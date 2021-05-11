@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelUserStore">
-    <attachedFolders />
+    <attachedFolders>
+      <Path>../com.unity.ml-agents</Path>
+      <Path>../com.unity.ml-agents.extensions</Path>
+    </attachedFolders>
     <explicitIncludes>
       <Path>Library/PackageCache/com.unity.barracuda@1.4.0-preview</Path>
       <Path>Library/PackageCache/com.unity.burst@1.4.7</Path>
@@ -18,8 +21,8 @@
       <Path>Library/PackageCache/com.unity.timeline@1.5.4</Path>
       <Path>Packages</Path>
       <Path>ProjectSettings</Path>
-      <Path>../com.unity.ml-agents</Path>
-      <Path>../com.unity.ml-agents.extensions</Path>
+      <Path>../../ml-agents-release_17/com.unity.ml-agents</Path>
+      <Path>../../ml-agents-release_17/com.unity.ml-agents.extensions</Path>
     </explicitIncludes>
     <explicitExcludes>
       <Path>.idea</Path>
@@ -27,6 +30,7 @@
       <Path>Logs</Path>
       <Path>Temp</Path>
       <Path>UserSettings</Path>
+      <Path>config</Path>
       <Path>obj</Path>
     </explicitExcludes>
   </component>

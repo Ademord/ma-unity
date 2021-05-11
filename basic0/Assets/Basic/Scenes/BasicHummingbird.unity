@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnvHummingbird (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
 --- !u!1001 &29279399
@@ -258,6 +263,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnvHummingbird (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
@@ -328,6 +338,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnvHummingbird (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
 --- !u!1001 &118462702
@@ -396,6 +411,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnvHummingbird (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
@@ -466,6 +486,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnvHummingbird (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
 --- !u!1001 &150850259
@@ -534,6 +559,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnvHummingbird (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
@@ -604,6 +634,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnvHummingbird (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
 --- !u!1001 &399401785
@@ -672,6 +707,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnvHummingbird (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
@@ -742,6 +782,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnvHummingbird (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
 --- !u!1001 &904080210
@@ -810,6 +855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnvHummingbird (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
@@ -891,7 +941,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905543912}
   m_LocalRotation: {x: 0.35842133, y: -0, z: -0, w: 0.93355995}
-  m_LocalPosition: {x: 37.86, y: 23.14, z: -18.72}
+  m_LocalPosition: {x: 2.1, y: 14.4, z: -16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -996,6 +1046,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnvHummingbird (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
 --- !u!1001 &1163837096
@@ -1064,6 +1119,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnvHummingbird (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
@@ -1227,6 +1287,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnvHummingbird (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
 --- !u!1001 &1457858506
@@ -1295,6 +1360,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnvHummingbird (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
@@ -1365,6 +1435,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnvHummingbird (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
 --- !u!1001 &1836212856
@@ -1433,6 +1508,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnvHummingbird (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
@@ -1503,6 +1583,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnvHummingbird (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
 --- !u!1001 &1920013573
@@ -1571,6 +1656,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnvHummingbird (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
@@ -1641,6 +1731,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnvHummingbird (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8328500844390827676, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
 --- !u!1001 &6217348520635998177
@@ -1650,6 +1745,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6523776699696001072, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8322718074820416686, guid: d04eed4d981963941a337325e76547f3,
         type: 3}
       propertyPath: m_RootOrder
@@ -1709,6 +1809,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnvHummingbird
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184110925773436061, guid: d04eed4d981963941a337325e76547f3,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d04eed4d981963941a337325e76547f3, type: 3}
