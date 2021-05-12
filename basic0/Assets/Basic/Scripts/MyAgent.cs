@@ -29,7 +29,7 @@ public class MyAgent : Agent
     
     new private Rigidbody rigidbody;
     private TrainingArea flowerArea;
-    private Flower nearestFlower;
+    [SerializeField] private Flower nearestFlower;
     private float smoothPitchChange = 0f;
     private float smoothYawChange = 0f;
     private const float MaxPitchAngle = 80f;
@@ -79,6 +79,11 @@ public class MyAgent : Agent
         // UpdateNearestFlower();
 
     }
+
+    // public void UpdateNearestFlower()
+    // {
+    //     // nearestFlower = targetTransform;
+    // }
     
     private void MoveToSafeRandomPosition(bool inFrontOfFlower)
     {
@@ -110,7 +115,7 @@ public class MyAgent : Agent
                 // transform.localPosition = new Vector3(Random.Range(-7f, 8f), Random.Range(1f, 8f) , Random.Range(-7f, 8f));
 
                 // float height = UnityEngine.Random.Range(1.2f, 2.5f);
-                float height = UnityEngine.Random.Range(1f, 8f);
+                float height = 2.9f; // UnityEngine.Random.Range(1f, 8f);
                 float radius = UnityEngine.Random.Range(2f, 7f);
                 Quaternion direction = Quaternion.Euler(
                     0, UnityEngine.Random.Range(-180f, 180f), 0f);
@@ -118,8 +123,8 @@ public class MyAgent : Agent
                     + Vector3.up * height + direction * Vector3.forward * radius;
                 // float pitch = UnityEngine.Random.Range(-60f, 60f);
                 float pitch = 0;
-                // float yaw = UnityEngine.Random.Range(-180f, 180f);
-                float yaw = 0;
+                float yaw = UnityEngine.Random.Range(-180f, 180f);
+                // float yaw = 0;
                 potentialRotation = Quaternion.Euler(pitch, yaw, 0f);
             }
 
@@ -136,22 +141,51 @@ public class MyAgent : Agent
         transform.rotation = potentialRotation;
     }
     
-    public override void OnActionReceived(ActionBuffers actions)
-    {
-        // Debug.Log(actions.DiscreteActions[0]);
-        // Debug.Log(actions.ContinuousActions[0]);
-        float moveX = actions.ContinuousActions[0];
-        float moveZ = actions.ContinuousActions[1];
-
+    public override void OnActionReceived(ActionBuffers actions) {
+        if (isFrozen) return;
+        
+        // transform.position += Time.deltaTime * moveSpeed * new Vector3(moveX, 0, moveZ);
         float moveSpeed = 3f;
-        transform.position += Time.deltaTime * moveSpeed * new Vector3(moveX, 0, moveZ);
+        Vector3 moveVector = new Vector3(actions.ContinuousActions[0], 0, actions.ContinuousActions[1]);
+        transform.position += Time.deltaTime * moveSpeed * moveVector;
+        // rigidbody.AddForce(move * moveForce);
+
+        // rotation
+        float yawchange   = actions.ContinuousActions[2];
+        Vector3 rotationVector = transform.rotation.eulerAngles;
+        smoothYawChange = Mathf.MoveTowards(smoothYawChange, yawchange, 2f * Time.fixedDeltaTime);
+        float yaw = rotationVector.y + smoothYawChange * Time.fixedDeltaTime * yawSpeed;
+        transform.rotation = Quaternion.Euler(0, yaw, 0f);
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
         // sensor.AddObservation(transform.localPosition);
         // sensor.AddObservation(targetTransform.localPosition);
-        sensor.AddObservation(targetTransform.localPosition - transform.localPosition);
+        // sensor.AddObservation(targetTransform.localPosition - transform.localPosition);
+        
+        if (nearestFlower is null)
+        {
+            sensor.AddObservation(new float[10]);
+            return;
+        }
+
+        // [Quaternion:4] Observe the local rotation
+        sensor.AddObservation(transform.localRotation.normalized);
+
+        // [Vector:3] pointing to nearest flower
+        Vector3 toFlower = nearestFlower.FlowerCenterVector - beakTip.localPosition;
+        sensor.AddObservation(toFlower.normalized);
+        
+        // dot product observation - beak tip in front of flower?
+        // +1 -> infront, -1 -> behind
+        sensor.AddObservation(Vector3.Dot(toFlower.normalized, -nearestFlower.FlowerUpVector.normalized));
+        // beak tip point to flower
+        sensor.AddObservation(Vector3.Dot(beakTip.forward.normalized, -nearestFlower.FlowerUpVector.normalized));
+        // relative distance from beak tip to flower
+        sensor.AddObservation(toFlower.magnitude / TrainingArea.AreaDiameter);
+        // 10 total observations
+        
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -159,13 +193,30 @@ public class MyAgent : Agent
         ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
         continuousActions[0] = Input.GetAxisRaw("Horizontal");
         continuousActions[1] = Input.GetAxisRaw("Vertical");
+        
+        float yaw = 0f;
+        if (Input.GetKey(KeyCode.LeftArrow)) yaw = -1f;
+        else if (Input.GetKey(KeyCode.RightArrow)) yaw = 1f;
+        continuousActions[2] = yaw;
+    }
+    public void FreezeAgent()
+    {
+        Debug.Assert(trainingMode == false, "Freeze/unfreeze not supported in training");
+        isFrozen = true;
+        rigidbody.Sleep();
+    }
+    public void UnfreezeAgent()
+    {
+        Debug.Assert(trainingMode == false, "Freeze/unfreeze not supported in training");
+        isFrozen = false;
+        rigidbody.WakeUp();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<Goal>(out Goal goal))
         {
-            SetReward(+1f);
+            AddReward(+1f);
             floorMeshRenderer.material = winMaterial;
             EndEpisode();
         }
@@ -182,9 +233,19 @@ public class MyAgent : Agent
             EndEpisode();
         }
     }
-
+    /// <summary>
+    /// called every 0.02 seconds
+    /// </summary>
     void FixedUpdate()
     {
         AddReward(-0.1f);
+    }
+    private void Update()
+    {
+        // Beektip to flower-line debug
+        if (nearestFlower != null)
+        {
+            Debug.DrawLine(beakTip.position, nearestFlower.FlowerCenterVector, Color.green);
+        }
     }
 }

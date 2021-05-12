@@ -32,6 +32,7 @@
       <Path>UserSettings</Path>
       <Path>config</Path>
       <Path>obj</Path>
+      <Path>results</Path>
     </explicitExcludes>
   </component>
 </project>

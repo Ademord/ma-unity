@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &387432392082272153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188555794493252083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd9fdb7ab07c8d40961dc978dbe73aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6217348520069519285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,16 +515,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2127622063279520233, guid: 681ae66681fb7c0409764abd33c9d383,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3367700925123789485, guid: 681ae66681fb7c0409764abd33c9d383,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3367700925123789485, guid: 681ae66681fb7c0409764abd33c9d383,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5972443953496082224, guid: 681ae66681fb7c0409764abd33c9d383,
         type: 3}
       propertyPath: m_Name
       value: FlowerPlant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210174593956225276, guid: 681ae66681fb7c0409764abd33c9d383,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742089877752796924, guid: 681ae66681fb7c0409764abd33c9d383,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3837927976241832529, guid: 681ae66681fb7c0409764abd33c9d383, type: 3}
     - {fileID: 728259878425950723, guid: 681ae66681fb7c0409764abd33c9d383, type: 3}
     - {fileID: 7984807455522428182, guid: 681ae66681fb7c0409764abd33c9d383, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 681ae66681fb7c0409764abd33c9d383, type: 3}
+--- !u!1 &3394115311597060435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8742089877752796924, guid: 681ae66681fb7c0409764abd33c9d383,
+    type: 3}
+  m_PrefabInstance: {fileID: 6217348520069519279}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5462480933968178758 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2127622063279520233, guid: 681ae66681fb7c0409764abd33c9d383,
@@ -531,27 +574,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6217348520069519279}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &188555794493252083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6112959157421733468, guid: 681ae66681fb7c0409764abd33c9d383,
+    type: 3}
+  m_PrefabInstance: {fileID: 6217348520069519279}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4834151805612599258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1539719790330998901, guid: 681ae66681fb7c0409764abd33c9d383,
     type: 3}
   m_PrefabInstance: {fileID: 6217348520069519279}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3394115311597060435 stripped
+--- !u!1 &1171518977653332225 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8742089877752796924, guid: 681ae66681fb7c0409764abd33c9d383,
+  m_CorrespondingSourceObject: {fileID: 5046960424489881262, guid: 681ae66681fb7c0409764abd33c9d383,
     type: 3}
   m_PrefabInstance: {fileID: 6217348520069519279}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &9025810645055829756 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3101409474858361171, guid: 681ae66681fb7c0409764abd33c9d383,
-    type: 3}
-  m_PrefabInstance: {fileID: 6217348520069519279}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1171518977653332225 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5046960424489881262, guid: 681ae66681fb7c0409764abd33c9d383,
     type: 3}
   m_PrefabInstance: {fileID: 6217348520069519279}
   m_PrefabAsset: {fileID: 0}
@@ -822,6 +865,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1920729184721047761, guid: 9615049e99b3eff4e9767be304e71735,
         type: 3}
+      propertyPath: nearestFlower
+      value: 
+      objectReference: {fileID: 152512418624854630}
+    - target: {fileID: 1920729184721047761, guid: 9615049e99b3eff4e9767be304e71735,
+        type: 3}
       propertyPath: targetTransform
       value: 
       objectReference: {fileID: 5891496613346142858}
@@ -838,7 +886,7 @@ PrefabInstance:
     - target: {fileID: 2178869929744226032, guid: 9615049e99b3eff4e9767be304e71735,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2178869929744226032, guid: 9615049e99b3eff4e9767be304e71735,
         type: 3}
@@ -848,7 +896,7 @@ PrefabInstance:
     - target: {fileID: 2178869929744226032, guid: 9615049e99b3eff4e9767be304e71735,
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2178869929744226032, guid: 9615049e99b3eff4e9767be304e71735,
         type: 3}
@@ -858,7 +906,7 @@ PrefabInstance:
     - target: {fileID: 2178869929744226032, guid: 9615049e99b3eff4e9767be304e71735,
         type: 3}
       propertyPath: m_BrainParameters.m_ActionSpec.m_NumContinuousActions
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6347737376032925142, guid: 9615049e99b3eff4e9767be304e71735,
         type: 3}
@@ -878,12 +926,12 @@ PrefabInstance:
     - target: {fileID: 7947982923943073733, guid: 9615049e99b3eff4e9767be304e71735,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.183
       objectReference: {fileID: 0}
     - target: {fileID: 7947982923943073733, guid: 9615049e99b3eff4e9767be304e71735,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.9
       objectReference: {fileID: 0}
     - target: {fileID: 7947982923943073733, guid: 9615049e99b3eff4e9767be304e71735,
         type: 3}

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TrainingArea : MonoBehaviour
 {
-        
+    public const float AreaDiameter = 20f;
+
     // private Dictionary<Collider, Flower> nectarFlowerDictionary;
     private List<GameObject> flowerPlants;
     public List<Flower> flowers { get; private set; }
@@ -21,7 +22,7 @@ public class TrainingArea : MonoBehaviour
             float yRotation = UnityEngine.Random.Range(-180f, 180f);
             float zRotation = UnityEngine.Random.Range(-5f, 5f);
             flowerPlant.transform.localRotation = Quaternion.Euler(xRotation, yRotation, zRotation);
-            flowerPlant.transform.position = new Vector3(Random.Range(-7f, 8f), 0 , Random.Range(7f, -8f));
+            flowerPlant.transform.localPosition = new Vector3(Random.Range(-7f, 8f), 0 , Random.Range(7f, -8f));
         }
         
         // reset all flower colliders and colors
