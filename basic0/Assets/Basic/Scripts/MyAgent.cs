@@ -41,6 +41,7 @@ public class MyAgent : Agent
     [SerializeField] private Transform targetTransform;
     [SerializeField] private Material winMaterial;
     [SerializeField] private Material loseMaterial;
+    [SerializeField] private Material floorMaterial;
     [SerializeField] private MeshRenderer floorMeshRenderer;
     public override void Initialize()
     {
@@ -56,6 +57,7 @@ public class MyAgent : Agent
     
     public override void OnEpisodeBegin()
     {
+        floorMeshRenderer.material = floorMaterial;
         // transform.localPosition = Vector3.zero;
         // transform.localPosition = new Vector3(Random.Range(-7f, 8f), Random.Range(1f, 8f) , Random.Range(-7f, 8f));
         targetTransform.transform.position = new Vector3(Random.Range(-7f, 8f), 0 , Random.Range(7f, -8f));
@@ -69,10 +71,10 @@ public class MyAgent : Agent
         
         bool inFrontOfFlower = false;
 
-        if (trainingMode)
-        {
-            inFrontOfFlower = UnityEngine.Random.value > 0.5f;
-        }
+        // if (trainingMode)
+        // {
+        //     inFrontOfFlower = UnityEngine.Random.value > 0.5f;
+        // }
         
         MoveToSafeRandomPosition(inFrontOfFlower);
 
@@ -146,16 +148,23 @@ public class MyAgent : Agent
         
         // transform.position += Time.deltaTime * moveSpeed * new Vector3(moveX, 0, moveZ);
         float moveSpeed = 3f;
-        Vector3 moveVector = new Vector3(actions.ContinuousActions[0], 0, actions.ContinuousActions[1]);
-        transform.position += Time.deltaTime * moveSpeed * moveVector;
-        // rigidbody.AddForce(move * moveForce);
+        Vector3 moveVector = new Vector3(actions.ContinuousActions[0], actions.ContinuousActions[1], actions.ContinuousActions[2]);
+        // transform.position += Time.deltaTime * moveSpeed * moveVector;
+        rigidbody.AddForce(moveVector * moveForce);
 
-        // rotation
-        float yawchange   = actions.ContinuousActions[2];
         Vector3 rotationVector = transform.rotation.eulerAngles;
+
+        float pitchChange = actions.ContinuousActions[3];
+        smoothPitchChange = Mathf.MoveTowards(smoothPitchChange, pitchChange, 2f*Time.fixedDeltaTime);
+        float pitch = rotationVector.x + smoothPitchChange * Time.fixedDeltaTime * pitchSpeed;
+        if (pitch > 180f) pitch -= 360f;
+        pitch = Mathf.Clamp(pitch, - MaxPitchAngle, +MaxPitchAngle);
+
+        float yawchange   = actions.ContinuousActions[4];
         smoothYawChange = Mathf.MoveTowards(smoothYawChange, yawchange, 2f * Time.fixedDeltaTime);
         float yaw = rotationVector.y + smoothYawChange * Time.fixedDeltaTime * yawSpeed;
-        transform.rotation = Quaternion.Euler(0, yaw, 0f);
+
+        transform.rotation = Quaternion.Euler(pitch, yaw, 0f);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -163,11 +172,16 @@ public class MyAgent : Agent
         // sensor.AddObservation(transform.localPosition);
         // sensor.AddObservation(targetTransform.localPosition);
         // sensor.AddObservation(targetTransform.localPosition - transform.localPosition);
-        
+
         if (nearestFlower is null)
         {
+            Debug.Log("nearest flower is null");
             sensor.AddObservation(new float[10]);
             return;
+        }
+        else
+        {
+            Debug.Log("nearest flower is not null");
         }
 
         // [Quaternion:4] Observe the local rotation
@@ -191,14 +205,44 @@ public class MyAgent : Agent
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
-        continuousActions[0] = Input.GetAxisRaw("Horizontal");
-        continuousActions[1] = Input.GetAxisRaw("Vertical");
-        
+        // continuousActions[0] = Input.GetAxisRaw("Horizontal");
+        // // continuousActions[1] = Input.GetAxisRaw("Vertical");
+        // continuousActions[2] = Input.GetAxisRaw("Vertical");
+
+
+        Vector3 moveX = Vector3.zero;
+        Vector3 moveY = Vector3.zero;
+        Vector3 moveZ = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.S)) moveZ = -transform.forward;
+        else if (Input.GetKey(KeyCode.W)) moveZ = transform.forward;
+
+        if (Input.GetKey(KeyCode.A)) moveX = -transform.right;
+        else if (Input.GetKey(KeyCode.D)) moveX = transform.right;
+
+        if (Input.GetKey(KeyCode.E)) moveY = transform.up;
+        else if (Input.GetKey(KeyCode.C)) moveY = -transform.up;
+
+        Vector3 combined = (moveX + moveY + moveZ).normalized;
+
+        continuousActions[0] = combined.x;
+        continuousActions[1] = combined.y;
+        continuousActions[2] = combined.z;
+
+
+        float pitch = 0f;
         float yaw = 0f;
-        if (Input.GetKey(KeyCode.LeftArrow)) yaw = -1f;
-        else if (Input.GetKey(KeyCode.RightArrow)) yaw = 1f;
-        continuousActions[2] = yaw;
+
+        if (Input.GetKey(KeyCode.DownArrow)) pitch = 0.25f;
+        else if (Input.GetKey(KeyCode.UpArrow)) pitch = -0.25f;
+        // yaw left / down
+        if (Input.GetKey(KeyCode.LeftArrow)) yaw = -0.25f;
+        else if (Input.GetKey(KeyCode.RightArrow)) yaw = 0.25f;
+        continuousActions[3] = pitch;
+        continuousActions[4] = yaw;
+
     }
+
     public void FreezeAgent()
     {
         Debug.Assert(trainingMode == false, "Freeze/unfreeze not supported in training");
@@ -228,9 +272,9 @@ public class MyAgent : Agent
         if (collision.collider.CompareTag("boundary"))
         {
             // boundary negative reward
-            AddReward(-1f); // discourage getting outside
+            AddReward(-0.5f); // discourage getting outside
             floorMeshRenderer.material = loseMaterial;
-            EndEpisode();
+            // EndEpisode();
         }
     }
     /// <summary>

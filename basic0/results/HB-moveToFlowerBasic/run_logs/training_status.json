@@ -2,22 +2,58 @@
     "Hummingbird": {
         "checkpoints": [
             {
-                "steps": 2482,
-                "file_path": "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-2482.onnx",
+                "steps": 753193,
+                "file_path": "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-753193.onnx",
                 "reward": null,
-                "creation_time": 1620822514.328276,
+                "creation_time": 1620829772.4916503,
                 "auxillary_file_paths": [
-                    "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-2482.pt"
+                    "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-753193.pt"
+                ]
+            },
+            {
+                "steps": 999193,
+                "file_path": "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-999193.onnx",
+                "reward": null,
+                "creation_time": 1620830048.8746774,
+                "auxillary_file_paths": [
+                    "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-999193.pt"
+                ]
+            },
+            {
+                "steps": 1073193,
+                "file_path": "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-1073193.onnx",
+                "reward": null,
+                "creation_time": 1620830110.2043872,
+                "auxillary_file_paths": [
+                    "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-1073193.pt"
+                ]
+            },
+            {
+                "steps": 1073193,
+                "file_path": "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-1073193.onnx",
+                "reward": null,
+                "creation_time": 1620830118.9833605,
+                "auxillary_file_paths": [
+                    "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-1073193.pt"
+                ]
+            },
+            {
+                "steps": 1073193,
+                "file_path": "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-1073193.onnx",
+                "reward": null,
+                "creation_time": 1620830132.8811235,
+                "auxillary_file_paths": [
+                    "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-1073193.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 2482,
+            "steps": 1073193,
             "file_path": "results\\HB-moveToFlowerBasic\\Hummingbird.onnx",
             "reward": null,
-            "creation_time": 1620822514.328276,
+            "creation_time": 1620830132.8811235,
             "auxillary_file_paths": [
-                "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-2482.pt"
+                "results\\HB-moveToFlowerBasic\\Hummingbird\\Hummingbird-1073193.pt"
             ]
         }
     },
