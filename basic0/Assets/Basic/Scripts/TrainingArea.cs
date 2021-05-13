@@ -51,8 +51,8 @@ public class TrainingArea : MonoBehaviour
         // nectarFlowerDictionary = new Dictionary<Collider, Flower>();
         flowers = new List<Flower>();
         FindChildFlowers(transform);
-        Debug.Log("found plants: " + flowerPlants.Count);
-        Debug.Log("found flowers: " + flowers.Count);
+        // Debug.Log("found plants: " + flowerPlants.Count);
+        // Debug.Log("found flowers: " + flowers.Count);
     }
 
     // called when the game starts

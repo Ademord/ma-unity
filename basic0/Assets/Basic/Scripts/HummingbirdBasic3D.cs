@@ -190,7 +190,7 @@ public class HummingbirdBasic3D : Agent
         // [Vector:3] pointing to nearest flower
         Vector3 toFlower = nearestFlower.FlowerCenterVector - beakTip.localPosition;
         sensor.AddObservation(toFlower);
-        sensor.AddObservation(toFlower.normalized);
+        // sensor.AddObservation(toFlower.normalized);
         
         // // dot product observation - beak tip in front of flower?
         // // +1 -> infront, -1 -> behind
@@ -200,7 +200,7 @@ public class HummingbirdBasic3D : Agent
         // // relative distance from beak tip to flower
         sensor.AddObservation(toFlower.magnitude / TrainingArea.AreaDiameter);
         // // 10 total observations
-        //
+        // 4 observations
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
