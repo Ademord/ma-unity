@@ -6,7 +6,7 @@ using Unity.MLAgents.Extensions;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 
-public class MyAgent : Agent
+public class HummingbirdBasic2D : Agent
 {
 
     [Tooltip("Force to apply when moving")]
@@ -71,10 +71,10 @@ public class MyAgent : Agent
         
         bool inFrontOfFlower = false;
 
-        // if (trainingMode)
-        // {
-        //     inFrontOfFlower = UnityEngine.Random.value > 0.5f;
-        // }
+        if (trainingMode)
+        {
+            inFrontOfFlower = UnityEngine.Random.value > 0.4f;
+        }
         
         MoveToSafeRandomPosition(inFrontOfFlower);
 
@@ -185,21 +185,22 @@ public class MyAgent : Agent
         }
 
         // [Quaternion:4] Observe the local rotation
-        sensor.AddObservation(transform.localRotation.normalized);
+        // sensor.AddObservation(transform.localRotation.normalized);
 
         // [Vector:3] pointing to nearest flower
         Vector3 toFlower = nearestFlower.FlowerCenterVector - beakTip.localPosition;
+        sensor.AddObservation(toFlower);
         sensor.AddObservation(toFlower.normalized);
         
-        // dot product observation - beak tip in front of flower?
-        // +1 -> infront, -1 -> behind
-        sensor.AddObservation(Vector3.Dot(toFlower.normalized, -nearestFlower.FlowerUpVector.normalized));
-        // beak tip point to flower
-        sensor.AddObservation(Vector3.Dot(beakTip.forward.normalized, -nearestFlower.FlowerUpVector.normalized));
-        // relative distance from beak tip to flower
+        // // dot product observation - beak tip in front of flower?
+        // // +1 -> infront, -1 -> behind
+        // sensor.AddObservation(Vector3.Dot(toFlower.normalized, -nearestFlower.FlowerUpVector.normalized));
+        // // beak tip point to flower
+        // sensor.AddObservation(Vector3.Dot(beakTip.forward.normalized, -nearestFlower.FlowerUpVector.normalized));
+        // // relative distance from beak tip to flower
         sensor.AddObservation(toFlower.magnitude / TrainingArea.AreaDiameter);
-        // 10 total observations
-        
+        // // 10 total observations
+        //
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
