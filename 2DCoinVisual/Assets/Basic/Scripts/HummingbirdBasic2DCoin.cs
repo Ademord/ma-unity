@@ -1,9 +1,21 @@
-﻿using Unity.MLAgents;
+﻿using UnityEngine;
+using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
-using UnityEngine;
+using Unity.MLAgentsExamples;
+using Unity.MLAgents.Sensors;
+using Random = UnityEngine.Random;
 
 public class HummingbirdBasic2DCoin : Agent
 {
+    // This agent improves upong the 2D coin example
+    // by adding the OrientationCube and the Direction Indicator
+    // it also adds the target walking speed to add a reward for the target moving
+    
+    // observations: 
+    
+    // actions <SimpleAgentController>:
+        // vertical (3)
+        // horizontal as rotation (3)
     [Tooltip("The platform to be moved around")]
     public GameObject platform;
 
@@ -11,38 +23,78 @@ public class HummingbirdBasic2DCoin : Agent
     private SimpleCharacterController characterController;
     new private Rigidbody rigidbody;
     private TrainingArea flowerArea;
+    
+    [Header("Walk Speed")]
+    [Range(0.1f, m_maxWalkingSpeed)]
+    [SerializeField]
+    [Tooltip(
+        "The speed the agent will try to match.\n\n" +
+        "TRAINING:\n" +
+        "For VariableSpeed envs, this value will randomize at the start of each training episode.\n" +
+        "Otherwise the agent will try to match the speed set here.\n\n" +
+        "INFERENCE:\n" +
+        "During inference, VariableSpeed agents will modify their behavior based on this value " +
+        "whereas the CrawlerDynamic & CrawlerStatic agents will run at the speed specified during training "
+    )]
+    //The walking speed to try and achieve
+    private float m_TargetWalkingSpeed = m_maxWalkingSpeed;
+
+    const float m_maxWalkingSpeed = 15; //The max walking speed
+
+    //The current target walking speed. Clamped because a value of zero will cause NaNs
+    public float TargetWalkingSpeed
+    {
+        get { return m_TargetWalkingSpeed; }
+        set { m_TargetWalkingSpeed = Mathf.Clamp(value, .1f, m_maxWalkingSpeed); }
+    }
     //The direction an agent will walk during training.
     [Header("Target To Walk Towards")]
     public Transform TargetPrefab; //Target prefab to use in Dynamic envs
     private Transform m_Target; //Target the agent will walk towards during training.
 
+    //This will be used as a stabilized model space reference point for observations
+    //Because ragdolls can move erratically during training, using a stabilized reference transform improves learning
+    OrientationCubeController m_OrientationCube;
+
+    //The indicator graphic gameobject that points towards the target
+    DirectionIndicator m_DirectionIndicator;
+
+    
     /// <summary>
     /// Called once when the agent is first initialized
     /// </summary>
     public override void Initialize()
     {
+        SpawnTarget(TargetPrefab, Vector3.zero); //spawn target
+
+        m_OrientationCube = GetComponentInChildren<OrientationCubeController>();
+        m_DirectionIndicator = GetComponentInChildren<DirectionIndicator>();
+
         startPosition = transform.position;
         characterController = GetComponent<SimpleCharacterController>();
         rigidbody = GetComponent<Rigidbody>();
         flowerArea = GetComponentInParent<TrainingArea>();
-        SpawnTarget(TargetPrefab, Vector3.zero); //spawn target
+        
     }
     // <summary>
     /// Called every time an episode begins. This is where we reset the challenge.
     /// </summary>
     public override void OnEpisodeBegin()
     {
-        // flowerArea.ResetFlowers();
-        // Reset agent position, rotation
         transform.position = startPosition;
         transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
         rigidbody.velocity = Vector3.zero;
-        // MoveToSafeRandomPosition();
 
         // Reset platform position (5 meters away from the agent in a random direction)
         Vector3 targetPosition = Vector3.zero + Quaternion.Euler(Vector3.up * Random.Range(0f, 360f)) * Vector3.forward * 5f;
         m_Target.transform.localPosition = targetPosition;
-        // SpawnTarget(TargetPrefab, transform.position); //spawn target
+        
+        // UpdateOrientationObjects();
+     
+        //Set our goal walking speed
+        TargetWalkingSpeed = Random.Range(0.1f, m_maxWalkingSpeed);
+
+        
     }
     /// <summary>
     /// Spawns a target prefab at pos
@@ -52,6 +104,18 @@ public class HummingbirdBasic2DCoin : Agent
     void SpawnTarget(Transform prefab, Vector3 pos)
     {
         m_Target = Instantiate(prefab, pos, Quaternion.identity, transform.parent);
+    }
+    
+    /// <summary>
+    /// Update OrientationCube and DirectionIndicator
+    /// </summary>
+    void UpdateOrientationObjects()
+    {
+        m_OrientationCube.UpdateOrientation(transform, m_Target);
+        if (m_DirectionIndicator)
+        {
+            m_DirectionIndicator.MatchOrientation(m_OrientationCube.transform);
+        }
     }
     
     private void MoveToSafeRandomPosition()
@@ -132,6 +196,44 @@ public class HummingbirdBasic2DCoin : Agent
             Debug.Log("entered flower!");
         }
     }
+    
+    /// <summary>
+    /// Enter or stay in a trigger collider
+    /// </summary>
+    /// <param name="collider"></param>
+    private void TriggerEnterOrStay(Collider collider)
+    {
+        // check if colliding with nectar
+        if (collider.CompareTag("collectible"))
+        {
+            Debug.Log("I am inside a TorusColliderSegment");
+            // Vector3 closestPointToBeakTip = collider.ClosestPoint(beakTip.position);
+            // // check if closest is close to tip
+            // if (Vector3.Distance(beakTip.position, closestPointToBeakTip) < BeakTipRadius)
+            // {
+            //     Flower flower = flowerArea.GetFlowerFromNectar(collider);
+            //     // Attemp to take 0.01 nectar
+            //     float nectarReceived = flower.Feed(0.01f);
+            //     // nectar obtained
+            //     NectarObtained += nectarReceived;
+            //     if (trainingMode)
+            //     {
+            //         // calculate reward for getting nectar
+            //         float bonus = 0.02f * Mathf.Clamp01(
+            //             Vector3.Dot(transform.forward.normalized,
+            //                 -nearestFlower.FlowerUpVector.normalized));
+            //         AddReward(0.01f + bonus); // experiment, balance reward
+            //
+            //     }
+            //     // if flower empty, update nearest flower
+            //     if (!flower.HasNectar)
+            //     {
+            //         UpdateNearestFlower();
+            //     }
+            }
+    }
+    
+    
     private void OnCollisionEnter(Collision collision)
     {
         // if (trainingMode && collision.collider.CompareTag("boundary"))
