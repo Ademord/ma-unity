@@ -11,7 +11,7 @@ public class PlantController
     {
         torusSegments = new List<TorusSegmentController>();
         FindChildTorusSegements(m_Target);
-        Debug.Log("found n torusSegments on the transform you gave me: " + torusSegments.Count);
+        // Debug.Log("found n torusSegments on the transform you gave me: " + torusSegments.Count);
     }
 
     public void ResetCollectibles()

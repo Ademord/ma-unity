@@ -93,7 +93,6 @@ public class TorusRaycastWithYawAgent : Agent
         m_Target.transform.localPosition = targetPosition;
         m_TargetController.ResetCollectibles();
         
-        // UpdateOrientationObjects();
         NectarObtained = 0f;
 
         //Set our goal walking speed
@@ -101,6 +100,8 @@ public class TorusRaycastWithYawAgent : Agent
 
         insideTorus = false;
         currentTorusSegment = null;
+        
+        UpdateOrientationObjects();
     }
     /// <summary>
     /// Spawns a target prefab at pos
@@ -119,6 +120,7 @@ public class TorusRaycastWithYawAgent : Agent
     /// </summary>
     void UpdateOrientationObjects()
     {
+        // Debug.Log("m_OrientationCube is null" + m_OrientationCube is null);
         m_OrientationCube.UpdateOrientation(transform, m_Target);
         if (m_DirectionIndicator)
         {
@@ -170,11 +172,16 @@ public class TorusRaycastWithYawAgent : Agent
         // because of the DecisionRequester, which only gets new decisions periodically.
         int vertical = Mathf.RoundToInt(Input.GetAxisRaw("Vertical"));
         int horizontal = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
-
+        int yaw = 0;
+        // if (Input.GetKey(KeyCode.LeftArrow)) yaw = -1;
+        // else if (Input.GetKey(KeyCode.RightArrow)) yaw = 1;
+        if (Input.GetKey(KeyCode.E)) yaw = -1;
+        else if (Input.GetKey(KeyCode.C)) yaw = 1;
         // Convert the actions to Discrete choices (0, 1, 2)
         ActionSegment<int> actions = actionsOut.DiscreteActions;
         actions[0] = vertical >= 0 ? vertical : 2;
         actions[1] = horizontal >= 0 ? horizontal : 2;
+        actions[2] = yaw >= 0 ? yaw : 2;
     }
     /// <summary>
     /// React to actions coming from either the neural net or human input
@@ -182,21 +189,37 @@ public class TorusRaycastWithYawAgent : Agent
     /// <param name="actions">The actions received</param>
     public override void OnActionReceived(ActionBuffers actions)
     {
+        AddReward(-1f / MaxStep);
+        MoveAgent(actions);
+
+    }
+
+    public void MoveAgent(ActionBuffers actions)
+    {
         // Convert actions from Discrete (0, 1, 2) to expected input values (-1, 0, +1)
         // of the character controller
         float vertical = actions.DiscreteActions[0] <= 1 ? actions.DiscreteActions[0] : -1;
         float horizontal = actions.DiscreteActions[1] <= 1 ? actions.DiscreteActions[1] : -1;
-
+        float yaw = actions.DiscreteActions[2] <= 1 ? actions.DiscreteActions[2] : -1;
+  
         characterController.ForwardInput = vertical;
-        characterController.TurnInput = horizontal;
-        characterController.YawInput = horizontal;
+        characterController.TurnInput = yaw;
+        characterController.SidesInput = horizontal;
         
         Collider[] colliders = Physics.OverlapSphere(transform.position, 0.01f);
         foreach (Collider collider in colliders)
         {
             insideTorus = collider.CompareTag("collectible");
-            Debug.Log("inside torus: " + insideTorus);
+            // Debug.Log("inside torus: " + insideTorus);
             GiveReward(collider);
+            
+            if (collider.CompareTag("platform"))
+            {
+                // boundary negative reward
+                AddReward(-1f); 
+                // EndEpisode();
+                Debug.Log("hit the wall!");
+            }
         }
     }
     /// <summary>
@@ -246,7 +269,7 @@ public class TorusRaycastWithYawAgent : Agent
         if (collision.collider.CompareTag("platform"))
         {
             // boundary negative reward
-            AddReward(-10f); 
+            AddReward(-1f); 
             // EndEpisode();
             Debug.Log("hit the wall!");
 
@@ -254,12 +277,14 @@ public class TorusRaycastWithYawAgent : Agent
     }
     private void GiveReward(Collider collider)
     {
+        // float facingReward_temp =
+            // Quaternion.Dot(transform.rotation.normalized, Quaternion.LookRotation(m_Target.transform.position));
+  
         // Debug.DrawLine(transform.position, m_Target.position, Color.green);
         if (insideTorus)
         {
             float insideReward = 0;
             float movingReward = 0;
-            float facingReward = 0;
 
             // Debug.Log("I am inside a TorusColliderSegment");
             
@@ -270,7 +295,7 @@ public class TorusRaycastWithYawAgent : Agent
 
             if (NectarObtained > 0)
             {
-                insideReward = 0.1f;
+                insideReward = 1f;
             }
             
             if (NectarObtained == torusSegment.MAX_NECTAR_AMOUNT * 4)
@@ -278,16 +303,33 @@ public class TorusRaycastWithYawAgent : Agent
                 EndEpisode();
             }
             
-            // if moving
-            // movingReward = 
-            
-            // if looking at flower
-            facingReward = 0.2f * Mathf.Clamp01(Vector3.Dot(transform.forward.normalized,
-                    -m_Target.transform.up.normalized));
+            // Set reward for this step according to mixture of the following elements.
+            // a. Match target speed
+            //This reward will approach 1 if it matches perfectly and approach zero as it deviates
+            // var matchSpeedReward = GetMatchingVelocityReward(cubeForward * TargetWalkingSpeed, GetAvgVelocity());
 
-            Debug.Log("Rewards obtained: " + insideReward + ", "+ facingReward);
-            AddReward(insideReward + movingReward + facingReward);
+            // b. Rotation alignment with target direction.
+            //This reward will approach 1 if it faces the target direction perfectly and approach zero as it deviates
+            var cubeForward = m_OrientationCube.transform.forward;
+            var lookAtTargetReward = (Vector3.Dot(cubeForward, transform.forward) + 1) * .5F;
+
+
+            // Debug.Log("Rewards obtained: " + insideReward + " || "+ lookAtTargetReward);
+            AddReward(insideReward * lookAtTargetReward);
         }
+    }
+
+    /// <summary>
+    /// Normalized value of the difference in actual speed vs goal walking speed.
+    /// </summary>
+    public float GetMatchingVelocityReward(Vector3 velocityGoal, Vector3 actualVelocity)
+    {
+        //distance between our actual velocity and goal velocity
+        var velDeltaMagnitude = Mathf.Clamp(Vector3.Distance(actualVelocity, velocityGoal), 0, TargetWalkingSpeed);
+
+        //return the value on a declining sigmoid shaped curve that decays from 1 to 0
+        //This reward will approach 1 if it matches perfectly and approach zero as it deviates
+        return Mathf.Pow(1 - Mathf.Pow(velDeltaMagnitude / TargetWalkingSpeed, 2), 2);
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -296,7 +338,7 @@ public class TorusRaycastWithYawAgent : Agent
     }
 
     private void FixedUpdate()
-    {     
-       
+    {
+        UpdateOrientationObjects();
     }
 }

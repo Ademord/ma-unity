@@ -1,0 +1,65 @@
+{
+    "Hummingbird": {
+        "checkpoints": [
+            {
+                "steps": 4999970,
+                "file_path": "results\\2DTorusWithYaw.4withFlowerColliderMultiplication\\Hummingbird\\Hummingbird-4999970.onnx",
+                "reward": 719.2335103352865,
+                "creation_time": 1621185623.0659914,
+                "auxillary_file_paths": [
+                    "results\\2DTorusWithYaw.4withFlowerColliderMultiplication\\Hummingbird\\Hummingbird-4999970.pt"
+                ]
+            },
+            {
+                "steps": 5499969,
+                "file_path": "results\\2DTorusWithYaw.4withFlowerColliderMultiplication\\Hummingbird\\Hummingbird-5499969.onnx",
+                "reward": null,
+                "creation_time": 1621186129.4214237,
+                "auxillary_file_paths": [
+                    "results\\2DTorusWithYaw.4withFlowerColliderMultiplication\\Hummingbird\\Hummingbird-5499969.pt"
+                ]
+            },
+            {
+                "steps": 5872381,
+                "file_path": "results\\2DTorusWithYaw.4withFlowerColliderMultiplication\\Hummingbird\\Hummingbird-5872381.onnx",
+                "reward": null,
+                "creation_time": 1621186515.5024042,
+                "auxillary_file_paths": [
+                    "results\\2DTorusWithYaw.4withFlowerColliderMultiplication\\Hummingbird\\Hummingbird-5872381.pt"
+                ]
+            },
+            {
+                "steps": 5999939,
+                "file_path": "results\\2DTorusWithYaw.4withFlowerColliderMultiplication\\Hummingbird\\Hummingbird-5999939.onnx",
+                "reward": null,
+                "creation_time": 1621186803.6958659,
+                "auxillary_file_paths": [
+                    "results\\2DTorusWithYaw.4withFlowerColliderMultiplication\\Hummingbird\\Hummingbird-5999939.pt"
+                ]
+            },
+            {
+                "steps": 6128411,
+                "file_path": "results\\2DTorusWithYaw.4withFlowerColliderMultiplication\\Hummingbird\\Hummingbird-6128411.onnx",
+                "reward": null,
+                "creation_time": 1621186927.9744594,
+                "auxillary_file_paths": [
+                    "results\\2DTorusWithYaw.4withFlowerColliderMultiplication\\Hummingbird\\Hummingbird-6128411.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 6128411,
+            "file_path": "results\\2DTorusWithYaw.4withFlowerColliderMultiplication\\Hummingbird.onnx",
+            "reward": null,
+            "creation_time": 1621186927.9744594,
+            "auxillary_file_paths": [
+                "results\\2DTorusWithYaw.4withFlowerColliderMultiplication\\Hummingbird\\Hummingbird-6128411.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

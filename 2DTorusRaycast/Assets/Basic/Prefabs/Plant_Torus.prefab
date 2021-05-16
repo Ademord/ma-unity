@@ -936,7 +936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullFlowerColor: {r: 0.9921569, g: 0.8000001, b: 0.14117648, a: 0.5}
   emptyFlowerColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
-  MAX_NECTAR_AMOUNT: 100
+  MAX_NECTAR_AMOUNT: 200
 --- !u!23 &5554473330440656404
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -944,7 +944,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2358200652650634667}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1243,7 +1243,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3023511705678634982}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1292,7 +1292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullFlowerColor: {r: 0.9921569, g: 0.8000001, b: 0.14117648, a: 0.5}
   emptyFlowerColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
-  MAX_NECTAR_AMOUNT: 100
+  MAX_NECTAR_AMOUNT: 200
 --- !u!1 &3216331192128152492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,7 +1423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullFlowerColor: {r: 0.9921569, g: 0.8000001, b: 0.14117648, a: 0.5}
   emptyFlowerColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
-  MAX_NECTAR_AMOUNT: 100
+  MAX_NECTAR_AMOUNT: 200
 --- !u!23 &4041342835385723252
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1431,7 +1431,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3287028782275774598}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1523,7 +1523,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3454397981943257364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1572,7 +1572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullFlowerColor: {r: 0.9921569, g: 0.8000001, b: 0.14117648, a: 0.5}
   emptyFlowerColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 1}
-  MAX_NECTAR_AMOUNT: 100
+  MAX_NECTAR_AMOUNT: 200
 --- !u!1 &4267295713192280151
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,14 +2568,13 @@ GameObject:
   - component: {fileID: 2600657026909849950}
   - component: {fileID: 2675854840682816810}
   - component: {fileID: 3155962034668109850}
-  - component: {fileID: 6392556027093114801}
   m_Layer: 0
   m_Name: FlowerCollider
-  m_TagString: collectible
+  m_TagString: platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &120321022360047271
 Transform:
   m_ObjectHideFlags: 0
@@ -2584,8 +2583,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6866694334385574363}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0, y: 0.0029, z: 0.0013}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 2997005808645450901}
   m_RootOrder: 1
@@ -2606,10 +2605,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6866694334385574363}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8400947189577481794, guid: 8c77304d7888fac4eacdded42fcaac9d, type: 3}
 --- !u!135 &3155962034668109850
@@ -2620,23 +2619,11 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6866694334385574363}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.045
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6392556027093114801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6866694334385574363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bd9fdb7ab07c8d40961dc978dbe73aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6922918509822314889
 GameObject:
   m_ObjectHideFlags: 0
