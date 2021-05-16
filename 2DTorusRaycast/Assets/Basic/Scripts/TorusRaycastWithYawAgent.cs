@@ -42,7 +42,7 @@ public class TorusRaycastWithYawAgent : Agent
     //The walking speed to try and achieve
     private float m_TargetWalkingSpeed = m_maxWalkingSpeed;
 
-    const float m_maxWalkingSpeed = 15; //The max walking speed
+    const float m_maxWalkingSpeed = 2; //The max walking speed
 
     //The current target walking speed. Clamped because a value of zero will cause NaNs
     public float TargetWalkingSpeed
@@ -97,7 +97,7 @@ public class TorusRaycastWithYawAgent : Agent
 
         //Set our goal walking speed
         TargetWalkingSpeed = Random.Range(0.1f, m_maxWalkingSpeed);
-
+        // Debug.Log("TargetWalkingSpeed: " + TargetWalkingSpeed);
         insideTorus = false;
         currentTorusSegment = null;
         
@@ -189,7 +189,7 @@ public class TorusRaycastWithYawAgent : Agent
     /// <param name="actions">The actions received</param>
     public override void OnActionReceived(ActionBuffers actions)
     {
-        AddReward(-1f / MaxStep);
+        // AddReward(-1f / MaxStep);
         MoveAgent(actions);
 
     }
@@ -213,64 +213,23 @@ public class TorusRaycastWithYawAgent : Agent
             // Debug.Log("inside torus: " + insideTorus);
             GiveReward(collider);
             
-            if (collider.CompareTag("platform"))
-            {
-                // boundary negative reward
-                AddReward(-1f); 
-                // EndEpisode();
-                Debug.Log("hit the wall!");
-            }
+            // if (collider.CompareTag("platform"))
+            // {
+            //     // boundary negative reward
+            //     AddReward(-1f); 
+            //     // EndEpisode();
+            //     Debug.Log("hit the wall!");
+            // }
         }
     }
-    /// <summary>
-    /// Called when the agent's collider enters a trigger collider
-    /// </summary>
-    /// <param name="other">The trigger collider</param>
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     TriggerEnterOrStay(other);
-    // }
-    // /// <summary>
-    // /// Called when the agent's collider stays inside a trigger collider
-    // /// </summary>
-    // /// <param name="other">The trigger collider</param>
-    // private void OnTriggerStay(Collider other)
-    // {
-    //     TriggerEnterOrStay(other);
-    // }
-    
-    /// <summary>
-    /// Enter or stay in a trigger collider
-    /// </summary>
-    /// <param name="collider"></param>
-    // private void TriggerEnterOrStay(Collider collider)
-    // {
-    //     if (collider.CompareTag("collectible"))
-    //     {
-    //         insideTorus = true;
-    //         currentTorusSegment = collider;
-    //     }
-    // }
-    //
-    // private void OnTriggerExit(Collider other)
-    // {
-    //        insideTorus = false;
-    //        currentTorusSegment = null;
-    // }
-    //
-    // private void OnCollisionExit(Collision other)
-    // {
-    //     insideTorus = false;
-    //     currentTorusSegment = null;    
-    // }
-
+  
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("platform"))
         {
             // boundary negative reward
-            AddReward(-1f); 
-            // EndEpisode();
+            AddReward(-10f); 
+            EndEpisode();
             Debug.Log("hit the wall!");
 
         }
@@ -279,8 +238,11 @@ public class TorusRaycastWithYawAgent : Agent
     {
         // float facingReward_temp =
             // Quaternion.Dot(transform.rotation.normalized, Quaternion.LookRotation(m_Target.transform.position));
-  
         // Debug.DrawLine(transform.position, m_Target.position, Color.green);
+        // Debug.Log("speed expected: " + cubeForward * TargetWalkingSpeed);
+        // Debug.Log("my speed: " + rigidbody.velocity);
+        // Debug.Log("my reward: " + matchSpeedReward);
+        
         if (insideTorus)
         {
             float insideReward = 0;
@@ -302,20 +264,17 @@ public class TorusRaycastWithYawAgent : Agent
             {
                 EndEpisode();
             }
-            
+            var cubeForward = m_OrientationCube.transform.forward;
             // Set reward for this step according to mixture of the following elements.
             // a. Match target speed
             //This reward will approach 1 if it matches perfectly and approach zero as it deviates
-            // var matchSpeedReward = GetMatchingVelocityReward(cubeForward * TargetWalkingSpeed, GetAvgVelocity());
-
+            var matchSpeedReward = GetMatchingVelocityReward(cubeForward * TargetWalkingSpeed, rigidbody.velocity);
             // b. Rotation alignment with target direction.
             //This reward will approach 1 if it faces the target direction perfectly and approach zero as it deviates
-            var cubeForward = m_OrientationCube.transform.forward;
             var lookAtTargetReward = (Vector3.Dot(cubeForward, transform.forward) + 1) * .5F;
 
-
             // Debug.Log("Rewards obtained: " + insideReward + " || "+ lookAtTargetReward);
-            AddReward(insideReward * lookAtTargetReward);
+            AddReward(insideReward + insideReward * (lookAtTargetReward + matchSpeedReward));
         }
     }
 
