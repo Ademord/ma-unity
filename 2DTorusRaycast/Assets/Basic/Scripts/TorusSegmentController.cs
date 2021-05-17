@@ -43,7 +43,7 @@ public class TorusSegmentController : MonoBehaviour
     
     public void Reset()
     {
-        NectarAmount = MAX_NECTAR_AMOUNT;
+        NectarAmount = MAX_NECTAR_AMOUNT * 100f;
         flowerCollider.gameObject.SetActive(true);
         flowerMaterial.SetColor("_BaseColor", fullFlowerColor);
     }
