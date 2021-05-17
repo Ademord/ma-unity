@@ -63,6 +63,10 @@ public class TorusRaycastWithYawAgent : Agent
     //The indicator graphic gameobject that points towards the target
     DirectionIndicator m_DirectionIndicator;
 
+    private float lastVerticalMove;
+    private float lastHorizontalMove;
+    private float lastRotation;
+    
     /// <summary>
     /// Called once when the agent is first initialized
     /// </summary>
@@ -94,6 +98,8 @@ public class TorusRaycastWithYawAgent : Agent
         m_TargetController.ResetCollectibles();
         
         NectarObtained = 0f;
+        lastVerticalMove = 0f;
+        lastHorizontalMove = 0f;
 
         //Set our goal walking speed
         TargetWalkingSpeed = Random.Range(0.1f, m_maxWalkingSpeed);
@@ -191,7 +197,6 @@ public class TorusRaycastWithYawAgent : Agent
     {
         // AddReward(-1f / MaxStep);
         MoveAgent(actions);
-
     }
 
     public void MoveAgent(ActionBuffers actions)
@@ -201,12 +206,34 @@ public class TorusRaycastWithYawAgent : Agent
         float vertical = actions.DiscreteActions[0] <= 1 ? actions.DiscreteActions[0] : -1;
         float horizontal = actions.DiscreteActions[1] <= 1 ? actions.DiscreteActions[1] : -1;
         float yaw = actions.DiscreteActions[2] <= 1 ? actions.DiscreteActions[2] : -1;
-
+        
+        // motivate to move in a strafe
         if (horizontal != 0)
         {
             AddReward(0.01f);
         }
 
+        // penalize if moving in opposite fashion (LEFT-RIGHT-LEFT-RIGHT)
+        if (lastHorizontalMove == -horizontal)
+        {
+            print("Penalized: Last horizontal move was opposite");
+            AddReward(-0.01f);
+        } 
+        if (lastVerticalMove == -vertical)
+        {
+            print("Penalized: Last vertical move was opposite");
+            AddReward(-0.01f);
+        }
+        if (lastRotation == -yaw)
+        {
+            print("Penalized: Last rotation move was opposite");
+            AddReward(-0.01f);
+        }
+
+        lastHorizontalMove = horizontal;
+        lastVerticalMove = vertical;
+        lastRotation = yaw;
+        
         characterController.ForwardInput = vertical;
         characterController.TurnInput = yaw;
         characterController.SidesInput = horizontal;
@@ -217,14 +244,6 @@ public class TorusRaycastWithYawAgent : Agent
             insideTorus = collider.CompareTag("collectible");
             // Debug.Log("inside torus: " + insideTorus);
             GiveReward(collider);
-            
-            // if (collider.CompareTag("platform"))
-            // {
-            //     // boundary negative reward
-            //     AddReward(-1f); 
-            //     // EndEpisode();
-            //     Debug.Log("hit the wall!");
-            // }
         }
     }
   
@@ -256,7 +275,7 @@ public class TorusRaycastWithYawAgent : Agent
                 insideReward = 1f;
             }
             
-            if (NectarObtained == torusSegment.MAX_NECTAR_AMOUNT * 4)
+            if (NectarObtained >= torusSegment.MAX_NECTAR_AMOUNT * 3.8f) //  * (4f/characterController.moveSpeed)
             {
                 EndEpisode();
             }

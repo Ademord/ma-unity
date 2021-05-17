@@ -7,7 +7,7 @@ public class SimpleCharacterControllerWithYaw : MonoBehaviour
     [Tooltip("Move speed in meters/second")]
     public float moveSpeed = 2f;
     [Tooltip("Turn speed in degrees/second, left (+) or right (-)")]
-    public float turnSpeed = 50;
+    public float turnSpeed = 50f;
   
     public bool IsGrounded { get; private set; }
     public float ForwardInput { get; set; }
