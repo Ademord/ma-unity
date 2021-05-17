@@ -42,12 +42,27 @@ public class SimpleCharacterControllerWithYaw : MonoBehaviour
         // Movement
         // Vector3 move = Mathf.Clamp(ForwardInput, -1f, 1f) *
         //                moveSpeed * Time.fixedDeltaTime * transform.forward;
-        var diagonal_move = new Vector3(SidesInput, 0.0f, ForwardInput);
-        var move = moveSpeed * diagonal_move; // * Time.deltaTime
-        rigidbody.AddForce(move); //ForceMode.VelocityChange
+        // var diagonal_move = new Vector3(SidesInput, 0.0f, ForwardInput);
+        // var move = moveSpeed * diagonal_move; // * Time.deltaTime
+        // rigidbody.AddForce(move, ForceMode.VelocityChange); //ForceMode.VelocityChange
         // rigidbody.MovePosition(transform.position + move);
         // transform.Translate(move);   
         
+        // NEW METHOD .18
+        // float strafe = Input.GetAxis("Strafe") * speed;
+        // float translation = Input.GetAxis("Vertical") * speed;
+        // float rotation = Input.GetAxis("Horizontal") * rotationSpeed;      
+
+        float strafe = SidesInput * moveSpeed;
+        float translation = ForwardInput * moveSpeed;
+ 
+        strafe *= Time.deltaTime;
+        translation *= Time.deltaTime;
+        // rotation *= Time.deltaTime;
+
+        transform.Translate(strafe, 0, 0);
+        transform.Translate(0, 0, translation);
+        // transform.Rotate(0, rotation, 0);
         
         // // Yaw Prerrequisites (cast YawInput to SmoothYawInput
         // Vector3 rotationVector = transform.rotation.eulerAngles;

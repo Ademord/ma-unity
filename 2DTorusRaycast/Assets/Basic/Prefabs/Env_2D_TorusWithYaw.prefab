@@ -330,8 +330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b179ee758b1444092c0c0a2e6f9416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  turnSpeed: 200
+  moveSpeed: 1
+  turnSpeed: 100
 --- !u!114 &407101979482555770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 4000
+  MaxStep: 10000
   platform: {fileID: 8328064501413925644}
   m_TargetWalkingSpeed: 2
   TargetPrefab: {fileID: 2216016307398891506, guid: a647a593c150e864daba3fe1f6b9e85b,

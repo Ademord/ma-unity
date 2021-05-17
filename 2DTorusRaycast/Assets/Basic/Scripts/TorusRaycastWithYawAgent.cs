@@ -202,6 +202,7 @@ public class TorusRaycastWithYawAgent : Agent
         float horizontal = actions.DiscreteActions[1] <= 1 ? actions.DiscreteActions[1] : -1;
         float yaw = actions.DiscreteActions[2] <= 1 ? actions.DiscreteActions[2] : -1;
   
+        if (horizontal != 0): AddReward(0.01f);
         characterController.ForwardInput = vertical;
         characterController.TurnInput = yaw;
         characterController.SidesInput = horizontal;
@@ -228,7 +229,7 @@ public class TorusRaycastWithYawAgent : Agent
         if (collision.collider.CompareTag("platform"))
         {
             // boundary negative reward
-            AddReward(-10f); 
+            AddReward(-1f); 
             EndEpisode();
             Debug.Log("hit the wall!");
 
@@ -273,8 +274,15 @@ public class TorusRaycastWithYawAgent : Agent
             //This reward will approach 1 if it faces the target direction perfectly and approach zero as it deviates
             var lookAtTargetReward = (Vector3.Dot(cubeForward, transform.forward) + 1) * .5F;
 
-            // Debug.Log("Rewards obtained: " + insideReward + " || "+ lookAtTargetReward);
-            AddReward(insideReward + insideReward * (lookAtTargetReward + matchSpeedReward));
+            // runs .18
+            // var result_reward = insideReward; //  + 0.10f * insideReward * (lookAtTargetReward + matchSpeedReward);
+
+            // runs 19.
+            var result_reward = insideReward * lookAtTargetReward; //  + 0.10f * insideReward * (lookAtTargetReward + matchSpeedReward);
+          
+            // add reward
+            AddReward(result_reward);
+            // Debug.Log("Rewards obtained: " + result_reward);
         }
     }
 
