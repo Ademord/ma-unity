@@ -34,7 +34,7 @@ behaviors:
     init_path: null
     keep_checkpoints: 5
     checkpoint_interval: 500000
-    max_steps: 500000
+    max_steps: 1000000
     time_horizon: 64
     summary_freq: 30000
     threaded: true
@@ -59,7 +59,7 @@ checkpoint_settings:
   run_id: 2DTorusWithYaw.19.newreward
   initialize_from: null
   load_model: false
-  resume: false
+  resume: true
   force: false
   train_model: false
   inference: false

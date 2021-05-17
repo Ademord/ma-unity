@@ -201,8 +201,12 @@ public class TorusRaycastWithYawAgent : Agent
         float vertical = actions.DiscreteActions[0] <= 1 ? actions.DiscreteActions[0] : -1;
         float horizontal = actions.DiscreteActions[1] <= 1 ? actions.DiscreteActions[1] : -1;
         float yaw = actions.DiscreteActions[2] <= 1 ? actions.DiscreteActions[2] : -1;
-  
-        if (horizontal != 0): AddReward(0.01f);
+
+        if (horizontal != 0)
+        {
+            AddReward(0.01f);
+        }
+
         characterController.ForwardInput = vertical;
         characterController.TurnInput = yaw;
         characterController.SidesInput = horizontal;
@@ -237,24 +241,15 @@ public class TorusRaycastWithYawAgent : Agent
     }
     private void GiveReward(Collider collider)
     {
-        // float facingReward_temp =
-            // Quaternion.Dot(transform.rotation.normalized, Quaternion.LookRotation(m_Target.transform.position));
-        // Debug.DrawLine(transform.position, m_Target.position, Color.green);
-        // Debug.Log("speed expected: " + cubeForward * TargetWalkingSpeed);
-        // Debug.Log("my speed: " + rigidbody.velocity);
-        // Debug.Log("my reward: " + matchSpeedReward);
-        
         if (insideTorus)
         {
             float insideReward = 0;
             float movingReward = 0;
 
-            // Debug.Log("I am inside a TorusColliderSegment");
             
             TorusSegmentController torusSegment = collider.transform.parent.gameObject.GetComponent<TorusSegmentController>();
             float nectarReceived = torusSegment.Feed(1);
             NectarObtained += nectarReceived;
-            // Debug.Log("Obtained nectar: " + NectarObtained);
 
             if (NectarObtained > 0)
             {
@@ -266,6 +261,7 @@ public class TorusRaycastWithYawAgent : Agent
                 EndEpisode();
             }
             var cubeForward = m_OrientationCube.transform.forward;
+            
             // Set reward for this step according to mixture of the following elements.
             // a. Match target speed
             //This reward will approach 1 if it matches perfectly and approach zero as it deviates
