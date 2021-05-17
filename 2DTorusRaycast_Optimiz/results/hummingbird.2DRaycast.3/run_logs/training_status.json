@@ -1,0 +1,56 @@
+{
+    "Hummingbird": {
+        "checkpoints": [
+            {
+                "steps": 375374,
+                "file_path": "results\\hummingbird.2DRaycast.3\\Hummingbird\\Hummingbird-375374.onnx",
+                "reward": null,
+                "creation_time": 1620908263.545343,
+                "auxillary_file_paths": [
+                    "results\\hummingbird.2DRaycast.3\\Hummingbird\\Hummingbird-375374.pt"
+                ]
+            },
+            {
+                "steps": 467076,
+                "file_path": "results\\hummingbird.2DRaycast.3\\Hummingbird\\Hummingbird-467076.onnx",
+                "reward": null,
+                "creation_time": 1620908390.463558,
+                "auxillary_file_paths": [
+                    "results\\hummingbird.2DRaycast.3\\Hummingbird\\Hummingbird-467076.pt"
+                ]
+            },
+            {
+                "steps": 499978,
+                "file_path": "results\\hummingbird.2DRaycast.3\\Hummingbird\\Hummingbird-499978.onnx",
+                "reward": null,
+                "creation_time": 1620908477.0170615,
+                "auxillary_file_paths": [
+                    "results\\hummingbird.2DRaycast.3\\Hummingbird\\Hummingbird-499978.pt"
+                ]
+            },
+            {
+                "steps": 610650,
+                "file_path": "results\\hummingbird.2DRaycast.3\\Hummingbird\\Hummingbird-610650.onnx",
+                "reward": null,
+                "creation_time": 1620908570.7279768,
+                "auxillary_file_paths": [
+                    "results\\hummingbird.2DRaycast.3\\Hummingbird\\Hummingbird-610650.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 610650,
+            "file_path": "results\\hummingbird.2DRaycast.3\\Hummingbird.onnx",
+            "reward": null,
+            "creation_time": 1620908570.7279768,
+            "auxillary_file_paths": [
+                "results\\hummingbird.2DRaycast.3\\Hummingbird\\Hummingbird-610650.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
