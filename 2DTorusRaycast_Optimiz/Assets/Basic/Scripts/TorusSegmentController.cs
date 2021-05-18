@@ -53,6 +53,6 @@ public class TorusSegmentController : MonoBehaviour
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
         flowerMaterial = meshRenderer.material;
         flowerCollider = transform.Find("TorusSegmentCollider").GetComponent<Collider>();
-        // ResetFlower();
+        // Reset();
     }
 }

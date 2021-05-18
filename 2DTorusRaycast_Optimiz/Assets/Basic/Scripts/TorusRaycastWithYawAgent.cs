@@ -267,9 +267,8 @@ public class TorusRaycastWithYawAgent : Agent
 
             
             TorusSegmentController torusSegment = collider.transform.parent.gameObject.GetComponent<TorusSegmentController>();
-            float nectarReceived = torusSegment.Feed(1);
+            float nectarReceived = torusSegment.Feed(0.01f);
             NectarObtained += nectarReceived;
-
             if (NectarObtained > 0)
             {
                 insideReward = 1f;
