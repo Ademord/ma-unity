@@ -74,7 +74,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ml-agents": {
-      "version": "file:C:/Users/franc/Documents/Unity Hub Projects AI ML/ml-agents-release_17/com.unity.ml-agents",
+      "version": "file:D:/Unity Hub Projects AI ML/ml-agents-release_17/com.unity.ml-agents",
       "depth": 0,
       "source": "local",
       "dependencies": {
@@ -84,7 +84,7 @@
       }
     },
     "com.unity.ml-agents.extensions": {
-      "version": "file:C:/Users/franc/Documents/Unity Hub Projects AI ML/ml-agents-release_17/com.unity.ml-agents.extensions",
+      "version": "file:D:/Unity Hub Projects AI ML/ml-agents-release_17/com.unity.ml-agents.extensions",
       "depth": 0,
       "source": "local",
       "dependencies": {

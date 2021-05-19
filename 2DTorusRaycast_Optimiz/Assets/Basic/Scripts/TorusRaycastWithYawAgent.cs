@@ -63,6 +63,8 @@ public class TorusRaycastWithYawAgent : Agent
     //The indicator graphic gameobject that points towards the target
     DirectionIndicator m_DirectionIndicator;
 
+    [Tooltip("Move speed in meters/second")]
+    public float feedSpeed = 1f;
     private float lastVerticalMove;
     private float lastHorizontalMove;
     private float lastRotation;
@@ -213,22 +215,22 @@ public class TorusRaycastWithYawAgent : Agent
             AddReward(0.01f);
         }
 
-        // penalize if moving in opposite fashion (LEFT-RIGHT-LEFT-RIGHT)
-        if (lastHorizontalMove == -horizontal)
-        {
-            print("Penalized: Last horizontal move was opposite");
-            AddReward(-0.01f);
-        } 
-        if (lastVerticalMove == -vertical)
-        {
-            print("Penalized: Last vertical move was opposite");
-            AddReward(-0.01f);
-        }
-        if (lastRotation == -yaw)
-        {
-            print("Penalized: Last rotation move was opposite");
-            AddReward(-0.01f);
-        }
+        // // penalize if moving in opposite fashion (LEFT-RIGHT-LEFT-RIGHT)
+        // if (lastHorizontalMove == -horizontal)
+        // {
+        //     print("Penalized: Last horizontal move was opposite");
+        //     AddReward(-0.01f);
+        // } 
+        // if (lastVerticalMove == -vertical)
+        // {
+        //     print("Penalized: Last vertical move was opposite");
+        //     AddReward(-0.01f);
+        // }
+        // if (lastRotation == -yaw)
+        // {
+        //     print("Penalized: Last rotation move was opposite");
+        //     AddReward(-0.01f);
+        // }
 
         lastHorizontalMove = horizontal;
         lastVerticalMove = vertical;
@@ -267,7 +269,7 @@ public class TorusRaycastWithYawAgent : Agent
 
             
             TorusSegmentController torusSegment = collider.transform.parent.gameObject.GetComponent<TorusSegmentController>();
-            float nectarReceived = torusSegment.Feed(0.01f);
+            float nectarReceived = torusSegment.Feed(feedSpeed);
             NectarObtained += nectarReceived;
             if (NectarObtained > 0)
             {

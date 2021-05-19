@@ -263,7 +263,7 @@ public class TorusRaycastAgent : Agent
             // Debug.Log("I am inside a TorusColliderSegment");
             
             TorusSegmentController torusSegment = collider.transform.parent.gameObject.GetComponent<TorusSegmentController>();
-            float nectarReceived = torusSegment.Feed(1);
+            float nectarReceived = torusSegment.Feed(0.01f);
             NectarObtained += nectarReceived;
             // Debug.Log("Obtained nectar: " + NectarObtained);
 
