@@ -181,8 +181,7 @@ public class TorusRaycastWithYawAgent : Agent
         int vertical = Mathf.RoundToInt(Input.GetAxisRaw("Vertical"));
         int horizontal = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
         int yaw = 0;
-        // if (Input.GetKey(KeyCode.LeftArrow)) yaw = -1;
-        // else if (Input.GetKey(KeyCode.RightArrow)) yaw = 1;
+
         if (Input.GetKey(KeyCode.E)) yaw = -1;
         else if (Input.GetKey(KeyCode.C)) yaw = 1;
         // Convert the actions to Discrete choices (0, 1, 2)
