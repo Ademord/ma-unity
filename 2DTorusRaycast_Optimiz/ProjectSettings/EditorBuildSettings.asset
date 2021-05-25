@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Basic/Scenes/2D_Torus_WithYaw_Inference.unity
+    guid: 8db5d2f9f624c514baf80486fa2919e5
   m_configObjects: {}
