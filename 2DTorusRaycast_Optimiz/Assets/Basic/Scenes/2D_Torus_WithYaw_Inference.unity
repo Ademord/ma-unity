@@ -312,6 +312,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_2D_TorusWithYaw_Inference
       objectReference: {fileID: 0}
+    - target: {fileID: 9184110925773436061, guid: 9d53500f0ca07b74d991e98119d498ef,
+        type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 3470262a0344a7c49baada7f764dc048,
+        type: 3}
+    - target: {fileID: 9184110925773436061, guid: 9d53500f0ca07b74d991e98119d498ef,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorObservationSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184110925773436061, guid: 9d53500f0ca07b74d991e98119d498ef,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d53500f0ca07b74d991e98119d498ef, type: 3}
 --- !u!1 &1037640985

@@ -211,7 +211,10 @@ public class TorusRaycastWithYawAgent : Agent
         // motivate to move in a strafe
         if (horizontal != 0)
         {
-            AddReward(0.01f);
+            if (insideTorus)
+            { 
+                AddReward(0.01f);
+            }
         }
 
         // // penalize if moving in opposite fashion (LEFT-RIGHT-LEFT-RIGHT)
