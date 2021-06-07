@@ -1,0 +1,65 @@
+{
+    "HummingbirdBasic2D": {
+        "checkpoints": [
+            {
+                "steps": 999951,
+                "file_path": "results\\hummingbirdBasic2D.1\\HummingbirdBasic2D\\HummingbirdBasic2D-999951.onnx",
+                "reward": null,
+                "creation_time": 1620903297.4329915,
+                "auxillary_file_paths": [
+                    "results\\hummingbirdBasic2D.1\\HummingbirdBasic2D\\HummingbirdBasic2D-999951.pt"
+                ]
+            },
+            {
+                "steps": 1499975,
+                "file_path": "results\\hummingbirdBasic2D.1\\HummingbirdBasic2D\\HummingbirdBasic2D-1499975.onnx",
+                "reward": -499.8333333333333,
+                "creation_time": 1620903813.949544,
+                "auxillary_file_paths": [
+                    "results\\hummingbirdBasic2D.1\\HummingbirdBasic2D\\HummingbirdBasic2D-1499975.pt"
+                ]
+            },
+            {
+                "steps": 1999958,
+                "file_path": "results\\hummingbirdBasic2D.1\\HummingbirdBasic2D\\HummingbirdBasic2D-1999958.onnx",
+                "reward": null,
+                "creation_time": 1620904332.5118797,
+                "auxillary_file_paths": [
+                    "results\\hummingbirdBasic2D.1\\HummingbirdBasic2D\\HummingbirdBasic2D-1999958.pt"
+                ]
+            },
+            {
+                "steps": 2499939,
+                "file_path": "results\\hummingbirdBasic2D.1\\HummingbirdBasic2D\\HummingbirdBasic2D-2499939.onnx",
+                "reward": null,
+                "creation_time": 1620904852.8513498,
+                "auxillary_file_paths": [
+                    "results\\hummingbirdBasic2D.1\\HummingbirdBasic2D\\HummingbirdBasic2D-2499939.pt"
+                ]
+            },
+            {
+                "steps": 2878327,
+                "file_path": "results\\hummingbirdBasic2D.1\\HummingbirdBasic2D\\HummingbirdBasic2D-2878327.onnx",
+                "reward": -499.79999923706055,
+                "creation_time": 1620905245.99206,
+                "auxillary_file_paths": [
+                    "results\\hummingbirdBasic2D.1\\HummingbirdBasic2D\\HummingbirdBasic2D-2878327.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2878327,
+            "file_path": "results\\hummingbirdBasic2D.1\\HummingbirdBasic2D.onnx",
+            "reward": -499.79999923706055,
+            "creation_time": 1620905245.99206,
+            "auxillary_file_paths": [
+                "results\\hummingbirdBasic2D.1\\HummingbirdBasic2D\\HummingbirdBasic2D-2878327.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

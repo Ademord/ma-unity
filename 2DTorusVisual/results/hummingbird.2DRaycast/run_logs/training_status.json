@@ -1,0 +1,29 @@
+{
+    "Hummingbird": {
+        "checkpoints": [
+            {
+                "steps": 198008,
+                "file_path": "results\\hummingbird.2DRaycast\\Hummingbird\\Hummingbird-198008.onnx",
+                "reward": -64.80000001192093,
+                "creation_time": 1620906574.378435,
+                "auxillary_file_paths": [
+                    "results\\hummingbird.2DRaycast\\Hummingbird\\Hummingbird-198008.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 198008,
+            "file_path": "results\\hummingbird.2DRaycast\\Hummingbird.onnx",
+            "reward": -64.80000001192093,
+            "creation_time": 1620906574.378435,
+            "auxillary_file_paths": [
+                "results\\hummingbird.2DRaycast\\Hummingbird\\Hummingbird-198008.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
