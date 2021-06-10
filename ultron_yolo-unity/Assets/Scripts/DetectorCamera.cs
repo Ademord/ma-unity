@@ -37,8 +37,15 @@ public class DetectorCamera : MonoBehaviour
     void Awake()
     {
         snapCam = GetComponent<Camera>();
+        RectTransform canvasRect = _previewUI.GetComponent<Canvas>().GetComponent<RectTransform>();
+        resWidth = (int) canvasRect.rect.width;
+        resHeight = (int) canvasRect.rect.height;
+        print("reswidth: " + canvasRect.rect.width);
+        print("resheight: " + canvasRect.rect.height);
+        
         if (snapCam.targetTexture == null)
         {
+          
             snapCam.targetTexture = new RenderTexture(resWidth, resHeight, 24);
         }
         else
@@ -89,39 +96,21 @@ public class DetectorCamera : MonoBehaviour
 
                 // Marker update
                 var i = 0;
-                // foreach (var m in _markers)
-                // {
-                //     print("marker parent" + m.transform.parent);
-                //     RectTransform parentCanvas  = m.GetComponentInParent<Canvas>().GetComponent<RectTransform>();
-                //     print("marker parent w and h" + parentCanvas.rect.width);
-                // }
-
-                print(string.Format("found {1} objects: {2}", 
-                    1, // _detector.DetectedObjects.Length, 
-                    _detector.DetectedObjects));
+                List<string> found = new List<string>();
                 foreach (var box in _detector.DetectedObjects)
                 {
                     if (i < _markers.Length)
                     {
                         var name = Config.GetLabel((int)box.classIndex);
-                        print("name found: " + name);
-                        // print(i);
-                        // print("markers[]: " + (_markers == null));
-                        // print("markers[i]: " + (_markers[i] == null));
-                        // print("box: " + (box == null));
-                        RectTransform parentCanvas  = _markers[i].GetComponentInParent<Canvas>().GetComponent<RectTransform>();
-                        // print("marker parent w and h" + parentCanvas.rect.width);
-                        _markers[i].SetAttributes(box);
-                     
-
+                        found.Add(name);
+                        _markers[i++].SetAttributes(box);
                     }
                     else
                     {
                         break;
                     }
-
-                    i++;
                 }
+                print("found: " + String.Join(", ", found));
 
                 for (; i < _markers.Length; i++) _markers[i].Hide();
             }

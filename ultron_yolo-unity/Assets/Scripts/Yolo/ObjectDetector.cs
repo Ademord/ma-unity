@@ -95,7 +95,10 @@ public sealed class ObjectDetector : System.IDisposable
         using (var tensor = new Tensor(1, imageSize, imageSize, 3, _preBuffer))
             _worker.Execute(tensor);
 
-        // Output tensor (13x13x125) -> Temporary render texture (125x169)
+        // Output tensor (13x13x125) -> Temporary render texture (125x169 == 125x13x13)
+        // Output tensor (13x13x125) -> Temporary render texture (125x169 == 255x26x26)
+        // OutputPerCell = 255
+        // TotalCells = 26x26
         var reshape = new TensorShape
           (1, Config.TotalCells, Config.OutputPerCell, 1);
 

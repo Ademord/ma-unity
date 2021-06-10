@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // public SnapshotCamera snapCam;
+    public SnapshotCamera snapCam;
     public DetectorCamera detectorCam;
     // Start is called before the first frame update
     void Start()
@@ -15,10 +15,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            detectorCam.CallTakeSnapshot();
-        }
+        detectorCam.CallTakeSnapshot();
+
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     detectorCam.CallTakeSnapshot();
+        //     // snapCam.CallTakeSnapshot();
+        // }
 
     }
 }

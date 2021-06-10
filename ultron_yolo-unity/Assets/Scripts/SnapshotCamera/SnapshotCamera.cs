@@ -34,8 +34,10 @@ public class SnapshotCamera : MonoBehaviour
     
     public void CallTakeSnapshot()
     {
-        snapCam.gameObject.SetActive(true);
-        
+        if (snapCam.gameObject.activeInHierarchy)
+        {
+            snapCam.gameObject.SetActive(true);
+        }
     }
 
     void LateUpdate()
