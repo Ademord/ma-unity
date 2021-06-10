@@ -3943,6 +3943,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: c9e7887ed6574844f942515552dd25e7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: c9e7887ed6574844f942515552dd25e7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5b011cb0bfe7fb24295c284217e5519e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9e7887ed6574844f942515552dd25e7, type: 3}
 --- !u!1001 &393906406
@@ -10477,6 +10485,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DirectionIndicator
       objectReference: {fileID: 0}
+    - target: {fileID: 4561961988867667266, guid: e568400ebedb3474fac505995f12ed4a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6026464216722085689, guid: e568400ebedb3474fac505995f12ed4a,
         type: 3}
       propertyPath: updatedByAgent
@@ -10540,6 +10553,11 @@ PrefabInstance:
     - target: {fileID: 6084207059270429360, guid: e568400ebedb3474fac505995f12ed4a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062221030534616196, guid: e568400ebedb3474fac505995f12ed4a,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
