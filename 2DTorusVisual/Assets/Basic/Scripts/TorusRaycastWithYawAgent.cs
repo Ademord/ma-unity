@@ -212,12 +212,12 @@ public class TorusRaycastWithYawAgent : Agent
         if (horizontal != 0)
         {
             // run33
-            AddReward(0.01f);
+            // AddReward(0.01f);
             // run32 no stacked == reward only inside
-            // if (insideTorus)
-            // { 
-            //     AddReward(0.01f);
-            // }
+            if (insideTorus)
+            { 
+                AddReward(0.01f);
+            }
         }
 
         // // penalize if moving in opposite fashion (LEFT-RIGHT-LEFT-RIGHT)

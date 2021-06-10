@@ -1,0 +1,65 @@
+{
+    "Hummingbird": {
+        "checkpoints": [
+            {
+                "steps": 2999994,
+                "file_path": "results\\2DTorusVisual.2\\Hummingbird\\Hummingbird-2999994.onnx",
+                "reward": 836.9816873073578,
+                "creation_time": 1623132318.4425552,
+                "auxillary_file_paths": [
+                    "results\\2DTorusVisual.2\\Hummingbird\\Hummingbird-2999994.pt"
+                ]
+            },
+            {
+                "steps": 3499902,
+                "file_path": "results\\2DTorusVisual.2\\Hummingbird\\Hummingbird-3499902.onnx",
+                "reward": 28.196666558583576,
+                "creation_time": 1623138113.7117,
+                "auxillary_file_paths": [
+                    "results\\2DTorusVisual.2\\Hummingbird\\Hummingbird-3499902.pt"
+                ]
+            },
+            {
+                "steps": 3999940,
+                "file_path": "results\\2DTorusVisual.2\\Hummingbird\\Hummingbird-3999940.onnx",
+                "reward": 66.06378350158532,
+                "creation_time": 1623143883.3450372,
+                "auxillary_file_paths": [
+                    "results\\2DTorusVisual.2\\Hummingbird\\Hummingbird-3999940.pt"
+                ]
+            },
+            {
+                "steps": 4499885,
+                "file_path": "results\\2DTorusVisual.2\\Hummingbird\\Hummingbird-4499885.onnx",
+                "reward": 1401.571224451065,
+                "creation_time": 1623149774.0771062,
+                "auxillary_file_paths": [
+                    "results\\2DTorusVisual.2\\Hummingbird\\Hummingbird-4499885.pt"
+                ]
+            },
+            {
+                "steps": 4741014,
+                "file_path": "results\\2DTorusVisual.2\\Hummingbird\\Hummingbird-4741014.onnx",
+                "reward": null,
+                "creation_time": 1623152619.1366773,
+                "auxillary_file_paths": [
+                    "results\\2DTorusVisual.2\\Hummingbird\\Hummingbird-4741014.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4741014,
+            "file_path": "results\\2DTorusVisual.2\\Hummingbird.onnx",
+            "reward": null,
+            "creation_time": 1623152619.1366773,
+            "auxillary_file_paths": [
+                "results\\2DTorusVisual.2\\Hummingbird\\Hummingbird-4741014.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
