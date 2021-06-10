@@ -514,7 +514,6 @@ GameObject:
   - component: {fileID: 11623530}
   - component: {fileID: 11623529}
   - component: {fileID: 11623528}
-  - component: {fileID: 11623527}
   m_Layer: 0
   m_Name: Floor_Inner (1)
   m_TagString: Untagged
@@ -522,20 +521,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &11623527
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11623526}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &11623528
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3932,7 +3917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: c9e7887ed6574844f942515552dd25e7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: c9e7887ed6574844f942515552dd25e7, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3940,7 +3925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: c9e7887ed6574844f942515552dd25e7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: c9e7887ed6574844f942515552dd25e7, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3952,7 +3937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: c9e7887ed6574844f942515552dd25e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: c9e7887ed6574844f942515552dd25e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -8560,7 +8545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &963194226
 AudioListener:
   m_ObjectHideFlags: 0
@@ -9807,7 +9792,6 @@ GameObject:
   - component: {fileID: 1092437179}
   - component: {fileID: 1092437182}
   - component: {fileID: 1092437181}
-  - component: {fileID: 1092437180}
   m_Layer: 0
   m_Name: Floor_Inner (3)
   m_TagString: Untagged
@@ -9829,20 +9813,6 @@ Transform:
   m_Father: {fileID: 1005649688}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1092437180
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092437178}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1092437181
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12908,8 +12878,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486584182}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.2214804, y: 0, z: 0, w: 0.97516483}
+  m_LocalPosition: {x: 0, y: 2.126, z: -2.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194231}
@@ -12917,7 +12887,7 @@ Transform:
   - {fileID: 950322365}
   m_Father: {fileID: 1726814276}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 25.592, y: 0, z: 0}
 --- !u!1 &1500129359
 GameObject:
   m_ObjectHideFlags: 0
@@ -15315,8 +15285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b179ee758b1444092c0c0a2e6f9416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  turnSpeed: 50
+  moveSpeed: 3
+  turnSpeed: 100
 --- !u!54 &1726814284
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15801,7 +15771,6 @@ GameObject:
   - component: {fileID: 1783497624}
   - component: {fileID: 1783497627}
   - component: {fileID: 1783497626}
-  - component: {fileID: 1783497625}
   m_Layer: 0
   m_Name: Floor_Inner (2)
   m_TagString: Untagged
@@ -15823,20 +15792,6 @@ Transform:
   m_Father: {fileID: 1005649688}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 42.154, z: 0}
---- !u!136 &1783497625
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783497623}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1783497626
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18584,7 +18539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2123797669
 RectTransform:
   m_ObjectHideFlags: 0
