@@ -110,7 +110,7 @@ public class DetectorCamera : MonoBehaviour
                         break;
                     }
                 }
-                print("found: " + String.Join(", ", found));
+                // print("found: " + String.Join(", ", found));
 
                 for (; i < _markers.Length; i++) _markers[i].Hide();
             }

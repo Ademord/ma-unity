@@ -65,6 +65,25 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.ml-agents": {
+      "version": "file:D:/Unity Hub Projects AI ML/ml-agents-release_17/com.unity.ml-agents",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.barracuda": "1.4.0-preview",
+        "com.unity.modules.imageconversion": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.ml-agents.extensions": {
+      "version": "file:D:/Unity Hub Projects AI ML/ml-agents-release_17/com.unity.ml-agents.extensions",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.ml-agents": "2.0.0-exp.1",
+        "com.unity.modules.physics": "1.0.0"
+      }
+    },
     "com.unity.render-pipelines.core": {
       "version": "11.0.0",
       "depth": 1,

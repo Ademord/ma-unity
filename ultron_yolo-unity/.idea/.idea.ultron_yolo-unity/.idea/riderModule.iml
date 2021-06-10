@@ -3,6 +3,8 @@
   <component name="NewModuleRootManager">
     <content url="file://$USER_HOME$/Downloads/barracuda-release-1.4.0-preview" />
     <content url="file://$MODULE_DIR$/../.." />
+    <content url="file://$MODULE_DIR$/../../../../ml-agents-release_17/com.unity.ml-agents" />
+    <content url="file://$MODULE_DIR$/../../../../ml-agents-release_17/com.unity.ml-agents.extensions" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

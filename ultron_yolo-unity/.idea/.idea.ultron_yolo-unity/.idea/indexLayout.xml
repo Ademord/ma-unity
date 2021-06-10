@@ -20,6 +20,8 @@
       <Path>Library/PackageCache/com.unity.toolchain.win-x86_64-linux-x86_64@0.1.20-preview</Path>
       <Path>Packages</Path>
       <Path>ProjectSettings</Path>
+      <Path>../../ml-agents-release_17/com.unity.ml-agents</Path>
+      <Path>../../ml-agents-release_17/com.unity.ml-agents.extensions</Path>
     </explicitIncludes>
     <explicitExcludes>
       <Path>.idea</Path>
