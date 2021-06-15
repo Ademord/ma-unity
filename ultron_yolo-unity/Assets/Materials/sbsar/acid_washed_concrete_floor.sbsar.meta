@@ -32,7 +32,7 @@ ScriptedImporter:
       - name: _BaseMap
         texture: {fileID: -179777442101735775, guid: 2160cb6a845c5744d8574d6575551fcf,
           type: 3}
-        scale: {x: 10, y: 10}
+        scale: {x: 100, y: 100}
         offset: {x: 0, y: 0}
       - name: _BumpMap
         texture: {fileID: -8414536605527388420, guid: 2160cb6a845c5744d8574d6575551fcf,
@@ -57,7 +57,7 @@ ScriptedImporter:
         offset: {x: 0, y: 0}
       - name: _MainTex
         texture: {instanceID: 0}
-        scale: {x: 10, y: 10}
+        scale: {x: 100, y: 100}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
         texture: {fileID: 6702472821672666174, guid: 2160cb6a845c5744d8574d6575551fcf,

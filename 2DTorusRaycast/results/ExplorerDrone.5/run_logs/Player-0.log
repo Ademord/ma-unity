@@ -1,0 +1,42 @@
+Mono path[0] = 'D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Managed'
+Mono config path = 'D:/Unity Hub Projects AI ML/ma-unity/builds/drone/MonoBleedingEdge/etc'
+Initialize engine version: 2021.1.6f1 (d6fd741ee4c5)
+[Subsystems] Discovering subsystems at path D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/UnitySubsystems
+GfxDevice: creating device client; threaded=1; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     8079 MB
+    Driver:   27.21.14.5206
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.065 seconds
+D3D11 device created for Microsoft Media Foundation video decoding.
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.702300 ms
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libcoreclr.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libcoreclr.so.dll
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libcoreclr.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libdl.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libdl.so.dll
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libdl.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libSystem.dylib
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libSystem.dylib.dll
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libSystem.dylib
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libcoreclr.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libcoreclr.so.dll
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libcoreclr.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libdl.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libdl.so.dll
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libdl.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libSystem.dylib
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libSystem.dylib.dll
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libSystem.dylib
+WARNING: The communication API versions between Unity and python differ at the minor version level. Python API: 1.5.0, Unity API: 1.0.0 Python Library Version: 0.26.0 .
+This means that some features may not work unless you upgrade the package with the lower version.Please find the versions that work best together from our release page.
+https://github.com/Unity-Technologies/ml-agents/releases
+
+Python package version (0.26.0) is out of the supported range or not from an official release. It is strongly recommended that you use a Python package between 0.16.1 and 0.20.0. Training will proceed, but the output format may be different.
+

@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1623587638",
+        "python_version": "3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\franc\\AppData\\Local\\Programs\\Python\\Python37\\Scripts\\mlagents-learn config\\hummingbird_torus\\ppo512_beta.yaml --run-id=ExplorerDrone.1",
+        "mlagents_version": "0.26.0",
+        "mlagents_envs_version": "0.26.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.1+cu110",
+        "numpy_version": "1.20.1",
+        "end_time_seconds": "1623587642"
+    },
+    "total": 3.3648901,
+    "count": 1,
+    "self": 0.009227300000000493,
+    "children": {
+        "run_training.setup": {
+            "total": 0.15115719999999966,
+            "count": 1,
+            "self": 0.15115719999999966
+        },
+        "TrainerController.start_learning": {
+            "total": 3.2045056,
+            "count": 1,
+            "self": 0.00010400000000032605,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 3.2043920999999997,
+                    "count": 1,
+                    "self": 3.2043920999999997
+                },
+                "TrainerController._save_models": {
+                    "total": 9.499999999995623e-06,
+                    "count": 1,
+                    "self": 9.499999999995623e-06
+                }
+            }
+        }
+    }
+}
