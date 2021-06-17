@@ -16,11 +16,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         detectorCam.CallTakeSnapshot();
-
+    
         // if (Input.GetKeyDown(KeyCode.Space))
         // {
-        //     detectorCam.CallTakeSnapshot();
-        //     // snapCam.CallTakeSnapshot();
+        //     snapCam.CallTakeSnapshot();
         // }
 
     }

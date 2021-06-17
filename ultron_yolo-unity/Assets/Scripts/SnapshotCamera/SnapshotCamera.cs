@@ -34,9 +34,15 @@ public class SnapshotCamera : MonoBehaviour
     
     public void CallTakeSnapshot()
     {
-        if (snapCam.gameObject.activeInHierarchy)
+        print("called takesnap");
+        if (snapCam.gameObject.activeInHierarchy == false)
         {
+            print("activasting snapcam");
             snapCam.gameObject.SetActive(true);
+        }
+        else
+        {
+            print(":stupiod shit is not active in heirarchy");
         }
     }
 
@@ -44,6 +50,7 @@ public class SnapshotCamera : MonoBehaviour
     {
         if (snapCam.gameObject.activeInHierarchy)
         {
+            print("entering take a screenshot...");
             // create a texture2d
             Texture2D snapshot = new Texture2D(resWidth, resHeight, TextureFormat.RGB24, false);
             snapCam.Render();
