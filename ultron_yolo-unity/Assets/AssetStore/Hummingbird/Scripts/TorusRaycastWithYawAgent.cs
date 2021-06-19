@@ -90,7 +90,6 @@ public class TorusRaycastWithYawAgent : Agent
     /// </summary>
     public override void OnEpisodeBegin()
     {
-        print("entered episodebegin");
         transform.position = startPosition;
         transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
         rigidbody.velocity = Vector3.zero;
@@ -182,8 +181,8 @@ public class TorusRaycastWithYawAgent : Agent
         int vertical = Mathf.RoundToInt(Input.GetAxisRaw("Vertical"));
         int horizontal = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
         int yaw = 0;
-        print("vertical: " + vertical);
-        print("horizontal: " + vertical);
+        // print("vertical: " + vertical);
+        // print("horizontal: " + vertical);
         if (Input.GetKey(KeyCode.E)) yaw = -1;
         else if (Input.GetKey(KeyCode.C)) yaw = 1;
         // Convert the actions to Discrete choices (0, 1, 2)
