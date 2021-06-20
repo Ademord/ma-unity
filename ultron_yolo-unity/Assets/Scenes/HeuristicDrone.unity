@@ -410,6 +410,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2302497946415403980, guid: e9efb64d992b1594fa8fff07e1bb5ac4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7024723976467106340, guid: e9efb64d992b1594fa8fff07e1bb5ac4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7024723976467106340, guid: e9efb64d992b1594fa8fff07e1bb5ac4,
+        type: 3}
+      propertyPath: disabledMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 0eef0033110db2c4c9ebff7073eefdb4, type: 2}
+    - target: {fileID: 7024723976467106340, guid: e9efb64d992b1594fa8fff07e1bb5ac4,
+        type: 3}
+      propertyPath: collectibleLayerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 7024723976467106341, guid: e9efb64d992b1594fa8fff07e1bb5ac4,
         type: 3}
       propertyPath: m_UseChildSensors

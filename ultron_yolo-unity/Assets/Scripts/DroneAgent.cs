@@ -22,8 +22,11 @@ public class DroneAgent : Agent
     new private Rigidbody rigidbody;
     private TrainingArea flowerArea;
 
-    private float DOT_PRODUCT_ALIGNMENT = -0.9f;
-    private int SCANNER_RAYCAST_DISTANCE = 3;
+   
+    private int SCANNER_RAYCAST_DISTANCE = 5;
+    private float distanceToTarget;
+
+    private float dotProductToTarget;
     // public float NectarObtained { get; private set; }
     // private bool insideTorus;
     // private Collider currentTorusSegment;
@@ -57,9 +60,12 @@ public class DroneAgent : Agent
     
     // Start is called before the first frame update
     private GameObject lastHit;
-    // public LayerMask layer;
     [Header("Collectible Parameters")]
+    public LayerMask collectibleLayerMask;
     public Material disabledMaterial;
+    public float REWARD_DOT_PRODUCT_TO_TARGET = -0.98f;
+    public float REWARD_DISTANCE_TO_TARGET = 3f;
+    
     private Vector3 collision = Vector3.zero;
     
     /// <summary>
@@ -89,6 +95,8 @@ public class DroneAgent : Agent
         transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
         rigidbody.velocity = Vector3.zero;
         lastHit = null;
+        dotProductToTarget = -1f;
+        distanceToTarget = -1f;
         // Reset target position (5 meters away from the agent in a random direction)
         Vector3 targetPosition = targetSpawnPosition + Quaternion.Euler(Vector3.up * Random.Range(0f, 360f)) * Vector3.forward * 5f;
         m_Target.transform.localPosition = targetPosition;
@@ -223,6 +231,12 @@ public class DroneAgent : Agent
         characterController.ForwardInput = vertical;
         characterController.TurnInput = yaw;
         characterController.SidesInput = horizontal;
+        // if agent strays too far away give a negative reward and end episode
+        if (Vector3.Distance(transform.position, Vector3.zero) > 10f)
+        {
+            AddReward(-1);
+            EndEpisode();
+        }
     }
   
     private void OnCollisionEnter(Collision collision)
@@ -239,46 +253,50 @@ public class DroneAgent : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        var distanceToTarget = -1f;
-        if (lastHit != null) distanceToTarget = Vector3.Distance(transform.position, lastHit.transform.position);
-        print("observed a distance to my Target of: " + distanceToTarget);
+        print("observed a distanceToTarget: " + distanceToTarget);
+        print("observed a dotProductToTarget: " + dotProductToTarget);
+        
         sensor.AddObservation(distanceToTarget);
+        sensor.AddObservation(dotProductToTarget);
     }
-
-    private void FixedUpdate()
-    {
-        // UpdateOrientationObjects();
-    }
+   
     // Update is called once per frame
     void Update()
     {
         var ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, SCANNER_RAYCAST_DISTANCE))
+        if (Physics.Raycast(ray, out hit, SCANNER_RAYCAST_DISTANCE, collectibleLayerMask))
         {
+            // found a target, record variables
             lastHit = hit.transform.gameObject;
-
-            if (lastHit.CompareTag("collectible"))
-            {
+            dotProductToTarget = Vector3.Dot(lastHit.transform.forward, transform.forward);
+            distanceToTarget = Vector3.Distance(lastHit.transform.position, transform.position);
+            
+            // if (lastHit.CompareTag("collectible"))
+            // {
                 // draw collision
-                collision = hit.point;
-                
-                // give reward if not given before AND dot product < .6
-                MeshRenderer meshRenderer = lastHit.GetComponent<MeshRenderer>();
-                if (meshRenderer.material != disabledMaterial && Vector3.Dot(lastHit.transform.forward, transform.forward) < DOT_PRODUCT_ALIGNMENT)
-                {
-                    print("giving reward here");
-                    meshRenderer.material = disabledMaterial;
-                }
-                else
-                {
-                    print("NOT giving reward here");
-                }
+            collision = hit.point;
+            
+            // give reward if not given before AND dot product < .6
+            MeshRenderer meshRenderer = lastHit.GetComponent<MeshRenderer>();
+            if (meshRenderer.material != disabledMaterial && 
+                dotProductToTarget < REWARD_DOT_PRODUCT_TO_TARGET &&
+                distanceToTarget < REWARD_DISTANCE_TO_TARGET)
+            {
+                print("giving reward here");
+                meshRenderer.material = disabledMaterial;
             }
+                // else
+                // {
+                //     print("NOT giving reward here");
+                // }
+            // }
         }
         else
         {
             lastHit = null;
+            dotProductToTarget = -1f;
+            distanceToTarget = -1f;
         }
     }
     private void OnDrawGizmos()

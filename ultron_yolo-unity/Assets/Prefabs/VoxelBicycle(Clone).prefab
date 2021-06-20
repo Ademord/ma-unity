@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3040798159038176415}
   - component: {fileID: 7176089153318789587}
   - component: {fileID: 5635874594291867240}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 8443299329191960027}
   - component: {fileID: 6334491419265887260}
   - component: {fileID: 5631438480292824684}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 2933606697504175962}
   - component: {fileID: 5525380690443904890}
   - component: {fileID: 902731654271617221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 5165525144395441502}
   - component: {fileID: 8659475756582514234}
   - component: {fileID: 2751186852926721875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 6881966870858636072}
   - component: {fileID: 216209807552307211}
   - component: {fileID: 8830538009631869866}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -993,7 +993,7 @@ GameObject:
   - component: {fileID: 3375727351792038324}
   - component: {fileID: 5561502789486491508}
   - component: {fileID: 4751092665201537987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -1189,7 +1189,7 @@ GameObject:
   - component: {fileID: 7623548425332561380}
   - component: {fileID: 4078722144425039583}
   - component: {fileID: 2376106466949874032}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -1385,7 +1385,7 @@ GameObject:
   - component: {fileID: 2266430928881410373}
   - component: {fileID: 5449355208137384926}
   - component: {fileID: 2004162211080673695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -1581,7 +1581,7 @@ GameObject:
   - component: {fileID: 7917840020132409805}
   - component: {fileID: 607556001174870160}
   - component: {fileID: 3216024545670926920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -1777,7 +1777,7 @@ GameObject:
   - component: {fileID: 8105124476266546439}
   - component: {fileID: 2444727511941033419}
   - component: {fileID: 68295319671506463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -1973,7 +1973,7 @@ GameObject:
   - component: {fileID: 7989405146277860836}
   - component: {fileID: 6596581873146496536}
   - component: {fileID: 2210920564313295950}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -2169,7 +2169,7 @@ GameObject:
   - component: {fileID: 5268791136912116397}
   - component: {fileID: 3976101172211390236}
   - component: {fileID: 1514328707946906368}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -2365,7 +2365,7 @@ GameObject:
   - component: {fileID: 224686205890971334}
   - component: {fileID: 6446252309976518850}
   - component: {fileID: 1020769877077347902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -2561,7 +2561,7 @@ GameObject:
   - component: {fileID: 8603108540082119806}
   - component: {fileID: 8174547415876031073}
   - component: {fileID: 4493967831335165647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -2757,7 +2757,7 @@ GameObject:
   - component: {fileID: 7896523681689272536}
   - component: {fileID: 1356348696398985162}
   - component: {fileID: 6743115949850070288}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -2953,7 +2953,7 @@ GameObject:
   - component: {fileID: 8359948078954902052}
   - component: {fileID: 3270431910875468558}
   - component: {fileID: 361113328164437502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -3149,7 +3149,7 @@ GameObject:
   - component: {fileID: 4163100286415627589}
   - component: {fileID: 3779128371484449138}
   - component: {fileID: 2724258301855846604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -3345,7 +3345,7 @@ GameObject:
   - component: {fileID: 575408095006347058}
   - component: {fileID: 8624369399827181865}
   - component: {fileID: 2125694696473982418}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -3541,7 +3541,7 @@ GameObject:
   - component: {fileID: 3303569157104263480}
   - component: {fileID: 81717166558349005}
   - component: {fileID: 1469948615205996271}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -3737,7 +3737,7 @@ GameObject:
   - component: {fileID: 1730136220842662895}
   - component: {fileID: 7485115668470193263}
   - component: {fileID: 7242434232142837395}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -3933,7 +3933,7 @@ GameObject:
   - component: {fileID: 6959781699263143962}
   - component: {fileID: 6047342110825211804}
   - component: {fileID: 6835804987562298202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -4129,7 +4129,7 @@ GameObject:
   - component: {fileID: 1556090299559336491}
   - component: {fileID: 4857646534686940515}
   - component: {fileID: 512416172754472449}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -4325,7 +4325,7 @@ GameObject:
   - component: {fileID: 8562034317908289004}
   - component: {fileID: 2211923328946168045}
   - component: {fileID: 84904353355197955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -4521,7 +4521,7 @@ GameObject:
   - component: {fileID: 3574179147361776462}
   - component: {fileID: 7842466172936751971}
   - component: {fileID: 132216761539180550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -4717,7 +4717,7 @@ GameObject:
   - component: {fileID: 748647049867223520}
   - component: {fileID: 6724266889804686076}
   - component: {fileID: 1917018619989268757}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -4913,7 +4913,7 @@ GameObject:
   - component: {fileID: 1669820563447761032}
   - component: {fileID: 110909671090620227}
   - component: {fileID: 8069547847953578108}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -5109,7 +5109,7 @@ GameObject:
   - component: {fileID: 6010497536377512535}
   - component: {fileID: 4659675621563250817}
   - component: {fileID: 3474538184946147480}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -5305,7 +5305,7 @@ GameObject:
   - component: {fileID: 2703969310781295684}
   - component: {fileID: 1601389644475796726}
   - component: {fileID: 4541462958897574071}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -5501,7 +5501,7 @@ GameObject:
   - component: {fileID: 1625087509589374487}
   - component: {fileID: 4967304261918366304}
   - component: {fileID: 8925690739245265421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -5697,7 +5697,7 @@ GameObject:
   - component: {fileID: 6166219247833836846}
   - component: {fileID: 4065236323838145979}
   - component: {fileID: 2400393743132022526}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -5893,7 +5893,7 @@ GameObject:
   - component: {fileID: 8314141729513042262}
   - component: {fileID: 312188305843213892}
   - component: {fileID: 5607751842788548282}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -6089,7 +6089,7 @@ GameObject:
   - component: {fileID: 3728697104307743119}
   - component: {fileID: 6405324602106236931}
   - component: {fileID: 3392459413045935520}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -6285,7 +6285,7 @@ GameObject:
   - component: {fileID: 6444368544722132613}
   - component: {fileID: 228006004353983732}
   - component: {fileID: 7968263442842842883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -6481,7 +6481,7 @@ GameObject:
   - component: {fileID: 2165818926363878226}
   - component: {fileID: 4682580713163436740}
   - component: {fileID: 149128051890543119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -6677,7 +6677,7 @@ GameObject:
   - component: {fileID: 3414571506374463196}
   - component: {fileID: 7002219478069248217}
   - component: {fileID: 3246079015281467641}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -6873,7 +6873,7 @@ GameObject:
   - component: {fileID: 4064392373155425627}
   - component: {fileID: 7053876277299269541}
   - component: {fileID: 7017718113334169267}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -7069,7 +7069,7 @@ GameObject:
   - component: {fileID: 5449428035818588496}
   - component: {fileID: 2188142677499936009}
   - component: {fileID: 5415573628930794680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -7265,7 +7265,7 @@ GameObject:
   - component: {fileID: 2076586776495759910}
   - component: {fileID: 6750082822313649380}
   - component: {fileID: 3178568389524934699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -7461,7 +7461,7 @@ GameObject:
   - component: {fileID: 2284771788883455897}
   - component: {fileID: 543774255256313505}
   - component: {fileID: 7823664827455950873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -7657,7 +7657,7 @@ GameObject:
   - component: {fileID: 4265532279714847481}
   - component: {fileID: 14476503759764667}
   - component: {fileID: 1914038192135261281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -7853,7 +7853,7 @@ GameObject:
   - component: {fileID: 8635028916030198563}
   - component: {fileID: 1464973838187410952}
   - component: {fileID: 8620619080360324989}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -8049,7 +8049,7 @@ GameObject:
   - component: {fileID: 7015187341348789222}
   - component: {fileID: 3242682240710762426}
   - component: {fileID: 8320861628367954034}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -8245,7 +8245,7 @@ GameObject:
   - component: {fileID: 2069530371096420765}
   - component: {fileID: 1624340610344323636}
   - component: {fileID: 1017969461732957380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -8441,7 +8441,7 @@ GameObject:
   - component: {fileID: 5112766060187817746}
   - component: {fileID: 4788079997064202105}
   - component: {fileID: 8265298739726002090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -8637,7 +8637,7 @@ GameObject:
   - component: {fileID: 2310837182792514937}
   - component: {fileID: 1918044499969181883}
   - component: {fileID: 5855587474133721580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -8833,7 +8833,7 @@ GameObject:
   - component: {fileID: 5166003801367686057}
   - component: {fileID: 7584718210967073212}
   - component: {fileID: 3707608782356507823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -9029,7 +9029,7 @@ GameObject:
   - component: {fileID: 8623889282163326577}
   - component: {fileID: 5737686191848477149}
   - component: {fileID: 2868232956342789907}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -9225,7 +9225,7 @@ GameObject:
   - component: {fileID: 6823672913285311864}
   - component: {fileID: 379355548731392226}
   - component: {fileID: 6899510672391397956}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -9421,7 +9421,7 @@ GameObject:
   - component: {fileID: 4553244551427498733}
   - component: {fileID: 1905877213438631713}
   - component: {fileID: 7635462283159801188}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -9617,7 +9617,7 @@ GameObject:
   - component: {fileID: 2268775353980960522}
   - component: {fileID: 5563336983167831632}
   - component: {fileID: 6519831884566476452}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -9813,7 +9813,7 @@ GameObject:
   - component: {fileID: 4962734940024315188}
   - component: {fileID: 4703293162022314762}
   - component: {fileID: 672917122937842349}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -10009,7 +10009,7 @@ GameObject:
   - component: {fileID: 2768890991573134065}
   - component: {fileID: 3091615793883974857}
   - component: {fileID: 8525190965539358041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -10205,7 +10205,7 @@ GameObject:
   - component: {fileID: 5368605613703420217}
   - component: {fileID: 3107516930592065223}
   - component: {fileID: 6900157620076641819}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -10401,7 +10401,7 @@ GameObject:
   - component: {fileID: 3200238040358150998}
   - component: {fileID: 3019258875411749646}
   - component: {fileID: 3596497483891319248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -10597,7 +10597,7 @@ GameObject:
   - component: {fileID: 1643208721340404296}
   - component: {fileID: 4844443153814863491}
   - component: {fileID: 6759326125353990511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -10793,7 +10793,7 @@ GameObject:
   - component: {fileID: 444854807808706582}
   - component: {fileID: 5444361924235785451}
   - component: {fileID: 9186527826395921699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -10989,7 +10989,7 @@ GameObject:
   - component: {fileID: 5576680128526344593}
   - component: {fileID: 7950410082435572561}
   - component: {fileID: 2378595493263825959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -11185,7 +11185,7 @@ GameObject:
   - component: {fileID: 289344048215671691}
   - component: {fileID: 4043691544517787262}
   - component: {fileID: 1694743164381933069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -11381,7 +11381,7 @@ GameObject:
   - component: {fileID: 3981696835390867612}
   - component: {fileID: 4546296944991145570}
   - component: {fileID: 5223415564240698556}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -11577,7 +11577,7 @@ GameObject:
   - component: {fileID: 7560254080358080031}
   - component: {fileID: 2233711972292827090}
   - component: {fileID: 868614631507904479}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -11773,7 +11773,7 @@ GameObject:
   - component: {fileID: 7145960602303049897}
   - component: {fileID: 4349716137482823439}
   - component: {fileID: 4543036575925031938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -11969,7 +11969,7 @@ GameObject:
   - component: {fileID: 5391003929608493929}
   - component: {fileID: 8957412875379021820}
   - component: {fileID: 8136294993502795671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -12165,7 +12165,7 @@ GameObject:
   - component: {fileID: 1781350306849776716}
   - component: {fileID: 7454603895100060626}
   - component: {fileID: 5318465414923785068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -12361,7 +12361,7 @@ GameObject:
   - component: {fileID: 3054146704453649289}
   - component: {fileID: 9047482590137217137}
   - component: {fileID: 6261661690703022847}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -12557,7 +12557,7 @@ GameObject:
   - component: {fileID: 713288929452829028}
   - component: {fileID: 5523626998443218247}
   - component: {fileID: 6974950910317367185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -12753,7 +12753,7 @@ GameObject:
   - component: {fileID: 734314345078826881}
   - component: {fileID: 6582614938062321777}
   - component: {fileID: 8693892573766979585}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -12949,7 +12949,7 @@ GameObject:
   - component: {fileID: 6150257265516237206}
   - component: {fileID: 6159227318380434788}
   - component: {fileID: 8610372785803894773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -13145,7 +13145,7 @@ GameObject:
   - component: {fileID: 8966023014623953847}
   - component: {fileID: 28027405234726609}
   - component: {fileID: 6715711457613619479}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -13341,7 +13341,7 @@ GameObject:
   - component: {fileID: 3817922915266971444}
   - component: {fileID: 9187853734310765195}
   - component: {fileID: 3072388070937679019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -13537,7 +13537,7 @@ GameObject:
   - component: {fileID: 7284521058386392506}
   - component: {fileID: 3503241771680376884}
   - component: {fileID: 5230797590113627900}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -13733,7 +13733,7 @@ GameObject:
   - component: {fileID: 4493545361257841279}
   - component: {fileID: 3573286742926590718}
   - component: {fileID: 899944233798461001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -13929,7 +13929,7 @@ GameObject:
   - component: {fileID: 3054679782382813320}
   - component: {fileID: 4805705873788563732}
   - component: {fileID: 5186259172644534730}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -14125,7 +14125,7 @@ GameObject:
   - component: {fileID: 1470074397778749170}
   - component: {fileID: 2268524006560697961}
   - component: {fileID: 3836149503414064581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -14321,7 +14321,7 @@ GameObject:
   - component: {fileID: 228428487067549267}
   - component: {fileID: 6997500577174723179}
   - component: {fileID: 373828611657888503}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -14517,7 +14517,7 @@ GameObject:
   - component: {fileID: 1650170685283233392}
   - component: {fileID: 3050311738838465818}
   - component: {fileID: 6720666919279693122}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -14713,7 +14713,7 @@ GameObject:
   - component: {fileID: 4642897241700043721}
   - component: {fileID: 756009817757237072}
   - component: {fileID: 5578454771742580520}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -14909,7 +14909,7 @@ GameObject:
   - component: {fileID: 7047918011048916081}
   - component: {fileID: 4926075192292240370}
   - component: {fileID: 3262539923881832803}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -15105,7 +15105,7 @@ GameObject:
   - component: {fileID: 8285591351389873041}
   - component: {fileID: 1859022346157719141}
   - component: {fileID: 8969210716666418517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -15301,7 +15301,7 @@ GameObject:
   - component: {fileID: 5492872686087102789}
   - component: {fileID: 6479009543475378846}
   - component: {fileID: 2864730960576183509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -15497,7 +15497,7 @@ GameObject:
   - component: {fileID: 8367852369907650050}
   - component: {fileID: 1507195407148471876}
   - component: {fileID: 3662685274516799775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -15693,7 +15693,7 @@ GameObject:
   - component: {fileID: 8443096269612580539}
   - component: {fileID: 786026187233286167}
   - component: {fileID: 3497816367145735928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -15889,7 +15889,7 @@ GameObject:
   - component: {fileID: 6786324232184373798}
   - component: {fileID: 7723169061678363800}
   - component: {fileID: 2112828580524339064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -16085,7 +16085,7 @@ GameObject:
   - component: {fileID: 2212866889162467460}
   - component: {fileID: 7656758036488045933}
   - component: {fileID: 6669556420512383399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -16281,7 +16281,7 @@ GameObject:
   - component: {fileID: 5912683802806214779}
   - component: {fileID: 7414348992915428944}
   - component: {fileID: 7586294892108198377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -16477,7 +16477,7 @@ GameObject:
   - component: {fileID: 7141651345504432999}
   - component: {fileID: 2953766113044559575}
   - component: {fileID: 5761745689994881023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -16673,7 +16673,7 @@ GameObject:
   - component: {fileID: 3336412983637878882}
   - component: {fileID: 1321096443251051308}
   - component: {fileID: 8251771149116467113}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -16869,7 +16869,7 @@ GameObject:
   - component: {fileID: 1806852421503639080}
   - component: {fileID: 2650235087748460105}
   - component: {fileID: 5783669168310458953}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -17065,7 +17065,7 @@ GameObject:
   - component: {fileID: 1517368691036442726}
   - component: {fileID: 4850171830716721271}
   - component: {fileID: 5630154390140600276}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -17261,7 +17261,7 @@ GameObject:
   - component: {fileID: 7309636095057955700}
   - component: {fileID: 908496948432609747}
   - component: {fileID: 3394704420016308499}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -17457,7 +17457,7 @@ GameObject:
   - component: {fileID: 941040185254071362}
   - component: {fileID: 1302528422039025346}
   - component: {fileID: 1585023264521314659}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -17653,7 +17653,7 @@ GameObject:
   - component: {fileID: 8765569514759248645}
   - component: {fileID: 2268697407184289003}
   - component: {fileID: 5123333235573893243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -17849,7 +17849,7 @@ GameObject:
   - component: {fileID: 2475800203971547369}
   - component: {fileID: 3561567624462239983}
   - component: {fileID: 1676517875719679289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -18045,7 +18045,7 @@ GameObject:
   - component: {fileID: 8279492019956788472}
   - component: {fileID: 4198268807006761839}
   - component: {fileID: 6254863000257796495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -18241,7 +18241,7 @@ GameObject:
   - component: {fileID: 17658300594354502}
   - component: {fileID: 7024941979458769186}
   - component: {fileID: 4680625520517854221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -18437,7 +18437,7 @@ GameObject:
   - component: {fileID: 6163073708230634353}
   - component: {fileID: 1487535148702573997}
   - component: {fileID: 5308340807757631728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -18633,7 +18633,7 @@ GameObject:
   - component: {fileID: 8167992607302940414}
   - component: {fileID: 7781066240353419393}
   - component: {fileID: 3144429303932103494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -18829,7 +18829,7 @@ GameObject:
   - component: {fileID: 5209477775960944046}
   - component: {fileID: 7162686832597867145}
   - component: {fileID: 1208005513267081718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -19025,7 +19025,7 @@ GameObject:
   - component: {fileID: 5107854292744862022}
   - component: {fileID: 3970363028884372584}
   - component: {fileID: 6826843865736628235}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -19221,7 +19221,7 @@ GameObject:
   - component: {fileID: 4580628417681316737}
   - component: {fileID: 4955541570444725073}
   - component: {fileID: 3666872995608671233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -19417,7 +19417,7 @@ GameObject:
   - component: {fileID: 5482258293593278577}
   - component: {fileID: 2524259771391520637}
   - component: {fileID: 4161479908359855652}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -19613,7 +19613,7 @@ GameObject:
   - component: {fileID: 3514872350361572275}
   - component: {fileID: 7573952670126937133}
   - component: {fileID: 4245371172671677235}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -19809,7 +19809,7 @@ GameObject:
   - component: {fileID: 8446012979726774705}
   - component: {fileID: 3631284969513832962}
   - component: {fileID: 8775096724646948618}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -20005,7 +20005,7 @@ GameObject:
   - component: {fileID: 1790109948983099889}
   - component: {fileID: 1489523055828673636}
   - component: {fileID: 8566605351489043785}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -20201,7 +20201,7 @@ GameObject:
   - component: {fileID: 7935919118084358902}
   - component: {fileID: 2072536300409054069}
   - component: {fileID: 3442038754254570238}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -20397,7 +20397,7 @@ GameObject:
   - component: {fileID: 9162080105291856893}
   - component: {fileID: 3103950583118979413}
   - component: {fileID: 7907765553562361670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -20593,7 +20593,7 @@ GameObject:
   - component: {fileID: 8044348601985214157}
   - component: {fileID: 7758439403373143130}
   - component: {fileID: 8973018935731575613}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -20789,7 +20789,7 @@ GameObject:
   - component: {fileID: 3318928712863325152}
   - component: {fileID: 2575526449127610447}
   - component: {fileID: 3650166900037332443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -20985,7 +20985,7 @@ GameObject:
   - component: {fileID: 8670587950866738030}
   - component: {fileID: 6091823596591948426}
   - component: {fileID: 6761712375738718107}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -21181,7 +21181,7 @@ GameObject:
   - component: {fileID: 5178547186830573296}
   - component: {fileID: 3117115204672421371}
   - component: {fileID: 6497342663918781169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -21377,7 +21377,7 @@ GameObject:
   - component: {fileID: 7166818318337917835}
   - component: {fileID: 313773075367681770}
   - component: {fileID: 6331750449281086231}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -21573,7 +21573,7 @@ GameObject:
   - component: {fileID: 542318747058884438}
   - component: {fileID: 3806840902277507180}
   - component: {fileID: 2466029737363792789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -21769,7 +21769,7 @@ GameObject:
   - component: {fileID: 5459712946054134587}
   - component: {fileID: 3199470404553861804}
   - component: {fileID: 5276062594936806726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -21965,7 +21965,7 @@ GameObject:
   - component: {fileID: 6562818370136253196}
   - component: {fileID: 1995545551746020303}
   - component: {fileID: 377375219494522411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -22161,7 +22161,7 @@ GameObject:
   - component: {fileID: 8428036824710024198}
   - component: {fileID: 5078100609302010541}
   - component: {fileID: 2315694947034269943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -22357,7 +22357,7 @@ GameObject:
   - component: {fileID: 344912045789191432}
   - component: {fileID: 6309252185640458484}
   - component: {fileID: 1553407620208325476}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -22553,7 +22553,7 @@ GameObject:
   - component: {fileID: 92095091921949052}
   - component: {fileID: 4920813588653747581}
   - component: {fileID: 2134643440053890904}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -22749,7 +22749,7 @@ GameObject:
   - component: {fileID: 7575679244504076497}
   - component: {fileID: 6811008751656984308}
   - component: {fileID: 7821775551984133044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -22945,7 +22945,7 @@ GameObject:
   - component: {fileID: 6333129459563655051}
   - component: {fileID: 8180875448610674864}
   - component: {fileID: 1391794868905059801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -23141,7 +23141,7 @@ GameObject:
   - component: {fileID: 6125633424154467962}
   - component: {fileID: 3664970730397434571}
   - component: {fileID: 6967423086835801923}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -23337,7 +23337,7 @@ GameObject:
   - component: {fileID: 8257413776378919244}
   - component: {fileID: 4425817097973450649}
   - component: {fileID: 3383618005306424109}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -23533,7 +23533,7 @@ GameObject:
   - component: {fileID: 8523971525651009157}
   - component: {fileID: 1604704277177637461}
   - component: {fileID: 1516071815225709130}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -23729,7 +23729,7 @@ GameObject:
   - component: {fileID: 8915715397124253515}
   - component: {fileID: 1193303956344399595}
   - component: {fileID: 1598830599328967239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -23925,7 +23925,7 @@ GameObject:
   - component: {fileID: 2736903395796652117}
   - component: {fileID: 4021277621347287440}
   - component: {fileID: 2116384721661510902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -24121,7 +24121,7 @@ GameObject:
   - component: {fileID: 77323116789152945}
   - component: {fileID: 8683344975858399346}
   - component: {fileID: 6347779760633816712}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -24317,7 +24317,7 @@ GameObject:
   - component: {fileID: 4303324748666720726}
   - component: {fileID: 526076160632505365}
   - component: {fileID: 8022360024234404397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -24513,7 +24513,7 @@ GameObject:
   - component: {fileID: 8414160365485221218}
   - component: {fileID: 340168842565374214}
   - component: {fileID: 5478882288163740543}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -24709,7 +24709,7 @@ GameObject:
   - component: {fileID: 2150480015749659818}
   - component: {fileID: 7533305425238152861}
   - component: {fileID: 2486895412987126309}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -24905,7 +24905,7 @@ GameObject:
   - component: {fileID: 645892172213225723}
   - component: {fileID: 3410161061128903534}
   - component: {fileID: 7953937731258676062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -25101,7 +25101,7 @@ GameObject:
   - component: {fileID: 8386430247770316397}
   - component: {fileID: 3709131667130390912}
   - component: {fileID: 1466149808469600299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -25297,7 +25297,7 @@ GameObject:
   - component: {fileID: 8481250477999981733}
   - component: {fileID: 377829215825965832}
   - component: {fileID: 7885168225676552093}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -25493,7 +25493,7 @@ GameObject:
   - component: {fileID: 1542782609242299613}
   - component: {fileID: 4340204544463054295}
   - component: {fileID: 8138450019209416859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -25689,7 +25689,7 @@ GameObject:
   - component: {fileID: 4912718062954701878}
   - component: {fileID: 5411274137315720140}
   - component: {fileID: 5705174270331136706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -25885,7 +25885,7 @@ GameObject:
   - component: {fileID: 6731107227948970725}
   - component: {fileID: 2145705638242507796}
   - component: {fileID: 5121982443433544888}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -26081,7 +26081,7 @@ GameObject:
   - component: {fileID: 2656507667401136824}
   - component: {fileID: 2718417355978773240}
   - component: {fileID: 8986189145276088414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -26277,7 +26277,7 @@ GameObject:
   - component: {fileID: 7489181293401407235}
   - component: {fileID: 5139407579678408172}
   - component: {fileID: 6234552842299978227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -26473,7 +26473,7 @@ GameObject:
   - component: {fileID: 1959419521144405894}
   - component: {fileID: 5924144618674637769}
   - component: {fileID: 4254145731172032744}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -26669,7 +26669,7 @@ GameObject:
   - component: {fileID: 2866285873022794999}
   - component: {fileID: 7199553136844747744}
   - component: {fileID: 4668199000629105512}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -26865,7 +26865,7 @@ GameObject:
   - component: {fileID: 3697049113271428541}
   - component: {fileID: 8867523646255164621}
   - component: {fileID: 7752803800416483256}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -27061,7 +27061,7 @@ GameObject:
   - component: {fileID: 8577542535409443944}
   - component: {fileID: 3889200927603917628}
   - component: {fileID: 9127262188191753795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -27257,7 +27257,7 @@ GameObject:
   - component: {fileID: 3187042995389229290}
   - component: {fileID: 7910256906121567111}
   - component: {fileID: 1333865111575378114}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -27453,7 +27453,7 @@ GameObject:
   - component: {fileID: 8203028859496128509}
   - component: {fileID: 8636309267552126320}
   - component: {fileID: 5178948983807383832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -27649,7 +27649,7 @@ GameObject:
   - component: {fileID: 6215152064199180328}
   - component: {fileID: 1358909666803664685}
   - component: {fileID: 3458881990657596784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -27845,7 +27845,7 @@ GameObject:
   - component: {fileID: 5458090012612598279}
   - component: {fileID: 1850438584768374545}
   - component: {fileID: 610421424951403943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -28041,7 +28041,7 @@ GameObject:
   - component: {fileID: 5096085789025928298}
   - component: {fileID: 6243116444999748164}
   - component: {fileID: 5358470941806111771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -28237,7 +28237,7 @@ GameObject:
   - component: {fileID: 2456374274614646284}
   - component: {fileID: 2073820459235361288}
   - component: {fileID: 5508139482974230553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -28433,7 +28433,7 @@ GameObject:
   - component: {fileID: 7920017849977198739}
   - component: {fileID: 483726026232579411}
   - component: {fileID: 3102551292108229700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -28629,7 +28629,7 @@ GameObject:
   - component: {fileID: 640772401650471362}
   - component: {fileID: 8058380868583322567}
   - component: {fileID: 6566787431555219143}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -28825,7 +28825,7 @@ GameObject:
   - component: {fileID: 4003897349090469942}
   - component: {fileID: 4806049422544558878}
   - component: {fileID: 5261485117361464856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -29021,7 +29021,7 @@ GameObject:
   - component: {fileID: 2234525700776962534}
   - component: {fileID: 6600698763092292494}
   - component: {fileID: 1872090350894948097}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -29217,7 +29217,7 @@ GameObject:
   - component: {fileID: 7216895674365551774}
   - component: {fileID: 6758848177385012883}
   - component: {fileID: 2857619245678638511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -29413,7 +29413,7 @@ GameObject:
   - component: {fileID: 1869001883261487796}
   - component: {fileID: 8701176742786807720}
   - component: {fileID: 603782165673076988}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -29609,7 +29609,7 @@ GameObject:
   - component: {fileID: 340236667991976123}
   - component: {fileID: 3807033638814864041}
   - component: {fileID: 5432523917622568671}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: bmx_one
   m_TagString: boundary
   m_Icon: {fileID: 0}
@@ -29746,7 +29746,7 @@ GameObject:
   - component: {fileID: 1856915824389293534}
   - component: {fileID: 6853624075766294509}
   - component: {fileID: 6724367595607623346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -29942,7 +29942,7 @@ GameObject:
   - component: {fileID: 1550578973141622957}
   - component: {fileID: 140438143946025140}
   - component: {fileID: 4718887926538638747}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -30138,7 +30138,7 @@ GameObject:
   - component: {fileID: 4403965116450374275}
   - component: {fileID: 6860706524690541971}
   - component: {fileID: 6703257202489784656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -30334,7 +30334,7 @@ GameObject:
   - component: {fileID: 6626785605907482201}
   - component: {fileID: 1268255187703899789}
   - component: {fileID: 5198400433892741557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -30530,7 +30530,7 @@ GameObject:
   - component: {fileID: 2781463061771100731}
   - component: {fileID: 3406016000856148663}
   - component: {fileID: 3264627571194497938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -30726,7 +30726,7 @@ GameObject:
   - component: {fileID: 7587678574782511160}
   - component: {fileID: 4402170667770413924}
   - component: {fileID: 149019941447681434}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -30922,7 +30922,7 @@ GameObject:
   - component: {fileID: 4443218456299559945}
   - component: {fileID: 4337151951642626805}
   - component: {fileID: 8074740633031636558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -31118,7 +31118,7 @@ GameObject:
   - component: {fileID: 8500604356489697234}
   - component: {fileID: 3222751032897498206}
   - component: {fileID: 7428797961803408661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -31314,7 +31314,7 @@ GameObject:
   - component: {fileID: 8232652442370573133}
   - component: {fileID: 3855718680707273109}
   - component: {fileID: 6763038332435007770}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -31510,7 +31510,7 @@ GameObject:
   - component: {fileID: 991920634013831777}
   - component: {fileID: 6956200177448459393}
   - component: {fileID: 2174851723055770848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -31706,7 +31706,7 @@ GameObject:
   - component: {fileID: 1939241650958751956}
   - component: {fileID: 2360200962472070773}
   - component: {fileID: 7494317689646317719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -31902,7 +31902,7 @@ GameObject:
   - component: {fileID: 6747208479321033997}
   - component: {fileID: 1610074130141373085}
   - component: {fileID: 5171818392312715261}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -32098,7 +32098,7 @@ GameObject:
   - component: {fileID: 4726427258126056590}
   - component: {fileID: 4284754396240990498}
   - component: {fileID: 392861404445070001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -32294,7 +32294,7 @@ GameObject:
   - component: {fileID: 7535871409743772991}
   - component: {fileID: 5720339144579678278}
   - component: {fileID: 4462479052308979401}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -32490,7 +32490,7 @@ GameObject:
   - component: {fileID: 7791820672191864894}
   - component: {fileID: 5034131286249549560}
   - component: {fileID: 6996245538498572147}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -32686,7 +32686,7 @@ GameObject:
   - component: {fileID: 769841931854437039}
   - component: {fileID: 1031002342165856873}
   - component: {fileID: 2125856160037996759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -32882,7 +32882,7 @@ GameObject:
   - component: {fileID: 9155232200853314047}
   - component: {fileID: 7090754820443136259}
   - component: {fileID: 5017630153606125280}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -33078,7 +33078,7 @@ GameObject:
   - component: {fileID: 5386931756433316485}
   - component: {fileID: 6247034232812374890}
   - component: {fileID: 84043202763131082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -33274,7 +33274,7 @@ GameObject:
   - component: {fileID: 1771222492613859439}
   - component: {fileID: 8919697112886177778}
   - component: {fileID: 4659715242647299849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -33470,7 +33470,7 @@ GameObject:
   - component: {fileID: 6735549853358309191}
   - component: {fileID: 3569365315619245539}
   - component: {fileID: 5308964014614480337}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -33666,7 +33666,7 @@ GameObject:
   - component: {fileID: 3110610233327740316}
   - component: {fileID: 4464863321660279973}
   - component: {fileID: 8196428516735420129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -33862,7 +33862,7 @@ GameObject:
   - component: {fileID: 435376830398039051}
   - component: {fileID: 8248259884951733089}
   - component: {fileID: 6438655575938964446}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -34058,7 +34058,7 @@ GameObject:
   - component: {fileID: 5137616163150087541}
   - component: {fileID: 2874203958203470117}
   - component: {fileID: 3495022107010813214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -34254,7 +34254,7 @@ GameObject:
   - component: {fileID: 810564612438266773}
   - component: {fileID: 6294098111432290156}
   - component: {fileID: 8577128631813103171}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -34450,7 +34450,7 @@ GameObject:
   - component: {fileID: 6395014752700940075}
   - component: {fileID: 5634442950841728940}
   - component: {fileID: 4991673142546429346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -34646,7 +34646,7 @@ GameObject:
   - component: {fileID: 2786899161541729654}
   - component: {fileID: 3317263581000669660}
   - component: {fileID: 8498703181003618982}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -34842,7 +34842,7 @@ GameObject:
   - component: {fileID: 5417478441456755309}
   - component: {fileID: 8543666900010595151}
   - component: {fileID: 4650831158599999162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -35038,7 +35038,7 @@ GameObject:
   - component: {fileID: 3410458844740568623}
   - component: {fileID: 3024019025882693264}
   - component: {fileID: 4254608405510235709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -35234,7 +35234,7 @@ GameObject:
   - component: {fileID: 7317610246121881595}
   - component: {fileID: 2929330063137253241}
   - component: {fileID: 2041522631496070098}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -35430,7 +35430,7 @@ GameObject:
   - component: {fileID: 6811393315965173169}
   - component: {fileID: 8329977891300503716}
   - component: {fileID: 7227398725110064788}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -35626,7 +35626,7 @@ GameObject:
   - component: {fileID: 7700570799404437414}
   - component: {fileID: 5592976544078894883}
   - component: {fileID: 3985943496964096334}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -35822,7 +35822,7 @@ GameObject:
   - component: {fileID: 5036053842687494615}
   - component: {fileID: 3875937565991444734}
   - component: {fileID: 1763837960881878062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -36018,7 +36018,7 @@ GameObject:
   - component: {fileID: 64748358050909223}
   - component: {fileID: 4774709347633870194}
   - component: {fileID: 1972792234128111722}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -36214,7 +36214,7 @@ GameObject:
   - component: {fileID: 7336247982418746194}
   - component: {fileID: 3974841111573221325}
   - component: {fileID: 8400187567949076381}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -36410,7 +36410,7 @@ GameObject:
   - component: {fileID: 6794873253746472430}
   - component: {fileID: 3869687885879573721}
   - component: {fileID: 748066730542517533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -36606,7 +36606,7 @@ GameObject:
   - component: {fileID: 2811748284088281493}
   - component: {fileID: 7275614721807783635}
   - component: {fileID: 3048145304844586268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -36802,7 +36802,7 @@ GameObject:
   - component: {fileID: 8766504524216661270}
   - component: {fileID: 5194051625075289670}
   - component: {fileID: 3979561019208048413}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -36998,7 +36998,7 @@ GameObject:
   - component: {fileID: 1553746991496997074}
   - component: {fileID: 4563722249882714111}
   - component: {fileID: 8101644411536191565}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -37194,7 +37194,7 @@ GameObject:
   - component: {fileID: 8346424225453892241}
   - component: {fileID: 5799300900016845052}
   - component: {fileID: 1998364132120859675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -37390,7 +37390,7 @@ GameObject:
   - component: {fileID: 3373764497398379512}
   - component: {fileID: 5425967436591800943}
   - component: {fileID: 734013488402235694}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -37586,7 +37586,7 @@ GameObject:
   - component: {fileID: 9041845531175004218}
   - component: {fileID: 3092267601825093071}
   - component: {fileID: 3481808303908541052}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -37782,7 +37782,7 @@ GameObject:
   - component: {fileID: 1031998825497710138}
   - component: {fileID: 2589058901501462378}
   - component: {fileID: 7199677012363112129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -37978,7 +37978,7 @@ GameObject:
   - component: {fileID: 8835013670977251701}
   - component: {fileID: 6013967530321134510}
   - component: {fileID: 7472121590471285117}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -38174,7 +38174,7 @@ GameObject:
   - component: {fileID: 1558451617264311537}
   - component: {fileID: 5097555804777693276}
   - component: {fileID: 462299159004161290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -38370,7 +38370,7 @@ GameObject:
   - component: {fileID: 8704269194623321576}
   - component: {fileID: 6598385054755057274}
   - component: {fileID: 8733435489556948677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -38566,7 +38566,7 @@ GameObject:
   - component: {fileID: 6522460158724202892}
   - component: {fileID: 4677336559038495315}
   - component: {fileID: 6477816065632772437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -38762,7 +38762,7 @@ GameObject:
   - component: {fileID: 406807363922341522}
   - component: {fileID: 2017838597692494327}
   - component: {fileID: 5920957010906623470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -38958,7 +38958,7 @@ GameObject:
   - component: {fileID: 2137643666031800239}
   - component: {fileID: 5833686750556347973}
   - component: {fileID: 5712912018473485415}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -39154,7 +39154,7 @@ GameObject:
   - component: {fileID: 4915298274368779295}
   - component: {fileID: 1567190827798251942}
   - component: {fileID: 6575275359249687265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -39350,7 +39350,7 @@ GameObject:
   - component: {fileID: 3803137991862085010}
   - component: {fileID: 2955907568590718573}
   - component: {fileID: 5322079130871376281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -39546,7 +39546,7 @@ GameObject:
   - component: {fileID: 521437493636780989}
   - component: {fileID: 4440969310536053172}
   - component: {fileID: 7463366278486611170}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -39742,7 +39742,7 @@ GameObject:
   - component: {fileID: 5717281295003059071}
   - component: {fileID: 1331998505980568962}
   - component: {fileID: 1124933191155209521}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -39938,7 +39938,7 @@ GameObject:
   - component: {fileID: 7144062991666147288}
   - component: {fileID: 622664472299667252}
   - component: {fileID: 1744991742380990671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -40134,7 +40134,7 @@ GameObject:
   - component: {fileID: 6216947855979134557}
   - component: {fileID: 5762844978288361379}
   - component: {fileID: 8963705635909898959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -40330,7 +40330,7 @@ GameObject:
   - component: {fileID: 2114336432263703829}
   - component: {fileID: 2723952782740717603}
   - component: {fileID: 1174082757085949717}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -40526,7 +40526,7 @@ GameObject:
   - component: {fileID: 7730557310598099863}
   - component: {fileID: 1962307613018983975}
   - component: {fileID: 4525369030663350381}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -40722,7 +40722,7 @@ GameObject:
   - component: {fileID: 4581242612389335630}
   - component: {fileID: 2902666895519669346}
   - component: {fileID: 4157284596131387914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -40918,7 +40918,7 @@ GameObject:
   - component: {fileID: 1575775307302549407}
   - component: {fileID: 6711750955406088978}
   - component: {fileID: 1899885712689907302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -41114,7 +41114,7 @@ GameObject:
   - component: {fileID: 5631286621894666314}
   - component: {fileID: 402018187823937279}
   - component: {fileID: 1327874634424391246}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -41310,7 +41310,7 @@ GameObject:
   - component: {fileID: 8173015787235870648}
   - component: {fileID: 7289526127046772779}
   - component: {fileID: 389315377877848085}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -41506,7 +41506,7 @@ GameObject:
   - component: {fileID: 3634521135480909424}
   - component: {fileID: 8194498880256504891}
   - component: {fileID: 543403513077935794}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -41702,7 +41702,7 @@ GameObject:
   - component: {fileID: 4794850736511781924}
   - component: {fileID: 6119348937648369654}
   - component: {fileID: 8247955709679713602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -41898,7 +41898,7 @@ GameObject:
   - component: {fileID: 5303487663911591913}
   - component: {fileID: 4401035084443269192}
   - component: {fileID: 8355502890225159835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -42094,7 +42094,7 @@ GameObject:
   - component: {fileID: 2651918838365343825}
   - component: {fileID: 7597248587525115076}
   - component: {fileID: 7625040897591652223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -42290,7 +42290,7 @@ GameObject:
   - component: {fileID: 1313651078909163747}
   - component: {fileID: 264834399767747385}
   - component: {fileID: 590353439116549590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -42486,7 +42486,7 @@ GameObject:
   - component: {fileID: 4790340971472885995}
   - component: {fileID: 3030499956264183960}
   - component: {fileID: 9166548523955532573}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -42682,7 +42682,7 @@ GameObject:
   - component: {fileID: 4999110461472623683}
   - component: {fileID: 264730925366042122}
   - component: {fileID: 8747488252084873347}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -42878,7 +42878,7 @@ GameObject:
   - component: {fileID: 7276493426919209279}
   - component: {fileID: 946277484176901067}
   - component: {fileID: 717342918632317333}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -43074,7 +43074,7 @@ GameObject:
   - component: {fileID: 40026403108103906}
   - component: {fileID: 4042967171457506703}
   - component: {fileID: 4371605112542653681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -43270,7 +43270,7 @@ GameObject:
   - component: {fileID: 7340078372424253574}
   - component: {fileID: 4753377449985137476}
   - component: {fileID: 4140278909142497827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -43466,7 +43466,7 @@ GameObject:
   - component: {fileID: 4249412910440192432}
   - component: {fileID: 976849470216326590}
   - component: {fileID: 1933301101995007848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -43662,7 +43662,7 @@ GameObject:
   - component: {fileID: 1370217744080239434}
   - component: {fileID: 2079478802622038021}
   - component: {fileID: 1791564591074594426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -43858,7 +43858,7 @@ GameObject:
   - component: {fileID: 4585308011013019774}
   - component: {fileID: 4704949877994694739}
   - component: {fileID: 6782772374262198491}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -44054,7 +44054,7 @@ GameObject:
   - component: {fileID: 7824262184223278412}
   - component: {fileID: 3860311558004427884}
   - component: {fileID: 507627028553108831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -44250,7 +44250,7 @@ GameObject:
   - component: {fileID: 3971570139922411034}
   - component: {fileID: 4323061842629361805}
   - component: {fileID: 501017403419752726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -44446,7 +44446,7 @@ GameObject:
   - component: {fileID: 7570998572434912228}
   - component: {fileID: 5129539992908381122}
   - component: {fileID: 6285393119611624813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -44642,7 +44642,7 @@ GameObject:
   - component: {fileID: 4478696833326149389}
   - component: {fileID: 5272410210110810570}
   - component: {fileID: 5895769837829327966}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -44838,7 +44838,7 @@ GameObject:
   - component: {fileID: 4462684206102739881}
   - component: {fileID: 2812395721566837484}
   - component: {fileID: 5182142548614226646}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -45034,7 +45034,7 @@ GameObject:
   - component: {fileID: 7638771156239589030}
   - component: {fileID: 4092714643096669120}
   - component: {fileID: 6684617049053363930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -45230,7 +45230,7 @@ GameObject:
   - component: {fileID: 8854774456203700381}
   - component: {fileID: 2169654915010908994}
   - component: {fileID: 3980956812186077402}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -45426,7 +45426,7 @@ GameObject:
   - component: {fileID: 2649412869175682336}
   - component: {fileID: 160996425713075119}
   - component: {fileID: 7831618934166089469}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -45622,7 +45622,7 @@ GameObject:
   - component: {fileID: 6303022597852292567}
   - component: {fileID: 6802981208288050194}
   - component: {fileID: 7849479045307016077}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -45818,7 +45818,7 @@ GameObject:
   - component: {fileID: 2934951781539210915}
   - component: {fileID: 4096115417650440239}
   - component: {fileID: 6637467464078450211}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -46014,7 +46014,7 @@ GameObject:
   - component: {fileID: 6831198161292212612}
   - component: {fileID: 5123240334972857017}
   - component: {fileID: 9056492679530247603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -46210,7 +46210,7 @@ GameObject:
   - component: {fileID: 1855620726834575208}
   - component: {fileID: 8987202640764692273}
   - component: {fileID: 7280346234492645229}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -46406,7 +46406,7 @@ GameObject:
   - component: {fileID: 7301013063363189648}
   - component: {fileID: 4710831687617946181}
   - component: {fileID: 1116560847003286280}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -46602,7 +46602,7 @@ GameObject:
   - component: {fileID: 7565280620461537645}
   - component: {fileID: 8511671459979761462}
   - component: {fileID: 1920269472945009153}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -46798,7 +46798,7 @@ GameObject:
   - component: {fileID: 1799586321918679947}
   - component: {fileID: 2904479495959621379}
   - component: {fileID: 6192226675936226671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -46994,7 +46994,7 @@ GameObject:
   - component: {fileID: 1564952519638940147}
   - component: {fileID: 2828860799385569894}
   - component: {fileID: 1250715129178635505}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -47190,7 +47190,7 @@ GameObject:
   - component: {fileID: 8850606437079303506}
   - component: {fileID: 109018115956408368}
   - component: {fileID: 8990150294723292048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -47386,7 +47386,7 @@ GameObject:
   - component: {fileID: 3947163708127226738}
   - component: {fileID: 6821567104471660128}
   - component: {fileID: 2805447752818469706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -47582,7 +47582,7 @@ GameObject:
   - component: {fileID: 6469962751996705035}
   - component: {fileID: 1698019308078775308}
   - component: {fileID: 8751561111794690482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -47778,7 +47778,7 @@ GameObject:
   - component: {fileID: 3070476426872866881}
   - component: {fileID: 341131602973130377}
   - component: {fileID: 9132475745769908248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -47974,7 +47974,7 @@ GameObject:
   - component: {fileID: 4464122588627959221}
   - component: {fileID: 1661634742761978017}
   - component: {fileID: 930952001089616148}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -48170,7 +48170,7 @@ GameObject:
   - component: {fileID: 3524107575856792389}
   - component: {fileID: 1181263446694102405}
   - component: {fileID: 8028697784915698587}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -48366,7 +48366,7 @@ GameObject:
   - component: {fileID: 7822800140079407798}
   - component: {fileID: 6909336014254761136}
   - component: {fileID: 454916932529416292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -48562,7 +48562,7 @@ GameObject:
   - component: {fileID: 2510695973110712675}
   - component: {fileID: 8389527439645707362}
   - component: {fileID: 2735859064543916830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -48758,7 +48758,7 @@ GameObject:
   - component: {fileID: 7367640517693540686}
   - component: {fileID: 8450041773382426361}
   - component: {fileID: 7059964203298705665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -48954,7 +48954,7 @@ GameObject:
   - component: {fileID: 2170263926235819921}
   - component: {fileID: 1694342882032342291}
   - component: {fileID: 2833131393723134817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -49150,7 +49150,7 @@ GameObject:
   - component: {fileID: 5617999929444465332}
   - component: {fileID: 8625519924987825567}
   - component: {fileID: 1107517960970738610}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -49346,7 +49346,7 @@ GameObject:
   - component: {fileID: 7738586637651341220}
   - component: {fileID: 2985694362552580809}
   - component: {fileID: 7143030186195374100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -49542,7 +49542,7 @@ GameObject:
   - component: {fileID: 4235578341524497820}
   - component: {fileID: 3173038992709382089}
   - component: {fileID: 451763140249531007}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -49738,7 +49738,7 @@ GameObject:
   - component: {fileID: 1226312095976834819}
   - component: {fileID: 3768758486577416561}
   - component: {fileID: 71219571136496657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -49934,7 +49934,7 @@ GameObject:
   - component: {fileID: 9215448340989862530}
   - component: {fileID: 1951270326252359985}
   - component: {fileID: 6971889129042309969}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -50130,7 +50130,7 @@ GameObject:
   - component: {fileID: 3247953374613570969}
   - component: {fileID: 4103514878148483135}
   - component: {fileID: 7446559132701482029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -50326,7 +50326,7 @@ GameObject:
   - component: {fileID: 769182654798436484}
   - component: {fileID: 3639045009995204878}
   - component: {fileID: 1824811623010947094}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -50522,7 +50522,7 @@ GameObject:
   - component: {fileID: 5075673421400481081}
   - component: {fileID: 7801703298427258338}
   - component: {fileID: 6063521910693115109}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -50718,7 +50718,7 @@ GameObject:
   - component: {fileID: 6037986414137468784}
   - component: {fileID: 9013400939950174980}
   - component: {fileID: 5855474306250397796}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -50914,7 +50914,7 @@ GameObject:
   - component: {fileID: 772413155694984160}
   - component: {fileID: 8340310110905631794}
   - component: {fileID: 3359602254502026491}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -51110,7 +51110,7 @@ GameObject:
   - component: {fileID: 1788740911480728559}
   - component: {fileID: 3493784526611173593}
   - component: {fileID: 1271273623182389847}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -51306,7 +51306,7 @@ GameObject:
   - component: {fileID: 2958620830721453250}
   - component: {fileID: 4797719308904356649}
   - component: {fileID: 1375324497608463300}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -51502,7 +51502,7 @@ GameObject:
   - component: {fileID: 8869903867087249543}
   - component: {fileID: 2945489185939420308}
   - component: {fileID: 3736320392953446461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -51698,7 +51698,7 @@ GameObject:
   - component: {fileID: 808152095512086807}
   - component: {fileID: 8874057464240591884}
   - component: {fileID: 784671201814668022}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -51894,7 +51894,7 @@ GameObject:
   - component: {fileID: 8622633118214607240}
   - component: {fileID: 4915675689880104205}
   - component: {fileID: 7257912857096579908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -52090,7 +52090,7 @@ GameObject:
   - component: {fileID: 6511485019289328561}
   - component: {fileID: 149914662459518937}
   - component: {fileID: 7773214987827467782}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -52286,7 +52286,7 @@ GameObject:
   - component: {fileID: 3447234144443426226}
   - component: {fileID: 3174934951442024339}
   - component: {fileID: 6495766949366066972}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -52482,7 +52482,7 @@ GameObject:
   - component: {fileID: 2012433042788543804}
   - component: {fileID: 7005932407725851247}
   - component: {fileID: 1564617254359203357}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -52678,7 +52678,7 @@ GameObject:
   - component: {fileID: 4710948020076923627}
   - component: {fileID: 4174864657995747122}
   - component: {fileID: 4160671202484649252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -52874,7 +52874,7 @@ GameObject:
   - component: {fileID: 4840139070487089410}
   - component: {fileID: 1944969938023016120}
   - component: {fileID: 1197890028237604594}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -53070,7 +53070,7 @@ GameObject:
   - component: {fileID: 6178894201014477151}
   - component: {fileID: 3658060072289226435}
   - component: {fileID: 936280534209000566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -53266,7 +53266,7 @@ GameObject:
   - component: {fileID: 8079210227478220048}
   - component: {fileID: 3089079233284393036}
   - component: {fileID: 2779586567232923854}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -53462,7 +53462,7 @@ GameObject:
   - component: {fileID: 4307940574890413182}
   - component: {fileID: 7295946979590480914}
   - component: {fileID: 3327613123496083718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -53658,7 +53658,7 @@ GameObject:
   - component: {fileID: 4670264696337085674}
   - component: {fileID: 7943363369860424099}
   - component: {fileID: 7968758301259223336}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -53854,7 +53854,7 @@ GameObject:
   - component: {fileID: 4272629279433059104}
   - component: {fileID: 3385922103528155690}
   - component: {fileID: 6428534701070159149}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -54050,7 +54050,7 @@ GameObject:
   - component: {fileID: 671323774071162162}
   - component: {fileID: 6544238979371987660}
   - component: {fileID: 5458438223481038907}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -54246,7 +54246,7 @@ GameObject:
   - component: {fileID: 2168808530918010728}
   - component: {fileID: 3559033314430522474}
   - component: {fileID: 3826203907919580874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -54442,7 +54442,7 @@ GameObject:
   - component: {fileID: 1942412089904174279}
   - component: {fileID: 263524158159922139}
   - component: {fileID: 6971481084204581472}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -54638,7 +54638,7 @@ GameObject:
   - component: {fileID: 48222102250263341}
   - component: {fileID: 6766312267259746064}
   - component: {fileID: 224638104705040927}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -54834,7 +54834,7 @@ GameObject:
   - component: {fileID: 8006113256936302987}
   - component: {fileID: 478372229690113223}
   - component: {fileID: 1284812522284336686}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -55030,7 +55030,7 @@ GameObject:
   - component: {fileID: 6797587726792736642}
   - component: {fileID: 4146966552042976347}
   - component: {fileID: 8414460413256920863}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -55226,7 +55226,7 @@ GameObject:
   - component: {fileID: 510688942272357705}
   - component: {fileID: 4629223490215970134}
   - component: {fileID: 7904771718480127085}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -55422,7 +55422,7 @@ GameObject:
   - component: {fileID: 1454462847851651727}
   - component: {fileID: 5984044269815883544}
   - component: {fileID: 1154407810297002076}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -55618,7 +55618,7 @@ GameObject:
   - component: {fileID: 1770876802113992398}
   - component: {fileID: 2410115293181525725}
   - component: {fileID: 9122614530942356750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -55814,7 +55814,7 @@ GameObject:
   - component: {fileID: 5539655265093442827}
   - component: {fileID: 324244725617677735}
   - component: {fileID: 6948746102944170688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -56010,7 +56010,7 @@ GameObject:
   - component: {fileID: 6969448620540618890}
   - component: {fileID: 8490327963212283969}
   - component: {fileID: 2515885291885721656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -56206,7 +56206,7 @@ GameObject:
   - component: {fileID: 940404284680872778}
   - component: {fileID: 5071009603436672784}
   - component: {fileID: 2012067552116481539}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -56402,7 +56402,7 @@ GameObject:
   - component: {fileID: 9015864948157405072}
   - component: {fileID: 5621245565079365079}
   - component: {fileID: 474295168909685348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -56598,7 +56598,7 @@ GameObject:
   - component: {fileID: 162990051961697720}
   - component: {fileID: 3434305367931328020}
   - component: {fileID: 5471333705117343092}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -56794,7 +56794,7 @@ GameObject:
   - component: {fileID: 281291132139288862}
   - component: {fileID: 4690444726112677298}
   - component: {fileID: 2527890655685737373}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -56990,7 +56990,7 @@ GameObject:
   - component: {fileID: 6182844081770686277}
   - component: {fileID: 5741913531587869205}
   - component: {fileID: 7369055524002712630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -57186,7 +57186,7 @@ GameObject:
   - component: {fileID: 2270100132591392057}
   - component: {fileID: 890185650479858035}
   - component: {fileID: 7941643861802088294}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -57382,7 +57382,7 @@ GameObject:
   - component: {fileID: 6632258983441862575}
   - component: {fileID: 2415307248643251035}
   - component: {fileID: 6516432518903654220}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -57578,7 +57578,7 @@ GameObject:
   - component: {fileID: 4446644629740006325}
   - component: {fileID: 5487405421281119760}
   - component: {fileID: 3034157952330938593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -57774,7 +57774,7 @@ GameObject:
   - component: {fileID: 4078653041038362784}
   - component: {fileID: 3390626418673038642}
   - component: {fileID: 1852530782935278832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -57970,7 +57970,7 @@ GameObject:
   - component: {fileID: 6283163597194300906}
   - component: {fileID: 4148534649553883525}
   - component: {fileID: 7545849811791638348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -58166,7 +58166,7 @@ GameObject:
   - component: {fileID: 5964469382540054016}
   - component: {fileID: 5506472208405741225}
   - component: {fileID: 7591774792743959446}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -58362,7 +58362,7 @@ GameObject:
   - component: {fileID: 7125487442908217701}
   - component: {fileID: 7342045173961691124}
   - component: {fileID: 7081275401590644081}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -58558,7 +58558,7 @@ GameObject:
   - component: {fileID: 3714079951398631816}
   - component: {fileID: 6041985461252354168}
   - component: {fileID: 1109362879282272372}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -58754,7 +58754,7 @@ GameObject:
   - component: {fileID: 8763179570840381417}
   - component: {fileID: 8502726469338391155}
   - component: {fileID: 4197047532250777919}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -58950,7 +58950,7 @@ GameObject:
   - component: {fileID: 8213457924501999521}
   - component: {fileID: 4668502804718270777}
   - component: {fileID: 9028436745606044013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -59146,7 +59146,7 @@ GameObject:
   - component: {fileID: 6843309500269838264}
   - component: {fileID: 4684831918229650686}
   - component: {fileID: 8220367857225867910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -59342,7 +59342,7 @@ GameObject:
   - component: {fileID: 434723996823038197}
   - component: {fileID: 1723753229774078203}
   - component: {fileID: 4055884368202685604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -59538,7 +59538,7 @@ GameObject:
   - component: {fileID: 3211370496924202205}
   - component: {fileID: 7344934549868993045}
   - component: {fileID: 8356989889806851193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -59734,7 +59734,7 @@ GameObject:
   - component: {fileID: 2412461478064652140}
   - component: {fileID: 4318736696275382864}
   - component: {fileID: 3799542169152980636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -59930,7 +59930,7 @@ GameObject:
   - component: {fileID: 4054902945294597}
   - component: {fileID: 4181165186672624170}
   - component: {fileID: 5843430101830069392}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -60126,7 +60126,7 @@ GameObject:
   - component: {fileID: 1901061047552116149}
   - component: {fileID: 2362987965753014864}
   - component: {fileID: 1596605989418919789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -60322,7 +60322,7 @@ GameObject:
   - component: {fileID: 5944002838719417116}
   - component: {fileID: 3921333851274938632}
   - component: {fileID: 3028734139853412305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -60550,7 +60550,7 @@ GameObject:
   - component: {fileID: 5392737672458014806}
   - component: {fileID: 4284665791071747562}
   - component: {fileID: 495682504252759222}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -60746,7 +60746,7 @@ GameObject:
   - component: {fileID: 8723338534969560294}
   - component: {fileID: 5024796175542996518}
   - component: {fileID: 4809991850820359128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -60942,7 +60942,7 @@ GameObject:
   - component: {fileID: 2647156166332263009}
   - component: {fileID: 6881760233782110039}
   - component: {fileID: 8301681318263011337}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -61138,7 +61138,7 @@ GameObject:
   - component: {fileID: 7346429803866244426}
   - component: {fileID: 6776133496927119553}
   - component: {fileID: 7595466450157988876}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -61334,7 +61334,7 @@ GameObject:
   - component: {fileID: 88837897800809601}
   - component: {fileID: 9046162248483730741}
   - component: {fileID: 3810435462317336244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -61530,7 +61530,7 @@ GameObject:
   - component: {fileID: 1769019684594470117}
   - component: {fileID: 2196698060984478208}
   - component: {fileID: 947465203489631664}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -61726,7 +61726,7 @@ GameObject:
   - component: {fileID: 36370331274415726}
   - component: {fileID: 1777146682939861769}
   - component: {fileID: 565221084484171263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -61922,7 +61922,7 @@ GameObject:
   - component: {fileID: 6098549041830236808}
   - component: {fileID: 7831431096708893192}
   - component: {fileID: 4403871162248324868}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -62118,7 +62118,7 @@ GameObject:
   - component: {fileID: 8301551974719647784}
   - component: {fileID: 3846949735768445799}
   - component: {fileID: 5683798948376533699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -62314,7 +62314,7 @@ GameObject:
   - component: {fileID: 2704978272023386401}
   - component: {fileID: 4795179658190053439}
   - component: {fileID: 3854019186156011032}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -62510,7 +62510,7 @@ GameObject:
   - component: {fileID: 6354508630926724551}
   - component: {fileID: 2612056456173865854}
   - component: {fileID: 6266558975033151875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -62706,7 +62706,7 @@ GameObject:
   - component: {fileID: 6225002313956790730}
   - component: {fileID: 4031535304594905197}
   - component: {fileID: 3084769577010853444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -62902,7 +62902,7 @@ GameObject:
   - component: {fileID: 8185708665234161736}
   - component: {fileID: 493579832720316402}
   - component: {fileID: 2261138907104273087}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -63098,7 +63098,7 @@ GameObject:
   - component: {fileID: 5291866727151741613}
   - component: {fileID: 471708412368518084}
   - component: {fileID: 1014745747571415372}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -63294,7 +63294,7 @@ GameObject:
   - component: {fileID: 6168990116681520608}
   - component: {fileID: 6538378637137410040}
   - component: {fileID: 4143728535875875939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -63490,7 +63490,7 @@ GameObject:
   - component: {fileID: 6174472079181968484}
   - component: {fileID: 6315345916382658263}
   - component: {fileID: 5717901386030303967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -63686,7 +63686,7 @@ GameObject:
   - component: {fileID: 8987455156950956208}
   - component: {fileID: 4376261506919614693}
   - component: {fileID: 5077170501363916333}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -63882,7 +63882,7 @@ GameObject:
   - component: {fileID: 3865807269258835963}
   - component: {fileID: 6655931494689305231}
   - component: {fileID: 265930868917751125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -64078,7 +64078,7 @@ GameObject:
   - component: {fileID: 1096043990940529318}
   - component: {fileID: 5458931326311088521}
   - component: {fileID: 9143002189354157684}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -64274,7 +64274,7 @@ GameObject:
   - component: {fileID: 4805773027662068737}
   - component: {fileID: 1036526569814216855}
   - component: {fileID: 2607713503430051438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -64470,7 +64470,7 @@ GameObject:
   - component: {fileID: 3624501215967809729}
   - component: {fileID: 7780911752308878714}
   - component: {fileID: 6166936505731113983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -64666,7 +64666,7 @@ GameObject:
   - component: {fileID: 3315537586971707872}
   - component: {fileID: 1389038972725231975}
   - component: {fileID: 2593204637784268022}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -64862,7 +64862,7 @@ GameObject:
   - component: {fileID: 6524438797851996574}
   - component: {fileID: 3469603567561283475}
   - component: {fileID: 6509220146540322217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -65058,7 +65058,7 @@ GameObject:
   - component: {fileID: 5669117505041555274}
   - component: {fileID: 5009740436043732005}
   - component: {fileID: 7767260687645856077}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -65254,7 +65254,7 @@ GameObject:
   - component: {fileID: 4318304158253834680}
   - component: {fileID: 4600520946135351134}
   - component: {fileID: 6812247662706560864}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -65450,7 +65450,7 @@ GameObject:
   - component: {fileID: 5431355620427243217}
   - component: {fileID: 8099982049162207478}
   - component: {fileID: 6672345020270507685}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -65646,7 +65646,7 @@ GameObject:
   - component: {fileID: 1163409058544041214}
   - component: {fileID: 7152486244275658904}
   - component: {fileID: 4676621116934683662}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -65842,7 +65842,7 @@ GameObject:
   - component: {fileID: 5543429800960744786}
   - component: {fileID: 3546427639965401175}
   - component: {fileID: 2904985172708897290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -66038,7 +66038,7 @@ GameObject:
   - component: {fileID: 6183335363874148702}
   - component: {fileID: 478257317546445021}
   - component: {fileID: 4217319721139705182}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -66234,7 +66234,7 @@ GameObject:
   - component: {fileID: 1070013814628269491}
   - component: {fileID: 649015009774061488}
   - component: {fileID: 3637172238831695672}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -66430,7 +66430,7 @@ GameObject:
   - component: {fileID: 2395748755413180799}
   - component: {fileID: 75654914020805560}
   - component: {fileID: 655959891190042382}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -66626,7 +66626,7 @@ GameObject:
   - component: {fileID: 8651904135734747555}
   - component: {fileID: 6800800338948012188}
   - component: {fileID: 3628136531626650594}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -66822,7 +66822,7 @@ GameObject:
   - component: {fileID: 973975452568911720}
   - component: {fileID: 4559804409393482408}
   - component: {fileID: 4327758130959899457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -67018,7 +67018,7 @@ GameObject:
   - component: {fileID: 674258718100464149}
   - component: {fileID: 3919879351234703293}
   - component: {fileID: 3902306661859577312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -67214,7 +67214,7 @@ GameObject:
   - component: {fileID: 1447820830347021865}
   - component: {fileID: 3760043521782531487}
   - component: {fileID: 9110671486649457936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -67410,7 +67410,7 @@ GameObject:
   - component: {fileID: 2910865297454495082}
   - component: {fileID: 4621616686402081807}
   - component: {fileID: 5918248088820226636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -67606,7 +67606,7 @@ GameObject:
   - component: {fileID: 8996402225742081044}
   - component: {fileID: 7397896887103951221}
   - component: {fileID: 6450721060560065736}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -67802,7 +67802,7 @@ GameObject:
   - component: {fileID: 7450981053031263390}
   - component: {fileID: 1106163518668888440}
   - component: {fileID: 6333964233943119959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -67998,7 +67998,7 @@ GameObject:
   - component: {fileID: 7265002324988383477}
   - component: {fileID: 5761724932123636527}
   - component: {fileID: 8633462771300796625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -68194,7 +68194,7 @@ GameObject:
   - component: {fileID: 1408928763468148659}
   - component: {fileID: 5741926624113286742}
   - component: {fileID: 5474857112268522418}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -68390,7 +68390,7 @@ GameObject:
   - component: {fileID: 6903446089619593687}
   - component: {fileID: 3996336589957333259}
   - component: {fileID: 5732283603866438358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -68586,7 +68586,7 @@ GameObject:
   - component: {fileID: 8006703509914996352}
   - component: {fileID: 7950752905560539729}
   - component: {fileID: 863182592391631695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -68782,7 +68782,7 @@ GameObject:
   - component: {fileID: 5974909786994294250}
   - component: {fileID: 6510308647796442218}
   - component: {fileID: 5893292838413007522}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -68978,7 +68978,7 @@ GameObject:
   - component: {fileID: 1951043700229890281}
   - component: {fileID: 705194991349176479}
   - component: {fileID: 4371971386741228420}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -69174,7 +69174,7 @@ GameObject:
   - component: {fileID: 534480031548698327}
   - component: {fileID: 4099141647563666719}
   - component: {fileID: 7703368049798287024}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -69370,7 +69370,7 @@ GameObject:
   - component: {fileID: 1466114282055743637}
   - component: {fileID: 5205917016103624641}
   - component: {fileID: 8859808063007229990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -69566,7 +69566,7 @@ GameObject:
   - component: {fileID: 3900955685253498144}
   - component: {fileID: 4670999283598074397}
   - component: {fileID: 1558387061630762263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -69762,7 +69762,7 @@ GameObject:
   - component: {fileID: 1305029107749359093}
   - component: {fileID: 5765271334462998297}
   - component: {fileID: 6173866121410955363}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -69958,7 +69958,7 @@ GameObject:
   - component: {fileID: 6961579015599822332}
   - component: {fileID: 884585858820648010}
   - component: {fileID: 7147338901329776819}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -70154,7 +70154,7 @@ GameObject:
   - component: {fileID: 929841988702013728}
   - component: {fileID: 4794097895381692442}
   - component: {fileID: 1103000125488346757}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -70350,7 +70350,7 @@ GameObject:
   - component: {fileID: 8188171674031024389}
   - component: {fileID: 8361374651167670151}
   - component: {fileID: 4348686055300965538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -70546,7 +70546,7 @@ GameObject:
   - component: {fileID: 6645770039831867728}
   - component: {fileID: 4835201909575766966}
   - component: {fileID: 4979372844281161466}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -70742,7 +70742,7 @@ GameObject:
   - component: {fileID: 1768053315474150781}
   - component: {fileID: 4147541552748408459}
   - component: {fileID: 2125608693023633719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -70938,7 +70938,7 @@ GameObject:
   - component: {fileID: 6160700096336349910}
   - component: {fileID: 7997666184264574547}
   - component: {fileID: 5029747381264692109}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -71134,7 +71134,7 @@ GameObject:
   - component: {fileID: 1267479809461592174}
   - component: {fileID: 5712784146504880277}
   - component: {fileID: 4911682565389248254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -71330,7 +71330,7 @@ GameObject:
   - component: {fileID: 2852350230090683421}
   - component: {fileID: 7768148800711050651}
   - component: {fileID: 5726255068326360234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -71526,7 +71526,7 @@ GameObject:
   - component: {fileID: 6314212256016841882}
   - component: {fileID: 6866773799009650344}
   - component: {fileID: 2425525180422255375}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -71722,7 +71722,7 @@ GameObject:
   - component: {fileID: 1336941174622036336}
   - component: {fileID: 5428218504715644108}
   - component: {fileID: 2598886680443864953}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -71918,7 +71918,7 @@ GameObject:
   - component: {fileID: 8229720056990447733}
   - component: {fileID: 5822825664841888379}
   - component: {fileID: 3581103400886187458}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -72114,7 +72114,7 @@ GameObject:
   - component: {fileID: 3168415036000457102}
   - component: {fileID: 8161623537328390077}
   - component: {fileID: 2069743127976364624}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -72310,7 +72310,7 @@ GameObject:
   - component: {fileID: 833587621039087679}
   - component: {fileID: 7431721354743639969}
   - component: {fileID: 8881311829347771906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -72506,7 +72506,7 @@ GameObject:
   - component: {fileID: 6306390682648521610}
   - component: {fileID: 6762344980295804044}
   - component: {fileID: 3332391065259156274}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -72702,7 +72702,7 @@ GameObject:
   - component: {fileID: 1592064672989256217}
   - component: {fileID: 7607214160419707520}
   - component: {fileID: 3845875690544215792}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -72898,7 +72898,7 @@ GameObject:
   - component: {fileID: 4985110409164634063}
   - component: {fileID: 8843221229377460291}
   - component: {fileID: 9222897627094184697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -73094,7 +73094,7 @@ GameObject:
   - component: {fileID: 5868338171329126060}
   - component: {fileID: 6605451854165046587}
   - component: {fileID: 136764412130990444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -73290,7 +73290,7 @@ GameObject:
   - component: {fileID: 1281014176797365097}
   - component: {fileID: 2260156212833174618}
   - component: {fileID: 7179526500732775958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -73486,7 +73486,7 @@ GameObject:
   - component: {fileID: 1445325358192521172}
   - component: {fileID: 9176881866045080513}
   - component: {fileID: 8765442700950820894}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -73682,7 +73682,7 @@ GameObject:
   - component: {fileID: 146826665559404826}
   - component: {fileID: 8500574369129112375}
   - component: {fileID: 427025342077163791}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -73878,7 +73878,7 @@ GameObject:
   - component: {fileID: 4568643578333089594}
   - component: {fileID: 8940013649959750811}
   - component: {fileID: 7185311998024796258}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -74074,7 +74074,7 @@ GameObject:
   - component: {fileID: 2674304746011238835}
   - component: {fileID: 1688499919462759379}
   - component: {fileID: 4847519196765639012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -74270,7 +74270,7 @@ GameObject:
   - component: {fileID: 2961728488168752822}
   - component: {fileID: 6592189834513842644}
   - component: {fileID: 4225270431281106246}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -74466,7 +74466,7 @@ GameObject:
   - component: {fileID: 550982623174201277}
   - component: {fileID: 4766490491447531854}
   - component: {fileID: 3807488661707476995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -74662,7 +74662,7 @@ GameObject:
   - component: {fileID: 2078675266988673487}
   - component: {fileID: 7998411478278710658}
   - component: {fileID: 7617621273457543352}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -74858,7 +74858,7 @@ GameObject:
   - component: {fileID: 5629393307165843711}
   - component: {fileID: 228888920633697549}
   - component: {fileID: 374520073195363140}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -75054,7 +75054,7 @@ GameObject:
   - component: {fileID: 2868680795168072822}
   - component: {fileID: 884639488666124302}
   - component: {fileID: 6296331569524246397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -75250,7 +75250,7 @@ GameObject:
   - component: {fileID: 6872718309275567237}
   - component: {fileID: 3149095809551681162}
   - component: {fileID: 1918847635551233983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -75446,7 +75446,7 @@ GameObject:
   - component: {fileID: 160764893934004880}
   - component: {fileID: 9193327895321456305}
   - component: {fileID: 7747752407914848910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -75642,7 +75642,7 @@ GameObject:
   - component: {fileID: 5002304086120804095}
   - component: {fileID: 1671621229202573973}
   - component: {fileID: 2767250278523678098}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -75838,7 +75838,7 @@ GameObject:
   - component: {fileID: 4256896100674287323}
   - component: {fileID: 2242666899491378279}
   - component: {fileID: 1315757744207181647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -76034,7 +76034,7 @@ GameObject:
   - component: {fileID: 6285017349543026433}
   - component: {fileID: 5694468041921662878}
   - component: {fileID: 7406411034538100119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -76230,7 +76230,7 @@ GameObject:
   - component: {fileID: 2901055996578887426}
   - component: {fileID: 458936541511785627}
   - component: {fileID: 7478159090411898895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -76426,7 +76426,7 @@ GameObject:
   - component: {fileID: 7658160417431669139}
   - component: {fileID: 6097549153890026917}
   - component: {fileID: 7353497403515680750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -76622,7 +76622,7 @@ GameObject:
   - component: {fileID: 413057229120723894}
   - component: {fileID: 4583015069722105815}
   - component: {fileID: 5846709102019913482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -76818,7 +76818,7 @@ GameObject:
   - component: {fileID: 4447499127049566335}
   - component: {fileID: 1160431300177410159}
   - component: {fileID: 8184736180963945916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -77014,7 +77014,7 @@ GameObject:
   - component: {fileID: 8757718254635520606}
   - component: {fileID: 3664344721258427144}
   - component: {fileID: 3584885700521223433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -77210,7 +77210,7 @@ GameObject:
   - component: {fileID: 7871600263379845411}
   - component: {fileID: 8745431175794616309}
   - component: {fileID: 3581570098679344523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -77406,7 +77406,7 @@ GameObject:
   - component: {fileID: 2656896569240632448}
   - component: {fileID: 2731085232172090265}
   - component: {fileID: 2839089104712089263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -77602,7 +77602,7 @@ GameObject:
   - component: {fileID: 8081271499681378067}
   - component: {fileID: 511223869909555994}
   - component: {fileID: 7872843840882792654}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -77798,7 +77798,7 @@ GameObject:
   - component: {fileID: 6279752897739202784}
   - component: {fileID: 8822427821838467756}
   - component: {fileID: 4556272517209290769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -77994,7 +77994,7 @@ GameObject:
   - component: {fileID: 2364049622883283232}
   - component: {fileID: 6634904290094777440}
   - component: {fileID: 2818130574794384545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -78190,7 +78190,7 @@ GameObject:
   - component: {fileID: 4312420434428899718}
   - component: {fileID: 4377866347544134026}
   - component: {fileID: 8860927306549203368}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -78386,7 +78386,7 @@ GameObject:
   - component: {fileID: 5468268660406756770}
   - component: {fileID: 4847127857444490543}
   - component: {fileID: 4132809970230713721}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -78582,7 +78582,7 @@ GameObject:
   - component: {fileID: 1443262463365218989}
   - component: {fileID: 4896362148447230834}
   - component: {fileID: 4218058270717804336}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -78778,7 +78778,7 @@ GameObject:
   - component: {fileID: 5137206581787484240}
   - component: {fileID: 1330518783969781218}
   - component: {fileID: 4820498837882838347}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -78974,7 +78974,7 @@ GameObject:
   - component: {fileID: 5799392261073491075}
   - component: {fileID: 1205543941838234809}
   - component: {fileID: 7077250863788784032}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -79170,7 +79170,7 @@ GameObject:
   - component: {fileID: 6832914281110384074}
   - component: {fileID: 880073654226360211}
   - component: {fileID: 2727915956676448528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -79366,7 +79366,7 @@ GameObject:
   - component: {fileID: 7740049539001682510}
   - component: {fileID: 1443568112040755362}
   - component: {fileID: 1577668382516589696}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -79562,7 +79562,7 @@ GameObject:
   - component: {fileID: 5827891641632603482}
   - component: {fileID: 8274166687047018946}
   - component: {fileID: 2836396047449296625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -79758,7 +79758,7 @@ GameObject:
   - component: {fileID: 2058921704969961627}
   - component: {fileID: 7151160739501424986}
   - component: {fileID: 5996703189917680739}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -79954,7 +79954,7 @@ GameObject:
   - component: {fileID: 3376363606241296290}
   - component: {fileID: 7481169984456488678}
   - component: {fileID: 4034674870841888409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -80150,7 +80150,7 @@ GameObject:
   - component: {fileID: 8124333175530348416}
   - component: {fileID: 4024151939621266192}
   - component: {fileID: 5190475798592263395}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -80346,7 +80346,7 @@ GameObject:
   - component: {fileID: 4766854732957187141}
   - component: {fileID: 5734494112590026077}
   - component: {fileID: 4289942048928269296}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -80542,7 +80542,7 @@ GameObject:
   - component: {fileID: 8642712504279514727}
   - component: {fileID: 1885923812323369567}
   - component: {fileID: 7339658988218754348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -80738,7 +80738,7 @@ GameObject:
   - component: {fileID: 1860487327666526116}
   - component: {fileID: 8488886927260691267}
   - component: {fileID: 4190725417517486726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -80934,7 +80934,7 @@ GameObject:
   - component: {fileID: 7660699379069328247}
   - component: {fileID: 4072930039211277202}
   - component: {fileID: 9126385863794615062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -81130,7 +81130,7 @@ GameObject:
   - component: {fileID: 5501387106496193361}
   - component: {fileID: 2918872669072755294}
   - component: {fileID: 4768382494093546914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -81326,7 +81326,7 @@ GameObject:
   - component: {fileID: 2139013095032690184}
   - component: {fileID: 4290132247864778413}
   - component: {fileID: 5101901383006892993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -81522,7 +81522,7 @@ GameObject:
   - component: {fileID: 8281552686879883513}
   - component: {fileID: 6159487097942660707}
   - component: {fileID: 750948206456361302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -81718,7 +81718,7 @@ GameObject:
   - component: {fileID: 9210902833910157923}
   - component: {fileID: 8621100550977559579}
   - component: {fileID: 3159969332221751759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -81914,7 +81914,7 @@ GameObject:
   - component: {fileID: 7838910285670290250}
   - component: {fileID: 5906264729607670449}
   - component: {fileID: 3673658306984321810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -82110,7 +82110,7 @@ GameObject:
   - component: {fileID: 3728820889195537929}
   - component: {fileID: 6923536113758163941}
   - component: {fileID: 8261250572575528403}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -82306,7 +82306,7 @@ GameObject:
   - component: {fileID: 1807329352780974988}
   - component: {fileID: 1617716199551329689}
   - component: {fileID: 4895308862912637795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -82502,7 +82502,7 @@ GameObject:
   - component: {fileID: 6721210017854884766}
   - component: {fileID: 7385046611154549990}
   - component: {fileID: 754662771457996384}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -82698,7 +82698,7 @@ GameObject:
   - component: {fileID: 1184875010902426037}
   - component: {fileID: 926751159113494966}
   - component: {fileID: 9107876741624858100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -82894,7 +82894,7 @@ GameObject:
   - component: {fileID: 7620291060556484050}
   - component: {fileID: 2753658602113758699}
   - component: {fileID: 6318100249660801737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -83090,7 +83090,7 @@ GameObject:
   - component: {fileID: 4473559616256374072}
   - component: {fileID: 5402320639795303785}
   - component: {fileID: 6770539663795007680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -83286,7 +83286,7 @@ GameObject:
   - component: {fileID: 2412940957277508886}
   - component: {fileID: 3275613989839760177}
   - component: {fileID: 6873673764371227585}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -83482,7 +83482,7 @@ GameObject:
   - component: {fileID: 6533042454258923663}
   - component: {fileID: 2245414989040943586}
   - component: {fileID: 2415312593220783358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -83678,7 +83678,7 @@ GameObject:
   - component: {fileID: 309040637486286840}
   - component: {fileID: 4431748617911663122}
   - component: {fileID: 8324829901518216511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -83874,7 +83874,7 @@ GameObject:
   - component: {fileID: 5678895482738634675}
   - component: {fileID: 5430917526601219129}
   - component: {fileID: 7823526603392126120}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -84070,7 +84070,7 @@ GameObject:
   - component: {fileID: 6501163981036437699}
   - component: {fileID: 4817366113157797972}
   - component: {fileID: 5427714723186669497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -84266,7 +84266,7 @@ GameObject:
   - component: {fileID: 1363863846696056063}
   - component: {fileID: 380985259549541473}
   - component: {fileID: 5611233285312604345}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -84462,7 +84462,7 @@ GameObject:
   - component: {fileID: 1409700300760067182}
   - component: {fileID: 1078235935894572116}
   - component: {fileID: 7356902272926536914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -84658,7 +84658,7 @@ GameObject:
   - component: {fileID: 3786063814316429200}
   - component: {fileID: 7247922057073976532}
   - component: {fileID: 5842016720557711612}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -84854,7 +84854,7 @@ GameObject:
   - component: {fileID: 3897201360295167873}
   - component: {fileID: 6339706835255832857}
   - component: {fileID: 2061364806545166403}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -85050,7 +85050,7 @@ GameObject:
   - component: {fileID: 5173779839261994796}
   - component: {fileID: 6133669612763723432}
   - component: {fileID: 5090731256266841708}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -85246,7 +85246,7 @@ GameObject:
   - component: {fileID: 5200907235058589155}
   - component: {fileID: 5034675846077061573}
   - component: {fileID: 8505838507460089385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -85442,7 +85442,7 @@ GameObject:
   - component: {fileID: 6823656879568361912}
   - component: {fileID: 8480536979016457419}
   - component: {fileID: 1717591170785892362}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -85638,7 +85638,7 @@ GameObject:
   - component: {fileID: 912325664893801982}
   - component: {fileID: 1338007287070091905}
   - component: {fileID: 1838842693403758340}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -85834,7 +85834,7 @@ GameObject:
   - component: {fileID: 1508540555561881864}
   - component: {fileID: 3988307493909080207}
   - component: {fileID: 736162401526435474}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -86030,7 +86030,7 @@ GameObject:
   - component: {fileID: 7482575187177974749}
   - component: {fileID: 3236742212830732825}
   - component: {fileID: 2112580577760055139}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -86226,7 +86226,7 @@ GameObject:
   - component: {fileID: 653867647137133896}
   - component: {fileID: 157437781452373718}
   - component: {fileID: 7798811789190896186}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -86422,7 +86422,7 @@ GameObject:
   - component: {fileID: 3329086378862099435}
   - component: {fileID: 4335672608986446892}
   - component: {fileID: 960235708305237736}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -86618,7 +86618,7 @@ GameObject:
   - component: {fileID: 4766888751832786695}
   - component: {fileID: 9107845041010078063}
   - component: {fileID: 5461622583320131308}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -86814,7 +86814,7 @@ GameObject:
   - component: {fileID: 5745272867392662366}
   - component: {fileID: 7270799488663062688}
   - component: {fileID: 5119967529482190643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -87010,7 +87010,7 @@ GameObject:
   - component: {fileID: 5665420883909442961}
   - component: {fileID: 106631795388082171}
   - component: {fileID: 4540109635823479596}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -87206,7 +87206,7 @@ GameObject:
   - component: {fileID: 4708701121180118190}
   - component: {fileID: 5731563848713973607}
   - component: {fileID: 1015643044309212486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -87402,7 +87402,7 @@ GameObject:
   - component: {fileID: 8999552850091202923}
   - component: {fileID: 2289153908303812103}
   - component: {fileID: 4482989233640440152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -87598,7 +87598,7 @@ GameObject:
   - component: {fileID: 7887321162318195657}
   - component: {fileID: 3430880574474980601}
   - component: {fileID: 3660236449429588955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -87794,7 +87794,7 @@ GameObject:
   - component: {fileID: 8595831721729191037}
   - component: {fileID: 6153731267261548257}
   - component: {fileID: 8612125779268579405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -87990,7 +87990,7 @@ GameObject:
   - component: {fileID: 8356019769452561176}
   - component: {fileID: 2935025214780489870}
   - component: {fileID: 2495790933758236590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -88186,7 +88186,7 @@ GameObject:
   - component: {fileID: 3308974256228392342}
   - component: {fileID: 5135723159534400496}
   - component: {fileID: 3451878661068388957}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -88382,7 +88382,7 @@ GameObject:
   - component: {fileID: 4528772218385835207}
   - component: {fileID: 6627771565462052813}
   - component: {fileID: 7355143709999207845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -88578,7 +88578,7 @@ GameObject:
   - component: {fileID: 904272077265175106}
   - component: {fileID: 5408016876187114953}
   - component: {fileID: 4963801561841753588}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -88774,7 +88774,7 @@ GameObject:
   - component: {fileID: 373958530932988717}
   - component: {fileID: 5547826600728461737}
   - component: {fileID: 5969882363586331812}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -88970,7 +88970,7 @@ GameObject:
   - component: {fileID: 3981365838235812839}
   - component: {fileID: 8639600967619656001}
   - component: {fileID: 458506617584549505}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -89166,7 +89166,7 @@ GameObject:
   - component: {fileID: 7090711442822111095}
   - component: {fileID: 1529201993247979687}
   - component: {fileID: 414784014647386677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -89362,7 +89362,7 @@ GameObject:
   - component: {fileID: 8924414896733574469}
   - component: {fileID: 4724635248091446837}
   - component: {fileID: 7136580027681140960}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -89558,7 +89558,7 @@ GameObject:
   - component: {fileID: 4588487606786835285}
   - component: {fileID: 5752801513440971190}
   - component: {fileID: 8947893411632180253}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -89754,7 +89754,7 @@ GameObject:
   - component: {fileID: 2412757909763676039}
   - component: {fileID: 926662460090480665}
   - component: {fileID: 8633866690307362576}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -89950,7 +89950,7 @@ GameObject:
   - component: {fileID: 1918963450624725491}
   - component: {fileID: 3840858904104194012}
   - component: {fileID: 4974634274451020959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -90146,7 +90146,7 @@ GameObject:
   - component: {fileID: 4771293062210124162}
   - component: {fileID: 149840667197288959}
   - component: {fileID: 554169812782070303}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -90342,7 +90342,7 @@ GameObject:
   - component: {fileID: 4898697823526831465}
   - component: {fileID: 4012929652481512611}
   - component: {fileID: 8282819684841922340}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -90538,7 +90538,7 @@ GameObject:
   - component: {fileID: 8170580196945403772}
   - component: {fileID: 2568796949020335345}
   - component: {fileID: 7071476952941966229}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -90734,7 +90734,7 @@ GameObject:
   - component: {fileID: 7088551835172790701}
   - component: {fileID: 3070935499309484316}
   - component: {fileID: 8248661496411898246}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -90930,7 +90930,7 @@ GameObject:
   - component: {fileID: 6772543287127557595}
   - component: {fileID: 7249707770181817738}
   - component: {fileID: 6130574869881042232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -91126,7 +91126,7 @@ GameObject:
   - component: {fileID: 1029085848415647903}
   - component: {fileID: 8103060685584024082}
   - component: {fileID: 3732490731002878125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -91322,7 +91322,7 @@ GameObject:
   - component: {fileID: 8164543453931085780}
   - component: {fileID: 1868427125416500434}
   - component: {fileID: 4045020698462766859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -91518,7 +91518,7 @@ GameObject:
   - component: {fileID: 1646316689930870374}
   - component: {fileID: 6179068427363148703}
   - component: {fileID: 5684825569358129768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -91714,7 +91714,7 @@ GameObject:
   - component: {fileID: 7684321183530205835}
   - component: {fileID: 6242617724473208760}
   - component: {fileID: 1489655939614219691}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -91910,7 +91910,7 @@ GameObject:
   - component: {fileID: 7322165370997712839}
   - component: {fileID: 1807560197646854306}
   - component: {fileID: 5404503226825798580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -92106,7 +92106,7 @@ GameObject:
   - component: {fileID: 8798938643835456908}
   - component: {fileID: 8214312617503114660}
   - component: {fileID: 8263577800561490574}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -92302,7 +92302,7 @@ GameObject:
   - component: {fileID: 2016407063098230112}
   - component: {fileID: 7654034239311825041}
   - component: {fileID: 4240815691677614425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -92498,7 +92498,7 @@ GameObject:
   - component: {fileID: 1467394571858737546}
   - component: {fileID: 837697825339348814}
   - component: {fileID: 2379034046301118175}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -92694,7 +92694,7 @@ GameObject:
   - component: {fileID: 5584941481272629909}
   - component: {fileID: 3684587931358896464}
   - component: {fileID: 7530698347760310344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -92890,7 +92890,7 @@ GameObject:
   - component: {fileID: 6837369115947820006}
   - component: {fileID: 2207015970836399305}
   - component: {fileID: 5495173887532681524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -93086,7 +93086,7 @@ GameObject:
   - component: {fileID: 6720163812925312156}
   - component: {fileID: 8694880923480157808}
   - component: {fileID: 2547062498405166787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -93282,7 +93282,7 @@ GameObject:
   - component: {fileID: 3934507192828896603}
   - component: {fileID: 5969517718350811623}
   - component: {fileID: 5558858655247699836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -93478,7 +93478,7 @@ GameObject:
   - component: {fileID: 7882728603560703884}
   - component: {fileID: 2451238324767823861}
   - component: {fileID: 2496070357644998284}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -93674,7 +93674,7 @@ GameObject:
   - component: {fileID: 2463258133401416232}
   - component: {fileID: 5275094702453296895}
   - component: {fileID: 3508512257831641987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -93870,7 +93870,7 @@ GameObject:
   - component: {fileID: 4541488496514002673}
   - component: {fileID: 7713901174760922219}
   - component: {fileID: 1245042725643676156}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -94066,7 +94066,7 @@ GameObject:
   - component: {fileID: 8574507989549341731}
   - component: {fileID: 2050582416820378516}
   - component: {fileID: 8786280226462256906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -94262,7 +94262,7 @@ GameObject:
   - component: {fileID: 1758365433967388690}
   - component: {fileID: 6559814383832210676}
   - component: {fileID: 1393896817870148740}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -94458,7 +94458,7 @@ GameObject:
   - component: {fileID: 4699631114322902135}
   - component: {fileID: 6930301451547402149}
   - component: {fileID: 3453494824373023728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -94654,7 +94654,7 @@ GameObject:
   - component: {fileID: 3470872642854849813}
   - component: {fileID: 848643557068606942}
   - component: {fileID: 8619515141724275737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -94850,7 +94850,7 @@ GameObject:
   - component: {fileID: 4939474614225620061}
   - component: {fileID: 145085752574894270}
   - component: {fileID: 599479186736212695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -95046,7 +95046,7 @@ GameObject:
   - component: {fileID: 5399561284714471412}
   - component: {fileID: 2548854118023061794}
   - component: {fileID: 6021384663194849483}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -95242,7 +95242,7 @@ GameObject:
   - component: {fileID: 4113929404739626340}
   - component: {fileID: 6084503177297654565}
   - component: {fileID: 1187372566894527329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -95438,7 +95438,7 @@ GameObject:
   - component: {fileID: 2829366475132465226}
   - component: {fileID: 4230577196509056958}
   - component: {fileID: 639248446924261730}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -95634,7 +95634,7 @@ GameObject:
   - component: {fileID: 6838812752880794631}
   - component: {fileID: 7997771764380727109}
   - component: {fileID: 3333887535684888071}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -95830,7 +95830,7 @@ GameObject:
   - component: {fileID: 1682985327068699117}
   - component: {fileID: 7618134073132366697}
   - component: {fileID: 9087821584643003147}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -96026,7 +96026,7 @@ GameObject:
   - component: {fileID: 5022586461668798043}
   - component: {fileID: 4863573109626162929}
   - component: {fileID: 5331961267206113111}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -96222,7 +96222,7 @@ GameObject:
   - component: {fileID: 5247819647484503157}
   - component: {fileID: 3089358948357356485}
   - component: {fileID: 305738102754262353}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -96418,7 +96418,7 @@ GameObject:
   - component: {fileID: 4327489169782203176}
   - component: {fileID: 4638370151026087625}
   - component: {fileID: 742099640619625330}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -96614,7 +96614,7 @@ GameObject:
   - component: {fileID: 8677814599926511677}
   - component: {fileID: 6609479368560773005}
   - component: {fileID: 1116417975384686969}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -96810,7 +96810,7 @@ GameObject:
   - component: {fileID: 6394419206960253211}
   - component: {fileID: 7410663081327920800}
   - component: {fileID: 1512503885819754512}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -97006,7 +97006,7 @@ GameObject:
   - component: {fileID: 6039899996365356241}
   - component: {fileID: 6644571877970708740}
   - component: {fileID: 7324900842234279184}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -97202,7 +97202,7 @@ GameObject:
   - component: {fileID: 3327084544342424717}
   - component: {fileID: 6088443289222778518}
   - component: {fileID: 3364581752681605256}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -97398,7 +97398,7 @@ GameObject:
   - component: {fileID: 76806445468439616}
   - component: {fileID: 8074953587506132155}
   - component: {fileID: 5079773648709979875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -97594,7 +97594,7 @@ GameObject:
   - component: {fileID: 7411166486185539784}
   - component: {fileID: 5810522108351549848}
   - component: {fileID: 6569973112668065833}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -97786,7 +97786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3764130123515587105}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: voxelGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98354,7 +98354,7 @@ GameObject:
   - component: {fileID: 6194899204610199341}
   - component: {fileID: 7704484480460200982}
   - component: {fileID: 837647269972726008}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -98550,7 +98550,7 @@ GameObject:
   - component: {fileID: 7360176467803350991}
   - component: {fileID: 7852534842952530719}
   - component: {fileID: 1061252560350160979}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -98746,7 +98746,7 @@ GameObject:
   - component: {fileID: 2692079414527874585}
   - component: {fileID: 5670286606605125226}
   - component: {fileID: 1566461197331341080}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -98942,7 +98942,7 @@ GameObject:
   - component: {fileID: 4576961129268794546}
   - component: {fileID: 5177125215610822977}
   - component: {fileID: 2351552366816777993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -99138,7 +99138,7 @@ GameObject:
   - component: {fileID: 6079914166367193794}
   - component: {fileID: 934821596073392665}
   - component: {fileID: 4569318652785106607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -99334,7 +99334,7 @@ GameObject:
   - component: {fileID: 6768287305803442684}
   - component: {fileID: 2952245039169688749}
   - component: {fileID: 183422377717534922}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -99530,7 +99530,7 @@ GameObject:
   - component: {fileID: 1161808227188868769}
   - component: {fileID: 5194942423632101819}
   - component: {fileID: 5859940173110389007}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -99726,7 +99726,7 @@ GameObject:
   - component: {fileID: 7031099533216473531}
   - component: {fileID: 3558238717935072498}
   - component: {fileID: 196106098591652128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -99922,7 +99922,7 @@ GameObject:
   - component: {fileID: 6989271049431471402}
   - component: {fileID: 6861412025017479668}
   - component: {fileID: 4552089298745632339}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -100118,7 +100118,7 @@ GameObject:
   - component: {fileID: 3841047075344338916}
   - component: {fileID: 5589383292238090727}
   - component: {fileID: 5462587523262244891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -100314,7 +100314,7 @@ GameObject:
   - component: {fileID: 6723385817967974466}
   - component: {fileID: 5705332390029860146}
   - component: {fileID: 1026155124018632811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -100510,7 +100510,7 @@ GameObject:
   - component: {fileID: 5198174834504247215}
   - component: {fileID: 2030623165799996554}
   - component: {fileID: 7153205309563090124}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -100706,7 +100706,7 @@ GameObject:
   - component: {fileID: 4002926235064608662}
   - component: {fileID: 8224904861421582883}
   - component: {fileID: 4412387187914915939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -100902,7 +100902,7 @@ GameObject:
   - component: {fileID: 7090228564837762495}
   - component: {fileID: 940114711418880092}
   - component: {fileID: 1224075051701235739}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -101098,7 +101098,7 @@ GameObject:
   - component: {fileID: 7432662829995625038}
   - component: {fileID: 4016467427672113469}
   - component: {fileID: 3555802111858975409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -101294,7 +101294,7 @@ GameObject:
   - component: {fileID: 3912891628781859210}
   - component: {fileID: 3977102980436950802}
   - component: {fileID: 979246935676777471}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -101490,7 +101490,7 @@ GameObject:
   - component: {fileID: 3380326341108768978}
   - component: {fileID: 5502344279142203105}
   - component: {fileID: 8792802998894221727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -101686,7 +101686,7 @@ GameObject:
   - component: {fileID: 8790915196891444593}
   - component: {fileID: 1821642681152441347}
   - component: {fileID: 8134901374283136355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -101882,7 +101882,7 @@ GameObject:
   - component: {fileID: 3098509275662018766}
   - component: {fileID: 7442003438228390608}
   - component: {fileID: 3680296564816172174}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -102078,7 +102078,7 @@ GameObject:
   - component: {fileID: 4433874813866654006}
   - component: {fileID: 5545689742607341140}
   - component: {fileID: 4150597433125775187}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -102274,7 +102274,7 @@ GameObject:
   - component: {fileID: 3591377197020317314}
   - component: {fileID: 7981418792857800757}
   - component: {fileID: 5125421977570265042}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -102470,7 +102470,7 @@ GameObject:
   - component: {fileID: 7361403618562870737}
   - component: {fileID: 4235648581307930790}
   - component: {fileID: 6564794920703332613}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -102666,7 +102666,7 @@ GameObject:
   - component: {fileID: 5586950893237744865}
   - component: {fileID: 1249261422456830370}
   - component: {fileID: 2166640492562321555}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -102862,7 +102862,7 @@ GameObject:
   - component: {fileID: 5513903801789896075}
   - component: {fileID: 5311658458326638566}
   - component: {fileID: 6787792975860753279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -103058,7 +103058,7 @@ GameObject:
   - component: {fileID: 3635257378524199711}
   - component: {fileID: 5112308779167048257}
   - component: {fileID: 3944914705713952589}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -103254,7 +103254,7 @@ GameObject:
   - component: {fileID: 6172157692814657510}
   - component: {fileID: 8803968275801093628}
   - component: {fileID: 3955977903864611708}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -103450,7 +103450,7 @@ GameObject:
   - component: {fileID: 5084879396382161551}
   - component: {fileID: 4495915988813741134}
   - component: {fileID: 3716730665147921894}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -103646,7 +103646,7 @@ GameObject:
   - component: {fileID: 2053827420404297444}
   - component: {fileID: 6515760077261226407}
   - component: {fileID: 4000309983229062182}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -103842,7 +103842,7 @@ GameObject:
   - component: {fileID: 5168685343164209349}
   - component: {fileID: 5593001913366200214}
   - component: {fileID: 7183654350533594897}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -104038,7 +104038,7 @@ GameObject:
   - component: {fileID: 5873987781987720315}
   - component: {fileID: 2647489241309764423}
   - component: {fileID: 7770999530775483618}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -104234,7 +104234,7 @@ GameObject:
   - component: {fileID: 3978506565964339591}
   - component: {fileID: 3362731239285910254}
   - component: {fileID: 7239935538818991914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -104430,7 +104430,7 @@ GameObject:
   - component: {fileID: 4555196860122202698}
   - component: {fileID: 4319593862678611072}
   - component: {fileID: 6603346031535917142}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -104626,7 +104626,7 @@ GameObject:
   - component: {fileID: 8671998847403168142}
   - component: {fileID: 9076717631550697467}
   - component: {fileID: 6519763863008586768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -104822,7 +104822,7 @@ GameObject:
   - component: {fileID: 7647570683919716462}
   - component: {fileID: 9095102640620905962}
   - component: {fileID: 1018816624614837080}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -105018,7 +105018,7 @@ GameObject:
   - component: {fileID: 6477301225120451614}
   - component: {fileID: 2377225904981861181}
   - component: {fileID: 6273581242614938406}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
@@ -105214,7 +105214,7 @@ GameObject:
   - component: {fileID: 4444359888552752215}
   - component: {fileID: 7209507216646984058}
   - component: {fileID: 9000873375457724835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MyVoxel(Clone)
   m_TagString: collectible
   m_Icon: {fileID: 0}
