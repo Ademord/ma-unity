@@ -17,99 +17,95 @@ public class DroneAgent : Agent
     // actions <SimpleAgentController>:
         // vertical (3)
         // horizontal as rotation (3)
-    [Tooltip("The platform to be moved around")]
-    public GameObject platform;
-
     private Vector3 startPosition;
     private SimpleCharacterControllerWithYaw characterController;
     new private Rigidbody rigidbody;
     private TrainingArea flowerArea;
-    public float NectarObtained { get; private set; }
-    private bool insideTorus;
-    private Collider currentTorusSegment;
-    [Header("Walk Speed")]
-    [Range(0.1f, m_maxWalkingSpeed)]
-    [SerializeField]
-    [Tooltip(
-        "The speed the agent will try to match.\n\n" +
-        "TRAINING:\n" +
-        "For VariableSpeed envs, this value will randomize at the start of each training episode.\n" +
-        "Otherwise the agent will try to match the speed set here.\n\n" +
-        "INFERENCE:\n" +
-        "During inference, VariableSpeed agents will modify their behavior based on this value " +
-        "whereas the CrawlerDynamic & CrawlerStatic agents will run at the speed specified during training "
-    )]
-    //The walking speed to try and achieve
-    private float m_TargetWalkingSpeed = m_maxWalkingSpeed;
 
-    const float m_maxWalkingSpeed = 2; //The max walking speed
+    private float DOT_PRODUCT_ALIGNMENT = -0.9f;
+    private int SCANNER_RAYCAST_DISTANCE = 3;
+    // public float NectarObtained { get; private set; }
+    // private bool insideTorus;
+    // private Collider currentTorusSegment;
+
+    // [Header("Walk Speed")]
+    // [Range(0.1f, m_maxWalkingSpeed)]
+    // [SerializeField]
+    //The walking speed to try and achieve
+    // private float m_TargetWalkingSpeed = m_maxWalkingSpeed;
+
+    // const float m_maxWalkingSpeed = 2; //The max walking speed
 
     //The current target walking speed. Clamped because a value of zero will cause NaNs
-    public float TargetWalkingSpeed
-    {
-        get { return m_TargetWalkingSpeed; }
-        set { m_TargetWalkingSpeed = Mathf.Clamp(value, .1f, m_maxWalkingSpeed); }
-    }
+    // public float TargetWalkingSpeed
+    // {
+    //     get { return m_TargetWalkingSpeed; }
+    //     set { m_TargetWalkingSpeed = Mathf.Clamp(value, .1f, m_maxWalkingSpeed); }
+    // }
     //The direction an agent will walk during training.
-    [Header("Target To Walk Towards")]
+    [Header("Target Parameters")]
     public Transform TargetPrefab; //Target prefab to use in Dynamic envs
     private Transform m_Target; //Target the agent will walk towards during training.
     private PlantController m_TargetController;
   
-    //This will be used as a stabilized model space reference point for observations
-    //Because ragdolls can move erratically during training, using a stabilized reference transform improves learning
-    OrientationCubeController m_OrientationCube;
-
-    //The indicator graphic gameobject that points towards the target
-    DirectionIndicator m_DirectionIndicator;
-
-    [Tooltip("Move speed in meters/second")]
-    public float feedSpeed = 1f;
-    private float lastVerticalMove;
-    private float lastHorizontalMove;
-    private float lastRotation;
+    // [Tooltip("Move speed in meters/second")]
+    // public float feedSpeed = 1f;
+    // private float lastVerticalMove;
+    // private float lastHorizontalMove;
+    // private float lastRotation;
     private Vector3 targetSpawnPosition = new Vector3(0f, 1.5f, 0f);
+    
+    // Start is called before the first frame update
+    private GameObject lastHit;
+    // public LayerMask layer;
+    [Header("Collectible Parameters")]
+    public Material disabledMaterial;
+    private Vector3 collision = Vector3.zero;
+    
     /// <summary>
     /// Called once when the agent is first initialized
     /// </summary>
     public override void Initialize()
-    {
+    {   
+        print("entered initialize " + DateTime.Now.ToString("HH:mm:ss tt"));
         SpawnTarget(TargetPrefab, targetSpawnPosition); //spawn target
     
-        m_OrientationCube = GetComponentInChildren<OrientationCubeController>();
-        m_DirectionIndicator = GetComponentInChildren<DirectionIndicator>();
-
+     
         startPosition = transform.position;
         characterController = GetComponent<SimpleCharacterControllerWithYaw>();
         rigidbody = GetComponent<Rigidbody>();
-        flowerArea = GetComponentInParent<TrainingArea>();
-        
+        // flowerArea = GetComponentInParent<TrainingArea>();
+        print("exited initialize " + DateTime.Now.ToString("HH:mm:ss tt"));
+
     }
     // <summary>
     /// Called every time an episode begins. This is where we reset the challenge.
     /// </summary>
     public override void OnEpisodeBegin()
     {
+        print("entered onEpBegin " + DateTime.Now.ToString("HH:mm:ss tt"));
+
         transform.position = startPosition;
         transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
         rigidbody.velocity = Vector3.zero;
-
-        // Reset platform position (5 meters away from the agent in a random direction)
+        lastHit = null;
+        // Reset target position (5 meters away from the agent in a random direction)
         Vector3 targetPosition = targetSpawnPosition + Quaternion.Euler(Vector3.up * Random.Range(0f, 360f)) * Vector3.forward * 5f;
         m_Target.transform.localPosition = targetPosition;
-        m_TargetController.ResetCollectibles();
+        // TODO in line 124
+        // m_TargetController.ResetCollectibles();
         
-        NectarObtained = 0f;
-        lastVerticalMove = 0f;
-        lastHorizontalMove = 0f;
+        // NectarObtained = 0f;
+        // lastVerticalMove = 0f;
+        // lastHorizontalMove = 0f;
 
         //Set our goal walking speed
-        TargetWalkingSpeed = Random.Range(0.1f, m_maxWalkingSpeed);
+        // TargetWalkingSpeed = Random.Range(0.1f, m_maxWalkingSpeed);
         // Debug.Log("TargetWalkingSpeed: " + TargetWalkingSpeed);
-        insideTorus = false;
-        currentTorusSegment = null;
-        
-        UpdateOrientationObjects();
+        // insideTorus = false;
+        // currentTorusSegment = null;
+        print("exited onEpBegin " + DateTime.Now.ToString("HH:mm:ss tt"));
+
     }
     /// <summary>
     /// Spawns a target prefab at pos
@@ -119,21 +115,9 @@ public class DroneAgent : Agent
     void SpawnTarget(Transform prefab, Vector3 pos)
     {
         m_Target = Instantiate(prefab, pos, Quaternion.identity, transform.parent);
-        m_TargetController = new PlantController(m_Target);
+        // TODO enable or refactor this later
+        // m_TargetController = new PlantController(m_Target);
 
-    }
-    
-    /// <summary>
-    /// Update OrientationCube and DirectionIndicator
-    /// </summary>
-    void UpdateOrientationObjects()
-    {
-        // Debug.Log("m_OrientationCube is null" + m_OrientationCube is null);
-        m_OrientationCube.UpdateOrientation(transform, m_Target);
-        if (m_DirectionIndicator)
-        {
-            m_DirectionIndicator.MatchOrientation(m_OrientationCube.transform);
-        }
     }
     
     private void MoveToSafeRandomPosition()
@@ -212,13 +196,7 @@ public class DroneAgent : Agent
         // motivate to move in a strafe
         if (horizontal != 0)
         {
-            // run33
             AddReward(0.01f);
-            // run32 no stacked == reward only inside
-            // if (insideTorus)
-            // { 
-            //     AddReward(0.01f);
-            // }
         }
 
         // // penalize if moving in opposite fashion (LEFT-RIGHT-LEFT-RIGHT)
@@ -238,26 +216,18 @@ public class DroneAgent : Agent
         //     AddReward(-0.01f);
         // }
 
-        lastHorizontalMove = horizontal;
-        lastVerticalMove = vertical;
-        lastRotation = yaw;
+        // lastHorizontalMove = horizontal;
+        // lastVerticalMove = vertical;
+        // lastRotation = yaw;
         
         characterController.ForwardInput = vertical;
         characterController.TurnInput = yaw;
         characterController.SidesInput = horizontal;
-        
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.01f);
-        foreach (Collider collider in colliders)
-        {
-            insideTorus = collider.CompareTag("collectible");
-            // Debug.Log("inside torus: " + insideTorus);
-            GiveReward(collider);
-        }
     }
   
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("platform"))
+        if (collision.collider.CompareTag("boundary"))
         {
             // boundary negative reward
             AddReward(-1f); 
@@ -266,68 +236,55 @@ public class DroneAgent : Agent
 
         }
     }
-    private void GiveReward(Collider collider)
-    {
-        if (insideTorus)
-        {
-            float insideReward = 0;
-            float movingReward = 0;
-
-            
-            TorusSegmentController torusSegment = collider.transform.parent.gameObject.GetComponent<TorusSegmentController>();
-            float nectarReceived = torusSegment.Feed(feedSpeed);
-            NectarObtained += nectarReceived;
-            if (NectarObtained > 0)
-            {
-                insideReward = 1f;
-            }
-            
-            if (NectarObtained >= torusSegment.MAX_NECTAR_AMOUNT * 3.8f) //  * (4f/characterController.moveSpeed)
-            {
-                EndEpisode();
-            }
-            var cubeForward = m_OrientationCube.transform.forward;
-            
-            // Set reward for this step according to mixture of the following elements.
-            // a. Match target speed
-            //This reward will approach 1 if it matches perfectly and approach zero as it deviates
-            var matchSpeedReward = GetMatchingVelocityReward(cubeForward * TargetWalkingSpeed, rigidbody.velocity);
-            // b. Rotation alignment with target direction.
-            //This reward will approach 1 if it faces the target direction perfectly and approach zero as it deviates
-            var lookAtTargetReward = (Vector3.Dot(cubeForward, transform.forward) + 1) * .5F;
-
-            // runs .18
-            // var result_reward = insideReward; //  + 0.10f * insideReward * (lookAtTargetReward + matchSpeedReward);
-
-            // runs 19.
-            var result_reward = insideReward * lookAtTargetReward; //  + 0.10f * insideReward * (lookAtTargetReward + matchSpeedReward);
-          
-            // add reward
-            AddReward(result_reward);
-            // Debug.Log("Rewards obtained: " + result_reward);
-        }
-    }
-
-    /// <summary>
-    /// Normalized value of the difference in actual speed vs goal walking speed.
-    /// </summary>
-    public float GetMatchingVelocityReward(Vector3 velocityGoal, Vector3 actualVelocity)
-    {
-        //distance between our actual velocity and goal velocity
-        var velDeltaMagnitude = Mathf.Clamp(Vector3.Distance(actualVelocity, velocityGoal), 0, TargetWalkingSpeed);
-
-        //return the value on a declining sigmoid shaped curve that decays from 1 to 0
-        //This reward will approach 1 if it matches perfectly and approach zero as it deviates
-        return Mathf.Pow(1 - Mathf.Pow(velDeltaMagnitude / TargetWalkingSpeed, 2), 2);
-    }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(insideTorus);
+        var distanceToTarget = -1f;
+        if (lastHit != null) distanceToTarget = Vector3.Distance(transform.position, lastHit.transform.position);
+        print("observed a distance to my Target of: " + distanceToTarget);
+        sensor.AddObservation(distanceToTarget);
     }
 
     private void FixedUpdate()
     {
-        UpdateOrientationObjects();
+        // UpdateOrientationObjects();
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        var ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, SCANNER_RAYCAST_DISTANCE))
+        {
+            lastHit = hit.transform.gameObject;
+
+            if (lastHit.CompareTag("collectible"))
+            {
+                // draw collision
+                collision = hit.point;
+                
+                // give reward if not given before AND dot product < .6
+                MeshRenderer meshRenderer = lastHit.GetComponent<MeshRenderer>();
+                if (meshRenderer.material != disabledMaterial && Vector3.Dot(lastHit.transform.forward, transform.forward) < DOT_PRODUCT_ALIGNMENT)
+                {
+                    print("giving reward here");
+                    meshRenderer.material = disabledMaterial;
+                }
+                else
+                {
+                    print("NOT giving reward here");
+                }
+            }
+        }
+        else
+        {
+            lastHit = null;
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        // Update();
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(collision, 0.2f);
     }
 }

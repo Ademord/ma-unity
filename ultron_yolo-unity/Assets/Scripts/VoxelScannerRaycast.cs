@@ -11,20 +11,33 @@ public class VoxelScannerRaycast : MonoBehaviour
     public LayerMask layer;
     public Material disabledMaterial;
     private Vector3 collision = Vector3.zero;
+    
     // Update is called once per frame
     void Update()
     {
-        var ray = new Ray(this.transform.position, this.transform.forward);
+        var ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 100)){
+        if (Physics.Raycast(ray, out hit, 5))
+        {
             lastHit = hit.transform.gameObject;
-            // is this correct? will this be a single Box from the voxels?
-            // lastHit.SetActive(false);
-            // could i also change the color maybe? to some gray-ish so it looks "disabled"? 
-            // lastHit.material = disabledMaterial;
-            collision = hit.point;
-            MeshRenderer meshRenderer = lastHit.GetComponent<MeshRenderer>();
-            meshRenderer.material = disabledMaterial;
+
+            if (lastHit.CompareTag("collectible"))
+            {
+                // draw collision
+                collision = hit.point;
+                
+                // give reward if not given before AND dot product < .6
+                MeshRenderer meshRenderer = lastHit.GetComponent<MeshRenderer>();
+                if (meshRenderer.material != disabledMaterial && Vector3.Dot(lastHit.transform.forward, transform.forward) < -0.6f)
+                {
+                    print("giving reward here");
+                    meshRenderer.material = disabledMaterial;
+                }
+                else
+                {
+                    print("NOT giving reward here");
+                }
+            }
         }
     }
 

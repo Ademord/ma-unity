@@ -77,7 +77,10 @@ namespace MeshVoxelizerProject
         {
             List<Vector3> verts = new List<Vector3>();
             List<int> indices = new List<int>();
-
+            
+            var voxelGrid = transform.parent.transform.Find("voxelGrid");
+            var shift = 0.5f;
+            var localScale = new Vector3(size/400f, size/400f, size/200f);
             for (int z = 0; z < size; z+=1)
             {
                 for (int y = 0; y < size; y+=1)
@@ -86,14 +89,15 @@ namespace MeshVoxelizerProject
                     {
                         if (voxels[x, y, z] != 1) continue;
 
-                        Vector3 pos = min + new Vector3(x * scale.x, y * scale.y, z * scale.z);
-                        
+                        // Vector3 pos = min + new Vector3(x * scale.x, y * scale.y, z * scale.z);
+                        Vector3 pos_prefab = min + new Vector3((x + shift) * scale.x, (y + shift) * scale.y , (z + shift) * scale.z) ;
+
                         // if (x == size - 1 || voxels[x + 1, y, z] == 0)
                         //     AddRightQuad(verts, indices, scale, pos);
-                        //
+
                         // if (x == 0 || voxels[x - 1, y, z] == 0)
                         //     AddLeftQuad(verts, indices, scale, pos);
-                        //
+                        
                         // if (y == size - 1 || voxels[x, y + 1, z] == 0)
                         //     AddTopQuad(verts, indices, scale, pos);
 
@@ -104,30 +108,17 @@ namespace MeshVoxelizerProject
                         {
                             // AddFrontQuad(verts, indices, scale, pos);
                             // print("y:" + y);
-                            var shift = 0.5f;
-                            Vector3 pos_prefab = min + new Vector3((x + shift) * scale.x, (y + shift) * scale.y , (z + shift) * scale.z) ;
-                            // Vector3 pos_prefab = min + new Vector3((x+0.5f) * scale.x, (y+0.5f) * scale.y , z * scale.z * 1.04f) ;
-                            var new_cube = Instantiate(TargetPrefab,transform.parent.transform.position + pos_prefab, Quaternion.identity, transform);
-                            new_cube.transform.localScale = new Vector3(size/400f, size/400f, size/2000f);
-                            // LineRenderer lineRenderer = new_cube.GetComponent<LineRenderer>();
-                            // lineRenderer.SetVertexCount(2);
-                            // lineRenderer.SetPosition(0, new_cube.position);
-                            // lineRenderer.SetPosition(1, new_cube.forward + new_cube.position);
+                            var new_cube = Instantiate(TargetPrefab,transform.parent.transform.position + pos_prefab, Quaternion.identity, voxelGrid);
+                            new_cube.transform.localScale = localScale;
                         }
                         
                         if (z == 0 || voxels[x, y, z - 1] == 0)
                         {
                             // AddBackQuad(verts, indices, scale, pos);
-                            var shift = 0.5f;
-                            Vector3 pos_prefab = min + new Vector3((x + shift) * scale.x, (y + shift) * scale.y , (z + shift) * scale.z) ;
-                            var new_cube = Instantiate(TargetPrefab, transform.parent.transform.position + pos_prefab, Quaternion.identity, transform);
-                            new_cube.transform.localScale = new Vector3(size/400f, size/400f, size/2000f);
+                            var new_cube = Instantiate(TargetPrefab, transform.parent.transform.position + pos_prefab, Quaternion.identity, voxelGrid);
+                            new_cube.transform.localScale = localScale;
                             new_cube.transform.Rotate(new Vector3(-180, 0, 0));
  
-                            // LineRenderer lineRenderer = new_cube.GetComponent<LineRenderer>();
-                            // lineRenderer.SetVertexCount(2);
-                            // lineRenderer.SetPosition(0, new_cube.position);
-                            // lineRenderer.SetPosition(1, new_cube.forward + new_cube.position);
 
                         }
                     }
