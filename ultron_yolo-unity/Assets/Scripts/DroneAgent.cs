@@ -46,17 +46,17 @@ public class DroneAgent : Agent
     //     set { m_TargetWalkingSpeed = Mathf.Clamp(value, .1f, m_maxWalkingSpeed); }
     // }
     //The direction an agent will walk during training.
-    [Header("Target Parameters")]
+    [Header("TrainingArea Parameters")]
     public Transform TargetPrefab; //Target prefab to use in Dynamic envs
-    private Transform m_Target; //Target the agent will walk towards during training.
-    private PlantController m_TargetController;
-  
+    public Transform m_Target; //Target the agent will walk towards during training.
+    private Transform trainingArea;
+    private TrainingAreaController trainingAreaController;
+
     // [Tooltip("Move speed in meters/second")]
     // public float feedSpeed = 1f;
     // private float lastVerticalMove;
     // private float lastHorizontalMove;
     // private float lastRotation;
-    private Vector3 targetSpawnPosition = new Vector3(0f, 1.5f, 0f);
     
     // Start is called before the first frame update
     private GameObject lastHit;
@@ -68,28 +68,21 @@ public class DroneAgent : Agent
     
     private Vector3 collision = Vector3.zero;
     
-    /// <summary>
     /// Called once when the agent is first initialized
-    /// </summary>
     public override void Initialize()
     {   
-        print("entered initialize " + DateTime.Now.ToString("HH:mm:ss tt"));
-        SpawnTarget(TargetPrefab, targetSpawnPosition); //spawn target
-    
-     
+        // agent variables
         startPosition = transform.position;
         characterController = GetComponent<SimpleCharacterControllerWithYaw>();
         rigidbody = GetComponent<Rigidbody>();
-        // flowerArea = GetComponentInParent<TrainingArea>();
-        print("exited initialize " + DateTime.Now.ToString("HH:mm:ss tt"));
-
+        // training area variables
+        trainingArea = transform.Find("TrainingArea");
+        trainingAreaController = trainingArea.GetComponent<TrainingAreaController>();
     }
-    // <summary>
+    
     /// Called every time an episode begins. This is where we reset the challenge.
-    /// </summary>
     public override void OnEpisodeBegin()
     {
-        print("entered onEpBegin " + DateTime.Now.ToString("HH:mm:ss tt"));
 
         transform.position = startPosition;
         transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
@@ -97,33 +90,13 @@ public class DroneAgent : Agent
         lastHit = null;
         dotProductToTarget = -1f;
         distanceToTarget = -1f;
-        // Reset target position (5 meters away from the agent in a random direction)
-        Vector3 targetPosition = targetSpawnPosition + Quaternion.Euler(Vector3.up * Random.Range(0f, 360f)) * Vector3.forward * 5f;
-        m_Target.transform.localPosition = targetPosition;
-        // TODO in line 124
-        // m_TargetController.ResetCollectibles();
         
-        // NectarObtained = 0f;
-        // lastVerticalMove = 0f;
-        // lastHorizontalMove = 0f;
-
-        //Set our goal walking speed
-        // TargetWalkingSpeed = Random.Range(0.1f, m_maxWalkingSpeed);
-        // Debug.Log("TargetWalkingSpeed: " + TargetWalkingSpeed);
-        // insideTorus = false;
-        // currentTorusSegment = null;
-        print("exited onEpBegin " + DateTime.Now.ToString("HH:mm:ss tt"));
-
+      
+        trainingAreaController.Reset();
     }
-    /// <summary>
-    /// Spawns a target prefab at pos
-    /// </summary>
-    /// <param name="prefab"></param>
-    /// <param name="pos"></param>
     void SpawnTarget(Transform prefab, Vector3 pos)
     {
         m_Target = Instantiate(prefab, pos, Quaternion.identity, transform.parent);
-        // TODO enable or refactor this later
         // m_TargetController = new PlantController(m_Target);
 
     }
@@ -253,9 +226,9 @@ public class DroneAgent : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        print("observed a distanceToTarget: " + distanceToTarget);
-        print("observed a dotProductToTarget: " + dotProductToTarget);
-        
+        // print("observed a distanceToTarget: " + distanceToTarget);
+        // print("observed a dotProductToTarget: " + dotProductToTarget);
+
         sensor.AddObservation(distanceToTarget);
         sensor.AddObservation(dotProductToTarget);
     }
@@ -265,6 +238,7 @@ public class DroneAgent : Agent
     {
         var ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
+        // check if raycast hits something in COLLECTIBLE layerMask
         if (Physics.Raycast(ray, out hit, SCANNER_RAYCAST_DISTANCE, collectibleLayerMask))
         {
             // found a target, record variables
@@ -272,25 +246,17 @@ public class DroneAgent : Agent
             dotProductToTarget = Vector3.Dot(lastHit.transform.forward, transform.forward);
             distanceToTarget = Vector3.Distance(lastHit.transform.position, transform.position);
             
-            // if (lastHit.CompareTag("collectible"))
-            // {
-                // draw collision
+            // draw collision
             collision = hit.point;
             
             // give reward if not given before AND dot product < .6
-            MeshRenderer meshRenderer = lastHit.GetComponent<MeshRenderer>();
-            if (meshRenderer.material != disabledMaterial && 
-                dotProductToTarget < REWARD_DOT_PRODUCT_TO_TARGET &&
-                distanceToTarget < REWARD_DISTANCE_TO_TARGET)
+            VoxelController myVoxel = lastHit.GetComponent<VoxelController>();
+            if (dotProductToTarget < REWARD_DOT_PRODUCT_TO_TARGET && distanceToTarget < REWARD_DISTANCE_TO_TARGET)
             {
                 print("giving reward here");
-                meshRenderer.material = disabledMaterial;
+                bool collected = myVoxel.Collect();
+                if (collected) AddReward(0.1f);
             }
-                // else
-                // {
-                //     print("NOT giving reward here");
-                // }
-            // }
         }
         else
         {
