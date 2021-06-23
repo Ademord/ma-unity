@@ -17,39 +17,19 @@ public class DroneAgent : Agent
     // actions <SimpleAgentController>:
         // vertical (3)
         // horizontal as rotation (3)
+    // agent variables
     private Vector3 startPosition;
     private SimpleCharacterControllerWithYaw characterController;
     new private Rigidbody rigidbody;
-    private TrainingArea flowerArea;
-
-   
-    private int SCANNER_RAYCAST_DISTANCE = 5;
+    
+    // observations
     private float distanceToTarget;
-
     private float dotProductToTarget;
-    // public float NectarObtained { get; private set; }
-    // private bool insideTorus;
-    // private Collider currentTorusSegment;
-
-    // [Header("Walk Speed")]
-    // [Range(0.1f, m_maxWalkingSpeed)]
-    // [SerializeField]
-    //The walking speed to try and achieve
-    // private float m_TargetWalkingSpeed = m_maxWalkingSpeed;
-
-    // const float m_maxWalkingSpeed = 2; //The max walking speed
-
-    //The current target walking speed. Clamped because a value of zero will cause NaNs
-    // public float TargetWalkingSpeed
-    // {
-    //     get { return m_TargetWalkingSpeed; }
-    //     set { m_TargetWalkingSpeed = Mathf.Clamp(value, .1f, m_maxWalkingSpeed); }
-    // }
-    //The direction an agent will walk during training.
+ 
     [Header("TrainingArea Parameters")]
-    public Transform TargetPrefab; //Target prefab to use in Dynamic envs
-    public Transform m_Target; //Target the agent will walk towards during training.
-    private Transform trainingArea;
+    // public Transform TargetPrefab; //Target prefab to use in Dynamic envs
+    // public Transform m_Target; //Target the agent will walk towards during training.
+    public Transform trainingArea;
     private TrainingAreaController trainingAreaController;
 
     // [Tooltip("Move speed in meters/second")]
@@ -58,82 +38,43 @@ public class DroneAgent : Agent
     // private float lastHorizontalMove;
     // private float lastRotation;
     
-    // Start is called before the first frame update
-    private GameObject lastHit;
+    // game rules
     [Header("Collectible Parameters")]
+    private GameObject lastHit;
     public LayerMask collectibleLayerMask;
-    public Material disabledMaterial;
-    public float REWARD_DOT_PRODUCT_TO_TARGET = -0.98f;
-    public float REWARD_DISTANCE_TO_TARGET = 3f;
-    
     private Vector3 collision = Vector3.zero;
-    
+
+    private int SCANNER_RAYCAST_DISTANCE = 5;
+    public float REWARD_DOT_PRODUCT_TO_TARGET = -0.90f;
+    public float REWARD_DISTANCE_TO_TARGET = 3.5f;
+
+    private int countCollected = 0;
     /// Called once when the agent is first initialized
     public override void Initialize()
     {   
         // agent variables
-        startPosition = transform.position;
+        startPosition = new Vector3(0f, 0.5f, 0f);
         characterController = GetComponent<SimpleCharacterControllerWithYaw>();
         rigidbody = GetComponent<Rigidbody>();
         // training area variables
-        trainingArea = transform.Find("TrainingArea");
+        // trainingArea = transform.Find("TrainingArea");
         trainingAreaController = trainingArea.GetComponent<TrainingAreaController>();
     }
     
     /// Called every time an episode begins. This is where we reset the challenge.
     public override void OnEpisodeBegin()
     {
-
         transform.position = startPosition;
         transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
         rigidbody.velocity = Vector3.zero;
         lastHit = null;
         dotProductToTarget = -1f;
         distanceToTarget = -1f;
-        
-      
+        countCollected = 0;
         trainingAreaController.Reset();
     }
-    void SpawnTarget(Transform prefab, Vector3 pos)
-    {
-        m_Target = Instantiate(prefab, pos, Quaternion.identity, transform.parent);
-        // m_TargetController = new PlantController(m_Target);
-
-    }
     
-    private void MoveToSafeRandomPosition()
-    {
-        bool safePositionFound = false;
-        int attemptsRemaining = 100;
-        Vector3 potentialPosition = Vector3.zero;
-        Quaternion potentialRotation = new Quaternion();
-
-        // loop until safe position
-        while (!safePositionFound && attemptsRemaining > 0)
-        {
-            float height = 4f; // UnityEngine.Random.Range(1f, 8f);
-            float radius = UnityEngine.Random.Range(2f, 7f);
-            Quaternion direction = Quaternion.Euler(
-                0, UnityEngine.Random.Range(-180f, 180f), 0f);
-            potentialPosition = flowerArea.transform.localPosition
-                                + Vector3.up * height + direction * Vector3.forward * radius;
-            // float pitch = UnityEngine.Random.Range(-60f, 60f);
-            float pitch = 0;
-            float yaw = UnityEngine.Random.Range(-180f, 180f);
-            potentialRotation = Quaternion.Euler(pitch, yaw, 0f);
-
-            // get a list of all colliders colliding with agent in potentialPosition
-            Collider[] colliders = Physics.OverlapSphere(potentialPosition, 0.05f);
-            // safe position if no colliders found
-            safePositionFound = colliders.Length == 0;
-        }
-
-        Debug.Assert(safePositionFound, "Could not found a safe position");
-
-        // set position, rotation
-        transform.position = potentialPosition;
-        transform.rotation = potentialRotation;
-    }
+    
     
     // <summary>
     /// Controls the agent with human input
@@ -175,10 +116,10 @@ public class DroneAgent : Agent
         float yaw = actions.DiscreteActions[2] <= 1 ? actions.DiscreteActions[2] : -1;
         
         // motivate to move in a strafe
-        if (horizontal != 0)
-        {
-            AddReward(0.01f);
-        }
+        // if (horizontal != 0)
+        // {
+        //     AddReward(0.01f);
+        // }
 
         // // penalize if moving in opposite fashion (LEFT-RIGHT-LEFT-RIGHT)
         // if (lastHorizontalMove == -horizontal)
@@ -205,7 +146,7 @@ public class DroneAgent : Agent
         characterController.TurnInput = yaw;
         characterController.SidesInput = horizontal;
         // if agent strays too far away give a negative reward and end episode
-        if (Vector3.Distance(transform.position, Vector3.zero) > 10f)
+        if (Vector3.Distance(transform.position, Vector3.zero) > 15f)
         {
             AddReward(-1);
             EndEpisode();
@@ -248,14 +189,25 @@ public class DroneAgent : Agent
             
             // draw collision
             collision = hit.point;
-            
             // give reward if not given before AND dot product < .6
             VoxelController myVoxel = lastHit.GetComponent<VoxelController>();
-            if (dotProductToTarget < REWARD_DOT_PRODUCT_TO_TARGET && distanceToTarget < REWARD_DISTANCE_TO_TARGET)
+
+            if (myVoxel.CanBeCollected && dotProductToTarget < 0)
             {
-                print("giving reward here");
+                // print("adding reward:" + dotProductToTarget);
+                AddReward(Math.Abs(dotProductToTarget));
+            }
+
+            if (myVoxel != null && dotProductToTarget < REWARD_DOT_PRODUCT_TO_TARGET && distanceToTarget < REWARD_DISTANCE_TO_TARGET)
+            {
+                print("Trying to collect..");
                 bool collected = myVoxel.Collect();
-                if (collected) AddReward(0.1f);
+                if (collected)
+                {
+                    print("collected !");
+                    countCollected++;
+                    AddReward(0.1f);
+                }
             }
         }
         else

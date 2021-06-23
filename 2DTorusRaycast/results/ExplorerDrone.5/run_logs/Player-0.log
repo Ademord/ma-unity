@@ -10,12 +10,12 @@ Direct3D:
     VRAM:     8079 MB
     Driver:   27.21.14.5206
 Begin MonoManager ReloadAssembly
-- Completed reload, in  0.065 seconds
+- Completed reload, in  0.063 seconds
 D3D11 device created for Microsoft Media Foundation video decoding.
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.702300 ms
+UnloadTime: 0.569200 ms
 Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libcoreclr.so
 Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libcoreclr.so.dll
 Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone/drone_Data/Mono/libcoreclr.so
@@ -41,9 +41,9 @@ https://github.com/Unity-Technologies/ml-agents/releases
 Python package version (0.26.0) is out of the supported range or not from an official release. It is strongly recommended that you use a Python package between 0.16.1 and 0.20.0. Training will proceed, but the output format may be different.
 
 Setting up 6 worker threads for Enlighten.
-  Thread -> id: 831c -> priority: 1 
-  Thread -> id: 6e80 -> priority: 1 
-  Thread -> id: 1aa8 -> priority: 1 
-  Thread -> id: 1654 -> priority: 1 
-  Thread -> id: 9aa8 -> priority: 1 
-  Thread -> id: 941c -> priority: 1 
+  Thread -> id: 8500 -> priority: 1 
+  Thread -> id: 8828 -> priority: 1 
+  Thread -> id: 88f0 -> priority: 1 
+  Thread -> id: 7bf8 -> priority: 1 
+  Thread -> id: 8a88 -> priority: 1 
+  Thread -> id: 8a8c -> priority: 1 

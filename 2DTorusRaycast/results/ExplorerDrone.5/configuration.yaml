@@ -47,10 +47,10 @@ env_settings:
   num_envs: 1
   seed: -1
 engine_settings:
-  width: 84
-  height: 84
+  width: 1280
+  height: 720
   quality_level: 5
-  time_scale: 20
+  time_scale: 3.0
   target_frame_rate: -1
   capture_frame_rate: 60
   no_graphics: false
@@ -59,10 +59,10 @@ checkpoint_settings:
   run_id: ExplorerDrone.5
   initialize_from: null
   load_model: false
-  resume: false
+  resume: true
   force: false
   train_model: false
-  inference: false
+  inference: true
   results_dir: results
 torch_settings:
   device: null

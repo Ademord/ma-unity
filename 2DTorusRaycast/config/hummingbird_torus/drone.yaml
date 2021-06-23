@@ -1,5 +1,5 @@
 behaviors:
-  DroneBehavior:
+  Drone:
     trainer_type: ppo
     hyperparameters:
       batch_size: 512 #128

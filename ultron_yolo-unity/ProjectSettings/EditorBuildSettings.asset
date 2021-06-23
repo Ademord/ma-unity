@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/HeuristicDrone.unity
+    guid: 1e3bf5043a61553408bf84f7328bad59
   m_configObjects: {}
