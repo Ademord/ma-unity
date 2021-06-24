@@ -44,9 +44,9 @@ public class DroneAgent : Agent
     public LayerMask collectibleLayerMask;
     private Vector3 collision = Vector3.zero;
 
-    private int SCANNER_RAYCAST_DISTANCE = 5;
-    public float REWARD_DOT_PRODUCT_TO_TARGET = -0.90f;
-    public float REWARD_DISTANCE_TO_TARGET = 3.5f;
+    private int SCANNER_RAYCAST_DISTANCE = 6;
+    public float REWARD_DOT_PRODUCT_TO_TARGET = -0.8f;
+    public float REWARD_DISTANCE_TO_TARGET = 4f;
 
     private int countCollected = 0;
     /// Called once when the agent is first initialized
@@ -184,30 +184,41 @@ public class DroneAgent : Agent
         {
             // found a target, record variables
             lastHit = hit.transform.gameObject;
-            dotProductToTarget = Vector3.Dot(lastHit.transform.forward, transform.forward);
-            distanceToTarget = Vector3.Distance(lastHit.transform.position, transform.position);
-            
+
             // draw collision
             collision = hit.point;
             // give reward if not given before AND dot product < .6
+            
             VoxelController myVoxel = lastHit.GetComponent<VoxelController>();
 
-            if (myVoxel.CanBeCollected && dotProductToTarget < 0)
+            if (myVoxel != null && myVoxel.CanBeCollected && dotProductToTarget < 0)
             {
+                // if there is something to be collected, give infos
+                dotProductToTarget = Vector3.Dot(lastHit.transform.forward, transform.forward);
+                distanceToTarget = Vector3.Distance(lastHit.transform.position, transform.position);
+                // add reward to motivate to go for the scan
                 // print("adding reward:" + dotProductToTarget);
                 AddReward(Math.Abs(dotProductToTarget));
-            }
 
-            if (myVoxel != null && dotProductToTarget < REWARD_DOT_PRODUCT_TO_TARGET && distanceToTarget < REWARD_DISTANCE_TO_TARGET)
-            {
-                print("Trying to collect..");
-                bool collected = myVoxel.Collect();
-                if (collected)
+                // try to collect
+                if (dotProductToTarget < REWARD_DOT_PRODUCT_TO_TARGET && distanceToTarget < REWARD_DISTANCE_TO_TARGET)
                 {
-                    print("collected !");
-                    countCollected++;
-                    AddReward(0.1f);
+                    print("Trying to collect..");
+                    bool collected = myVoxel.Collect();
+                    if (collected)
+                    {
+                        print("collected !");
+                        countCollected++;
+                        AddReward(0.1f);
+                    }
                 }
+
+            }
+            else
+            {
+                lastHit = null;
+                dotProductToTarget = -1f;
+                distanceToTarget = -1f;
             }
         }
         else

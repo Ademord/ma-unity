@@ -86,8 +86,9 @@ public class TrainingAreaController : MonoBehaviour
         // loop until safe position
         while (!safePositionFound && attemptsRemaining > 0)
         {
-            float height = 1f; // UnityEngine.Random.Range(1f, 8f);
-            float radius = Random.Range(2f, 7f);
+            print("looking for a safe position....");
+            float height = 1.3f; // UnityEngine.Random.Range(1f, 8f);
+            float radius = Random.Range(2f, 10f);
             Quaternion direction = Quaternion.Euler(
                 0, Random.Range(-180f, 180f), 0f);
             potentialPosition = transform.localPosition
@@ -98,9 +99,10 @@ public class TrainingAreaController : MonoBehaviour
             potentialRotation = Quaternion.Euler(pitch, yaw, 0f);
 
             // get a list of all colliders colliding with agent in potentialPosition
-            Collider[] colliders = Physics.OverlapSphere(potentialPosition, 0.1f);
+            Collider[] colliders = Physics.OverlapSphere(potentialPosition, 1f);
             // safe position if no colliders found
             safePositionFound = colliders.Length == 0;
+            attemptsRemaining--;
         }
 
         Debug.Assert(safePositionFound, "Could not found a safe position");

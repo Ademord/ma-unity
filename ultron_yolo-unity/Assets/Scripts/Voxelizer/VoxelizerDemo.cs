@@ -88,7 +88,7 @@ namespace MeshVoxelizerProject
                     for (int x = 0; x < size; x+=1)
                     {
                         if (voxels[x, y, z] != 1) continue;
-
+                        print("adding voxels..");
                         // Vector3 pos = min + new Vector3(x * scale.x, y * scale.y, z * scale.z);
                         Vector3 pos_prefab = min + new Vector3((x + shift) * scale.x, (y + shift) * scale.y , (z + shift) * scale.z) ;
 

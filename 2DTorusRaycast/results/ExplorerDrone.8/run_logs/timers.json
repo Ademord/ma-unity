@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1624459101",
+        "python_version": "3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\franc\\AppData\\Local\\Programs\\Python\\Python37\\Scripts\\mlagents-learn config\\hummingbird_torus\\drone.yaml --env ..\\builds\\drone2D_run8\\ultron_yolo-unity --run-id=ExplorerDrone.8 --width=1280 --height=720 --time-scale=15 --num-envs=3 --force",
+        "mlagents_version": "0.26.0",
+        "mlagents_envs_version": "0.26.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.1+cu110",
+        "numpy_version": "1.20.1",
+        "end_time_seconds": "1624459102"
+    },
+    "total": 1.0191873,
+    "count": 1,
+    "self": 0.10131139999999994,
+    "children": {
+        "run_training.setup": {
+            "total": 0.23321769999999997,
+            "count": 1,
+            "self": 0.23321769999999997
+        },
+        "TrainerController.start_learning": {
+            "total": 0.6846582000000001,
+            "count": 1,
+            "self": 0.00028240000000034904,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 0.6843652,
+                    "count": 1,
+                    "self": 0.6843652
+                },
+                "trainer_threads": {
+                    "total": 1.299999999870849e-06,
+                    "count": 1,
+                    "self": 1.299999999870849e-06
+                },
+                "TrainerController._save_models": {
+                    "total": 9.29999999987885e-06,
+                    "count": 1,
+                    "self": 9.29999999987885e-06
+                }
+            }
+        }
+    }
+}

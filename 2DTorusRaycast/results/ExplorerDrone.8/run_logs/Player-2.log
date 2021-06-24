@@ -1,0 +1,3328 @@
+Mono path[0] = 'D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Managed'
+Mono config path = 'D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/MonoBleedingEdge/etc'
+PlayerConnection initialized from D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55458
+Multi-casting "[IP] 160.85.232.77 [Port] 55458 [Flags] 2 [Guid] 2199102505 [EditorId] 4182832641 [Version] 1048832 [Id] WindowsPlayer(DESKTOP-D5Q2KVG) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] ultron_yolo-unity" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55458]
+PlayerConnection already initialized - listening to [0.0.0.0:55458]
+Initialize engine version: 2021.1.6f1 (d6fd741ee4c5)
+[Subsystems] Discovering subsystems at path D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/UnitySubsystems
+GfxDevice: creating device client; threaded=1; jobified=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   27.21.14.5206
+Begin MonoManager ReloadAssembly
+Symbol file data-170143E8 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-17047F48 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.AIModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170143E8 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.ARModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170143E8 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.AccessibilityModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-1705CB68 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.AndroidJNIModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-17081770 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.AnimationModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-17086D78 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.AssetBundleModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-1709E230 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.AudioModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170143E8 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.ClothModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-1700C5B0 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.ClusterInputModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-17017780 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.ClusterRendererModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170AB458 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.CoreModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170B1978 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.CrashReportingModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170B6470 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.DSPGraphModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170B9A78 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.DirectorModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-011F6970 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.GIModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170C5630 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.GameCenterModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170C8E38 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.GridModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-011F6970 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.HotReloadModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170F2248 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.IMGUIModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170F5650 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.ImageConversionModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170F8C60 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.InputModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170FF268 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.InputLegacyModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-17101E70 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.JSONSerializeModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-17101E70 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.LocalizationModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-1712A7D8 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.ParticleSystemModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-16F25D20 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.PerformanceReportingModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-1712A7D8 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.PhysicsModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-17166008 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.Physics2DModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-011F60D8 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.ProfilerModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-011F6E20 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-17101E70 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.ScreenCaptureModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-1712EFE8 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.SharedInternalsModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-11DF1660 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.SpriteMaskModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-1712EFE8 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.SpriteShapeModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-170B9E80 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.StreamingModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-17185C50 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.SubstanceModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-1712EFE8 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.SubsystemsModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-011F61A0 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.TLSModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-171A3E70 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.TerrainModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-17101E70 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.TerrainPhysicsModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-1870DC50 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.TextCoreModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-171AC688 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.TextRenderingModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-171AC688 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.TilemapModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-171AC688 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UIModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-18727478 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UIElementsModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-18732E80 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UIElementsNativeModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-18746288 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UNETModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-011F6970 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UmbraModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-1874E690 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UnityAnalyticsModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-17101E70 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UnityConnectModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-17101E70 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UnityCurlModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-011F6970 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UnityTestProtocolModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-187644C0 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UnityWebRequestModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-187674C8 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-171AEA90 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-171AEA90 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-18775540 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-1877FF50 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.VFXModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-171AEA90 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.VRModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-171AEA90 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.VehiclesModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-1877FF50 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.VideoModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-1877FF50 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.VirtualTexturingModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-16FD7F20 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.WindModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-187ADEF0 doesn't match image D:\Unity Hub Projects AI ML\ma-unity\builds\drone2D_run8\ultron_yolo-unity_Data\Managed\UnityEngine.XRModule.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Completed reload, in  0.081 seconds
+D3D11 device created for Microsoft Media Foundation video decoding.
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.629900 ms
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libcoreclr.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libcoreclr.so.dll
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libcoreclr.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libdl.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libdl.so.dll
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libdl.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libSystem.dylib
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libSystem.dylib.dll
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libSystem.dylib
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libcoreclr.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libcoreclr.so.dll
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libcoreclr.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libdl.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libdl.so.dll
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libdl.so
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libSystem.dylib
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libSystem.dylib.dll
+Fallback handler could not load library D:/Unity Hub Projects AI ML/ma-unity/builds/drone2D_run8/ultron_yolo-unity_Data/Mono/libSystem.dylib
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+hit the wall!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DroneAgent:OnCollisionEnter (UnityEngine.Collision) (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:163)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 163)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+collected !
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:207)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 207)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Trying to collect..
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEngine.MonoBehaviour:print (object)
+DroneAgent:Update () (at D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs:203)
+
+(Filename: D:/Unity Hub Projects AI ML/ma-unity/ultron_yolo-unity/Assets/Scripts/DroneAgent.cs Line: 203)
+
+Setting up 6 worker threads for Enlighten.
+  Thread -> id: 9b20 -> priority: 1 
+  Thread -> id: 9fb0 -> priority: 1 
+  Thread -> id: a2fc -> priority: 1 
+  Thread -> id: 969c -> priority: 1 
+  Thread -> id: 8248 -> priority: 1 
+  Thread -> id: 9964 -> priority: 1 
+PlayerConnection::Cleanup##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1624459936919,"processId":33764,"allocatedMemory":201282,"memoryLabels":[{"Permanent":24},{"NewDelete":128},{"Thread":100},{"Manager":1632},{"Geometry":4294966252},{"GfxDevice":196720},{"Serialization":1348},{"WebCam":12},{"String":598},{"HashMap":768},{"PoolAlloc":32},{"GI":184},{"VR":780}]}
+
