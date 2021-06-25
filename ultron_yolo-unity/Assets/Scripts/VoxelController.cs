@@ -13,6 +13,8 @@ public class VoxelController : MonoBehaviour
 
     private MeshRenderer _voxelMeshRenderer;
     public event EventHandler<CollectedEventArgs> Collected;
+    
+    public Collider _collider;
     public bool CanBeCollected { get { return _voxelMeshRenderer.sharedMaterial == undetectedMaterial; } }
 
     private void Awake()
@@ -22,6 +24,7 @@ public class VoxelController : MonoBehaviour
     
     public void Reset()
     {
+        // TODO change this so we do not use find
         _voxelMeshRenderer.material = undetectedMaterial;
         var collider = transform.Find("collider");
         if (collider != null)

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TrainingAreaController : MonoBehaviour
@@ -7,52 +8,39 @@ public class TrainingAreaController : MonoBehaviour
     public List<VoxelController> collectiblesList { get; private set; }
     public string collectibleTag = "collectible";
     private Vector3 elementSpawnPosition = new Vector3(0f, 1.1f, 0f);
-    // public List<Transform> children { get; private set; }
 
     // training elements tracks child: N_elements, List_Elements
     public Dictionary<Transform, (int numToCollect, List<VoxelController> collectibles)> trainingElements;
+    
     // Start is called before the first frame update
     private void Awake()
     {
         // initialize empty variables
-        // collectiblesList = new List<VoxelController>();
-        // children = new List<Transform>();
         trainingElements = new Dictionary<Transform, (int numToCollect, List<VoxelController> collectibles)>();
         // initialize variables
         FindAllElements(transform);
 
-        // FindCollectibles(transform);
-        
         // Debug.Log("found n Collectibles on the TrainingArea you gave me: " + collectiblesList.Count);
         // Debug.Log("found n Children on the TrainingArea you gave me: " + children.Count);
     }
 
     public void Reset()
     {
-        // // reset all collectibles materials, only if the parent was active in hierarchy
-        // foreach (var collectible in collectiblesList)
-        // {
-        //     if (collectible.gameObject.activeInHierarchy) collectible.Reset();
-        // }
-        // // reset all children positions
-        // foreach (var element in children)
-        // {
-        //     // Reset target position (5 meters away from the agent in a random direction)
-        //     // Vector3 targetPosition = elementSpawnPosition + Quaternion.Euler(Vector3.up * Random.Range(0f, 360f)) * Vector3.forward * Random.Range(2f, 10f);
-        //     // element.transform.localPosition = targetPosition;
-        //     MoveToSafeRandomPosition(element);
-        // }
-        
-        // foreach KeyValuePair<Transform, List<VoxelController>>
         print("found n Children on the TrainingArea you gave me: " + trainingElements.Count);
-
-        foreach (var kvp in trainingElements)
+        
+        // dicts are immutable on the forach loop so ToArray is the work-around to edit the original dict.
+        foreach (var kvp in trainingElements.ToArray())
         {
+            // reset each voxels state (material and collider)
             foreach (var collectible in kvp.Value.collectibles)
             {
                 if (collectible.gameObject.activeInHierarchy) collectible.Reset();
             }
+            // reset the objects position to a random location
             MoveToSafeRandomPosition(kvp.Key);
+            // reset the counter of objects that can be detected
+            trainingElements[kvp.Key] = (kvp.Value.collectibles.Count, kvp.Value.collectibles);
+
             // print("current childs name: " + kvp.Key.name);
             // print("found n Collectibles in the current Child: " + kvp.Value.collectibles.Count);
         }
@@ -78,6 +66,7 @@ public class TrainingAreaController : MonoBehaviour
     }
     private void FindCollectibles(Transform parent)
     {
+        // TODO change this so it doesnt use the global variable
         // foreach child in parent, exit1: exit when no more children in element
         // Debug.Log("found n children:" + parent.childCount);
         for (int i = 0; i < parent.childCount; i++)
@@ -102,14 +91,7 @@ public class TrainingAreaController : MonoBehaviour
             }
         }
     }
-    // public void FindEveryChild(Transform parent)
-    // {
-    //     int count = parent.childCount;
-    //     for (int i = 0; i < count; i++)
-    //     {   
-    //         children.Add(parent.GetChild(i));
-    //     }
-    // }
+    
     public void FindAllElements(Transform parent)
     {
         int count = parent.childCount;
@@ -164,10 +146,7 @@ public class TrainingAreaController : MonoBehaviour
 
     public void ReduceNumCollected(object sender, CollectedEventArgs e)
     {
-        // print("a child was detected for object" + e.grandparent);
         trainingElements[e.grandparent] = (trainingElements[e.grandparent].numToCollect - 1,
             trainingElements[e.grandparent].collectibles);
-        // print("remaining objects to find in grandparent:" + trainingElements[e.grandparent].numToCollect);
-        
     }
 }

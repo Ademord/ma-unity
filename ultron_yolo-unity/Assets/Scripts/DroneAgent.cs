@@ -19,7 +19,7 @@ public class DroneAgent : Agent
         // horizontal as rotation (3)
     // agent variables
     private Vector3 startPosition;
-    private SimpleCharacterControllerWithYaw characterController;
+    private CharacterController2D characterController;
     new private Rigidbody rigidbody;
     
     // observations
@@ -54,7 +54,7 @@ public class DroneAgent : Agent
     {   
         // agent variables
         startPosition = new Vector3(0f, 0.5f, 0f);
-        characterController = GetComponent<SimpleCharacterControllerWithYaw>();
+        characterController = GetComponent<CharacterController2D>();
         rigidbody = GetComponent<Rigidbody>();
         // training area variables
         // trainingArea = transform.Find("TrainingArea");

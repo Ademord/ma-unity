@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/HeuristicDrone.unity
+    path: Assets/Scenes/Drone2D_minimal.unity
     guid: 1e3bf5043a61553408bf84f7328bad59
   - enabled: 1
     path: Assets/Scenes/Drone2D.unity

@@ -21,7 +21,7 @@ public class TorusRaycastWithYawAgent : Agent
     public GameObject platform;
 
     private Vector3 startPosition;
-    private SimpleCharacterControllerWithYaw characterController;
+    private CharacterController2D characterController;
     new private Rigidbody rigidbody;
     private TrainingArea flowerArea;
     public float NectarObtained { get; private set; }
@@ -80,7 +80,7 @@ public class TorusRaycastWithYawAgent : Agent
         m_DirectionIndicator = GetComponentInChildren<DirectionIndicator>();
 
         startPosition = transform.position;
-        characterController = GetComponent<SimpleCharacterControllerWithYaw>();
+        characterController = GetComponent<CharacterController2D>();
         rigidbody = GetComponent<Rigidbody>();
         flowerArea = GetComponentInParent<TrainingArea>();
         
