@@ -1,0 +1,47 @@
+{
+    "Drone": {
+        "checkpoints": [
+            {
+                "steps": 499949,
+                "file_path": "results\\ExplorerDrone.10\\Drone\\Drone-499949.onnx",
+                "reward": 111.08884600230625,
+                "creation_time": 1624538848.2116861,
+                "auxillary_file_paths": [
+                    "results\\ExplorerDrone.10\\Drone\\Drone-499949.pt"
+                ]
+            },
+            {
+                "steps": 999892,
+                "file_path": "results\\ExplorerDrone.10\\Drone\\Drone-999892.onnx",
+                "reward": 196.23926067352295,
+                "creation_time": 1624541414.7866862,
+                "auxillary_file_paths": [
+                    "results\\ExplorerDrone.10\\Drone\\Drone-999892.pt"
+                ]
+            },
+            {
+                "steps": 1263995,
+                "file_path": "results\\ExplorerDrone.10\\Drone\\Drone-1263995.onnx",
+                "reward": null,
+                "creation_time": 1624542825.5989916,
+                "auxillary_file_paths": [
+                    "results\\ExplorerDrone.10\\Drone\\Drone-1263995.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1263995,
+            "file_path": "results\\ExplorerDrone.10\\Drone.onnx",
+            "reward": null,
+            "creation_time": 1624542825.5989916,
+            "auxillary_file_paths": [
+                "results\\ExplorerDrone.10\\Drone\\Drone-1263995.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

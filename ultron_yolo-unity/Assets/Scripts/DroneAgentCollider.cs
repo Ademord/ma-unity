@@ -48,7 +48,6 @@ public class DroneAgentCollider : Agent
     public float REWARD_DOT_PRODUCT_TO_TARGET = -0.8f;
     public float REWARD_DISTANCE_TO_TARGET = 4f;
 
-    private int countCollected = 0;
     /// Called once when the agent is first initialized
     public override void Initialize()
     {   
@@ -70,7 +69,6 @@ public class DroneAgentCollider : Agent
         lastHit = null;
         dotProductToTarget = -1f;
         distanceToTarget = -1f;
-        countCollected = 0;
         trainingAreaController.Reset();
     }
     
@@ -174,6 +172,8 @@ public class DroneAgentCollider : Agent
         sensor.AddObservation(dotProductToTarget);
     }
    
+    public bool CanBeCollected { get { return dotProductToTarget < REWARD_DOT_PRODUCT_TO_TARGET && distanceToTarget < REWARD_DISTANCE_TO_TARGET; } }
+
     // Update is called once per frame
     void Update()
     {
@@ -188,46 +188,72 @@ public class DroneAgentCollider : Agent
 
             // draw collision
             collision = hit.point;
-            // give reward if not given before AND dot product < .6
             
+            // attempt to get voxel
             VoxelController myVoxel = lastHit.transform.parent.GetComponent<VoxelController>();
-            print(myVoxel == null);
-            if (myVoxel != null && myVoxel.CanBeCollected && dotProductToTarget < 0)
+            if (myVoxel != null && myVoxel.CanBeCollected)
             {
-                // if there is something to be collected, give infos
+                print("adding observations..");
+                // add observations
                 dotProductToTarget = Vector3.Dot(lastHit.transform.forward, transform.forward);
                 distanceToTarget = Vector3.Distance(lastHit.transform.position, transform.position);
-                // add reward to motivate to go for the scan
-                // print("adding reward:" + dotProductToTarget);
-                AddReward(Math.Abs(dotProductToTarget));
-
-                // try to collect
-                if (dotProductToTarget < REWARD_DOT_PRODUCT_TO_TARGET && distanceToTarget < REWARD_DISTANCE_TO_TARGET)
+                
+                // if "facing" the correct side, give a reward
+                if (dotProductToTarget < 0)
                 {
-                    print("Trying to collect..");
-                    bool collected = myVoxel.Collect();
-                    if (collected)
+                    print("facing the correct side");
+                  
+                    // add reward to motivate to go for the scan
+                    AddReward(Math.Abs(dotProductToTarget));
+                    
+                    // try to collect
+                    var canCollect = CanBeCollected;
+                    if (canCollect)
                     {
-                        print("collected !");
-                        countCollected++;
-                        AddReward(0.1f);
+                        // attempt to collect
+                        bool collected = myVoxel.Collect();
+                        if (collected)
+                        {
+                            // give reward
+                            AddReward(1f);
+                            
+                            // reset observations
+                            ResetObservations();
+
+                            // end episode if all collectibles have been collected
+                            if (trainingAreaController.EverythingHasBeenCollected)
+                            {
+                                print("collected all the items!");
+                                EndEpisode();
+                            }
+                        }
+                        // print("error situation where CanBecollected and collected have different values: " +
+                        //     (canCollect != collected));
                     }
                 }
-
+                else
+                {
+                    print("Facing the incorrect side");
+                }
             }
             else
             {
-                lastHit = null;
-                dotProductToTarget = -1f;
-                distanceToTarget = -1f;
+                print("raycast hit something but it didnt have a voxel ?");
+                ResetObservations();
             }
         }
         else
         {
-            lastHit = null;
-            dotProductToTarget = -1f;
-            distanceToTarget = -1f;
+            print("raycast hit nothing so resetting observation vars");
+            ResetObservations();
         }
+    }
+
+    private void ResetObservations()
+    {
+        lastHit = null;
+        dotProductToTarget = 100f;
+        distanceToTarget = 100f;
     }
     private void OnDrawGizmos()
     {
