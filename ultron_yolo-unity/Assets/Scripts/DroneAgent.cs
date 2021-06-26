@@ -30,7 +30,7 @@ public class DroneAgent : Agent
     // public Transform TargetPrefab; //Target prefab to use in Dynamic envs
     // public Transform m_Target; //Target the agent will walk towards during training.
     public Transform trainingArea;
-    private TrainingAreaController trainingAreaController;
+    private TrainingAreaController2D trainingAreaController;
 
     // [Tooltip("Move speed in meters/second")]
     // public float feedSpeed = 1f;
@@ -58,7 +58,7 @@ public class DroneAgent : Agent
         rigidbody = GetComponent<Rigidbody>();
         // training area variables
         // trainingArea = transform.Find("TrainingArea");
-        trainingAreaController = trainingArea.GetComponent<TrainingAreaController>();
+        trainingAreaController = trainingArea.GetComponent<TrainingAreaController2D>();
     }
     
     /// Called every time an episode begins. This is where we reset the challenge.

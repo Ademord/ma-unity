@@ -243,3 +243,4 @@ MonoBehaviour:
   undetectedMaterial: {fileID: 2100000, guid: f332284bee6a2f84db22368dc7919fdb, type: 2}
   detectedCollectibleMaterial: {fileID: 2100000, guid: 70ffbf6ac3219fc48a54271debeda7ef,
     type: 2}
+  _collider: {fileID: 2545731835798896766}

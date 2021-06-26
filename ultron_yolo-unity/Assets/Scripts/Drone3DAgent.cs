@@ -30,8 +30,9 @@ public class Drone3DAgent : Agent
     // public Transform TargetPrefab; //Target prefab to use in Dynamic envs
     // public Transform m_Target; //Target the agent will walk towards during training.
     public Transform trainingArea;
-    private TrainingAreaController trainingAreaController;
+    private TrainingAreaController3D trainingAreaController;
 
+    public float MAX_DISTANCE_EXPLORATION = 10f;
     // [Tooltip("Move speed in meters/second")]
     // public float feedSpeed = 1f;
     // private float lastVerticalMove;
@@ -48,6 +49,20 @@ public class Drone3DAgent : Agent
     public float REWARD_DOT_PRODUCT_TO_TARGET = -0.8f;
     public float REWARD_DISTANCE_TO_TARGET = 4f;
 
+    //This will be used as a stabilized model space reference point for observations
+    //Because ragdolls can move erratically during training, using a stabilized reference transform improves learning
+    OrientationCubeController m_OrientationCube;
+
+    //The indicator graphic gameobject that points towards the target
+    DirectionIndicator m_DirectionIndicator;
+    
+    [Header("Cone Scanner Parameters")]
+    public float radius;
+    public float depth;
+    public float angle;
+
+    private Physics physics;
+    
     /// Called once when the agent is first initialized
     public override void Initialize()
     {   
@@ -55,25 +70,42 @@ public class Drone3DAgent : Agent
         startPosition = new Vector3(0f, 0.5f, 0f);
         characterController = GetComponent<CharacterController3D>();
         rigidbody = GetComponent<Rigidbody>();
+        m_OrientationCube = GetComponentInChildren<OrientationCubeController>();
+        m_DirectionIndicator = GetComponentInChildren<DirectionIndicator>();
+        
         // training area variables
         // trainingArea = transform.Find("TrainingArea");
-        trainingAreaController = trainingArea.GetComponent<TrainingAreaController>();
+        trainingAreaController = trainingArea.GetComponent<TrainingAreaController3D>();
     }
     
     /// Called every time an episode begins. This is where we reset the challenge.
     public override void OnEpisodeBegin()
     {
+        RandomizeAgentTransform();
+        ResetObservations();
+        trainingAreaController.Reset();
+        UpdateOrientationObjects();
+    }
+
+    private void RandomizeAgentTransform()
+    {
         transform.position = startPosition;
         transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
         rigidbody.velocity = Vector3.zero;
-        lastHit = null;
-        dotProductToTarget = -1f;
-        distanceToTarget = -1f;
-        trainingAreaController.Reset();
     }
-    
-    
-    
+    /// <summary>
+    /// Update OrientationCube and DirectionIndicator
+    /// </summary>
+    void UpdateOrientationObjects()
+    {
+        // // Debug.Log("m_OrientationCube is null" + m_OrientationCube is null);
+        // m_OrientationCube.UpdateOrientation(transform, m_Target);
+        // if (m_DirectionIndicator)
+        // {
+        //     m_DirectionIndicator.MatchOrientation(m_OrientationCube.transform);
+        // }
+    }
+
     // <summary>
     /// Controls the agent with human input
     /// </summary>
@@ -82,18 +114,28 @@ public class Drone3DAgent : Agent
     {
         // Read input values and round them. GetAxisRaw works better in this case
         // because of the DecisionRequester, which only gets new decisions periodically.
-        int vertical = Mathf.RoundToInt(Input.GetAxisRaw("Vertical"));
-        int horizontal = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
+        int forwardInput = Mathf.RoundToInt(Input.GetAxisRaw("Vertical"));
+        int sidesInput = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
         int yaw = 0;
-        // print("vertical: " + vertical);
-        // print("horizontal: " + vertical);
         if (Input.GetKey(KeyCode.E)) yaw = -1;
         else if (Input.GetKey(KeyCode.C)) yaw = 1;
+        
+        // new vertical input
+        int verticalInput = 0;
+        if (Input.GetKey(KeyCode.R)) verticalInput = 1;
+        else if (Input.GetKey(KeyCode.V)) verticalInput = -1;
+
+        // int pitch = 0;
+        // if (Input.GetKey(KeyCode.I)) pitch = 1;
+        // else if (Input.GetKey(KeyCode.K)) pitch = -1;
+
         // Convert the actions to Discrete choices (0, 1, 2)
         ActionSegment<int> actions = actionsOut.DiscreteActions;
-        actions[0] = vertical >= 0 ? vertical : 2;
-        actions[1] = horizontal >= 0 ? horizontal : 2;
+        actions[0] = forwardInput >= 0 ? forwardInput : 2;
+        actions[1] = sidesInput >= 0 ? sidesInput : 2;
         actions[2] = yaw >= 0 ? yaw : 2;
+        actions[3] = verticalInput >= 0 ? verticalInput : 2;
+        // actions[4] = pitch >= 0 ? pitch : 2;
     }
     /// <summary>
     /// React to actions coming from either the neural net or human input
@@ -109,42 +151,21 @@ public class Drone3DAgent : Agent
     {
         // Convert actions from Discrete (0, 1, 2) to expected input values (-1, 0, +1)
         // of the character controller
-        float vertical = actions.DiscreteActions[0] <= 1 ? actions.DiscreteActions[0] : -1;
-        float horizontal = actions.DiscreteActions[1] <= 1 ? actions.DiscreteActions[1] : -1;
+        float forwardInput = actions.DiscreteActions[0] <= 1 ? actions.DiscreteActions[0] : -1;
+        float sidesInput = actions.DiscreteActions[1] <= 1 ? actions.DiscreteActions[1] : -1;
         float yaw = actions.DiscreteActions[2] <= 1 ? actions.DiscreteActions[2] : -1;
+        // new vertical input
+        float verticalInput = actions.DiscreteActions[3] <= 1 ? actions.DiscreteActions[3] : -1;
+        // float pitch = actions.DiscreteActions[4] <= 1 ? actions.DiscreteActions[4] : -1;
         
-        // motivate to move in a strafe
-        // if (horizontal != 0)
-        // {
-        //     AddReward(0.01f);
-        // }
-
-        // // penalize if moving in opposite fashion (LEFT-RIGHT-LEFT-RIGHT)
-        // if (lastHorizontalMove == -horizontal)
-        // {
-        //     print("Penalized: Last horizontal move was opposite");
-        //     AddReward(-0.01f);
-        // } 
-        // if (lastVerticalMove == -vertical)
-        // {
-        //     print("Penalized: Last vertical move was opposite");
-        //     AddReward(-0.01f);
-        // }
-        // if (lastRotation == -yaw)
-        // {
-        //     print("Penalized: Last rotation move was opposite");
-        //     AddReward(-0.01f);
-        // }
-
-        // lastHorizontalMove = horizontal;
-        // lastVerticalMove = vertical;
-        // lastRotation = yaw;
-        
-        characterController.ForwardInput = vertical;
+        characterController.ForwardInput = forwardInput;
         characterController.TurnInput = yaw;
-        characterController.SidesInput = horizontal;
+        characterController.SidesInput = sidesInput;
+        characterController.VerticalInput = verticalInput;
+        // characterController.PitchInput = pitch;
+        
         // if agent strays too far away give a negative reward and end episode
-        if (Vector3.Distance(transform.position, Vector3.zero) > 15f)
+        if (Vector3.Distance(transform.position, Vector3.zero) > MAX_DISTANCE_EXPLORATION)
         {
             AddReward(-1);
             EndEpisode();
@@ -170,6 +191,8 @@ public class Drone3DAgent : Agent
 
         sensor.AddObservation(distanceToTarget);
         sensor.AddObservation(dotProductToTarget);
+        sensor.AddObservation(transform.position);
+        sensor.AddObservation(transform.rotation);
     }
    
     public bool CanBeCollected { get { return dotProductToTarget < REWARD_DOT_PRODUCT_TO_TARGET && distanceToTarget < REWARD_DISTANCE_TO_TARGET; } }
@@ -177,49 +200,32 @@ public class Drone3DAgent : Agent
     // Update is called once per frame
     void Update()
     {
-        var ray = new Ray(transform.position, transform.forward);
-        RaycastHit hit;
-        // check if raycast hits something in COLLECTIBLE layerMask
-        if (Physics.Raycast(ray, out hit, SCANNER_RAYCAST_DISTANCE, collectibleLayerMask))
+        RaycastHit[] coneHits = physics.ConeCastAll(transform.position, radius, transform.forward, depth, angle, collectibleLayerMask);
+        // print("depth: " + depth);
+        if (coneHits.Length > 0)
         {
-            print("raycaST FOUND target");
-            // found a target, record variables
-            lastHit = hit.transform.gameObject;
-
-            // draw collision
-            collision = hit.point;
-            
-            // attempt to get voxel
-            VoxelController myVoxel = lastHit.transform.parent.GetComponent<VoxelController>();
-            if (myVoxel != null && myVoxel.CanBeCollected)
+            // print("conehits length: " + coneHits.Length);
+            for (int i = 0; i < coneHits.Length; i++)
             {
-                print("adding observations..");
-                // add observations
-                dotProductToTarget = Vector3.Dot(lastHit.transform.forward, transform.forward);
-                distanceToTarget = Vector3.Distance(lastHit.transform.position, transform.position);
-                
-                // if "facing" the correct side, give a reward
-                if (dotProductToTarget < 0)
+                // this method will only see "colliders" and therefore they must be under the correct LayerMask
+                VoxelController myVoxel = coneHits[i].transform.parent.GetComponent<VoxelController>();
+                if (myVoxel != null)
                 {
-                    print("facing the correct side");
-                  
-                    // add reward to motivate to go for the scan
-                    AddReward(Math.Abs(dotProductToTarget));
+                    dotProductToTarget = Vector3.Dot(myVoxel.transform.forward, transform.forward);
+                    distanceToTarget = Vector3.Distance(myVoxel.transform.position, transform.position);
+                    // print("conecast detected a voxel: " + dotProductToTarget);
                     
-                    // try to collect
-                    var canCollect = CanBeCollected;
-                    if (canCollect)
+                    if (CanBeCollected)
                     {
                         // attempt to collect
-                        bool collected = myVoxel.Collect();
-                        if (collected)
+                        if (myVoxel.Collect())
                         {
                             // give reward
                             AddReward(1f);
                             
                             // reset observations
                             ResetObservations();
-
+                    
                             // end episode if all collectibles have been collected
                             if (trainingAreaController.EverythingHasBeenCollected)
                             {
@@ -227,26 +233,89 @@ public class Drone3DAgent : Agent
                                 EndEpisode();
                             }
                         }
-                        // print("error situation where CanBecollected and collected have different values: " +
-                        //     (canCollect != collected));
                     }
                 }
                 else
                 {
-                    print("Facing the incorrect side");
+                    print("conecast could not detect a voxel in detected collider");
                 }
-            }
-            else
-            {
-                print("raycast hit something but it didnt have a voxel ?");
-                ResetObservations();
             }
         }
         else
         {
-            print("raycast hit nothing so resetting observation vars");
             ResetObservations();
         }
+
+        // var ray = new Ray(transform.position, transform.forward);
+        // RaycastHit hit;
+        // // check if raycast hits something in COLLECTIBLE layerMask
+        // if (Physics.Raycast(ray, out hit, SCANNER_RAYCAST_DISTANCE, collectibleLayerMask))
+        // {
+        //     print("raycaST FOUND target");
+        //     // found a target, record variables
+        //     lastHit = hit.transform.gameObject;
+        //
+        //     // draw collision
+        //     collision = hit.point;
+        //     
+        //     // attempt to get voxel
+        //     VoxelController myVoxel = lastHit.transform.parent.GetComponent<VoxelController>();
+        //     if (myVoxel != null && myVoxel.CanBeCollected)
+        //     {
+        //         print("adding observations..");
+        //         // add observations
+        //         dotProductToTarget = Vector3.Dot(lastHit.transform.forward, transform.forward);
+        //         distanceToTarget = Vector3.Distance(lastHit.transform.position, transform.position);
+        //         
+        //         // if "facing" the correct side, give a reward
+        //         if (dotProductToTarget < 0)
+        //         {
+        //             print("facing the correct side");
+        //           
+        //             // add reward to motivate to go for the scan
+        //             AddReward(Math.Abs(dotProductToTarget));
+        //             
+        //             // try to collect
+        //             var canCollect = CanBeCollected;
+        //             if (canCollect)
+        //             {
+        //                 // attempt to collect
+        //                 bool collected = myVoxel.Collect();
+        //                 if (collected)
+        //                 {
+        //                     // give reward
+        //                     AddReward(1f);
+        //                     
+        //                     // reset observations
+        //                     ResetObservations();
+        //
+        //                     // end episode if all collectibles have been collected
+        //                     if (trainingAreaController.EverythingHasBeenCollected)
+        //                     {
+        //                         print("collected all the items!");
+        //                         EndEpisode();
+        //                     }
+        //                 }
+        //                 // print("error situation where CanBecollected and collected have different values: " +
+        //                 //     (canCollect != collected));
+        //             }
+        //         }
+        //         else
+        //         {
+        //             print("Facing the incorrect side");
+        //         }
+        //     }
+        //     else
+        //     {
+        //         print("raycast hit something but it didnt have a voxel ?");
+        //         ResetObservations();
+        //     }
+        // }
+        // else
+        // {
+        //     print("raycast hit nothing so resetting observation vars");
+        //     ResetObservations();
+        // }
     }
 
     private void ResetObservations()
@@ -260,5 +329,9 @@ public class Drone3DAgent : Agent
         // Update();
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(collision, 0.2f);
+    }
+    private void FixedUpdate()
+    {
+        UpdateOrientationObjects();
     }
 }

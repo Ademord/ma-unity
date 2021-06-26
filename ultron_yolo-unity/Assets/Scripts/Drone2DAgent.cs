@@ -30,7 +30,7 @@ public class Drone2DAgent : Agent
     // public Transform TargetPrefab; //Target prefab to use in Dynamic envs
     // public Transform m_Target; //Target the agent will walk towards during training.
     public Transform trainingArea;
-    private TrainingAreaController trainingAreaController;
+    private TrainingAreaController2D trainingAreaController;
 
     // [Tooltip("Move speed in meters/second")]
     // public float feedSpeed = 1f;
@@ -57,7 +57,7 @@ public class Drone2DAgent : Agent
         rigidbody = GetComponent<Rigidbody>();
         // training area variables
         // trainingArea = transform.Find("TrainingArea");
-        trainingAreaController = trainingArea.GetComponent<TrainingAreaController>();
+        trainingAreaController = trainingArea.GetComponent<TrainingAreaController2D>();
     }
     
     /// Called every time an episode begins. This is where we reset the challenge.
@@ -66,13 +66,9 @@ public class Drone2DAgent : Agent
         transform.position = startPosition;
         transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
         rigidbody.velocity = Vector3.zero;
-        lastHit = null;
-        dotProductToTarget = -1f;
-        distanceToTarget = -1f;
+        ResetObservations();
         trainingAreaController.Reset();
     }
-    
-    
     
     // <summary>
     /// Controls the agent with human input
