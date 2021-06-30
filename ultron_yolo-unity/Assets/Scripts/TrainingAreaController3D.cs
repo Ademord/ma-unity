@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class TrainingAreaController3D : MonoBehaviour
 {
+    [Header("Collectible Parameters")]
+
+    [Tooltip("The material when the voxel can be collected")]
+    public Material undetectedMaterial;
+
+    [Tooltip("The material when the voxel is not collectable")]
+    public Material detectedCollectibleMaterial;
     public List<VoxelController> collectiblesList { get; private set; }
     public string collectibleTag = "collectible";
-    private Vector3 elementSpawnPosition = new Vector3(0f, 1.1f, 0f);
 
     // training elements tracks child: N_elements, List_Elements
     public Dictionary<Transform, (int numToCollect, List<VoxelController> collectibles)> trainingElements;
@@ -78,6 +84,9 @@ public class TrainingAreaController3D : MonoBehaviour
                 // once flower found, add the flowers list and add the collider attached to the hash map
                 if (current_child != null)
                 {
+                    current_child.undetectedMaterial = undetectedMaterial;
+                    current_child.detectedCollectibleMaterial = detectedCollectibleMaterial;
+
                     collectiblesList.Add(current_child);
                     current_child.Collected += ReduceNumCollected;
                 }
@@ -121,14 +130,14 @@ public class TrainingAreaController3D : MonoBehaviour
         while (!safePositionFound && attemptsRemaining > 0)
         {
             // print("looking for a safe position....");
-            float height = 1.3f; // UnityEngine.Random.Range(1f, 8f);
+            float height = Random.Range(1.3f, 3f);
             float radius = Random.Range(2f, 8f);
             Quaternion direction = Quaternion.Euler(
                 0, Random.Range(-180f, 180f), 0f);
             potentialPosition = transform.localPosition
                                 + Vector3.up * height + direction * Vector3.forward * radius;
-            // float pitch = UnityEngine.Random.Range(-60f, 60f);
-            float pitch = 0;
+            // deactivated pitch
+            float pitch = 0; // UnityEngine.Random.Range(-60f, 60f);
             float yaw = Random.Range(-180f, 180f);
             potentialRotation = Quaternion.Euler(pitch, yaw, 0f);
 

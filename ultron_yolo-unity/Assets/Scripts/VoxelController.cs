@@ -5,21 +5,20 @@ using UnityEngine;
 
 public class VoxelController : MonoBehaviour
 {
-    [Tooltip("The material when the voxel can be collected")]
-    public Material undetectedMaterial;
-
-    [Tooltip("The material when the voxel is not collectable")]
-    public Material detectedCollectibleMaterial;
+    public Material undetectedMaterial { private get;  set; }
+    public Material detectedCollectibleMaterial { private get;  set; }
 
     private MeshRenderer _voxelMeshRenderer;
     public event EventHandler<CollectedEventArgs> Collected;
-    
-    public Collider _collider;
+
+    // [Tooltip("The collider of the current voxel")]
+    // public Transform collider;
     public bool CanBeCollected { get { return _voxelMeshRenderer.sharedMaterial == undetectedMaterial; } }
 
     private void Awake()
     {
         _voxelMeshRenderer = transform.GetComponent<MeshRenderer>();
+        // collider = transform.GetComponent<Collider>();
     }
     
     public void Reset()
@@ -72,8 +71,6 @@ public class VoxelController : MonoBehaviour
             handler(this, e);
         }
     }
-    
-
 }
 
 public class CollectedEventArgs : EventArgs

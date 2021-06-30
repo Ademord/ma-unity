@@ -123,3 +123,4 @@ Temporary Items
 .apdisk
 *.sbsar
 *.log
+/Assets/AssetStore/*

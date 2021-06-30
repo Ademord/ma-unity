@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.unity.barracuda": {
-      "version": "file:C:/Users/franc/Downloads/barracuda-release-1.4.0-preview",
+      "version": "file:C:/Users/franc/Downloads/unity installed packages/barracuda-release-1.4.0-preview",
       "depth": 0,
       "source": "local",
       "dependencies": {

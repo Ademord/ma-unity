@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Drone3D.unity
+    guid: e8038f20f31a9a04c8e2423329f57cdf
+  - enabled: 0
+    path: Assets/Scenes/Drone3D_GridsensorElios.unity
+    guid: 45eba47796c98a341aa99a6de0eb712e
+  - enabled: 1
+    path: Assets/Scenes/Drone3D_GS_mbaske.unity
+    guid: ba9f4e3f74d35a740917bc3faf159d56
+  m_configObjects: {}

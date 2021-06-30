@@ -1,0 +1,65 @@
+{
+    "Drone": {
+        "checkpoints": [
+            {
+                "steps": 2999995,
+                "file_path": "results\\ExplorerDrone.20\\Drone\\Drone-2999995.onnx",
+                "reward": 525.0,
+                "creation_time": 1624948633.7898211,
+                "auxillary_file_paths": [
+                    "results\\ExplorerDrone.20\\Drone\\Drone-2999995.pt"
+                ]
+            },
+            {
+                "steps": 3499980,
+                "file_path": "results\\ExplorerDrone.20\\Drone\\Drone-3499980.onnx",
+                "reward": 522.0,
+                "creation_time": 1624953018.0989933,
+                "auxillary_file_paths": [
+                    "results\\ExplorerDrone.20\\Drone\\Drone-3499980.pt"
+                ]
+            },
+            {
+                "steps": 3999998,
+                "file_path": "results\\ExplorerDrone.20\\Drone\\Drone-3999998.onnx",
+                "reward": 529.5555555555555,
+                "creation_time": 1624957417.9564195,
+                "auxillary_file_paths": [
+                    "results\\ExplorerDrone.20\\Drone\\Drone-3999998.pt"
+                ]
+            },
+            {
+                "steps": 4499995,
+                "file_path": "results\\ExplorerDrone.20\\Drone\\Drone-4499995.onnx",
+                "reward": 523.7857142857143,
+                "creation_time": 1624961849.4210796,
+                "auxillary_file_paths": [
+                    "results\\ExplorerDrone.20\\Drone\\Drone-4499995.pt"
+                ]
+            },
+            {
+                "steps": 4680921,
+                "file_path": "results\\ExplorerDrone.20\\Drone\\Drone-4680921.onnx",
+                "reward": 492.3636363636364,
+                "creation_time": 1624969252.021471,
+                "auxillary_file_paths": [
+                    "results\\ExplorerDrone.20\\Drone\\Drone-4680921.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4680921,
+            "file_path": "results\\ExplorerDrone.20\\Drone.onnx",
+            "reward": 492.3636363636364,
+            "creation_time": 1624969252.021471,
+            "auxillary_file_paths": [
+                "results\\ExplorerDrone.20\\Drone\\Drone-4680921.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

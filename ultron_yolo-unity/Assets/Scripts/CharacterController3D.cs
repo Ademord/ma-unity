@@ -62,7 +62,7 @@ public class CharacterController3D : MonoBehaviour
 
         float strafe = SidesInput * moveSpeed;
         float translation = ForwardInput * moveSpeed;
-        float verticalTranslation = VerticalInput * moveSpeed / 4f;
+        float verticalTranslation = VerticalInput * moveSpeed;
             
         strafe *= Time.deltaTime;
         translation *= Time.deltaTime;
