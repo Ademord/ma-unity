@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using NaughtyAttributes;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TrainingAreaController3D : MonoBehaviour
 {
@@ -19,8 +22,18 @@ public class TrainingAreaController3D : MonoBehaviour
     public Dictionary<Transform, (int numToCollect, List<VoxelController> collectibles)> trainingElements;
 
     public float maxSpawnHeight = 5f;
+    public event Action ScansCompleteEvent;
+    private bool m_OptScansComplete; // flag
+
+    public float FieldRadius = 100;
+    private float m_RadiusSqr;
+    [SerializeField, Range(10, 50)]
+    private float m_AsteroidSpacing = 22;
+   
+    [SerializeField, ReadOnly]
+    private int m_AsteroidCount; // info
     // Start is called before the first frame update
-    private void Awake()
+    public void Initialize()
     {
         // initialize empty variables
         trainingElements = new Dictionary<Transform, (int numToCollect, List<VoxelController> collectibles)>();
@@ -30,10 +43,10 @@ public class TrainingAreaController3D : MonoBehaviour
         // Debug.Log("found n Collectibles on the TrainingArea you gave me: " + collectiblesList.Count);
         // Debug.Log("found n Children on the TrainingArea you gave me: " + children.Count);
     }
-
+    
     public void Reset()
     {
-        print("found n Children on the TrainingArea you gave me: " + trainingElements.Count);
+        // print("found n Children on the TrainingArea you gave me: " + trainingElements.Count);
         
         // dicts are immutable on the forach loop so ToArray is the work-around to edit the original dict.
         foreach (var kvp in trainingElements.ToArray())
@@ -120,7 +133,7 @@ public class TrainingAreaController3D : MonoBehaviour
     // {
     //     m_Target = Instantiate(prefab, pos, Quaternion.identity, transform.parent);
     // }
-    private void MoveToSafeRandomPosition(Transform trans)
+    public void MoveToSafeRandomPosition(Transform trans)
     {
         bool safePositionFound = false;
         int attemptsRemaining = 100;
@@ -131,7 +144,7 @@ public class TrainingAreaController3D : MonoBehaviour
         while (!safePositionFound && attemptsRemaining > 0)
         {
             // print("looking for a safe position....");
-            float height = 0f; // Random.Range(0, maxSpawnHeight);
+            float height = Random.Range(0, maxSpawnHeight);
             float radius = Random.Range(2f, 8f);
             Quaternion direction = Quaternion.Euler(
                 0, Random.Range(-180f, 180f), 0f);
@@ -160,5 +173,15 @@ public class TrainingAreaController3D : MonoBehaviour
     {
         trainingElements[e.grandparent] = (trainingElements[e.grandparent].numToCollect - 1,
             trainingElements[e.grandparent].collectibles);
+    }
+    private void OnApplicationQuit()
+    {
+        foreach (var kvp in trainingElements.ToArray())
+        {
+            foreach (var collectible in kvp.Value.collectibles)
+            {
+                collectible.Collected -= ReduceNumCollected;;
+            }
+        }
     }
 }

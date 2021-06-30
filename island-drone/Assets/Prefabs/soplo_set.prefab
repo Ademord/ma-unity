@@ -635,7 +635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 102562319725845629, guid: 841fe71fa5eaf7e4cae0e23ccd1692e3, type: 3}
       propertyPath: intensityInside
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 102562319725845629, guid: 841fe71fa5eaf7e4cae0e23ccd1692e3, type: 3}
       propertyPath: intensityOutside
@@ -1509,7 +1509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 102562319725845629, guid: 841fe71fa5eaf7e4cae0e23ccd1692e3, type: 3}
       propertyPath: intensityInside
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 102562319725845629, guid: 841fe71fa5eaf7e4cae0e23ccd1692e3, type: 3}
       propertyPath: intensityOutside
@@ -1553,6 +1553,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 102562319725845629, guid: 841fe71fa5eaf7e4cae0e23ccd1692e3, type: 3}
       propertyPath: colorGradient.key2.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 102562319725845629, guid: 841fe71fa5eaf7e4cae0e23ccd1692e3, type: 3}
+      propertyPath: intensityModeAdvanced
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

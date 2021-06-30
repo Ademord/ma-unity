@@ -25,6 +25,7 @@ namespace Ademord.Drone
         // actions <SimpleAgentController>:
         // vertical (3)
         // horizontal as rotation (3)
+        
         // agent variables
         private Vector3 startPosition;
         private CharacterController3D characterController;
@@ -34,6 +35,10 @@ namespace Ademord.Drone
         private float distanceToTarget;
         private float dotProductToTarget;
 
+        [SerializeField]
+        [Tooltip("Reference to sensor component for retrieving detected opponent gameobjects.")]
+        private GridSensorComponent3D m_SensorComponent;
+        
         [Header("TrainingArea Parameters")]
         // public Transform TargetPrefab; //Target prefab to use in Dynamic envs
         // public Transform m_Target; //Target the agent will walk towards during training.
@@ -70,9 +75,6 @@ namespace Ademord.Drone
 
         private Physics physics;
 
-        [SerializeField] [Tooltip("Reference to sensor component for retrieving detected opponent gameobjects.")]
-        private GridSensorComponent3D m_SensorComponent;
-
         // Called once when the agent is first initialized
         private IList<GameObject> m_Targets;
 
@@ -91,45 +93,27 @@ namespace Ademord.Drone
             m_DirectionIndicator = GetComponentInChildren<DirectionIndicator>();
 
             // training area variables
-            // trainingArea = transform.Find("TrainingArea");
             trainingAreaController = trainingArea.GetComponent<TrainingAreaController3D>();
             m_Targets = new List<GameObject>(10);
-
         }
 
-        /// Called every time an episode begins. This is where we reset the challenge.
         public override void OnEpisodeBegin()
         {
             RandomizeAgentTransform();
+            trainingAreaController.MoveToSafeRandomPosition(transform);
             ResetObservations();
             trainingAreaController.Reset();
-            UpdateOrientationObjects();
         }
 
         private void RandomizeAgentTransform()
         {
-            transform.position = startPosition;
-            transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
+            // transform.position = startPosition;
+            // transform.rotation = Quaternion.Euler(Vector3.up * Random.Range(0f, 360f));
             rigidbody.velocity = Vector3.zero;
         }
 
-        /// <summary>
-        /// Update OrientationCube and DirectionIndicator
-        /// </summary>
-        void UpdateOrientationObjects()
-        {
-            // // Debug.Log("m_OrientationCube is null" + m_OrientationCube is null);
-            // m_OrientationCube.UpdateOrientation(transform, m_Target);
-            // if (m_DirectionIndicator)
-            // {
-            //     m_DirectionIndicator.MatchOrientation(m_OrientationCube.transform);
-            // }
-        }
+  
 
-        // <summary>
-        /// Controls the agent with human input
-        /// </summary>
-        /// <param name="actionsOut">The actions parsed from keyboard input</param>
         public override void Heuristic(in ActionBuffers actionsOut)
         {
             // Read input values and round them. GetAxisRaw works better in this case
@@ -158,10 +142,6 @@ namespace Ademord.Drone
             // actions[4] = pitch >= 0 ? pitch : 2;
         }
 
-        /// <summary>
-        /// React to actions coming from either the neural net or human input
-        /// </summary>
-        /// <param name="actions">The actions received</param>
         public override void OnActionReceived(ActionBuffers actions)
         {
             // AddReward(-1f / MaxStep);
@@ -374,9 +354,5 @@ namespace Ademord.Drone
             // Gizmos.DrawWireSphere(collision, 0.2f);
         }
 
-        private void FixedUpdate()
-        {
-            UpdateOrientationObjects();
-        }
     }
 }
