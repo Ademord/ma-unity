@@ -46,7 +46,7 @@ public class TrainingAreaController3D : MonoBehaviour
     
     public void Reset()
     {
-        // print("found n Children on the TrainingArea you gave me: " + trainingElements.Count);
+        print("found n Children on the TrainingArea you gave me: " + trainingElements.Count);
         
         // dicts are immutable on the forach loop so ToArray is the work-around to edit the original dict.
         foreach (var kvp in trainingElements.ToArray())

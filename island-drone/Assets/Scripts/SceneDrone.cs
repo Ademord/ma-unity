@@ -9,7 +9,7 @@ using Unity.MLAgents.Actuators;
 public class SceneDrone : MonoBehaviour
 {
     // TODO delete commented
-    // private CharacterController3D characterController;
+    private CharacterController3D characterController;
     public Vector3 Position => transform.position;
     // public Vector3 LocalPosition => transform.localPosition;
     // public Vector3 Velocity => rb.velocity;
@@ -96,7 +96,7 @@ public class SceneDrone : MonoBehaviour
     // public SceneDronePath Path { get; private set; }
     public SceneDroneScanBuffer ScanBuffer { get; private set; }
 
-    private const int scanBufferSize = 10;
+    private const int scanBufferSize = 2;
     private const float proximitySensorRange = 1f;
     private const float maxVelocity = 0.2f;
     // private const float pathExtent = 2f;
@@ -128,6 +128,8 @@ public class SceneDrone : MonoBehaviour
     {
         // Path = new SceneDronePath(pathExtent);
         ScanBuffer = new SceneDroneScanBuffer(scanBufferSize);
+        characterController = GetComponent<CharacterController3D>();
+        m_Rigidbody = GetComponent<Rigidbody>();
 
         // characterController = GetComponent<CharacterController3D>();
 
@@ -157,12 +159,13 @@ public class SceneDrone : MonoBehaviour
     public void Reset()
     {
         ScanBuffer.Clear();
+        m_Rigidbody.angularVelocity = Vector3.zero;
+        m_Rigidbody.velocity = Vector3.zero;
         // Path.Clear(Position);
         // laser.enabled = false;
     }
     private void Stop()
     {
-        m_Rigidbody = GetComponent<Rigidbody>();
         m_Rigidbody.angularVelocity = Vector3.zero;
         m_Rigidbody.velocity = Vector3.zero;
 
@@ -177,7 +180,41 @@ public class SceneDrone : MonoBehaviour
     //     rb.AddForce(velocity * maxVelocity, ForceMode.VelocityChange);
     //     // Path.Add(Position);
     // }
+    public void ManagedUpdate(ActionBuffers actions)
+    {
+        float forwardInput = actions.ContinuousActions[0] <= 1 ? actions.ContinuousActions[0] : -1;
+        float sidesInput = actions.ContinuousActions[1] <= 1 ? actions.ContinuousActions[1] : -1;
+        float yaw = actions.ContinuousActions[2] <= 1 ? actions.ContinuousActions[2] : -1;
+        // new vertical input
+        float verticalInput = actions.ContinuousActions[3] <= 1 ? actions.ContinuousActions[3] : -1;
+        // float pitch = actions.DiscreteActions[4] <= 1 ? actions.DiscreteActions[4] : -1;
+        
+        characterController.ForwardInput = forwardInput;
+        characterController.TurnInput = yaw;
+        characterController.SidesInput = sidesInput;
+        characterController.VerticalInput = verticalInput;
+        // characterController.PitchInput = pitch;
+    }
+    public void ManagedUpdate(Vector3 velocity, float yaw)
+    {
+        // float forwardInput = actions.DiscreteActions[0] <= 1 ? actions.DiscreteActions[0] : -1;
+        // float sidesInput = actions.DiscreteActions[1] <= 1 ? actions.DiscreteActions[1] : -1;
+        // float yaw = actions.DiscreteActions[2] <= 1 ? actions.DiscreteActions[2] : -1;
+        // // new vertical input
+        // float verticalInput = actions.DiscreteActions[3] <= 1 ? actions.DiscreteActions[3] : -1;
+        // // float pitch = actions.DiscreteActions[4] <= 1 ? actions.DiscreteActions[4] : -1;
+        //
+        // characterController.ForwardInput = forwardInput;
+        // characterController.TurnInput = yaw;
+        // // characterController.SidesInput = sidesInput;
+        // // characterController.VerticalInput = verticalInput;
+        // characterController.PitchInput = pitch;
 
+        // if agent strays too far away give a negative reward and end episode
+        print("received movement vector: " + velocity);
+        m_Rigidbody.AddForce(velocity * maxVelocity, ForceMode.VelocityChange);
+
+    }
     public float ManagedUpdate(int throttle_horizontal, int throttle_vertical, int yaw)
     {
         Vector3 pos = LocalPosition;
@@ -229,6 +266,7 @@ public class SceneDrone : MonoBehaviour
 
         return fwdSpeed;
     }
+    
     // public Point Scan(float hrz, float vrt, float range)
     // {
     //     RaycastHit hit;

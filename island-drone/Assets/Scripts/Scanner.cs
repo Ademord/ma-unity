@@ -68,7 +68,7 @@ namespace Ademord.Drone
         {
             m_Owner = owner;
             // lerp to look at target
-            VoxelController myVoxel = target.GetComponent<VoxelController>();
+            VoxelController myVoxel = target.parent.transform.GetComponent<VoxelController>();
             
             // if (myVoxel != null && myVoxel.Collect())
             if (myVoxel != null)
