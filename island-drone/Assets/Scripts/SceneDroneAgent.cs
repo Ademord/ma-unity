@@ -24,9 +24,9 @@ namespace Ademord.Drone
         public SceneDroneData Data { get; private set; }
         // public BlockWorld World { get; private set; }
         
-        [SerializeField]
-        [Range(2f, 10f)]
-        private float lookRadius = 5f;
+        // [SerializeField]
+        // [Range(2f, 10f)]
+        // private float lookRadius = 5f; // replaced for m_TargetFollowDistance
         [SerializeField]
         [Range(0.25f, 1f)]
         private float leafNodeSize = 0.5f;
@@ -40,7 +40,7 @@ namespace Ademord.Drone
 
         [SerializeField]
         [Tooltip("Maximum exploration area the drone is allowed to cover.")]
-        [Range(5f, 10f)]
+        [Range(5f, 30f)]
         private float ExplorationLimit = 10f;
         [SerializeField]
         [Tooltip("Drone's Scanner Eye.")]
@@ -90,7 +90,8 @@ namespace Ademord.Drone
         private GameObject m_VFX;
         public SceneDrone m_Drone { get; private set; }
         private float damping = 10;
-        
+        private float dotProductToTarget;
+
         private IList<GameObject> m_Targets;
         [SerializeField]
         [Tooltip("Target Tag")]
@@ -133,107 +134,82 @@ namespace Ademord.Drone
 
         public override void OnEpisodeBegin()
         {
-            Data.Reset(m_Drone.Position, lookRadius, leafNodeSize);
             m_Drone.Reset();
             
-            m_World.MoveToSafeRandomPosition(m_Drone.transform);
-            m_World.Reset();
+            m_World.MoveToSafeRandomPosition(m_Drone.transform, true);
+            m_World.Reset(); 
 
-            scanPoint = default(Point);
-            prevPos = GetVector3Int(m_Drone.Position);
-            lingerCount = 0;
-            scanned = false;
+            ResetObservations(true);
         }
        
         public override void CollectObservations(VectorSensor sensor)
         {
-            // TODO octree storage
-            // Vector3 pos = m_Drone.Position;
-            // if (IsNewGridPosition(pos))
-            // {
-            //     Data.AddPoint(new Point(PointType.DronePos, pos, Time.time));
-            // }
-            //
-            // Data.AddPoint(scanPoint);
-            // // Number of new leaf nodes created by this scan.
-            // int nodeCount = Data.Tree.Intersect(pos, scanPoint.Position);
-            // float scanReward = (nodeCount * 0.1f) / Data.LookRadius;
-            // AddReward(scanReward);
-            //
-            // Data.StepUpdate(pos);
+            Vector3 pos = m_Drone.Position;
+
+            if (IsNewGridPosition(pos))
+            {
+                Data.AddPoint(new Point(PointType.DronePos, pos, Time.time));
+            }
             
-            // TODO ACTIVATE
-            // float linger = lingerCount / 100f; // 0 - 2
-            // float lingerPenalty = -linger * 0.1f;
-            // AddReward(lingerPenalty);
-            //
+            // scan all voxels seen by GridSensor
+            ScanTargets();
+
+            // this reward promotes to scan new parts of the island
+            // Number of new leaf nodes created by this scan.
+            int nodeCount = Data.Tree.Intersect(pos, scanPoint.Position);
+            // print("new nodes discovered:" + nodeCount);
+            float scanReward = (nodeCount * 0.05f) / Data.LookRadius;
+            AddReward(scanReward);
+            
+            Data.StepUpdate(pos);
+            
+            float linger = lingerCount / 100f; // 0 - 2
+            float lingerPenalty = -linger * 0.05f;
+            // print("linger penalty:" + lingerPenalty);
+            AddReward(lingerPenalty);
+            
             Vector3 velocity = Normalization.Sigmoid(m_Drone.WorldVelocity);
+            // print("velocity:" + velocity);
+            // print("velocity:" + m_Drone.LocalVelocity);
             Vector4 proximity = m_Drone.GetForwardProximity();
             float proxPenalty = (1f - 1f / Mathf.Max(proximity.w, 0.1f)) * velocity.sqrMagnitude * 0.25f;
-            // print("proximity penalty: " + proxPenalty);
-            // AddReward(proxPenalty);
-            //
-            // sensor.AddObservation(linger - 1f); // 1
-            // // sensor.AddObservation(velocity); // 3 
-            // sensor.AddObservation((Vector3)proximity); // 3
-            // sensor.AddObservation(proximity.w * 2f - 1f); // 1 
-            // sensor.AddObservation(Data.LookRadiusNorm); // 1 
-            // sensor.AddObservation(Data.NodeDensities); // 8
-            // sensor.AddObservation(Data.IntersectRatios); // 8 
-            // sensor.AddObservation(m_Drone.ScanBuffer.ToArray()); // 30
+            print("proximity penalty: " + proxPenalty);
+            AddReward(proxPenalty);
             
-            ///////////
-            print("throttle: " + m_Drone.Throttle_horizontal);
-            sensor.AddObservation(m_Drone.Throttle_horizontal); // 1
-            sensor.AddObservation(m_Drone.Throttle_vertical); // 1
-            sensor.AddObservation(m_Drone.Yaw); // 1
+            sensor.AddObservation(velocity); // 3 
+            sensor.AddObservation(linger - 1f); // 1
+            sensor.AddObservation((Vector3)proximity); // 3
+            sensor.AddObservation(proximity.w * 2f - 1f); // 1 
+            sensor.AddObservation(Data.LookRadiusNorm); // 1 
+            // total = 9
+            sensor.AddObservation(Data.NodeDensities); // 8
+            sensor.AddObservation(Data.IntersectRatios); // 8 
+            // sensor.AddObservation(m_Drone.ScanBuffer.ToArray()); // 30
+            // total = 25
+
+            // print("throttle: " + m_Drone.Throttle_horizontal);
+            // sensor.AddObservation(m_Drone.Throttle_horizontal); // 1
+            // sensor.AddObservation(m_Drone.Throttle_vertical); // 1
+            // sensor.AddObservation(m_Drone.Yaw); // 1
             sensor.AddObservation(m_Drone.NormPosition); // 1 
             sensor.AddObservation(m_Drone.NormOrientation); // 1
+            // TODO remove observations
             sensor.AddObservation(Normalization.Sigmoid(m_Drone.LocalSpin)); // 3
             sensor.AddObservation(Normalization.Sigmoid(m_Drone.LocalVelocity)); // 3
-
-            Vector3 pos = m_Drone.transform.position;
-            Vector3 fwd = m_Drone.transform.forward;
-            m_Targets.Clear();
-
-            // Find targets in vicinity.
-            if (CanScan()) //CanAddTargets()
-            {
-                foreach (var target in m_SensorComponent.GetDetectedGameObjects(m_TargetTag))
-                {
-                    VoxelController myVoxel = target.transform.parent.GetComponent<VoxelController>();
-                    Vector3 delta = target.transform.position - pos;
-                    var dotProductToTarget = Vector3.Dot(fwd, myVoxel.transform.forward);
-                    if (dotProductToTarget < m_TargetDotProduct 
-                        && Vector3.Angle(fwd, delta) < m_TargetFollowAngle 
-                        && delta.sqrMagnitude < m_TargetFollowDistanceSqr)
-                    {
-                        if (UnityEngine.Random.Range(0, 101) <= m_ScanAccuracy) // chance to collect
-                        {
-                            // removing m_targets because the reload time slows down FPS. there is no nice way to do 
-                            // bulk scanning
-                            // m_Targets.Add(target);
-                            ScanTarget(target);
-                        }
-                        // print("dotproduct to target: " + dotProductToTarget);
-                    }
-                    // m_AddedTargetsTime = Time.time;
-                }
-                // ScanTargets();
-                ResetVFX();
-            }
+            sensor.AddObservation(dotProductToTarget); // 1
+            // total = 34
         }
 
         public override void OnActionReceived(ActionBuffers actions)
         {
 
-            if (actions.ContinuousActions[0] != 0f ||
-                actions.ContinuousActions[1] != 0f ||
-                actions.ContinuousActions[2] != 0f ||
-                actions.ContinuousActions[3] != 0f)
-            {
-                m_MovedTime = Time.time;
-            }
+            // if (actions.ContinuousActions[0] != 0f ||
+            //     actions.ContinuousActions[1] != 0f ||
+            //     actions.ContinuousActions[2] != 0f ||
+            //     actions.ContinuousActions[3] != 0f)
+            // {
+            //     m_MovedTime = Time.time;
+            // }
 
             // Drone.Move(new Vector3(vectorAction[2], vectorAction[3], vectorAction[4]));
             // var discrete_actions = actions.DiscreteActions;
@@ -256,6 +232,15 @@ namespace Ademord.Drone
             // thought process 2:  decided to make the drone only focus on moving itself to a location that gives it a reward.
             // it will learn to move towards its targets and if there are targets that meet the criteria it will scan them
             // VFX will spawn a scanner prefab in every location where the target is.
+            
+            // if agent strays too far away give a negative reward and end episode
+            // print( "distance to center: " + Vector3.Distance(m_Drone.Position, Vector3.zero));
+            // print("max distance to explore: " + ExplorationLimit);
+            if (Vector3.Distance(m_Drone.Position, Vector3.zero) > ExplorationLimit)
+            {
+                AddReward(-1);
+                EndEpisode();
+            }
         }
 
         /// <inheritdoc/>
@@ -306,7 +291,7 @@ namespace Ademord.Drone
         }
         private void ScanTarget(GameObject target)
         {
-            Vector3 pos = m_Drone.transform.position;
+            Vector3 pos = m_Drone.Position;
             Vector3 fwd = m_Drone.transform.forward;
             Vector3 vlc = m_Drone.WorldVelocity;
             // canScan logic moved outside of loop because it makes sense to be able to scan in bulks of BufferSize (10)
@@ -321,7 +306,6 @@ namespace Ademord.Drone
                  Vector3.Angle(fwd, delta) < m_TargetScanAngle &&
                  delta.sqrMagnitude < m_TargetScanDistanceSqr)
             {
-                print("scanning target");
                 // following m_baske's logic of shooting bullets forward
                 // scanner will create a scan in the position and direction sent
                 ScannerPosition = pos + fwd;
@@ -331,30 +315,61 @@ namespace Ademord.Drone
                 m_ShotTime = Time.time;
                 scanned = true;
                 RotateVFXToTarget(target);
-            }
-
-        }
-        
-        private void RotateVFXToTarget(GameObject target)
-        {
-            if (m_VFX.gameObject.activeInHierarchy)
-            {
-                // m_VFX.transform.LookAt(target.transform);
-                // var desiredRotQ = Quaternion.LookRotation(delta, Vector3.up);
-                    
-                Quaternion OriginalRot = m_VFX.transform.rotation;
-                m_VFX.transform.LookAt(target.transform);
-                Quaternion NewRot = m_VFX.transform.rotation;
-                m_VFX.transform.rotation = OriginalRot;
-                m_VFX.transform.rotation = Quaternion.Lerp(m_VFX.transform.rotation, NewRot, damping * Time.deltaTime);
-
-                // Vector3 lTargetDir = target.transform.position - m_VFX.transform.position;
-                // lTargetDir.y = 0.0f;
-                // m_VFX.transform.localRotation = Quaternion.RotateTowards(m_VFX.transform.localRotation,
-                //     Quaternion.LookRotation(lTargetDir), (1f * Time.deltaTime) *  5);
+                // ResetObservations();
             }
         }
+
         private void ScanTargets()
+        {
+            // *** SCAN ***
+            Vector3 pos = m_Drone.Position;
+            Vector3 fwd = m_Drone.transform.forward;
+            // m_Targets.Clear();
+
+            // Find targets in vicinity.
+            // if CanScan() removed because of reduction of FPS
+            var _targetsFound = false;
+
+            foreach (var target in m_SensorComponent.GetDetectedGameObjects(m_TargetTag))
+            {
+                // edit Data point to add
+                Point point = new Point(PointType.ScanPoint, target.transform.position, Time.time);
+                Data.AddPoint(point);
+                // update that a target was found
+                _targetsFound = true;
+                
+                VoxelController myVoxel = target.transform.parent.GetComponent<VoxelController>();
+                Vector3 delta = target.transform.position - pos;
+                dotProductToTarget = Vector3.Dot(fwd, myVoxel.transform.forward);
+                if (dotProductToTarget < m_TargetDotProduct 
+                    && Vector3.Angle(fwd, delta) < m_TargetFollowAngle 
+                    && delta.sqrMagnitude < m_TargetFollowDistanceSqr)
+                {        
+
+                    if (UnityEngine.Random.Range(0, 101) <= m_ScanAccuracy) // chance to collect
+                    {
+                        // removing m_targets because the reload time slows down FPS. there is no nice way to do 
+                        // bulk scanning
+                        // m_Targets.Add(target);
+                        ScanTarget(target);
+                    }
+                    // print("dotproduct to target: " + dotProductToTarget);
+                }
+                // m_AddedTargetsTime = Time.time;
+            }
+            
+            // add scanpoint
+
+            // ScanTargets();
+            if (_targetsFound == false)
+            {
+                Point point = new Point(PointType.ScanOutOfRange, m_Drone.Position + fwd * m_TargetFollowDistance, Time.time);
+                Data.AddPoint(point);
+                ResetObservations(false);
+            }
+            ResetVFX();
+        }
+        private void ScanTargets_deprecated()
         {
             Vector3 pos = m_Drone.transform.position;
             Vector3 fwd = m_Drone.transform.forward;
@@ -386,7 +401,7 @@ namespace Ademord.Drone
                         m_ScannerComponent.Scan(this, target.transform);
                         m_ShotTime = Time.time;
                         scanned = true;
-                        if (m_VFX.gameObject.activeInHierarchy)
+                        if (m_VFX != null)
                         {
                             // m_VFX.transform.LookAt(target.transform);
                             // var desiredRotQ = Quaternion.LookRotation(delta, Vector3.up);
@@ -406,24 +421,69 @@ namespace Ademord.Drone
                 }
   
             }
-
             ResetVFX();
+            ResetObservations(false);
+        }
+
+        public void ResetObservations(bool fullReset)
+        {
+            // reset SCAN observations 
+            dotProductToTarget = 100f;
+            // distanceToTarget = 100f;
+            scanned = false;
+
+            if (fullReset)
+            {
+                // reset octree
+                Data.Reset(m_Drone.Position, m_TargetFollowDistance, leafNodeSize); // lookRadius removed
+            
+                // reset octree scan related data
+                scanPoint = default(Point);
+                prevPos = GetVector3Int(m_Drone.Position);
+                lingerCount = 0;
+            }
+           
+        }
+                
+        private void RotateVFXToTarget(GameObject target)
+        {
+            if (m_VFX != null)
+            {
+                // m_VFX.transform.LookAt(target.transform);
+                // var desiredRotQ = Quaternion.LookRotation(delta, Vector3.up);
+                    
+                Quaternion OriginalRot = m_VFX.transform.rotation;
+                m_VFX.transform.LookAt(target.transform);
+                Quaternion NewRot = m_VFX.transform.rotation;
+                m_VFX.transform.rotation = OriginalRot;
+                m_VFX.transform.rotation = Quaternion.Lerp(m_VFX.transform.rotation, NewRot, damping * Time.deltaTime);
+
+                // Vector3 lTargetDir = target.transform.position - m_VFX.transform.position;
+                // lTargetDir.y = 0.0f;
+                // m_VFX.transform.localRotation = Quaternion.RotateTowards(m_VFX.transform.localRotation,
+                //     Quaternion.LookRotation(lTargetDir), (1f * Time.deltaTime) *  5);
+            }
         }
 
         private void ResetVFX()
         {
+            // print("trying to reset VFX");
             if (CanResetScannerRotation())
             {
                 m_ScannerComponent.Reset();
-                var rotation = m_VFX.transform.rotation;
-                if (m_VFX.gameObject.activeInHierarchy)
+                if (m_VFX != null)
                 {
+                    var rotation = m_VFX.transform.rotation;
                     // m_VFX.transform.localRotation = 
                     var desiredRotQ = new Quaternion(0, rotation.y, 0, rotation.w);
-                    m_VFX.transform.rotation = Quaternion.Lerp(rotation, desiredRotQ, Time.deltaTime * damping / 5);
+                    m_VFX.transform.rotation = Quaternion.Lerp(rotation, desiredRotQ, Time.deltaTime * damping);
                 }
                 scanned = false;
             }
+            // else
+            // {
+            //     print("could not reset");
+            // }
         }
         private bool CanScan()
         {
@@ -472,12 +532,13 @@ namespace Ademord.Drone
         /// <inheritdoc/>
         public void OnVoxelScanned()
         {
-            AddReward(1);
+            AddReward(1f);
             m_HitScoreCount++;
         }
 
         void Update()
         {
+            // print("dotProductToTarget: " + (dotProductToTarget > 0.5));
             // end episode if all collectibles have been collected
             if (m_World.EverythingHasBeenCollected)
             {

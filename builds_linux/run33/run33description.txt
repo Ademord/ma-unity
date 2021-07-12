@@ -1,1 +1,0 @@
-run33 = run32_nostacked + removed condition for strafe reward (inside torus, line 215 TorusRaycastWithYawAgent.cs)

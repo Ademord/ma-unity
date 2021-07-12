@@ -182,18 +182,31 @@ public class SceneDrone : MonoBehaviour
     // }
     public void ManagedUpdate(ActionBuffers actions)
     {
-        float forwardInput = actions.ContinuousActions[0] <= 1 ? actions.ContinuousActions[0] : -1;
-        float sidesInput = actions.ContinuousActions[1] <= 1 ? actions.ContinuousActions[1] : -1;
-        float yaw = actions.ContinuousActions[2] <= 1 ? actions.ContinuousActions[2] : -1;
-        // new vertical input
-        float verticalInput = actions.ContinuousActions[3] <= 1 ? actions.ContinuousActions[3] : -1;
-        // float pitch = actions.DiscreteActions[4] <= 1 ? actions.DiscreteActions[4] : -1;
+        // TODO pull this info from editor 
+        bool Heuristic = true;
         
-        characterController.ForwardInput = forwardInput;
-        characterController.TurnInput = yaw;
-        characterController.SidesInput = sidesInput;
-        characterController.VerticalInput = verticalInput;
-        // characterController.PitchInput = pitch;
+        if (Heuristic)
+        {
+            float forwardInput = actions.ContinuousActions[0] <= 1 ? actions.ContinuousActions[0] : -1;
+            float sidesInput = actions.ContinuousActions[1] <= 1 ? actions.ContinuousActions[1] : -1;
+            float yaw = actions.ContinuousActions[2] <= 1 ? actions.ContinuousActions[2] : -1;
+            // new vertical input
+            float verticalInput = actions.ContinuousActions[3] <= 1 ? actions.ContinuousActions[3] : -1;
+            // float pitch = actions.DiscreteActions[4] <= 1 ? actions.DiscreteActions[4] : -1;
+        
+            characterController.ForwardInput = forwardInput;
+            characterController.TurnInput = yaw;
+            characterController.SidesInput = sidesInput;
+            characterController.VerticalInput = verticalInput;
+            // characterController.PitchInput = pitch;
+        }
+        else
+        {
+            characterController.ForwardInput = actions.ContinuousActions[0];
+            characterController.SidesInput = actions.ContinuousActions[1];
+            characterController.TurnInput = actions.ContinuousActions[2];
+            characterController.VerticalInput = actions.ContinuousActions[3];
+        }
     }
     public void ManagedUpdate(Vector3 velocity, float yaw)
     {
@@ -293,8 +306,9 @@ public class SceneDrone : MonoBehaviour
         RaycastHit hit;
         Ray ray = new Ray(Position, m_Rigidbody.velocity);
         Vector4 result = new Vector4(0f, 0f, 0f, 1f);
-        if (Physics.SphereCast(ray, 0.25f, out hit, proximitySensorRange, layerMask))
+        if (Physics.SphereCast(ray, 0.25f, out hit, proximitySensorRange))
         {
+            Debug.Log("proximity found something");
             result = (hit.point - Position).normalized;
             result.w = hit.distance / proximitySensorRange;
         }

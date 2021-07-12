@@ -21,11 +21,11 @@ namespace Ademord.Drone
         // public float PitchInput { get; set; }
         // float smoothYawInput = 0f;
 
-        new private Rigidbody rigidbody;
+        private Rigidbody m_Rigidbody;
 
         private void Awake()
         {
-            rigidbody = GetComponent<Rigidbody>();
+            m_Rigidbody = GetComponent<Rigidbody>();
         }
 
         private void FixedUpdate()
@@ -42,7 +42,12 @@ namespace Ademord.Drone
             if (TurnInput != 0f)
             {
                 float angle = Mathf.Clamp(TurnInput, -1f, 1f) * turnSpeed;
-                transform.Rotate(Vector3.up, Time.fixedDeltaTime * angle);
+                var yaw = Mathf.Clamp( TurnInput * 0.01f, -1, 1);
+
+
+                // transform.Rotate(Vector3.up, Time.fixedDeltaTime * angle);
+                m_Rigidbody.AddTorque(transform.up * yaw, ForceMode.VelocityChange);
+
             }
             // if (PitchInput != 0f)
             // {
@@ -73,7 +78,9 @@ namespace Ademord.Drone
             verticalTranslation *= Time.deltaTime;
             // rotation *= Time.deltaTime;
 
-            transform.Translate(strafe, verticalTranslation, translation);
+            // transform.Translate(strafe, verticalTranslation, translation);
+            m_Rigidbody.AddForce(new Vector3(-strafe, verticalTranslation, translation) * 4f, ForceMode.VelocityChange);
+
             // transform.Rotate(0, rotation, 0);
 
             // // Yaw Prerrequisites (cast YawInput to SmoothYawInput

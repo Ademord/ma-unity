@@ -3,6 +3,7 @@
   <component name="ContentModelUserStore">
     <attachedFolders />
     <explicitIncludes>
+      <Path>$USER_HOME$/Downloads/gizmos-master</Path>
       <Path>$USER_HOME$/Downloads/unity installed packages/barracuda-release-1.4.0-preview</Path>
       <Path>$USER_HOME$/Downloads/unity installed packages/ml-agents-release_17/com.unity.ml-agents</Path>
       <Path>$USER_HOME$/Downloads/unity installed packages/ml-agents-release_17/com.unity.ml-agents.extensions</Path>

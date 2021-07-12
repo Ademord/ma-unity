@@ -25,21 +25,28 @@ public class TrainingAreaController3D : MonoBehaviour
     public event Action ScansCompleteEvent;
     private bool m_OptScansComplete; // flag
 
-    public float FieldRadius = 100;
+    public float FieldRadius = 5;
     private float m_RadiusSqr;
-    [SerializeField, Range(10, 50)]
-    private float m_AsteroidSpacing = 22;
-   
-    [SerializeField, ReadOnly]
-    private int m_AsteroidCount; // info
+
+    
     // Start is called before the first frame update
     public void Initialize()
     {
         // initialize empty variables
         trainingElements = new Dictionary<Transform, (int numToCollect, List<VoxelController> collectibles)>();
+        
         // initialize variables
         FindAllElements(transform);
 
+        // initalize collectibles
+        foreach (var kvp in trainingElements.ToArray())
+        {
+            foreach (var collectible in kvp.Value.collectibles)
+            {
+                if (collectible.gameObject.activeInHierarchy) collectible.Initialize();
+            }
+        }
+        
         // Debug.Log("found n Collectibles on the TrainingArea you gave me: " + collectiblesList.Count);
         // Debug.Log("found n Children on the TrainingArea you gave me: " + children.Count);
     }
@@ -133,7 +140,7 @@ public class TrainingAreaController3D : MonoBehaviour
     // {
     //     m_Target = Instantiate(prefab, pos, Quaternion.identity, transform.parent);
     // }
-    public void MoveToSafeRandomPosition(Transform trans)
+    public void MoveToSafeRandomPosition(Transform trans, bool isDrone=false)
     {
         bool safePositionFound = false;
         int attemptsRemaining = 100;
@@ -144,7 +151,9 @@ public class TrainingAreaController3D : MonoBehaviour
         while (!safePositionFound && attemptsRemaining > 0)
         {
             // print("looking for a safe position....");
-            float height = Random.Range(0, maxSpawnHeight);
+            // make drone spawn higher to bike
+            var multiplier = isDrone ? 1.2f : 0.8f;
+            float height = Random.Range(0, maxSpawnHeight * multiplier);
             float radius = Random.Range(2f, 8f);
             Quaternion direction = Quaternion.Euler(
                 0, Random.Range(-180f, 180f), 0f);

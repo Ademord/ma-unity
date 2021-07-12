@@ -1,7 +1,13 @@
 {
   "dependencies": {
+    "com.popcron.gizmos": {
+      "version": "file:D:/Unity Hub Projects AI ML/ma-unity/unity installed packages/gizmos-master",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.barracuda": {
-      "version": "file:C:/Users/franc/Downloads/unity installed packages/barracuda-release-1.4.0-preview",
+      "version": "file:D:/Unity Hub Projects AI ML/ma-unity/unity installed packages/barracuda-release-1.4.0-preview",
       "depth": 0,
       "source": "local",
       "dependencies": {
@@ -66,7 +72,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ml-agents": {
-      "version": "file:C:/Users/franc/Downloads/unity installed packages/ml-agents-release_17/com.unity.ml-agents",
+      "version": "file:D:/Unity Hub Projects AI ML/ma-unity/unity installed packages/ml-agents-release_17/com.unity.ml-agents",
       "depth": 0,
       "source": "local",
       "dependencies": {
@@ -76,7 +82,7 @@
       }
     },
     "com.unity.ml-agents.extensions": {
-      "version": "file:C:/Users/franc/Downloads/unity installed packages/ml-agents-release_17/com.unity.ml-agents.extensions",
+      "version": "file:D:/Unity Hub Projects AI ML/ma-unity/unity installed packages/ml-agents-release_17/com.unity.ml-agents.extensions",
       "depth": 0,
       "source": "local",
       "dependencies": {
