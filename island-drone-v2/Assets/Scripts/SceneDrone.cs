@@ -155,10 +155,10 @@ public class SceneDrone : MonoBehaviour
 
         Reset();
     }
-    private void Awake()
-    {
-        Stop();
-    }
+    // private void Awake()
+    // {
+    //     Stop();
+    // }
     public void Reset()
     {
         // ScanBuffer.Clear();

@@ -20,105 +20,108 @@ namespace Ademord.Drone
     public class SceneDroneAgent : Agent, IScannerOwner
     {
         /// <inheritdoc/>
-        public Vector3 ScannerPosition { get; private set; }
+        public Vector3 ScannerPosition { get; protected set; }
 
         /// <inheritdoc/>
-        public Vector3 ScannerDirection { get; private set; }
+        public Vector3 ScannerDirection { get; protected set; }
         // private ScannerPool m_Scanner;
         
 
-        private StatsRecorder m_Stats;
-        public SceneDroneData Data { get; private set; }
+        protected StatsRecorder m_Stats;
+        public SceneDroneData Data { get; protected set; }
         // public BlockWorld World { get; private set; }
+        protected GameObject m_VFX;
+        public SceneDrone m_Drone { get; protected set; }
         
         // [SerializeField]
         // [Range(2f, 10f)]
         // private float lookRadius = 5f; // replaced for m_TargetFollowDistance
         [SerializeField]
         [Range(0.25f, 1f)]
-        private float leafNodeSize = 0.5f;
+        protected float leafNodeSize = 0.5f;
 
-        private Point scanPoint;
-        private Vector3Int prevPos;
-        private int lingerCount; 
+        protected Point scanPoint;
+        protected Vector3Int prevPos;
+        protected int lingerCount; 
 
         [Header("TrainingArea Parameters")]
-        private TrainingAreaController3D m_World;
+        protected TrainingAreaController3D m_World;
         
         [SerializeField]
         [Tooltip("Maximum exploration area the drone is allowed to cover.")]
         [Range(5f, 30f)]
-        private float ExplorationLimit = 10f;
+        protected float ExplorationLimit = 10f;
         [SerializeField]
         [Tooltip("Drone's Scanner Eye.")]
-        private ScannerController m_ScannerComponent;
+        protected ScannerController m_ScannerComponent;
         [SerializeField]
         [Tooltip("Reference to sensor component for retrieving detected opponent gameobjects.")]
-        private GridSensorComponent3D m_SensorComponent;
+        protected GridSensorComponent3D m_SensorComponent;
         [SerializeField]
         [Tooltip("Ship-to-ship forward axis angle below which agent is rewarded for following opponent.")]
-        private float m_TargetDotProduct = -0.8f;
+        protected float m_TargetDotProduct = -0.8f;
         [SerializeField]
         [Tooltip("Ship-to-ship forward axis angle below which agent is rewarded for following opponent.")]
-        private float m_TargetFollowAngle = 30;
+        protected float m_TargetFollowAngle = 30;
         [SerializeField]
         [Tooltip("Ship-to-ship distance below which agent is rewarded for following opponent.")]
-        private float m_TargetFollowDistance = 50;
-        private float m_TargetFollowDistanceSqr;
+        protected float m_TargetFollowDistance = 50;
+        protected float m_TargetFollowDistanceSqr;
         [SerializeField]
         [Tooltip("Ship-to-ship forward axis angle below which target is locked and auto-fire triggered.")]
-        private float m_TargetScanAngle = 10;
+        protected float m_TargetScanAngle = 10;
         [SerializeField]
         [Tooltip("Ship-to-ship distance below which target is locked and auto-fire triggered.")]
-        private float m_TargetScanDistance = 20;
-        private float m_TargetScanDistanceSqr;
+        protected float m_TargetScanDistance = 20;
+        protected float m_TargetScanDistanceSqr;
         [SerializeField]
         [Tooltip("Delay between auto-fire shots.")]
-        private float m_ScanReloadTime = 0.2f;       
+        protected float m_ScanReloadTime = 0.2f;       
         [SerializeField]
         [Tooltip("Delay between auto-fire shots.")]
-        private float m_ScanAccuracy = 20;        
+        protected float m_ScanAccuracy = 20;        
         [SerializeField]
         [Tooltip("Delay between auto-fire shots.")]
-        private float m_InactivityTime = 2f;
+        protected float m_InactivityTime = 2f;
         [SerializeField]
         [Tooltip("Scanner Buffer Size.")]
-        private int m_TargetsBufferSize = 10;
+        protected int m_TargetsBufferSize = 10;
         [SerializeField]
         [Tooltip("Target Tag")]
-        private static string m_TargetTag = "collectible"; // same for all.
+        protected static string m_TargetTag = "collectible"; // same for all.
         [SerializeField]
         [Tooltip("Step interval for writing stats to Tensorboard.")]
-        private int m_StatsInterval = 120;
+        protected int m_StatsInterval = 120;
         [SerializeField]  [BitMask(typeof(SteuernModus))]
-        private SteuernModus steuernModus;
+        protected SteuernModus steuernModus;
 
-        private float m_ShotTime;
-        private float m_MovedTime;
-        private float m_AddedTargetsTime;
-        private bool scanned;
-        private GameObject m_VFX;
-        public SceneDrone m_Drone { get; private set; }
-        private float dotProductToTarget;
-        private float distanceToTarget;
-        private Vector3 vectorToTargetsInFront;
-        private Vector3 vectorToTargetsFacingAway;
+        protected float m_ShotTime;
+        protected float m_MovedTime;
+        protected float m_AddedTargetsTime;
+        protected bool scanned;
+
+        protected float dotProductToTarget;
+        protected float distanceToTarget;
+        protected Vector3 vectorToTargetsInFront;
+        protected Vector3 vectorToTargetsFacingAway;
         // damping of VFX rotation
-        private float damping = 10;
-        private int m_HitScoreCount;
+        protected float damping = 10;
+        protected int m_HitScoreCount;
 
        
         
         // private int m_CollisionCount;
         // private IList<GameObject> m_Targets;
         
-        private void OnValidate()
+        protected void OnValidate()
         {
             leafNodeSize = Mathf.Pow(2f, Mathf.Round(Mathf.Log(leafNodeSize, 2f)));
         }
 
         public override void Initialize()
         {
+            // debug why Heuristic not running
+            // print("entering initialize");
             // m_Scanner = FindObjectOfType<ScannerPool>();
             // m_ScannerComponent = GetComponent<ScannerController>();
             m_VFX = GameObject.Find("VFX");
@@ -151,10 +154,12 @@ namespace Ademord.Drone
 
         public override void OnEpisodeBegin()
         {
+            // print("entering onepisodebegin");
+
             m_Drone.Reset();
-            
             m_World.MoveToSafeRandomPosition(m_Drone.transform, true);
-            m_World.Reset(); 
+
+            // m_World.Reset(); 
 
             ResetObservations(true);
         }
@@ -270,7 +275,9 @@ namespace Ademord.Drone
 
         /// <inheritdoc/>
         public override void Heuristic(in ActionBuffers actionsOut)
-        {
+        { 
+            // print("entering heuristic");
+
             // var actions = actionsOut.DiscreteActions;
             var actions = actionsOut.ContinuousActions;
             // bool shift = Input.GetKey(KeyCode.LeftShift);
@@ -314,7 +321,7 @@ namespace Ademord.Drone
             // actions[4] = pitch >= 0 ? pitch : 2;
             
         }
-        private void ScanTarget(GameObject target)
+        protected void ScanTarget(GameObject target)
         {
             Vector3 pos = m_Drone.Position;
             Vector3 fwd = m_Drone.transform.forward;
@@ -344,7 +351,7 @@ namespace Ademord.Drone
             }
         }
 
-        private void ScanTargets()
+        protected void ScanTargets()
         {
             // *** SCAN ***
             Vector3 pos = m_Drone.Position;
@@ -490,7 +497,7 @@ namespace Ademord.Drone
            
         }
                 
-        private void RotateVFXToTarget(GameObject target)
+        protected void RotateVFXToTarget(GameObject target)
         {
             if (m_VFX != null)
             {
@@ -510,7 +517,7 @@ namespace Ademord.Drone
             }
         }
 
-        private void ResetVFX()
+        protected void ResetVFX()
         {
             // print("trying to reset VFX");
             if (CanResetScannerRotation())
@@ -530,18 +537,18 @@ namespace Ademord.Drone
             //     print("could not reset");
             // }
         }
-        private bool CanScan()
+        protected bool CanScan()
         {
             return Time.time - m_ShotTime >= m_ScanReloadTime;
         }
-        private bool NotMoving()
+        protected bool NotMoving()
         {
             return Time.time - m_MovedTime >= m_InactivityTime / 4;
         }
         
         // after having scanned AND a period of time has passed since last scan, reset rotation == not scanning anymore
         // it needs the bool scanned otherwise it will always reset the position since time will always be higher
-        private bool CanResetScannerRotation()
+        protected bool CanResetScannerRotation()
         {
             return scanned && (Time.time - m_ShotTime >= m_InactivityTime);
         } 
@@ -551,7 +558,7 @@ namespace Ademord.Drone
         //     print(m_Targets.Count);
         //     return (Time.time - m_AddedTargetsTime >= m_ScanReloadTime * m_Targets.Count * 0.8f);
         // }
-        private bool IsNewGridPosition(Vector3 dronePos)
+        protected bool IsNewGridPosition(Vector3 dronePos)
         {
             Vector3Int pos = GetVector3Int(dronePos);
             if (pos != prevPos)
@@ -565,7 +572,7 @@ namespace Ademord.Drone
             return false;
         }
 
-        private Vector3Int GetVector3Int(Vector3 pos)
+        protected Vector3Int GetVector3Int(Vector3 pos)
         {
             float s = Data.LeafNodeSize;
             return new Vector3Int(

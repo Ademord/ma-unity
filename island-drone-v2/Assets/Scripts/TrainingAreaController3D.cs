@@ -61,7 +61,7 @@ public class TrainingAreaController3D : MonoBehaviour
             // reset each voxels state (material and collider)
             foreach (var collectible in kvp.Value.collectibles)
             {
-                if (collectible.gameObject.activeInHierarchy) collectible.Reset();
+                if (collectible != null && collectible.gameObject.activeInHierarchy) collectible.Reset();
             }
             // reset the objects position to a random location
             MoveToSafeRandomPosition(kvp.Key);
@@ -77,18 +77,29 @@ public class TrainingAreaController3D : MonoBehaviour
     {
         get
         {
-            var result = true;
+            var scannedObjects = 0;
             foreach (var kvp in trainingElements)
             {
-                // print("num to be collected: " + kvp.Value.numToCollect); 
-                if (kvp.Value.numToCollect > 0)
+                if (IsFullyScanned(kvp))
                 {
-                    result = false;
-                    break;
+                    scannedObjects++;
+                }
+                else
+                {
+                    // optimization: if one is found that has not been fully scanned, do not keep searching 
+                    return false;
                 }
             }
-            return result;
+            // obvious note: if the number of scanned objects is the same as
+            // the number of objects to scan, all items have been scanned 
+            return scannedObjects == trainingElements.Count;
         }
+    }
+
+    private bool IsFullyScanned(KeyValuePair<Transform, (int numToCollect, List<VoxelController> collectibles)> kvp)
+    {
+        // print("num to be collected: " + kvp.Value.numToCollect);
+        return kvp.Value.numToCollect == 0;
     }
     private void FindCollectibles(Transform parent)
     {
@@ -165,7 +176,7 @@ public class TrainingAreaController3D : MonoBehaviour
             potentialRotation = Quaternion.Euler(pitch, yaw, 0f);
 
             // get a list of all colliders colliding with agent in potentialPosition
-            Collider[] colliders = Physics.OverlapSphere(potentialPosition, 1f);
+            Collider[] colliders = Physics.OverlapSphere(potentialPosition, 2f);
             // safe position if no colliders found
             safePositionFound = colliders.Length == 0;
             attemptsRemaining--;

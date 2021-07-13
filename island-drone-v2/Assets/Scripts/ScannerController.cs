@@ -35,7 +35,7 @@ namespace Ademord.Drone
                 }
                 else
                 {
-                    print("could not collect voxel");
+                    print("could not collect voxel" +  target.transform.name);
                 }
             }
             else
