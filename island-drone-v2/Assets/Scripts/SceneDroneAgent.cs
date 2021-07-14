@@ -154,10 +154,12 @@ namespace Ademord.Drone
 
         public override void OnEpisodeBegin()
         {
-            // print("entering onepisodebegin");
+            print("entering onepisodebegin");
 
             m_Drone.Reset();
-            m_World.MoveToSafeRandomPosition(m_Drone.transform, true);
+            m_Drone.transform.localPosition = new Vector3(0, 3, 0);
+            transform.rotation = Quaternion.Euler(Vector3.up * UnityEngine.Random.Range(0f, 360f));
+            // m_World.MoveToSafeRandomPosition(m_Drone.transform, true);
 
             // m_World.Reset(); 
 
@@ -187,10 +189,11 @@ namespace Ademord.Drone
             AddReward(-1f / MaxStep);
             // print("LocalSpin" + m_Drone.LocalSpin); 
             
-            float linger = lingerCount / 100f; // 0 - 2
-            float lingerPenalty = -linger * 0.001f;
-            // print("linger penalty:" + lingerPenalty);
-            AddReward(lingerPenalty);
+            // run 32 removed lingering penalty
+            // float linger = lingerCount / 100f; // 0 - 2
+            // float lingerPenalty = -linger * 0.001f;
+            // // print("linger penalty:" + lingerPenalty);
+            // AddReward(lingerPenalty);
             
             // run 29 removed velocity related observations
 
@@ -210,7 +213,7 @@ namespace Ademord.Drone
             // sensor.AddObservation((Vector3)proximity); // 3
             // 13 velocity related observations
             
-            sensor.AddObservation(linger - 1f); // 1
+            // sensor.AddObservation(linger - 1f); // 1
             sensor.AddObservation(Data.LookRadiusNorm); // 1 
             sensor.AddObservation(Data.NodeDensities); // 8
             sensor.AddObservation(Data.IntersectRatios); // 8 
@@ -266,11 +269,13 @@ namespace Ademord.Drone
             // if agent strays too far away give a negative reward and end episode
             // print( "distance to center: " + Vector3.Distance(m_Drone.Position, Vector3.zero));
             // print("max distance to explore: " + ExplorationLimit);
-            if (Vector3.Distance(m_Drone.Position, Vector3.zero) > ExplorationLimit)
-            {
-                AddReward(-1);
-                EndEpisode();
-            }
+            
+            // added a boundary so removed this code
+            // if (Vector3.Distance(m_Drone.Position, Vector3.zero) > ExplorationLimit)
+            // {
+            //     AddReward(-1);
+            //     EndEpisode();
+            // }
         }
 
         /// <inheritdoc/>
@@ -519,7 +524,7 @@ namespace Ademord.Drone
 
         protected void ResetVFX()
         {
-            // print("trying to reset VFX");
+            // print("trying to reset VFX after scanning");
             if (CanResetScannerRotation())
             {
                 m_ScannerComponent.Reset();
@@ -532,10 +537,10 @@ namespace Ademord.Drone
                 }
                 scanned = false;
             }
-            // else
-            // {
-            //     print("could not reset");
-            // }
+            else
+            {
+                // print("could not reset");
+            }
         }
         protected bool CanScan()
         {
@@ -550,7 +555,7 @@ namespace Ademord.Drone
         // it needs the bool scanned otherwise it will always reset the position since time will always be higher
         protected bool CanResetScannerRotation()
         {
-            return scanned && (Time.time - m_ShotTime >= m_InactivityTime);
+            return (Time.time - m_ShotTime >= m_InactivityTime);
         } 
         // if a period has passed after scannning
         // private bool CanAddTargets()
@@ -596,6 +601,7 @@ namespace Ademord.Drone
             if (m_World.trainingElements.Count > 0 && m_World.EverythingHasBeenCollected)
             {
                 print("collected all the items!");
+                AddReward(1f);
                 EndEpisode();
             }
         }

@@ -110,7 +110,7 @@ public class TrainingAreaController3D : MonoBehaviour
         {
             Transform child = parent.GetChild(i);
             // Debug.Log("childs name: " + child.name);
-            if (child.CompareTag(collectibleTag))
+            if (child.gameObject.activeInHierarchy && child.CompareTag(collectibleTag))
             {
                 VoxelController current_child = child.GetComponent<VoxelController>();
                 // once flower found, add the flowers list and add the collider attached to the hash map
@@ -165,7 +165,7 @@ public class TrainingAreaController3D : MonoBehaviour
             // make drone spawn higher to bike
             var multiplier = isDrone ? 1.2f : 0.8f;
             float height = Random.Range(0, maxSpawnHeight * multiplier);
-            float radius = Random.Range(2f, 8f);
+            float radius = Random.Range(2f, 10f);
             Quaternion direction = Quaternion.Euler(
                 0, Random.Range(-180f, 180f), 0f);
             potentialPosition = transform.position
@@ -176,7 +176,7 @@ public class TrainingAreaController3D : MonoBehaviour
             potentialRotation = Quaternion.Euler(pitch, yaw, 0f);
 
             // get a list of all colliders colliding with agent in potentialPosition
-            Collider[] colliders = Physics.OverlapSphere(potentialPosition, 2f);
+            Collider[] colliders = Physics.OverlapSphere(potentialPosition, 1f);
             // safe position if no colliders found
             safePositionFound = colliders.Length == 0;
             attemptsRemaining--;
