@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Ademord.Drone;
 using MBaske.MLUtil;
 using MBaske.Sensors.Grid;
@@ -57,9 +58,9 @@ namespace Ademord.Drone
         [SerializeField]
         [Tooltip("Reference to sensor component for retrieving detected opponent gameobjects.")]
         protected GridSensorComponent3D m_SensorComponent;
-        [SerializeField]
-        [Tooltip("Ship-to-ship forward axis angle below which agent is rewarded for following opponent.")]
-        protected float m_TargetDotProduct = -0.8f;
+        // [SerializeField]
+        // [Tooltip("Ship-to-ship forward axis angle below which agent is rewarded for following opponent.")]
+        // protected float m_TargetDotProduct = -0.8f;
         [SerializeField]
         [Tooltip("Ship-to-ship forward axis angle below which agent is rewarded for following opponent.")]
         protected float m_TargetFollowAngle = 30;
@@ -100,8 +101,10 @@ namespace Ademord.Drone
         protected float m_AddedTargetsTime;
         protected bool scanned;
 
-        protected float dotProductToTarget;
+        // protected float dotProductToTarget;
         protected float distanceToTarget;
+        protected float angleToTargetsInFront;
+        protected float angleToTargetsFacingAway;
         protected Vector3 vectorToTargetsInFront;
         protected Vector3 vectorToTargetsFacingAway;
         // damping of VFX rotation
@@ -226,7 +229,9 @@ namespace Ademord.Drone
             // sensor.AddObservation(m_Drone.Position); // 1 
             sensor.AddObservation(m_Drone.NormPosition); // 1 
             sensor.AddObservation(m_Drone.NormOrientation); // 1
-            sensor.AddObservation(dotProductToTarget); // 1
+            // sensor.AddObservation(dotProductToTarget); // 1
+            sensor.AddObservation(angleToTargetsInFront); // 1
+            sensor.AddObservation(angleToTargetsFacingAway); // 1
             sensor.AddObservation(distanceToTarget); // 1
             sensor.AddObservation(vectorToTargetsInFront.normalized); // 3
             sensor.AddObservation(vectorToTargetsFacingAway.normalized); // 3
@@ -235,7 +240,11 @@ namespace Ademord.Drone
 
         public override void OnActionReceived(ActionBuffers actions)
         {
-
+            if (CanResetScannerRotation())
+            {
+                // penalize while not scanning
+                AddReward(-0.001f);
+            }
             // if (actions.ContinuousActions[0] != 0f ||
             //     actions.ContinuousActions[1] != 0f ||
             //     actions.ContinuousActions[2] != 0f ||
@@ -368,6 +377,9 @@ namespace Ademord.Drone
             var _targetsFound = false;
             Vector3 _vectorToTargetsInFront = vectorToTargetsInFront;
             Vector3 _vectorToTargetsFacingAway = vectorToTargetsFacingAway;
+            float _distanceToTargets = 0;
+            float _angleToTargetsInFront = 0;
+            float _angleToTargetsFacingAway = 0;
             foreach (var target in m_SensorComponent.GetDetectedGameObjects(m_TargetTag))
             {
                 // edit Data point to add
@@ -378,17 +390,22 @@ namespace Ademord.Drone
                 
                 VoxelController myVoxel = target.transform.parent.GetComponent<VoxelController>();
                 Vector3 delta = target.transform.position - pos;
-                dotProductToTarget = Vector3.Dot(fwd, myVoxel.transform.forward);
-                distanceToTarget = Vector3.Distance(myVoxel.transform.position, pos);
-
+                // dotProduct requirement: ONLY SCAN TARGETS IN FRONT
+                var dotProductToTarget = Vector3.Dot(fwd, myVoxel.transform.forward);
+                // distanceToTarget = Vector3.Distance(myVoxel.transform.position, pos);
              
-                if (dotProductToTarget < m_TargetDotProduct 
+                if ( // dotProductToTarget < m_TargetDotProduct
+                    dotProductToTarget < 0
                     && Vector3.Angle(fwd, delta) < m_TargetFollowAngle 
                     && delta.sqrMagnitude < m_TargetFollowDistanceSqr)
                 {        
                     _vectorToTargetsInFront += myVoxel.transform.position - pos;
                     _vectorToTargetsInFront /= 2f;
-
+                    
+                    _distanceToTargets += Vector3.Distance(myVoxel.transform.position, pos);
+                    
+                    _angleToTargetsInFront += Vector3.Angle(fwd, delta);
+                    
                     if (UnityEngine.Random.Range(0, 101) <= m_ScanAccuracy) // chance to collect
                     {
                         // removing m_targets because the reload time slows down FPS. there is no nice way to do 
@@ -400,27 +417,50 @@ namespace Ademord.Drone
                 }
                 else
                 {
+                    // objects i cannot scan
                     _vectorToTargetsFacingAway += myVoxel.transform.position - pos;
                     _vectorToTargetsFacingAway /= 2f;
+                    
+                    _angleToTargetsFacingAway += Vector3.Angle(fwd, delta);
+
                 }
                 // m_AddedTargetsTime = Time.time;
             }
 
-            vectorToTargetsInFront = _vectorToTargetsInFront;
-            vectorToTargetsFacingAway = _vectorToTargetsFacingAway;
-            
-            // print("in front of me: " + vectorToTargetsInFront);
-            // print("facing away: " + vectorToTargetsFacingAway);
-
-            // add scanpoint
-
-            // ScanTargets();
             if (_targetsFound == false)
             {
                 Point point = new Point(PointType.ScanOutOfRange, m_Drone.Position + fwd * m_TargetFollowDistance, Time.time);
                 Data.AddPoint(point);
                 ResetObservations(false);
             }
+            else
+            {
+                var n_ObjectsDetectedBySensor = m_SensorComponent.GetDetectedGameObjects(m_TargetTag).Count();
+                
+                // avg vector to targets
+                vectorToTargetsInFront = _vectorToTargetsInFront;
+                vectorToTargetsFacingAway = _vectorToTargetsFacingAway;
+                
+                // avg distance to targets
+                _distanceToTargets /= n_ObjectsDetectedBySensor;
+                distanceToTarget = _distanceToTargets;
+                
+                // avg facing direction to targets (technically should be inferred from vectors)
+                _angleToTargetsInFront /= n_ObjectsDetectedBySensor;
+                angleToTargetsInFront = _angleToTargetsInFront;
+                
+                _angleToTargetsFacingAway /= n_ObjectsDetectedBySensor;
+                angleToTargetsFacingAway = _angleToTargetsFacingAway;
+                
+                // print("in front of me: " + vectorToTargetsInFront);
+                // print("facing away: " + vectorToTargetsFacingAway);
+                
+                print("distance to targets: " + distanceToTarget);
+                
+                // print("angle to targets infront: " + angleToTargetsInFront);
+                // print("angle to targets facingaway: " + angleToTargetsFacingAway);
+            }
+
             ResetVFX();
         }
         // private void ScanTargets_deprecated()
@@ -482,12 +522,15 @@ namespace Ademord.Drone
         public void ResetObservations(bool fullReset)
         {
             // reset SCAN observations 
-            dotProductToTarget = 100f;
-            distanceToTarget = 100f;
+            vectorToTargetsInFront = vectorToTargetsFacingAway = m_Drone.transform.forward;
+
+            distanceToTarget = -1f;
             // distanceToTarget = 100f;
+            
+            angleToTargetsInFront = -1f;
+            angleToTargetsFacingAway = -1f;
+
             scanned = false;
-            vectorToTargetsInFront = m_Drone.transform.forward;
-            vectorToTargetsFacingAway = m_Drone.transform.forward;
             
             if (fullReset)
             {
@@ -499,7 +542,6 @@ namespace Ademord.Drone
                 prevPos = GetVector3Int(m_Drone.Position);
                 lingerCount = 0;
             }
-           
         }
                 
         protected void RotateVFXToTarget(GameObject target)
