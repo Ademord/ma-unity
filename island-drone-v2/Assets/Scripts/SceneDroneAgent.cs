@@ -63,6 +63,9 @@ namespace Ademord.Drone
         // protected float m_TargetDotProduct = -0.8f;
         [SerializeField]
         [Tooltip("Ship-to-ship forward axis angle below which agent is rewarded for following opponent.")]
+        protected bool RestartOnCollision = false;
+        [SerializeField]
+        [Tooltip("Ship-to-ship forward axis angle below which agent is rewarded for following opponent.")]
         protected float m_TargetFollowAngle = 30;
         [SerializeField]
         [Tooltip("Ship-to-ship distance below which agent is rewarded for following opponent.")]
@@ -240,11 +243,13 @@ namespace Ademord.Drone
 
         public override void OnActionReceived(ActionBuffers actions)
         {
-            if (CanResetScannerRotation())
+            // penalize rotations
+            if (actions.ContinuousActions[2] != 0f)
             {
-                // penalize while not scanning
-                AddReward(-0.001f);
+                print("penalizing for rotating: " + actions.ContinuousActions[2]);
+                AddReward(-0.01f);
             }
+            
             // if (actions.ContinuousActions[0] != 0f ||
             //     actions.ContinuousActions[1] != 0f ||
             //     actions.ContinuousActions[2] != 0f ||
@@ -387,7 +392,7 @@ namespace Ademord.Drone
                 Data.AddPoint(point);
                 // update that a target was found
                 _targetsFound = true;
-                
+
                 VoxelController myVoxel = target.transform.parent.GetComponent<VoxelController>();
                 Vector3 delta = target.transform.position - pos;
                 // dotProduct requirement: ONLY SCAN TARGETS IN FRONT
@@ -432,6 +437,12 @@ namespace Ademord.Drone
                 Point point = new Point(PointType.ScanOutOfRange, m_Drone.Position + fwd * m_TargetFollowDistance, Time.time);
                 Data.AddPoint(point);
                 ResetObservations(false);
+                // if (CanResetScannerRotation())
+                // {
+                // }
+                // penalize while not scanning
+                print("penalizing while not scanning");
+                AddReward(-0.01f);
             }
             else
             {
@@ -455,7 +466,7 @@ namespace Ademord.Drone
                 // print("in front of me: " + vectorToTargetsInFront);
                 // print("facing away: " + vectorToTargetsFacingAway);
                 
-                print("distance to targets: " + distanceToTarget);
+                // print("distance to targets: " + distanceToTarget);
                 
                 // print("angle to targets infront: " + angleToTargetsInFront);
                 // print("angle to targets facingaway: " + angleToTargetsFacingAway);
@@ -650,9 +661,20 @@ namespace Ademord.Drone
 
         protected virtual void CollisionEvent(object sender, EventArgs e)
         {
+            if (RestartOnCollision)
+            {
+                EndEpisode();
+            }
             AddReward(-1f);
-            EndEpisode();
             Debug.Log("hit the wall!");
+            
+            // print("in front of me: " + vectorToTargetsInFront);
+            // print("facing away: " + vectorToTargetsFacingAway);
+                
+            print("distance to targets: " + distanceToTarget);
+                
+            // print("angle to targets infront: " + angleToTargetsInFront);
+            // print("angle to targets facingaway: " + angleToTargetsFacingAway);
         }
 
 

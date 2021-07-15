@@ -14,8 +14,6 @@ namespace Ademord.Drone
     {
         public override void OnEpisodeBegin()
         {
-            print("entering onepisodebegin");
-
             m_Drone.Reset();
             m_Drone.transform.localPosition = new Vector3(0, 3, 0);
             transform.rotation = Quaternion.Euler(Vector3.up * UnityEngine.Random.Range(0f, 360f));
