@@ -58,6 +58,7 @@ namespace Ademord.Drone
         [SerializeField]
         [Tooltip("Reference to sensor component for retrieving detected opponent gameobjects.")]
         protected GridSensorComponent3D m_SensorComponent;
+        protected GridSensorComponent2D m_SensorComponent_2D;
         // [SerializeField]
         // [Tooltip("Ship-to-ship forward axis angle below which agent is rewarded for following opponent.")]
         // protected float m_TargetDotProduct = -0.8f;
@@ -241,15 +242,17 @@ namespace Ademord.Drone
             // 28    
         }
 
+        protected ActionBuffers saved_actions;
         public override void OnActionReceived(ActionBuffers actions)
         {
             // penalize rotations
             if (actions.ContinuousActions[2] != 0f)
             {
-                print("penalizing for rotating: " + actions.ContinuousActions[2]);
+                // print("penalizing for rotating: " + actions.ContinuousActions[2]);
                 AddReward(-0.01f);
             }
-            
+
+            saved_actions = actions;
             // if (actions.ContinuousActions[0] != 0f ||
             //     actions.ContinuousActions[1] != 0f ||
             //     actions.ContinuousActions[2] != 0f ||
@@ -370,6 +373,24 @@ namespace Ademord.Drone
             }
         }
 
+        protected void FooGridSensor3D()
+        {
+            foreach (var target in m_SensorComponent.GetDetectedGameObjects(m_TargetTag))
+            {
+                // do something
+            }
+            
+        }
+        
+        protected void FooGridSensor2D()
+        {
+            foreach (var target in m_SensorComponent_2D.GetDetectedGameObjects(m_TargetTag))
+            {
+                // do something
+            }
+            
+        }
+        
         protected void ScanTargets()
         {
             // *** SCAN ***
@@ -671,7 +692,7 @@ namespace Ademord.Drone
             // print("in front of me: " + vectorToTargetsInFront);
             // print("facing away: " + vectorToTargetsFacingAway);
                 
-            print("distance to targets: " + distanceToTarget);
+            // print("distance to targets: " + distanceToTarget);
                 
             // print("angle to targets infront: " + angleToTargetsInFront);
             // print("angle to targets facingaway: " + angleToTargetsFacingAway);
