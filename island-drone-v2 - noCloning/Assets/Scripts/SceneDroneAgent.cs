@@ -58,6 +58,7 @@ namespace Ademord.Drone
         [SerializeField]
         [Tooltip("Reference to sensor component for retrieving detected obstacle, goal, and boundary gameobjects.")]
         protected GridSensorComponent3D m_SensorComponent;
+        [SerializeField]
         [Tooltip("Reference to sensor component for retrieving detected goal gameobjects that can be disabled (scanned).")]
         protected GridSensorComponent3D m_SensorComponent_Scanner;
         // [SerializeField]
@@ -249,7 +250,7 @@ namespace Ademord.Drone
             if (actions.ContinuousActions[2] != 0f)
             {
                 // print("penalizing for rotating: " + actions.ContinuousActions[2]);
-                AddReward(-0.01f);
+                AddReward(-0.0001f);
             }
             
             // if (actions.ContinuousActions[0] != 0f ||
@@ -351,17 +352,17 @@ namespace Ademord.Drone
             // instead of pausing after every scan
             
             Vector3 delta = target.transform.position - pos;
-            // Speed towards target.
+            // reward speed towards target.
             float speed = Vector3.Dot(delta.normalized, vlc);
             AddReward(speed * 0.01f);
 
-            if ( CanScan() &&
-                 Vector3.Angle(fwd, delta) < m_TargetScanAngle &&
-                 delta.sqrMagnitude < m_TargetScanDistanceSqr)
+            if (CanScan()) 
+                 // Vector3.Angle(fwd, delta) < m_TargetScanAngle &&
+                 // delta.sqrMagnitude < m_TargetScanDistanceSqr)
             {
                 // following m_baske's logic of shooting bullets forward
                 // scanner will create a scan in the position and direction sent
-                ScannerPosition = pos + fwd;
+                // ScannerPosition = pos + fwd;
                 // ScannerDirection = delta.normalized;
                 // m_Bullets.Shoot(this);
                 m_ScannerComponent.Scan(this, target.transform);
@@ -389,48 +390,63 @@ namespace Ademord.Drone
             float _angleToTargetsFacingAway = 0;
             foreach (var target in m_SensorComponent.GetDetectedGameObjects(m_TargetTag))
             {
-                // edit Data point to add
-                Point point = new Point(PointType.ScanPoint, target.transform.position, Time.time);
-                Data.AddPoint(point);
-                // update that a target was found
-                _targetsFound = true;
-
+                // extract voxel
                 VoxelController myVoxel = target.transform.parent.GetComponent<VoxelController>();
-                Vector3 delta = target.transform.position - pos;
+                
+                if (myVoxel)
+                {
+                    // collection of scan points for octree at targe'ts position
+                    Point point = new Point(PointType.ScanPoint, target.transform.position, Time.time);
+                    Data.AddPoint(point);
+
+                    // update that a target was found, otherwise later a ScanOutOfRange point is added
+                    _targetsFound = true;
+                    
+                    var dotProductToTarget = Vector3.Dot(fwd, myVoxel.transform.forward);
+                    Vector3 delta = target.transform.position - pos;
+
+                    // dotProduct requirement: ONLY SCAN TARGETS IN FRONT
+                    if (dotProductToTarget < 0)
+                        // dotProductToTarget < m_TargetDotProduct
+                        // && Vector3.Angle(fwd, delta) < m_TargetFollowAngle 
+                        // && delta.sqrMagnitude < m_TargetFollowDistanceSqr)
+                    {
+                        _vectorToTargetsInFront += myVoxel.transform.position - pos;
+                        _vectorToTargetsInFront /= 2f;
+
+                        _distanceToTargets += Vector3.Distance(myVoxel.transform.position, pos);
+
+                        _angleToTargetsInFront += Vector3.Angle(fwd, delta);
+                    }
+                    else
+                    {
+                        // objects i cannot scan
+                        _vectorToTargetsFacingAway += myVoxel.transform.position - pos;
+                        _vectorToTargetsFacingAway /= 2f;
+                    
+                        _angleToTargetsFacingAway += Vector3.Angle(fwd, delta);
+
+                    }
+                }
+            }
+
+            foreach (var target in m_SensorComponent_Scanner.GetDetectedGameObjects(m_TargetTag))
+            {
+             
+                VoxelController myVoxel = target.transform.parent.GetComponent<VoxelController>();
                 // dotProduct requirement: ONLY SCAN TARGETS IN FRONT
                 var dotProductToTarget = Vector3.Dot(fwd, myVoxel.transform.forward);
                 // distanceToTarget = Vector3.Distance(myVoxel.transform.position, pos);
-             
-                if ( // dotProductToTarget < m_TargetDotProduct
-                    dotProductToTarget < 0
-                    && Vector3.Angle(fwd, delta) < m_TargetFollowAngle 
-                    && delta.sqrMagnitude < m_TargetFollowDistanceSqr)
-                {        
-                    _vectorToTargetsInFront += myVoxel.transform.position - pos;
-                    _vectorToTargetsInFront /= 2f;
-                    
-                    _distanceToTargets += Vector3.Distance(myVoxel.transform.position, pos);
-                    
-                    _angleToTargetsInFront += Vector3.Angle(fwd, delta);
-                    
-                    if (UnityEngine.Random.Range(0, 101) <= m_ScanAccuracy) // chance to collect
+                
+                // vector to target, used to get angle observation
+                Vector3 delta = target.transform.position - pos;
+
+                // if facing targets and chance to collect is successful
+                if (dotProductToTarget < 0 && UnityEngine.Random.Range(0, 101) <= m_ScanAccuracy) 
                     {
-                        // removing m_targets because the reload time slows down FPS. there is no nice way to do 
-                        // bulk scanning
-                        // m_Targets.Add(target);
                         ScanTarget(target);
                     }
                     // print("dotproduct to target: " + dotProductToTarget);
-                }
-                else
-                {
-                    // objects i cannot scan
-                    _vectorToTargetsFacingAway += myVoxel.transform.position - pos;
-                    _vectorToTargetsFacingAway /= 2f;
-                    
-                    _angleToTargetsFacingAway += Vector3.Angle(fwd, delta);
-
-                }
                 // m_AddedTargetsTime = Time.time;
             }
 
@@ -442,12 +458,14 @@ namespace Ademord.Drone
                 // if (CanResetScannerRotation())
                 // {
                 // }
-                // penalize while not scanning
-                print("penalizing while not scanning");
-                AddReward(-0.01f);
+                
             }
             else
             {
+                // IF targets are in vision and I AM NOT SCANNING: penalize. Will make the agent hurry to scan.
+                print("penalizing while not scanning");
+                AddReward(-0.0001f);
+                
                 var n_ObjectsDetectedBySensor = m_SensorComponent.GetDetectedGameObjects(m_TargetTag).Count();
                 
                 // avg vector to targets
@@ -644,7 +662,7 @@ namespace Ademord.Drone
         /// <inheritdoc/>
         public void OnVoxelScanned()
         {
-            AddReward(1f);
+            AddReward(0.1f);
             m_HitScoreCount++;
         }
 
@@ -656,7 +674,7 @@ namespace Ademord.Drone
             if (m_World.trainingElements.Count > 0 && m_World.EverythingHasBeenCollected)
             {
                 print("collected all the items!");
-                AddReward(1f);
+                // AddReward(1f);
                 EndEpisode();
             }
         }

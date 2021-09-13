@@ -42,9 +42,10 @@ namespace Ademord.Drone
             switch (steuernModus)
             {
                 case SteuernModus.Manual:
-                    float strafe = SidesInput * moveSpeed * 2;
-                    float translation = ForwardInput * moveSpeed * 2;
-                    float verticalTranslation = VerticalInput * moveSpeed * 2;
+                    var multiplier = 4;
+                    float strafe = SidesInput * moveSpeed * multiplier;
+                    float translation = ForwardInput * moveSpeed * multiplier;
+                    float verticalTranslation = VerticalInput * moveSpeed * multiplier;
             
                     strafe *= Time.deltaTime;
                     translation *= Time.deltaTime;
