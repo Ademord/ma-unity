@@ -22,7 +22,7 @@ namespace Ademord.Drone
                 m_LastScanner = Spawn(owner.ScannerPosition);
             }
             // scan 
-            m_LastScanner.Scan(owner, target);
+            // m_LastScanner.Scan(owner, target);
         }
     }
 }

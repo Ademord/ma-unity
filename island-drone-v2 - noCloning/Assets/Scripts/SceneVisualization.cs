@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Gizmos = Popcron.Gizmos;
 
-namespace Ademord.Drone
+namespace Ademord
 {
     public enum DrawFilter : int
     {
@@ -25,7 +25,7 @@ namespace Ademord.Drone
         [SerializeField] [Range(0.25f, 32f)] private float minNodeSize = 2f;
         [SerializeField] [Range(0.25f, 32f)] private float maxNodeSize = 32f;
 
-        private SceneDroneAgent agent;
+        private OctreeAgent agent;
         private List<Point> points;
         private List<OctreeNode> nodes;
         private LeafNodeDrawer leafNodeDrawer;
@@ -56,7 +56,7 @@ namespace Ademord.Drone
 
         private void Start()
         {
-            agent = GetComponent<SceneDroneAgent>();
+            agent = GetComponent<OctreeAgent>();
             points = new List<Point>();
             nodes = new List<OctreeNode>();
             OnValidate();
@@ -66,7 +66,7 @@ namespace Ademord.Drone
         {
             if ((int) drawFilter > 0)
             {
-                center = agent.m_Drone.Position;
+                center = agent.WorldPosition;
 
                 if (drawFilter.HasFlag(DrawFilter.Octree))
                 {

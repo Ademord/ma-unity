@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Ademord.Drone
+namespace Ademord
 {
     /// <summary>
     /// Interface for bullet owner who must provide the position and
@@ -21,8 +21,10 @@ namespace Ademord.Drone
         /// <summary>
         /// Callback performs actions after a bullet hit was scored.
         /// </summary>
-        void OnVoxelScanned();
+        void OnVoxelScanned(GameObject target);
         void ResetObservations(bool fullReset);
+        
+        
     }
 
     /// <summary>
@@ -65,11 +67,11 @@ namespace Ademord.Drone
         /// </summary>
         /// <param name="owner"><see cref="IScannerOwner"/></param>
         /// <param name="target"><see cref="Transform"/></param>
-        public void Scan(IScannerOwner owner, Transform target)
+        public void Scan(IScannerOwner owner, GameObject target)
         {
             m_Owner = owner;
             // lerp to look at target
-            VoxelController myVoxel = target.parent.transform.GetComponent<VoxelController>();
+            VoxelController myVoxel = target.transform.parent.transform.GetComponent<VoxelController>();
             
             // if (myVoxel != null && myVoxel.Collect())
             if (myVoxel != null)
@@ -89,11 +91,11 @@ namespace Ademord.Drone
             }
             
             // transform.rotation = Quaternion.LookRotation(owner.ScannerDirection, Vector3.up);
-            transform.LookAt(target);
+            transform.LookAt(target.transform);
             // set the time at which the scan happened, in case a new one is coming, do not destroy this scanner
             m_ScannedTime = Time.time;
             // notify Agent of scan
-            m_Owner.OnVoxelScanned();
+            m_Owner.OnVoxelScanned(target);
             // TODO verify that this will not be needed
             // m_Owner.ResetObservations();
 

@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SceneDrone.unity
+    path: Assets/Scenes/DroneAgentTrain-v0.unity
     guid: 528668c14855a384e81e717aadbc9f58
   m_configObjects: {}
