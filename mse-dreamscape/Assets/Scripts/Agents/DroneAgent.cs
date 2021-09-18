@@ -1,4 +1,5 @@
 ﻿using System;
+using MBaske.Sensors.Grid;
 using UnityEngine;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
@@ -18,6 +19,7 @@ namespace Ademord
         private CharacterController3D characterController;
         public Vector3 LocalVelocity => m_Body.AvgLocalVelocityXZ;
         public Vector3 WorldVelocity => m_Body.AvgWorldVelocityXZ;
+        
         // public Vector3 WorldVelocity => m_Rigidbody.velocity;
         // public Vector3 LocalVelocity => transform.InverseTransformVector(m_Rigidbody.velocity);
 
@@ -52,6 +54,9 @@ namespace Ademord
             get { return NormTargetLookAngle * 180; }
         }
         
+        [SerializeField]
+        [Tooltip("Reference to sensor component for retrieving detected obstacle, goal, and boundary gameobjects.")]
+        protected GridSensorComponent3D m_SensorComponent;
         
         protected Body m_Body;
         
@@ -92,7 +97,7 @@ namespace Ademord
             m_Body.OnCollisionEvent += CollisionEvent;
             
             characterController = GetComponentInChildren<CharacterController3D>();
-            print(steuernModus);
+            // print(steuernModus);
             characterController.steuernModus = steuernModus;
             
             // Path = new SceneDronePath(pathExtent);
@@ -124,7 +129,8 @@ namespace Ademord
 
          public override void OnActionReceived(ActionBuffers actions)
          {
-            ManagedUpdate(actions);
+             
+             ManagedUpdate(actions);
          }
 
         public override void Heuristic(in ActionBuffers actionsOut)

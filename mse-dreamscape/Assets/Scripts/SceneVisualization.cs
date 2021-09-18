@@ -25,7 +25,7 @@ namespace Ademord
         [SerializeField] [Range(0.25f, 32f)] private float minNodeSize = 2f;
         [SerializeField] [Range(0.25f, 32f)] private float maxNodeSize = 32f;
 
-        private OctreeAgent agent;
+        private OctreeAgentTrain agent;
         private List<Point> points;
         private List<OctreeNode> nodes;
         private LeafNodeDrawer leafNodeDrawer;
@@ -56,7 +56,11 @@ namespace Ademord
 
         private void Start()
         {
-            agent = GetComponent<OctreeAgent>();
+            agent = GetComponent<OctreeAgentTrain>();
+            if (agent == null)
+            {
+                Debug.Log("No AgentOctree found for visualization.");
+            }
             points = new List<Point>();
             nodes = new List<OctreeNode>();
             OnValidate();
@@ -69,8 +73,13 @@ namespace Ademord
                 center = agent.WorldPosition;
 
                 if (drawFilter.HasFlag(DrawFilter.Octree))
-                {
+                {                    
+                    agent.Data.Tree.GetLeafNodesAt(center, drawRadius, nodes);
+                    // print("number of leafnodes: " + nodes.Count);
+                    
                     agent.Data.Tree.GetNodesAt(center, drawRadius, minNodeSize, maxNodeSize, nodes);
+                    // print("number of nodes: " + nodes.Count);
+
                     DrawBounds();
                 }
 
@@ -114,7 +123,7 @@ namespace Ademord
 
         private void DrawBounds()
         {
-            ColorGradient cg = new ColorGradient(Color.red, Color.blue);
+            ColorGradient cg = new ColorGradient(Color.red, Color.cyan);
             foreach (OctreeNode node in nodes)
             {
                 if (node.GetPoints(pointFilter, points))

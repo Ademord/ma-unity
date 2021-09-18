@@ -59,7 +59,8 @@ public class SceneDroneData
         LeafNodeInfo = new Dictionary<PointType, Dictionary<Vector3, int>>()
         {
             { PointType.DronePos, new Dictionary<Vector3, int>() },
-            { PointType.ScanPoint, new Dictionary<Vector3, int>() }
+            { PointType.ScanPoint, new Dictionary<Vector3, int>() },
+            { PointType.ScanOutOfRange, new Dictionary<Vector3, int>() }
         };
     }
 
@@ -70,6 +71,7 @@ public class SceneDroneData
         Tree = new Octree(16, dronePos, leafNodeSize);
         LeafNodeInfo[PointType.DronePos].Clear();
         LeafNodeInfo[PointType.ScanPoint].Clear();
+        LeafNodeInfo[PointType.ScanOutOfRange].Clear();
         localLeafNodes.Clear();
         LookRadius = lookRadius;
         LookRadiusNorm = NormalizeDistance(lookRadius);
@@ -87,6 +89,7 @@ public class SceneDroneData
         {
             if (!LeafNodeInfo[point.Type].ContainsKey(node.Center))
             {
+                Debug.Log("adding new node.center to this key: " + point.Type);
                 LeafNodeInfo[point.Type].Add(node.Center, 0);
             }
             LeafNodeInfo[point.Type][node.Center]++;

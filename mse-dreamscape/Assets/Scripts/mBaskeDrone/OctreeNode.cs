@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEngine;
 // using Popcron.Gizmos;
 using System;
+using System.Runtime.InteropServices;
 
 public enum PointType
 {
@@ -46,6 +47,7 @@ public class OctreeNode
     public OctreeNode(float baseLengthVal, float minSizeVal, Vector3 centerVal)
     {
         isLeaf = baseLengthVal / 2f < minSizeVal;
+        // Debug.Log("isleaf: " + baseLengthVal + " : " + minSizeVal);
         SetValues(baseLengthVal, minSizeVal, centerVal);
     }
 
@@ -120,15 +122,19 @@ public class OctreeNode
     {
         if ((Center - position).sqrMagnitude - sqrHalfDiagonal <= sqrRadius)
         {
+            // Debug.Log("1. entered first if");
             if (isLeaf)
             {
+                // Debug.Log("2. entered isLeaf if");
                 if (IntersectCount > 0 || hasPoints)
                 {
+                    // Debug.Log("3. entered intersectcount if");
                     result.Add(this);
                 }
             }
             else if (hasChildren)
             {
+                // Debug.Log("entered hasChildren if");
                 for (int i = 0; i < 8; i++)
                 {
                     children[i].GetLeafNodesAt(position, sqrRadius, result);

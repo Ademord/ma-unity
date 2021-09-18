@@ -39,9 +39,7 @@ namespace Ademord
         [Tooltip("Scanner Buffer Size.")]
         protected int m_TargetsBufferSize = 10;
       
-        [SerializeField]
-        [Tooltip("Reference to sensor component for retrieving detected obstacle, goal, and boundary gameobjects.")]
-        protected GridSensorComponent3D m_SensorComponent;
+       
 
         
         [SerializeField]

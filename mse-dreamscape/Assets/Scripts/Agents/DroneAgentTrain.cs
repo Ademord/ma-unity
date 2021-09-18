@@ -13,7 +13,7 @@ namespace Ademord
         void PostAction();
         void SetRewards();
         void AddTensorboardStats();
-        void DrawGUIStats();
+        void DrawGUIStats(bool drawSummary);
     }
     public class DroneAgentTrain : DroneAgent, ITrain
     {
@@ -27,8 +27,8 @@ namespace Ademord
         protected int m_TBStatsInterval = 60;
         protected StatsRecorder m_TBStats;
 
-        [SerializeField, MinMaxSlider(0f, 5f)]
-        protected MinMax m_TargetSpeedRange = new MinMax(0f, 5f);
+        [SerializeField, MinMaxSlider(0f, 10f)]
+        protected MinMax m_TargetSpeedRange = new MinMax(0f, 10f);
 
         protected Vector3 m_TargetWalkDirectionXZ;
         protected Vector3 m_TargetLookDirectionXZ;
@@ -65,6 +65,11 @@ namespace Ademord
         
         public override void OnActionReceived(ActionBuffers actionBuffers)
         {
+            // motivate forward movements
+            if (actionBuffers.ContinuousActions[0] > 0)
+            {
+                AddReward(0.00001f);
+            }
             base.OnActionReceived(actionBuffers);
 
             if (m_Requester.DecisionStepCount % m_TBStatsInterval == 0)
@@ -83,6 +88,7 @@ namespace Ademord
 
         public virtual void SetRewards()
         {
+            // print("adding speed rewards");
             AddReward(GetSpeedErrorPenalty());
         }
 
@@ -140,12 +146,15 @@ namespace Ademord
             m_TBStats.Add(m_BehaviorName + "/Speed Error", GetSpeedError());
         }
 
-        public virtual void DrawGUIStats()
+        public virtual void DrawGUIStats(bool drawSummary = true)
         {
             m_GUIStats.Add(TargetSpeed, "Speed", "Target", Colors.Orange);
             m_GUIStats.Add(m_Body.AvgSpeed, "Speed", "Measured Avg.", Colors.Lightblue);
 
-            m_GUIStats.Add(GetSpeedErrorPenalty(), "Penalties", "Speed Error", Colors.Orange);
+            if (drawSummary)
+            {
+                m_GUIStats.Add(GetSpeedErrorPenalty(), "Penalties", "Speed Error", Colors.Orange);
+            }
         }
     }
 }
