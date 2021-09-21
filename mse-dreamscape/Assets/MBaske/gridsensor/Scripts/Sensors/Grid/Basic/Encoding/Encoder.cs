@@ -95,96 +95,141 @@ namespace MBaske.Sensors.Grid
                     {
                         modifier.Reset();
                         int channel = firstTagChannel;
-
-                        // Iterate observables for current result item.
                         foreach (var obs in tagObs)
                         {
-                            // We evaluate the observable here and write obsValue
-                            // to all grid positions below, UNLESS it's distance.
-                            bool encodeDistance = obs.Evaluate(
-                                item.Detectable, out float obsValue)
-                                 == ObservableType.Distance;
-
-                            if (!modifier.HasGridPositions)
+                            if (obs.Name == "InSight")
                             {
-                                if (item.HasPoints)
+                                obs.Evaluate(item.Detectable, out float inSight);
+                                // Debug.Log("item. inSight?: " + inSight);
+
+                                if (inSight == 1) // && obsValue == 1f
                                 {
-                                    // Is first observable we have any points for.
-
-                                    foreach (var point in item.NormPoints)
-                                    {
-                                        // Normalized item point -> grid position.
-                                        Vector2Int pos = m_GridBuffer.NormalizedToGridPos(point);
-
-                                        if (encodeDistance)
-                                        {
-                                            // Ignore obsValue (is 0 for distance).
-
-                                            // (Weighted) inverse distance, 1 (near) - 0 (far).
-                                            float proximity = m_Normalization.Evaluate(point.z);
-
-                                            // Override if closer.
-                                            if (proximity > m_GridBuffer.Read(channel, pos))
-                                            {
-                                                // Write unmodified position to buffer.
-                                                m_GridBuffer.Write(channel, pos, proximity);
-                                                // Write unmodified position to modifier.
-                                                modifier.AddPosition(pos, 1 - point.z); // unweighted
-                                            }
-                                            // else: ignore occluded.
-                                        }
-                                        else
-                                        {
-                                            // Write unmodified position to buffer.
-                                            m_GridBuffer.Write(channel, pos, obsValue);
-
-                                            // Write unmodified position to modifier.
-                                            // NOTE Need some proximity value for PointModDilation.
-                                            // Passing 0.5 to get a visible result, 0 does nothing.
-                                            modifier.AddPosition(pos, 0.5f);
-                                        }
-                                    }
-
-                                    // Will write additional positions to buffer.
-                                    // NOTE So far, all point modifiers are only ADDING positions,
-                                    // but that might not be the case for future modifiers.
-                                    modifier.Process(m_GridBuffer, channel);
-
-                                    if (m_Debug_IsEnabled)
-                                    {
-                                        // Store modified grid positions.
-                                        m_Debug_ChannelData.AddGridPositions(channel, modifier.GridPositions);
-                                    }
+                                    // Debug.Log("item.Detectable: " + item.Detectable);
+                                    // Debug.Log("item.Detectable.Observables[0]: " + item.Detectable.Observables.GetObservable(0));
+                                    // Debug.Log("obsValue: " + obsValue);
+                                    RegisterObservables(ref tagObs, item, ref modifier, ref channel);
                                 }
                             }
                             else
                             {
-                                // Is additional observable.
-                                //
-                                // The modifier already contains the required grid positions,
-                                // even if we haven't applied any modifications (PointModNone).
-                                //
-                                // The reason for requiring distance as the first observable,
-                                // is that we write obsValue to ALL stored grid positions here.
-                                // Distance is the only observable with individual position values.
-                                //
-                                // Will write all positions to buffer.
-                                modifier.Write(m_GridBuffer, channel, obsValue);
-
-                                if (m_Debug_IsEnabled)
-                                {
-                                    // Store modified grid positions.
-                                    m_Debug_ChannelData.AddGridPositions(channel, modifier.GridPositions);
-                                }
+                                // Debug.Log("looking at... obs.Name: " + obs.Name);
                             }
 
-                            // Next observable...
-                            channel++;
+                        }
+                        // RegisterObservables(ref tagObs, item, ref modifier, ref channel);
+                    }
+                }
+                firstTagChannel += tagObs.Count();
+            }
+        }
+
+        private void RegisterObservables(ref IEnumerable<Observable> tagObs, DetectionResult.Item item, ref PointModifier modifier, ref int channel)
+        {
+            // Iterate observables for current result item.
+            // observables are: Distance, One-Hot, inSight, depending on the detectable item.
+            foreach (var obs in tagObs)
+            {
+                // if (obs.Name == "InSight")
+                // {
+                //     // skip registration of this channel
+                //     continue;
+                // }
+                
+                // bool inSight = obs.Evaluate(item.Detectable.Observables, out float obsDotProduct) < 0;
+                // if (!inSight)
+                // {
+                //     Debug.Log("observable not in sight, skipping...");
+                //     continue;
+                // }
+
+                // We evaluate the observable here and write obsValue
+                // to all grid positions below, UNLESS it's distance.
+                bool encodeDistance = obs.Evaluate(
+                    item.Detectable, out float obsValue)
+                    == ObservableType.Distance;
+
+                // Debug.Log("registering... obs.Name: " + obs.Name);
+                // // Debug.Log("obs.InSight: " + obs.Getter());
+                // Debug.Log("item.Detectable: " + item.Detectable);
+                // Debug.Log("item.Detectable.Observables.Count: " + item.Detectable.Observables.Count);
+                // Debug.Log("obsValue: " + obsValue);
+
+                if (!modifier.HasGridPositions)
+                {
+                    if (item.HasPoints)
+                    {
+                        // Is first observable we have any points for.
+
+                        foreach (var point in item.NormPoints)
+                        {
+                            // Normalized item point -> grid position.
+                            Vector2Int pos = m_GridBuffer.NormalizedToGridPos(point);
+
+                            if (encodeDistance)
+                            {
+                                // Ignore obsValue (is 0 for distance).
+
+                                // (Weighted) inverse distance, 1 (near) - 0 (far).
+                                float proximity = m_Normalization.Evaluate(point.z);
+
+                                // Override if closer.
+                                if (proximity > m_GridBuffer.Read(channel, pos))
+                                {
+                                    // Write unmodified position to buffer.
+                                    m_GridBuffer.Write(channel, pos, proximity);
+                                    // Write unmodified position to modifier.
+                                    modifier.AddPosition(pos, 1 - point.z); // unweighted
+                                }
+
+                                // else: ignore occluded.
+                            }
+                            else
+                            {
+                                // Write unmodified position to buffer.
+                                m_GridBuffer.Write(channel, pos, obsValue);
+
+                                // Write unmodified position to modifier.
+                                // NOTE Need some proximity value for PointModDilation.
+                                // Passing 0.5 to get a visible result, 0 does nothing.
+                                modifier.AddPosition(pos, 0.5f);
+                            }
+                        }
+
+                        // Will write additional positions to buffer.
+                        // NOTE So far, all point modifiers are only ADDING positions,
+                        // but that might not be the case for future modifiers.
+                        modifier.Process(m_GridBuffer, channel);
+
+                        if (m_Debug_IsEnabled)
+                        {
+                            // Store modified grid positions.
+                            m_Debug_ChannelData.AddGridPositions(channel, modifier.GridPositions);
                         }
                     }
                 }
+                else
+                {
+                    // Is additional observable.
+                    //
+                    // The modifier already contains the required grid positions,
+                    // even if we haven't applied any modifications (PointModNone).
+                    //
+                    // The reason for requiring distance as the first observable,
+                    // is that we write obsValue to ALL stored grid positions here.
+                    // Distance is the only observable with individual position values.
+                    //
+                    // Will write all positions to buffer.
+                    modifier.Write(m_GridBuffer, channel, obsValue);
 
-                firstTagChannel += tagObs.Count();
+                    if (m_Debug_IsEnabled)
+                    {
+                        // Store modified grid positions.
+                        m_Debug_ChannelData.AddGridPositions(channel, modifier.GridPositions);
+                    }
+                }
+
+                // Next observable...
+                channel++;
             }
         }
     }

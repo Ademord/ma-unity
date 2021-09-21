@@ -89,7 +89,7 @@ public class SceneDroneData
         {
             if (!LeafNodeInfo[point.Type].ContainsKey(node.Center))
             {
-                Debug.Log("adding new node.center to this key: " + point.Type);
+                // Debug.Log("adding new node.center to this key: " + point.Type);
                 LeafNodeInfo[point.Type].Add(node.Center, 0);
             }
             LeafNodeInfo[point.Type][node.Center]++;

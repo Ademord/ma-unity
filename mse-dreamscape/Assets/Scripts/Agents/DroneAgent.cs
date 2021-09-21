@@ -55,13 +55,13 @@ namespace Ademord
         }
         
         [SerializeField]
+        [Header("Drone Agent Parameters")]
         [Tooltip("Reference to sensor component for retrieving detected obstacle, goal, and boundary gameobjects.")]
         protected GridSensorComponent3D m_SensorComponent;
         
         protected Body m_Body;
         
         [SerializeField]
-        [Header("TrainingArea Parameters")]
         protected TrainingAreaController3D m_World;
         
         [SerializeField]
@@ -75,6 +75,8 @@ namespace Ademord
         
         [SerializeField]  [BitMask(typeof(SteuernModus))]
         protected SteuernModus steuernModus;
+
+        protected bool movingForward;
 
         public override void Initialize()
         {
@@ -94,7 +96,7 @@ namespace Ademord
 
             m_Body = GetComponentInChildren<Body>();
             m_Body.Initialize(ExplorationLimit);
-            m_Body.OnCollisionEvent += CollisionEvent;
+            m_Body.OnBoundaryCollisionEventHandler += BoundaryCollisionEvent;
             
             characterController = GetComponentInChildren<CharacterController3D>();
             // print(steuernModus);
@@ -107,28 +109,35 @@ namespace Ademord
         public override void OnEpisodeBegin()
         {
             ResetAgent();
-            if (m_World != null)
-                m_World.Reset(); 
         }
 
-        public virtual void ResetAgent()
+        public void ResetAgent()
         {
+            // print("ResetAgent: DroneAgent");
             m_Body.ManagedReset(true);
         }
         
          public override void CollectObservations(VectorSensor sensor)
         {
-            sensor.AddObservation(m_NormTargetSpeed);
-            sensor.AddObservation(Normalization.Sigmoid(m_Body.LocalVelocity));
-            sensor.AddObservation(Normalization.Sigmoid(m_Body.LocalAngularVelocity));
+            sensor.AddObservation(m_NormTargetSpeed); // 1
+            sensor.AddObservation(Normalization.Sigmoid(m_Body.LocalVelocity)); //3
+            sensor.AddObservation(Normalization.Sigmoid(m_Body.LocalAngularVelocity)); //3
             sensor.AddObservation(m_Body.NormPosition); // 1 
             sensor.AddObservation(m_Body.NormOrientation); // 1
-            
+            // total 9 obs
             AddReward(-1f / MaxStep);
         }
 
          public override void OnActionReceived(ActionBuffers actions)
          {
+             if (actions.ContinuousActions[0] > 0 || actions.ContinuousActions[1] != 0)
+             {
+                 movingForward = true;
+             }
+             else
+             {
+                 movingForward = false;
+             }
              
              ManagedUpdate(actions);
          }
@@ -202,7 +211,7 @@ namespace Ademord
             }
         }
 
-        protected virtual void CollisionEvent(object sender, EventArgs e)
+        protected virtual void BoundaryCollisionEvent(object sender, BoundaryCollidedEventArgs e)
         {
             Debug.Log("hit the wall!");
 

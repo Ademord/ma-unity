@@ -123,7 +123,7 @@ namespace Ademord
 
         private void DrawBounds()
         {
-            ColorGradient cg = new ColorGradient(Color.red, Color.cyan);
+            ColorGradient cg = new ColorGradient(Color.red, Color.blue);
             foreach (OctreeNode node in nodes)
             {
                 if (node.GetPoints(pointFilter, points))

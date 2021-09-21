@@ -3,18 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - boundary
+  - obstacle
+  - collectible
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Agent
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Collectible
+  - Boundary
+  - Obstacle
+  - GroundMask
   - 
   - 
   - 

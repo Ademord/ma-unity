@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelUserStore">
-    <attachedFolders />
+    <attachedFolders>
+      <Path>../../unity installed packages/barracuda-release-1.4.0-preview</Path>
+      <Path>../../unity installed packages/gizmos-master</Path>
+      <Path>../../unity installed packages/ml-agents-release_17/com.unity.ml-agents</Path>
+      <Path>../../unity installed packages/ml-agents-release_17/com.unity.ml-agents.extensions</Path>
+    </attachedFolders>
     <explicitIncludes>
+      <Path>Assets</Path>
       <Path>Library/PackageCache/com.unity.burst@1.3.4</Path>
       <Path>Library/PackageCache/com.unity.collab-proxy@1.5.7</Path>
       <Path>Library/PackageCache/com.unity.ext.nunit@1.0.6</Path>

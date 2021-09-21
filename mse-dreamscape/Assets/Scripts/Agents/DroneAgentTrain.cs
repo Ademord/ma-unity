@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using MBaske.Sensors.Grid;
 using UnityEngine;
 using Unity.MLAgents;
@@ -18,17 +19,22 @@ namespace Ademord
     public class DroneAgentTrain : DroneAgent, ITrain
     {
    
+        // [Header("Drone Agent Train Parameters")]
+        [Header("GUI Parameters")]
         [SerializeField]
         protected bool m_DrawGUIStats;
         protected GUIStats m_GUIStats;
-
         [SerializeField]
         [Tooltip("Step interval for writing stats to Tensorboard.")]
         protected int m_TBStatsInterval = 60;
         protected StatsRecorder m_TBStats;
 
+
+        [Header("Speed Parameters")]
+        [SerializeField]
+        protected bool m_TrainTargetSpeed = true;
         [SerializeField, MinMaxSlider(0f, 10f)]
-        protected MinMax m_TargetSpeedRange = new MinMax(0f, 10f);
+        protected MinMax m_TargetSpeedRange = new MinMax(0f, 4.7f);
 
         protected Vector3 m_TargetWalkDirectionXZ;
         protected Vector3 m_TargetLookDirectionXZ;
@@ -49,27 +55,23 @@ namespace Ademord
 
         public override void OnEpisodeBegin()
         {
-            ResetAgent();
-            
             base.OnEpisodeBegin();
-        }
-        public override void ResetAgent()
-        {
-            base.ResetAgent();
 
+            ResetAgent();
+        }
+        public void ResetAgent()
+        {
+            // print("ResetAgent: DroneAgentTrain");
             if (m_DrawGUIStats)
             {
                 m_GUIStats.Clear();
             }
+           
         }
-        
+
         public override void OnActionReceived(ActionBuffers actionBuffers)
         {
-            // motivate forward movements
-            if (actionBuffers.ContinuousActions[0] > 0)
-            {
-                AddReward(0.00001f);
-            }
+            
             base.OnActionReceived(actionBuffers);
 
             if (m_Requester.DecisionStepCount % m_TBStatsInterval == 0)
@@ -88,9 +90,12 @@ namespace Ademord
 
         public virtual void SetRewards()
         {
-            // print("adding speed rewards");
-            AddReward(GetSpeedErrorPenalty());
+            AddReward(GetMovingForwardReward());
+
+            if (m_TrainTargetSpeed)
+                AddReward(GetSpeedErrorPenalty());
         }
+        
 
         public virtual void PostAction() { }
         
@@ -139,11 +144,17 @@ namespace Ademord
             return norm * -strength;
         }
 
+        protected float GetMovingForwardReward()
+        {
+            // print("moving forward: " + movingForward);
+            return movingForward ? 0.01f: 0;
+        }
         // STATS
 
         public virtual void AddTensorboardStats()
         {
             m_TBStats.Add(m_BehaviorName + "/Speed Error", GetSpeedError());
+            m_TBStats.Add(m_BehaviorName + "/Moving Forward", movingForward ? 1 : 0);
         }
 
         public virtual void DrawGUIStats(bool drawSummary = true)
@@ -153,6 +164,7 @@ namespace Ademord
 
             if (drawSummary)
             {
+                m_GUIStats.Add(GetMovingForwardReward(), "Rewards", "Moving Forward Reward", Colors.Orange);
                 m_GUIStats.Add(GetSpeedErrorPenalty(), "Penalties", "Speed Error", Colors.Orange);
             }
         }

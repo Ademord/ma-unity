@@ -6,7 +6,8 @@ namespace Ademord
 {
     public class Body : MonoBehaviour
     {
-        public event EventHandler<CollectedEventArgs> OnCollisionEvent;
+        public event EventHandler<BoundaryCollidedEventArgs> OnBoundaryCollisionEventHandler;
+        public event EventHandler<VoxelCollectedEventArgs> OnGoalCollisionEventHandler;
         public Vector3 WorldPosition => m_Body.transform.position;
         public Vector3 WorldForward => m_Body.transform.forward;
         public Vector3 WorldVelocity => m_Body.velocity;
@@ -257,18 +258,46 @@ namespace Ademord
             if (collision.collider.CompareTag("boundary"))
             {
                 // m_OnCollisionEventHandler?.Invoke(this, EventArgs.Empty);
-                CollectedEventArgs args = new CollectedEventArgs();
-                NotifyCollision(args);
+                BoundaryCollidedEventArgs args = new BoundaryCollidedEventArgs();
+                args.CollisionCollider = collision.collider;
+                NotifyBoundaryCollision(args);
             }
         }
 
-        private void NotifyCollision(CollectedEventArgs e)
+        private void OnTriggerEnter(Collider collider)
         {
-            EventHandler<CollectedEventArgs> handler = OnCollisionEvent;
+            if (collider.CompareTag("collectible"))
+            {
+                // m_OnCollisionEventHandler?.Invoke(this, EventArgs.Empty);
+                VoxelCollectedEventArgs args = new VoxelCollectedEventArgs();
+                args.CollisionCollider = collider;
+                NotifyGoalCollision(args);
+            }
+        }
+
+        private void NotifyBoundaryCollision(BoundaryCollidedEventArgs e)
+        {
+            EventHandler<BoundaryCollidedEventArgs> handler = OnBoundaryCollisionEventHandler;
             if (handler != null)
             {
                 handler(this, e);
             }
         }
+        private void NotifyGoalCollision(VoxelCollectedEventArgs e)
+        {
+            EventHandler<VoxelCollectedEventArgs> handler = OnGoalCollisionEventHandler;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+           
+        }
     }
+    public class BoundaryCollidedEventArgs : EventArgs
+    {
+        // used to notify of collection
+        public Collider CollisionCollider { get; set; }
+    }
+    
+
 }

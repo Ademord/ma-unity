@@ -22,14 +22,15 @@ ScriptedImporter:
     shaderName: Universal Render Pipeline/Lit
     materialProperties:
       shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-      shaderKeywords: _BASEMAP _BUMPMAP _METALLICGLOSSMAP _SPECGLOSSMAP
-      lightmapFlags: 4
+      shaderKeywords: _BUMPMAP _EMISSION _METALLICGLOSSMAP _METALLICSPECGLOSSMAP
+        _NORMALMAP _SPECGLOSSMAP _SPECULAR_SETUP
+      lightmapFlags: 1
       enableInstancingVariants: 0
       doubleSidedGI: 0
-      customRenderQueue: -1
+      customRenderQueue: 2000
       texEnvs:
       - name: _BaseMap
-        texture: {fileID: -8588168065428776403, guid: 58322cd97f3fc2545adaf2bfb5d8e715, type: 3}
+        texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _BumpMap
@@ -134,16 +135,16 @@ ScriptedImporter:
       - name: _Surface
         float: 0
       - name: _WorkflowMode
-        float: 1
+        float: 0
       - name: _ZWrite
         float: 1
       colors:
       - name: _BaseColor
-        color: {r: 1, g: 1, b: 1, a: 1}
+        color: {r: 1, g: 0.25131878, b: 0, a: 1}
       - name: _Color
         color: {r: 1, g: 1, b: 1, a: 1}
       - name: _EmissionColor
-        color: {r: 0, g: 0, b: 0, a: 1}
+        color: {r: 0.764151, g: 0.2857934, b: 0.0036044943, a: 1}
       - name: _SpecColor
         color: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     outputDescList:
@@ -306,7 +307,6 @@ ScriptedImporter:
       bGenerateOnLoad: 1
     material: {fileID: 6632773577420560467, guid: 58322cd97f3fc2545adaf2bfb5d8e715, type: 3}
     generatedTextures:
-    - {fileID: -8588168065428776403, guid: 58322cd97f3fc2545adaf2bfb5d8e715, type: 3}
     - {fileID: -3687095811249123605, guid: 58322cd97f3fc2545adaf2bfb5d8e715, type: 3}
     - {fileID: -5104276853381173152, guid: 58322cd97f3fc2545adaf2bfb5d8e715, type: 3}
     - {fileID: -319043880257222251, guid: 58322cd97f3fc2545adaf2bfb5d8e715, type: 3}

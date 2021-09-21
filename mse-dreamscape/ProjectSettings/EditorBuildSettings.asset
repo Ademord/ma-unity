@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/OctreeAgentTrain.unity
+  - enabled: 0
+    path: Assets/Scenes/OctreeAgent.unity
     guid: 250622cbf25056b49ae1083a67082ed9
+  - enabled: 0
+    path: Assets/Scenes/DroneAgent_rocks.unity
+    guid: 6da94aa50b600d040b361d4f749373b6
+  - enabled: 0
+    path: Assets/Scenes/PigeonAgent.unity
+    guid: c4ba9e143d1d335469321987cb873037
+  - enabled: 0
+    path: Assets/Scenes/PigeonAgent_rocks.unity
+    guid: d78aa77f386166e42a500f03590be8c9
+  - enabled: 1
+    path: Assets/Scenes/DroneAgent_quidditch.unity
+    guid: 71a6f9ad5ad8d4c4baa960095994615c
   m_configObjects: {}

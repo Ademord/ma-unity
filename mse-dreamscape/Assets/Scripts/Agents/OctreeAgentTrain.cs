@@ -9,32 +9,38 @@ namespace Ademord
     public class OctreeAgentTrain : DroneAgentTrain
     {
         public Vector3 WorldPosition => m_Body.WorldPosition;
-
-        protected Point scanPoint;
         protected Vector3Int prevPos;
+        protected List<Point> scanPoints;
         protected int lingerCount; 
-        
+        // variable of new nodes discovered since 3 methods use it and modify it all the time otherwise
+        private int nodeCount;
+
         public SceneDroneData Data { get; protected set; }
 
         [SerializeField]
+        [Header("Octree Agent Parameters")]
         [Range(0.25f, 8f)]
         protected float leafNodeSize = 4f;
 
-        // [SerializeField]
-        // [Tooltip("Distance below which agent is rewarded for following goals.")]
-        // [Range(5f, 50f)]
-        // protected float m_TargetFollowDistance = 10f;
+        
+        [SerializeField]
+        [Range(1, 128)]
+        int m_OctreePanoramicScanResolution = 26;
+        
+        [SerializeField]
+        bool m_DrawPanoramicResolutionGuidelines = false;
         
         public override void Initialize()
         {
             base.Initialize();
 
+            scanPoints = new List<Point>();
             Data = new SceneDroneData();
         }
 
         public override void OnEpisodeBegin()
         {
-            base.ResetAgent();
+            base.OnEpisodeBegin();
 
             ResetAgent();
             RandomizeTargets();
@@ -42,13 +48,15 @@ namespace Ademord
         
         protected new virtual void ResetAgent()
         {
+            // print("ResetAgent: OctreeAgent");
             // reset octree
             Data.Reset(m_Body.WorldPosition, m_SensorComponent.MaxDistance, leafNodeSize); // lookRadius removed
-        
+            // scanPoint = default(Point);
+            scanPoints = default(List<Point>);
             // reset octree scan related data
-            scanPoint = default(Point);
             prevPos = GetVector3Int(m_Body.WorldPosition);
             lingerCount = 0;
+            nodeCount = 0;
             // m_VoxelsScanned = 0;
         }
 
@@ -67,11 +75,14 @@ namespace Ademord
             {
                 Data.AddPoint(new Point(PointType.DronePos, m_Body.WorldPosition, Time.time));
             }
-            Data.AddPoint(scanPoint);
-            // moved rewards to OctreeAgentTrain
-            
+            scanPoints = PopulateOctree();
+            nodeCount = GetNewNodesCount();
+            // Data.AddPoint(scanPoint);
+
             sensor.AddObservation(Data.LookRadiusNorm); // 1 
             sensor.AddObservation(Data.NodeDensities); // 8
+            // print("IntersectRatios: " +  string.Join(", ", Data.IntersectRatios));
+            // print("NodeDensities: " + string.Join(", ", Data.NodeDensities));
             sensor.AddObservation(Data.IntersectRatios); // 8 
             
             // sensor.AddObservation(linger - 1f); // 1
@@ -95,11 +106,14 @@ namespace Ademord
         {
             base.PostAction();
             
-            // scanPoint = 
-            PopulateOctree();
+            foreach (var point in scanPoints)
+            {
+                Data.AddPoint(point);
+            }
+            scanPoints.Clear();
         }
     
-        private void PopulateOctree()
+        private List<Point> PopulateOctree()
         {
             // this adds a dead point at every out of scan range if there was nothing in the vision of the agent
             // if "no objects detected"
@@ -113,11 +127,11 @@ namespace Ademord
             // for every collectible ""                                                      "" 
             
             // add a scan point out of range if there was no object in between. 
-            
-            float scaling = m_SensorComponent.MaxDistance;
-            Vector3[] pts = PointsOnSphere(128);
-            
-            foreach (Vector3 value in pts)
+            Vector3[] raycast_pts = PointsOnSphere(m_OctreePanoramicScanResolution);
+            Point[] scan_points = new Point[m_OctreePanoramicScanResolution];
+
+            int idx_scan_points = 0;
+            foreach (Vector3 value in raycast_pts)
             {
                 RaycastHit hit;
                 // Vector3 scan = new Vector3(1f, 1f, 1f);
@@ -126,7 +140,6 @@ namespace Ademord
                 bool hitSomething = Physics.Raycast(ray.origin, ray.direction, out hit, m_SensorComponent.MaxDistance);
                 if (hitSomething && (hit.collider.tag.Equals("collectible") || hit.collider.tag.Equals("obstacle"))) // hit.collider.tag.Equals("boundary")
                 {
-                    print("agent hit something");
                     // scan.z = SceneDroneData.NormalizeDistance(hit.distance);
                     // Grid nodes align with blocks:
                     // Offset point slightly so it doesn't sit right on the boundary between two nodes.
@@ -134,17 +147,27 @@ namespace Ademord
                     point.Type = PointType.ScanPoint;
                 }
                 
-                Data.AddPoint(point);
+                scan_points[idx_scan_points++] = point;
+
+                if (m_DrawPanoramicResolutionGuidelines)
+                {
+                    // visualization
+                    List<GameObject> uspheres = new List<GameObject>();
+                    int i = 0;
+                    uspheres.Add(GameObject.CreatePrimitive(PrimitiveType.Sphere));
+                    uspheres[i].transform.parent = transform;
+                    uspheres[i].transform.position = point.Position;                    
+                }
             }
-            
-            
+
+            return new List<Point>(scan_points);
             // List<GameObject> uspheres = new List<GameObject>();
             // int i = 0;
             //
             // uspheres.Add(GameObject.CreatePrimitive(PrimitiveType.Sphere));
             // uspheres[i].transform.parent = transform;
             // uspheres[i].transform.position = point.Position ;
-            
+
             // ScanBuffer.Add(scan);
             // we dont return a scan point because the drone does not have a ray cast
             // if the drone had a raycast then it would 
@@ -196,11 +219,21 @@ namespace Ademord
         }
         public float GetOctreeDiscoveryReward()
         {
-            Vector3 pos = m_Body.WorldPosition;
-            int nodeCount = Data.Tree.Intersect(pos, scanPoint.Position);
             return (nodeCount * 0.1f) / Data.LookRadius;
         }
-        
+
+        public int GetNewNodesCount()
+        {
+            Vector3 pos = m_Body.WorldPosition;
+            int nodeCount = 0;
+            // changed to support multiple scanpoints being found every timestep t
+            foreach (var point in scanPoints)
+            {
+                // print("adding points : nodecount: " + nodeCount);
+                nodeCount += Data.Tree.Intersect(pos, point.Position);
+            }
+            return nodeCount;
+        }
         protected void OnValidate()
         {
             leafNodeSize = Mathf.Pow(2f, Mathf.Round(Mathf.Log(leafNodeSize, 2f)));
@@ -232,8 +265,12 @@ namespace Ademord
         public override void AddTensorboardStats()
         {
             base.AddTensorboardStats();
-            // m_TBStats.Add(m_BehaviorName + "/Speed Error", GetSpeedError());
-            // m_TBStats.Add(m_BehaviorName + "/Look Error", GetLingeringPenalty());
+            // how much space it covers
+            m_TBStats.Add(m_BehaviorName + "/Leaf Nodes Visited", Data.LeafNodeInfo[PointType.DronePos].Count);
+            // how quickly it finds scan points
+            m_TBStats.Add(m_BehaviorName + "/Scan Points Found", Data.LeafNodeInfo[PointType.ScanPoint].Count);
+            m_TBStats.Add(m_BehaviorName + "/Octree New Nodes Count", nodeCount);
+            m_TBStats.Add(m_BehaviorName + "/Lingering Count", lingerCount);
         }
 
         public override void DrawGUIStats(bool drawSummary = true)
@@ -246,8 +283,8 @@ namespace Ademord
             m_GUIStats.Add(Data.LeafNodeInfo[PointType.DronePos].Count, "Octree", "Leaf Nodes Visited", palette[1]);
             // if scanner is smaller (not panoramic) then scan ouf of range nodes will show how much the agent looked around.
             // m_GUIStats.Add(Data.LeafNodeInfo[PointType.ScanOutOfRange].Count, "Octree", "Leaf Nodes ScanOutOfRange", palette[2]);
-            
-            m_GUIStats.Add(Data.LeafNodeInfo[PointType.ScanPoint].Count, "Octree", "Leaf Nodes Scan Points", palette[3]);
+            m_GUIStats.Add(Data.LeafNodeInfo[PointType.ScanPoint].Count, "Octree", "Leaf Nodes Scan Points", palette[2]);
+            m_GUIStats.Add(nodeCount, "Octree", "New Nodes Count", palette[3]);
             // m_GUIStats.Add(coveragePercentage, "Octree", "Coverage %", palette[3]);
 
             if (drawSummary)
@@ -255,11 +292,13 @@ namespace Ademord
                 // rewards
             
                 float sum =
-                    m_GUIStats.Add(GetOctreeDiscoveryReward(), "Rewards", "Octree Node Discovery", palette[0]);
+                    m_GUIStats.Add(GetOctreeDiscoveryReward(), "Rewards", "Octree Node Discovery", palette[0]) +
+                    m_GUIStats.Add(GetMovingForwardReward(), "Rewards", "Moving Forward Reward", palette[1]);
+
             
                 // penalties
-                sum += m_GUIStats.Add(GetLingeringPenalty(), "Penalties", "Lingering Error", palette[1]) +
-                       m_GUIStats.Add(GetSpeedErrorPenalty(), "Penalties", "Speed Error", palette[2]);
+                sum += m_GUIStats.Add(GetLingeringPenalty(), "Penalties", "Lingering Error", palette[0]) +
+                       m_GUIStats.Add(GetSpeedErrorPenalty(), "Penalties", "Speed Error", palette[1]);
 
                 m_GUIStats.Add(sum, "Reward Sum", "", Colors.Lightblue);
             }
