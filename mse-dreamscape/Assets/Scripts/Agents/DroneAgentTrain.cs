@@ -164,8 +164,8 @@ namespace Ademord
 
             if (drawSummary)
             {
-                m_GUIStats.Add(GetMovingForwardReward(), "Rewards", "Moving Forward Reward", Colors.Orange);
                 m_GUIStats.Add(GetSpeedErrorPenalty(), "Penalties", "Speed Error", Colors.Orange);
+                m_GUIStats.Add(GetMovingForwardReward(), "Rewards", "Moving Forward Reward", Colors.Orange);
             }
         }
     }

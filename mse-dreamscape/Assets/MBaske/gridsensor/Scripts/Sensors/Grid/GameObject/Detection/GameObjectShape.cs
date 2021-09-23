@@ -241,8 +241,8 @@ namespace MBaske.Sensors.Grid
         public IList<Vector3> GetWorldPointsAtDistance(Transform transform, float normDistance)
         {
             // normDistance 0 (near) to 1 (far), invert -> max LOD when closest.
-            SetSelectedLOD(Mathf.RoundToInt((1 - normDistance) * m_MaxLOD));
-            // SetSelectedLOD(m_MaxLOD);
+            // SetSelectedLOD(Mathf.RoundToInt((1 - normDistance) * m_MaxLOD));
+            SetSelectedLOD(m_MaxLOD);
             return GetWorldPoints(transform);
         }
 

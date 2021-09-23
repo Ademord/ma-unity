@@ -1,15 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using Ademord;
 
 namespace MBaske.Sensors.Grid
 {
     /// The encoder is responsible for writing <see cref="DetectionResult"/> contents
-    /// to the <see cref="Grid.GridBuffer"/> which is used by the <see cref="GridSensor"/>.
+    /// to the <see cref="Sensors.Grid.GridBuffer"/> which is used by the <see cref="GridSensor"/>.
     public class Encoder : IEncoder, IDebugable
     {
         /// <summary>
-        /// <see cref="Grid.DistanceNormalization"/> is specific to this <see cref="Encoder"/>.
+        /// <see cref="Sensors.Grid.DistanceNormalization"/> is specific to this <see cref="Encoder"/>.
         /// </summary>
         public DistanceNormalization DistanceNormalization
         {
@@ -90,70 +91,49 @@ namespace MBaske.Sensors.Grid
                 {
                     // Has detection result for current tag -> get matching modifier.
                     var modifier = m_PointModifiersByTag[tag];
-               
                     foreach (var item in tagItems)
                     {
                         modifier.Reset();
                         int channel = firstTagChannel;
-                        foreach (var obs in tagObs)
-                        {
-                            if (obs.Name == "InSight")
-                            {
-                                obs.Evaluate(item.Detectable, out float inSight);
-                                // Debug.Log("item. inSight?: " + inSight);
-
-                                if (inSight == 1) // && obsValue == 1f
-                                {
-                                    // Debug.Log("item.Detectable: " + item.Detectable);
-                                    // Debug.Log("item.Detectable.Observables[0]: " + item.Detectable.Observables.GetObservable(0));
-                                    // Debug.Log("obsValue: " + obsValue);
-                                    RegisterObservables(ref tagObs, item, ref modifier, ref channel);
-                                }
-                            }
-                            else
-                            {
-                                // Debug.Log("looking at... obs.Name: " + obs.Name);
-                            }
-
-                        }
-                        // RegisterObservables(ref tagObs, item, ref modifier, ref channel);
+                        RegisterObservables(tag, ref tagObs, item, ref modifier, ref channel);
                     }
                 }
                 firstTagChannel += tagObs.Count();
             }
         }
 
-        private void RegisterObservables(ref IEnumerable<Observable> tagObs, DetectionResult.Item item, ref PointModifier modifier, ref int channel)
+        private static float IsVisible(DetectionResult.Item item)
+        {
+            var current_object = item.Detectable as VoxelDetectableGameObject;
+            if (current_object != null)
+            {
+                return current_object.IsInSight();
+            }
+            else
+            {
+                return 1;
+            }
+        }
+
+        private void RegisterObservables(string tag, ref IEnumerable<Observable> tagObs, DetectionResult.Item item, ref PointModifier modifier, ref int channel)
         {
             // Iterate observables for current result item.
             // observables are: Distance, One-Hot, inSight, depending on the detectable item.
             foreach (var obs in tagObs)
             {
-                // if (obs.Name == "InSight")
-                // {
-                //     // skip registration of this channel
-                //     continue;
-                // }
-                
-                // bool inSight = obs.Evaluate(item.Detectable.Observables, out float obsDotProduct) < 0;
-                // if (!inSight)
-                // {
-                //     Debug.Log("observable not in sight, skipping...");
-                //     continue;
-                // }
-
                 // We evaluate the observable here and write obsValue
                 // to all grid positions below, UNLESS it's distance.
                 bool encodeDistance = obs.Evaluate(
                     item.Detectable, out float obsValue)
                     == ObservableType.Distance;
 
-                // Debug.Log("registering... obs.Name: " + obs.Name);
-                // // Debug.Log("obs.InSight: " + obs.Getter());
-                // Debug.Log("item.Detectable: " + item.Detectable);
-                // Debug.Log("item.Detectable.Observables.Count: " + item.Detectable.Observables.Count);
-                // Debug.Log("obsValue: " + obsValue);
-
+                // nullify observations that are not visible given this filter
+                // only collectibles since the rest of the environment is not voxelized
+                if (tag == "collectible")
+                {
+                    obsValue *= IsVisible(item);
+                }
+                
                 if (!modifier.HasGridPositions)
                 {
                     if (item.HasPoints)

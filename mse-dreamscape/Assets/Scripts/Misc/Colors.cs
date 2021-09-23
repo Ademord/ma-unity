@@ -40,8 +40,8 @@ namespace Ademord
             {
                 return result;
             }
-
-            Debug.LogWarningFormat("Invalid color", color);
+            // TODO disabled logwarning
+            // Debug.LogWarningFormat("Invalid color", color);
             return result;
         }
 

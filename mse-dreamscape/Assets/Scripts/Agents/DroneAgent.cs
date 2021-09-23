@@ -82,7 +82,6 @@ namespace Ademord
         {
             base.Initialize();
             
-            steuernModus = SteuernModus.PhysicsVelocity;
             if (m_World != null)
             { 
                 m_World = m_World.GetComponent<TrainingAreaController3D>();
@@ -119,12 +118,19 @@ namespace Ademord
         
          public override void CollectObservations(VectorSensor sensor)
         {
+            // print("Normalization.Sigmoid(m_Body.LocalVelocity): " + Normalization.Sigmoid(m_Body.LocalVelocity));
+            // print("m_NormTargetSpeed: " + m_NormTargetSpeed);
+            // print("WorldPosition: " + m_Body.WorldPosition);
+            // print("AvgWorldRotationXZ: " + m_Body.AvgWorldRotationXZ);
+            
             sensor.AddObservation(m_NormTargetSpeed); // 1
             sensor.AddObservation(Normalization.Sigmoid(m_Body.LocalVelocity)); //3
             sensor.AddObservation(Normalization.Sigmoid(m_Body.LocalAngularVelocity)); //3
-            sensor.AddObservation(m_Body.NormPosition); // 1 
-            sensor.AddObservation(m_Body.NormOrientation); // 1
-            // total 9 obs
+            // todo find a way to pass roation by the sun's info
+            sensor.AddObservation(m_Body.AvgWorldRotationXZ); // 4 
+            sensor.AddObservation(m_Body.WorldPosition); // 3
+
+            // total 14 obs
             AddReward(-1f / MaxStep);
         }
 
@@ -184,12 +190,12 @@ namespace Ademord
                     break;
                 
                 case SteuernModus.PhysicsThrottle:
-                    m_Body.ControlWithThrottle(
-                        actions.ContinuousActions[0],
-                        actions.ContinuousActions[1], 
-                        actions.ContinuousActions[3], // [3] is vertical
-                        actions.ContinuousActions[2]
-                    );
+                    // m_Body.ControlWithThrottle(
+                    //     actions.ContinuousActions[0],
+                    //     actions.ContinuousActions[1], 
+                    //     actions.ContinuousActions[3], // [3] is vertical
+                    //     actions.ContinuousActions[2]
+                    // );
                     break;
 
                 default:

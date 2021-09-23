@@ -9,9 +9,23 @@ namespace Ademord
     {
         public Material undetectedMaterial { private get;  set; }
         public Material detectedCollectibleMaterial { private get;  set; }
-
+        protected Transform m_Collider;
+        
         private MeshRenderer _voxelMeshRenderer;
         public event EventHandler<VoxelCollectedEventArgs> Collected;
+
+        [SerializeField] private bool rotate = false;
+        
+        int rotationsPerMinute = 10;
+
+        void Update()
+        {
+            if (rotate)
+            {
+                var angle = 6 * rotationsPerMinute * Time.deltaTime;
+                transform.Rotate(0, angle, 0);
+            }
+        }
 
         // [Tooltip("The collider of the current voxel")]
         // public Transform collider;
@@ -21,39 +35,38 @@ namespace Ademord
         {
             _voxelMeshRenderer = transform.GetComponent<MeshRenderer>();
             // collider = transform.GetComponent<Collider>();
+            m_Collider = transform.Find("collider");
+
+            if (_voxelMeshRenderer == null)
+            {
+                print("ERROR: _voxelMeshRenderer was NOT FOUND");
+            }
+            if (m_Collider == null)
+            {
+                print("ERROR: collider in voxel was NOT FOUND");
+
+            }
         }
         
         public void Reset()
         {
             _voxelMeshRenderer.material = undetectedMaterial;
-            var collider = transform.Find("collider");
-            if (collider != null)
-            {
-                collider.gameObject.SetActive(true);
-            }
-            else
-            {
-                print("ERROR: collider in voxel was NOT FOUND");
-            }
+            m_Collider.gameObject.SetActive(true);
+            // var collider = transform.Find("collider");
         }
         
         public bool Collect()
         {
             if (CanBeCollected)
             {
+                // print("tryiong to collect a collectable voxel");
+                
                 // change material
                 _voxelMeshRenderer.material = detectedCollectibleMaterial;
                 
                 // disable collider
-                var collider = transform.Find("collider");
-                if (collider != null)
-                {
-                    collider.gameObject.SetActive(false);
-                }
-                else
-                {
-                    print("ERROR: collider in voxel was NOT FOUND");
-                }
+                m_Collider.gameObject.SetActive(false);
+              
                 // notify of collection to TrainingArea
                 VoxelCollectedEventArgs args = new VoxelCollectedEventArgs();
                 args.grandparent = transform.parent.parent;

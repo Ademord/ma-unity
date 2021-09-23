@@ -36,7 +36,7 @@ namespace Ademord
             if (m_World != null)
                 m_World.Reset(true); 
             
-            // m_World.MoveToSafeRandomPosition(m_Drone.transform, true);
+            m_World.MoveToSafeRandomPosition(m_Body.transform, true);
         }
         public override void SetRewards()
         {
@@ -45,16 +45,14 @@ namespace Ademord
             AddReward(GetGoalsReward());
 
         }
-
+        public override void PostAction()
+        {
+            base.PostAction();
+            goalCount = 0;
+        }
         public float GetGoalsReward()
         {
-            // define reward
-            var r = goalCount * 1;
-            
-            // add to accumulator
-            totalGoalCount += goalCount;
-            goalCount = 0;
-            
+            var r = goalCount * 1f;
             return r;
         }
         
@@ -66,7 +64,33 @@ namespace Ademord
             {
                 // print("collected a quidditch goal!");
                 goalCount++;
+                totalGoalCount++;
             }
-        } 
+        }
+        public override void DrawGUIStats(bool drawSummary = true)
+        {
+            base.DrawGUIStats(false);
+            var palette = Colors.Palette(4, 1, 0.5f, 0.2f, 0.8f);
+
+            // m_GUIStats.Add(GetNormWalkDirectionError(), "Direction Errors", "Walk Direction", Colors.Orange);
+            // m_GUIStats.Add(GetNormLookDirectionError(), "Direction Errors", "Look Direction", Colors.Lightblue);
+        
+            m_GUIStats.Add(goalCount, "Goals", "Goal Count", palette[0]);
+            m_GUIStats.Add(totalGoalCount, "Goals", "Total Goal Count", palette[1]);
+            
+            if (drawSummary)
+            {
+                // rewards
+            
+                float sum =
+                    m_GUIStats.Add(GetGoalsReward(), "Rewards", "Goal Reward", palette[0]) +
+                    m_GUIStats.Add(GetMovingForwardReward(), "Rewards", "Moving Forward Reward", palette[1]);
+            
+                // penalties
+                sum += m_GUIStats.Add(GetSpeedErrorPenalty(), "Penalties", "Speed Error", palette[1]);
+
+                m_GUIStats.Add(sum, "Reward Sum", "", Colors.Lightblue);
+            }
+        }
     }
 }

@@ -126,6 +126,7 @@ namespace Ademord
             Vector3 pos = LocalPosition;
             Vector3 fwd = transform.forward;
             Vector3 normal = pos.normalized;
+            Vector3 up_v = transform.up;
             float sqrMag = pos.sqrMagnitude;
 
             // Update control values.
@@ -144,19 +145,19 @@ namespace Ademord
 
             Vector3 fwd_velocity = fwd * Throttle_horizontal;
             Vector3 sideways_velocity = transform.right * Throttle_sideways;
-            Vector3 vertical_velocity = transform.up * Throttle_vertical; 
+            Vector3 vertical_velocity = up_v * Throttle_vertical; 
 
             Yaw = yaw == 0
                 ? Yaw * m_ControlAttenuate
                 : Mathf.Clamp(Yaw + yaw * m_ControlIncrement * 0.5f, -1, 1);
 
            
-            m_Body.AddTorque(Yaw * 0.25f * transform.up, ForceMode.VelocityChange);
+            m_Body.AddTorque(Yaw * 0.25f * up_v, ForceMode.VelocityChange);
 
             // Update observables.
 
             NormPosition = Mathf.Clamp01(sqrMag / m_BrakeThreshRadiusSqr) * 2 - 1;
-            NormOrientation = Vector3.Angle(normal, fwd) / 90f - 1;
+            NormOrientation = Vector3.Angle(normal, up_v) / 90f - 1;
             
             // Sum all velocity changes
             

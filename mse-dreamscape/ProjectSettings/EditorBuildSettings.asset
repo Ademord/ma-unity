@@ -17,7 +17,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/PigeonAgent_rocks.unity
     guid: d78aa77f386166e42a500f03590be8c9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DroneAgent_quidditch.unity
     guid: 71a6f9ad5ad8d4c4baa960095994615c
+  - enabled: 0
+    path: Assets/Scenes/VoxelAgent.unity
+    guid: 73caeb59a119af44fbb800557684eb16
+  - enabled: 0
+    path: Assets/Scenes/run48.2_PigeonAgent.unity
+    guid: dda21eedf1bf0bc4d845c797a5ca8150
+  - enabled: 0
+    path: Assets/Scenes/run48.22_PigeonAgent.unity
+    guid: 17ce90cb5babc824eac0738c4848169a
+  - enabled: 1
+    path: Assets/Scenes/run49_PigeonAgent_rocks.unity
+    guid: 951d833b4a922904da0d9310217a16f5
   m_configObjects: {}

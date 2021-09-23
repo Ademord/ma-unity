@@ -12,26 +12,27 @@ namespace Ademord
     {
         [Header("Voxel Agent Parameters")]
         [SerializeField]
+        [Tooltip("Reference to sensor component for retrieving detected goal gameobjects that can be disabled (scanned).")]
+        protected GridSensorComponent3D m_SensorComponent_Scanner;
+        [SerializeField]
         [Tooltip("Accuracy of the scanner.")]
         protected float m_ScanAccuracy = 20;        
         [SerializeField]
-        [Tooltip("Delay between scans.")]
-        protected float m_InactivityTime = 2f;
+        [Tooltip("VFX of Scanner Drone that rotates towards objects being scanned.")]
+        private VFXController m_VFXController;
         [SerializeField]
-        [Tooltip("Reference to sensor component for retrieving detected goal gameobjects that can be disabled (scanned).")]
-        protected GridSensorComponent3D m_SensorComponent_Scanner;
+        [Tooltip("Delay between scans.")]
+        protected float m_ResetVFXWaitPeriod = 2f;
         
         protected static string m_TargetTag = "collectible"; // same for all.
         protected float m_ShotTime;
         protected int m_VoxelsScanned;
         protected int totalVoxelsScanned;
-        private VFXController m_VFXController;
-
+        
         
         public override void Initialize()
         {
             base.Initialize();
-            m_VFXController.Initialize();
         }
         public override void OnEpisodeBegin()
         {
@@ -44,18 +45,20 @@ namespace Ademord
         {
             base.CollectObservations(sensor);
             
+            m_VoxelsScanned = UseScanner(m_Body.WorldForward, m_Body.WorldPosition);
+            totalVoxelsScanned += m_VoxelsScanned;
             if (CanResetScannerRotation()) m_VFXController.ResetVFX();
         }
-
+        
         public override void PostAction()
         {
             base.PostAction();
-            
-            UseScanner(m_Body.WorldForward, m_Body.WorldPosition);
+            m_VoxelsScanned = 0;
         }
 
-        private void UseScanner(Vector3 fwd, Vector3 pos)
+        private int UseScanner(Vector3 fwd, Vector3 pos)
         {
+            int voxelCount = 0;
             foreach (var target in m_SensorComponent_Scanner.GetDetectedGameObjects(m_TargetTag))
             {
                 VoxelController myVoxel = target.transform.parent.GetComponent<VoxelController>();
@@ -72,15 +75,18 @@ namespace Ademord
                             // notify of collection / scan
                             OnVoxelScanned(target);
                             m_ShotTime = Time.time;
+                            voxelCount++;
                         }
                         else
                         {
                             // this shouldnt happen during normal runtime
-                            print("could not collect voxel" + target.transform.name);
+                            // print("could not collect voxel" + target.transform.name);
                         }
                     }
                 }
             }
+
+            return voxelCount;
         }
         
         public void OnVoxelScanned(GameObject target)
@@ -93,7 +99,7 @@ namespace Ademord
         // it needs the bool scanned otherwise it will always reset the position since time will always be higher
         protected bool CanResetScannerRotation()
         {
-            return (Time.time - m_ShotTime >= m_InactivityTime);
+            return (Time.time - m_ShotTime >= m_ResetVFXWaitPeriod);
         } 
 
         public void ResetAgent(bool fullReset = false)

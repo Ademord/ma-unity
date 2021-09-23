@@ -77,19 +77,19 @@ namespace Ademord
             }
             scanPoints = PopulateOctree();
             nodeCount = GetNewNodesCount();
-            // Data.AddPoint(scanPoint);
+            // new scanPoints are added to the octree on post action
 
+            // TODO decide to remove
+            sensor.AddObservation((lingerCount / 100f) - 1f); // 1, lingerCount / 100f is constrained to 0-2 so -1 makes it from -1 to 1
             sensor.AddObservation(Data.LookRadiusNorm); // 1 
             sensor.AddObservation(Data.NodeDensities); // 8
-            // print("IntersectRatios: " +  string.Join(", ", Data.IntersectRatios));
-            // print("NodeDensities: " + string.Join(", ", Data.NodeDensities));
             sensor.AddObservation(Data.IntersectRatios); // 8 
+            // total 18 obs
             
-            // sensor.AddObservation(linger - 1f); // 1
             // sensor.AddObservation(m_Drone.ScanBuffer.ToArray()); // 30
+
         }
         
-
         public override void SetRewards()
         {
             base.SetRewards();
@@ -219,7 +219,8 @@ namespace Ademord
         }
         public float GetOctreeDiscoveryReward()
         {
-            return (nodeCount * 0.1f) / Data.LookRadius;
+            return (nodeCount * 1f) / Data.LookRadius;
+            // return (nodeCount * 0.1f) / Data.LookRadius;
         }
 
         public int GetNewNodesCount()
@@ -266,11 +267,13 @@ namespace Ademord
         {
             base.AddTensorboardStats();
             // how much space it covers
+            m_TBStats.Add(m_BehaviorName + "/Lingering Count", lingerCount);
+            m_TBStats.Add(m_BehaviorName + "/Lingering Penalty", GetLingeringPenalty());
             m_TBStats.Add(m_BehaviorName + "/Leaf Nodes Visited", Data.LeafNodeInfo[PointType.DronePos].Count);
             // how quickly it finds scan points
             m_TBStats.Add(m_BehaviorName + "/Scan Points Found", Data.LeafNodeInfo[PointType.ScanPoint].Count);
             m_TBStats.Add(m_BehaviorName + "/Octree New Nodes Count", nodeCount);
-            m_TBStats.Add(m_BehaviorName + "/Lingering Count", lingerCount);
+            m_TBStats.Add(m_BehaviorName + "/Octree Discovery Reward", GetOctreeDiscoveryReward());
         }
 
         public override void DrawGUIStats(bool drawSummary = true)

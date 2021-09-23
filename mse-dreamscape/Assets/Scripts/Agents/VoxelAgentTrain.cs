@@ -25,38 +25,34 @@ namespace Ademord
         protected new virtual void ResetAgent()
         {
             m_VoxelsScanned = 0;
+            totalVoxelsScanned = 0;
         }
         
-        protected virtual void SetRewards()
-        {
-            base.SetRewards();
-            AddReward(GetVoxelDiscoveryReward());
-        }
         protected void RandomizeTargets()
         {
             RandomizeTargetSpeed();
 
+            if (m_World != null)
+                m_World.Reset(false); 
+
             // m_World.MoveToSafeRandomPosition(m_Drone.transform, true);
         }
-
-        protected virtual void PostAction() { }
-
         
+        public override void SetRewards()
+        {
+            base.SetRewards();
+            AddReward(GetVoxelDiscoveryReward());
+        }
+
+     
         public float GetVoxelDiscoveryReward()
         {
             // define reward
             var r = m_VoxelsScanned * 1f;
             // var r = (float) m_VoxelsScanned / (2 + m_VoxelsScanned) * 1f;
-            
-            // add to accumulator
-            totalVoxelsScanned += m_VoxelsScanned;
-            m_VoxelsScanned = 0;
-            
             return r;
         }
         
-        // STATS
-
         protected virtual void AddTensorboardStats()
         {
             // m_TBStats.Add(m_BehaviorName + "/Look Error", GetNormLookDirectionError());
@@ -71,8 +67,8 @@ namespace Ademord
             // m_GUIStats.Add(GetNormWalkDirectionError(), "Direction Errors", "Walk Direction", Colors.Orange);
             // m_GUIStats.Add(GetNormLookDirectionError(), "Direction Errors", "Look Direction", Colors.Lightblue);
         
-            m_GUIStats.Add(m_VoxelsScanned, "Voxels", "Voxel Scan Count", palette[3]);
-            m_GUIStats.Add(totalVoxelsScanned, "Voxels", "Total Voxel Scan Count", palette[3]);
+            m_GUIStats.Add(m_VoxelsScanned, "Voxels", "Voxel Scan Count", palette[0]);
+            m_GUIStats.Add(totalVoxelsScanned, "Voxels", "Total Voxel Scan Count", palette[1]);
             
             if (drawSummary)
             {
