@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/run55_RandomAgent.unity
     guid: be556ec4bedc5464f998a85c2c76d60b
+  - enabled: 1
+    path: Assets/Scenes/run54.1_VoxelSpeedPigeonRWNAgent.unity
+    guid: 3650c260a2aba1248a018a279bddbbf9
   m_configObjects: {}

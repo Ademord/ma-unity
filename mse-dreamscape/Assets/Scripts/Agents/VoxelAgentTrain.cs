@@ -46,13 +46,14 @@ namespace Ademord
         public virtual float GetVoxelDiscoveryReward()
         {
             // define reward
+            float r = 0;
             if (NormalizeVoxelReward)
             {
-                var r = (float) m_VoxelsScanned / (2 + m_VoxelsScanned) * 1f;
+                r = (float) m_VoxelsScanned / (2 + m_VoxelsScanned) * 1f;
             }
             else
             {
-                var r = m_VoxelsScanned * 1f;
+                r = m_VoxelsScanned * 1f;
             }
             return r;
         }

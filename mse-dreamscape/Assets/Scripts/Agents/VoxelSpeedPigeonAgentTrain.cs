@@ -7,6 +7,7 @@ namespace Ademord
 {
     public class VoxelSpeedPigeonAgentTrain : VoxelPigeonAgentTrain
     {
+        [SerializeField] private bool m_SpeedSensitivityToTargetsInFOV = false;
         private bool TargetsInFOV;
         public override void Initialize()
         {
@@ -17,15 +18,18 @@ namespace Ademord
         public override void CollectObservations(VectorSensor sensor)
         {
             base.CollectObservations(sensor);
-
-            TargetsInFOV = CheckForTargetsInFOV();
-            if (TargetsInFOV)
+            
+            if (m_SpeedSensitivityToTargetsInFOV)
             {
-                m_SpeedErrorStrength = 0.25f;
-            }
-            else
-            {
-                m_SpeedErrorStrength = 1f;
+                TargetsInFOV = CheckForTargetsInFOV();
+                if (TargetsInFOV)
+                {
+                    m_SpeedErrorStrength = 0.25f;
+                }
+                else
+                {
+                    m_SpeedErrorStrength = 1f;
+                }
             }
         }
 

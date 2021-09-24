@@ -42,7 +42,7 @@ public class SnapshotCamera : MonoBehaviour
         }
         else
         {
-            print(":stupiod shit is not active in heirarchy");
+            print("camera is not active in heirarchy");
         }
     }
 

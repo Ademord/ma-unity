@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,6 +10,9 @@ namespace Ademord
 {
     public class TrainingAreaController3D : MonoBehaviour
     {
+        public event EventHandler<VoxelCollectedEventArgs> OnObjectFullyScannedEventHandler;
+
+        
         [Header("Collectible Parameters")]
         [SerializeField] 
         string collectibleTag = "collectible";
@@ -235,13 +239,36 @@ namespace Ademord
             // print("reducing collected number, received grandparent: " + e.grandparent);
             trainingElements[e.grandparent] = (trainingElements[e.grandparent].numToCollect - 1,
                 trainingElements[e.grandparent].collectibles);
-            if (trainingElements[e.grandparent].numToCollect ==0 && RespawnOnCollection)
+            // if finished scanning an object, notify agent.
+            if (trainingElements[e.grandparent].numToCollect == 0 && RespawnOnCollection)
             {
-                Debug.Assert(m_TargetSpawnPrefab != null, "No Respawn Prefab specified");
+                // Debug.Assert(m_TargetSpawnPrefab != null, "No Respawn Prefab specified");
+                // first spawn a new target
                 SpawnTarget(m_TargetSpawnPrefab, new Vector3(30,30,30));
+                // set destruction of old target
                 Destroy(e.grandparent.gameObject, TimeBeforeDestroy);
+                // notify of full scan
+                OnFullyScanned();
             }
         }
+        private void OnFullyScanned()
+        {
+            // m_OnCollisionEventHandler?.Invoke(this, EventArgs.Empty);
+            VoxelCollectedEventArgs args = new VoxelCollectedEventArgs();
+            // args.CollisionCollider = collider;
+            NotifyObjectFullyScanned(args);
+        }
+        private void NotifyObjectFullyScanned(VoxelCollectedEventArgs e)
+        {
+            EventHandler<VoxelCollectedEventArgs> handler = OnObjectFullyScannedEventHandler;
+            if (handler != null)
+            {
+                print("Notifying Agent of Full Scan.");
+                handler(this, e);
+            }
+           
+        }
+        
         private void OnApplicationQuit()
         {
             foreach (var kvp in trainingElements.ToArray())
@@ -252,7 +279,27 @@ namespace Ademord
                 }
             }
         }
-        
+
+        public Vector3 GetClosestTarget(Vector3 origin)
+        {
+            Vector3 closestPoint = new Vector3(0, 0, 0);
+            float minDist = 100000f;
+            foreach (var kvp in trainingElements.ToArray())
+            {
+                if (kvp.Value.numToCollect > 0)
+                {
+                    float dist = Vector3.Distance(origin, kvp.Key.position);
+                    print("distance between objects is: " + dist);
+                    if (dist < minDist)
+                    {
+                        minDist = dist;
+                        closestPoint = kvp.Key.position;
+                    }
+                } 
+            }
+            return closestPoint;
+        }
+
     }
 
 }

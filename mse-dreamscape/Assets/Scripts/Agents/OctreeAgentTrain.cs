@@ -17,8 +17,11 @@ namespace Ademord
 
         public SceneDroneData Data { get; protected set; }
 
-        [SerializeField]
         [Header("Octree Agent Parameters")]
+        [SerializeField] protected bool m_AddOctreeObservations = true;
+        [SerializeField] protected bool m_TrainOctreeDiscovery = true;
+        
+        [SerializeField]
         [Range(0.25f, 8f)]
         protected float leafNodeSize = 4f;
 
@@ -79,23 +82,27 @@ namespace Ademord
             nodeCount = GetNewNodesCount();
             // new scanPoints are added to the octree on post action
 
-            // TODO decide to remove
-            sensor.AddObservation((lingerCount / 100f) - 1f); // 1, lingerCount / 100f is constrained to 0-2 so -1 makes it from -1 to 1
-            sensor.AddObservation(Data.LookRadiusNorm); // 1 
-            sensor.AddObservation(Data.NodeDensities); // 8
-            sensor.AddObservation(Data.IntersectRatios); // 8 
-            // total 18 obs
-            
-            // sensor.AddObservation(m_Drone.ScanBuffer.ToArray()); // 30
-
+            if (m_AddOctreeObservations)
+            {
+                sensor.AddObservation((lingerCount / 100f) - 1f); // 1, lingerCount / 100f is constrained to 0-2 so -1 makes it from -1 to 1
+                sensor.AddObservation(Data.LookRadiusNorm); // 1 
+                sensor.AddObservation(Data.NodeDensities); // 8
+                sensor.AddObservation(Data.IntersectRatios); // 8 
+                // total 18 obs
+                // sensor.AddObservation(m_Drone.ScanBuffer.ToArray()); // 30
+            }
         }
         
         public override void SetRewards()
         {
             base.SetRewards();
-            // print("adding octree rewards");
-            AddReward(GetOctreeDiscoveryReward());
-            AddReward(GetLingeringPenalty());
+
+            if (m_TrainOctreeDiscovery)
+            {
+                AddReward(GetOctreeDiscoveryReward());
+                AddReward(GetLingeringPenalty());
+            }
+            
             Data.StepUpdate(m_Body.WorldPosition);
         }
         

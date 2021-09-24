@@ -6,6 +6,7 @@ namespace Ademord
     public class PigeonAgentTrain : OctreeAgentTrain
     {
         [Header("Pigeon Agent Parameters")]
+        [SerializeField] protected bool m_AddPigeonObservations = true;
 
         [SerializeField]
         protected MagneticNorth m_MagneticNorth;
@@ -41,10 +42,13 @@ namespace Ademord
             valueTowardsMagneticNorth = GetRotationTowardsSunCompassStyle();
             // print("valueTowardsSun: " + valueTowardsSun + "valueTowardsSun: " + valueTowardsSun.w);
             // print("valueTowardsMagneticNorth: " + valueTowardsMagneticNorth + "valueTowardsMagneticNorth.z: " + valueTowardsMagneticNorth.z + "valueTowardsMagneticNorth.w: " + valueTowardsMagneticNorth.w);
-            sensor.AddObservation(valueTowardsSun); // 4
-            sensor.AddObservation(valueTowardsMagneticNorth); // 4
 
-            // total 8 obs
+            if (m_AddPigeonObservations)
+            {
+                sensor.AddObservation(valueTowardsSun); // 4
+                sensor.AddObservation(valueTowardsMagneticNorth); // 4
+                // total 8 obs
+            }
         }
 
         public Quaternion GetRotationTowardsSunCompassStyle()

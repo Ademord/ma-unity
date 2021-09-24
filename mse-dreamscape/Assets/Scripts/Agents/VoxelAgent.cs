@@ -33,6 +33,7 @@ namespace Ademord
         public override void Initialize()
         {
             base.Initialize();
+
         }
         public override void OnEpisodeBegin()
         {

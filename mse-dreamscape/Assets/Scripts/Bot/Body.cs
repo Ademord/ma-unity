@@ -264,7 +264,15 @@ namespace Ademord
                 NotifyBoundaryCollision(args);
             }
         }
-
+        private void NotifyBoundaryCollision(BoundaryCollidedEventArgs e)
+        {
+            EventHandler<BoundaryCollidedEventArgs> handler = OnBoundaryCollisionEventHandler;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
+        
         private void OnTriggerEnter(Collider collider)
         {
             if (collider.CompareTag("collectible"))
@@ -273,15 +281,6 @@ namespace Ademord
                 VoxelCollectedEventArgs args = new VoxelCollectedEventArgs();
                 args.CollisionCollider = collider;
                 NotifyGoalCollision(args);
-            }
-        }
-
-        private void NotifyBoundaryCollision(BoundaryCollidedEventArgs e)
-        {
-            EventHandler<BoundaryCollidedEventArgs> handler = OnBoundaryCollisionEventHandler;
-            if (handler != null)
-            {
-                handler(this, e);
             }
         }
         private void NotifyGoalCollision(VoxelCollectedEventArgs e)

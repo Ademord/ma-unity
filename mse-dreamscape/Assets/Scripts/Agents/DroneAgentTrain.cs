@@ -31,8 +31,7 @@ namespace Ademord
 
 
         [Header("Speed Parameters")]
-        [SerializeField]
-        protected bool m_TrainTargetSpeed = true;
+        [SerializeField] protected bool m_TrainTargetSpeed = true;
         [SerializeField, MinMaxSlider(0f, 10f)]
         protected MinMax m_TargetSpeedRange = new MinMax(0f, 4.7f);
 
@@ -103,26 +102,11 @@ namespace Ademord
         // SPEED
         protected void RandomizeTargetSpeed()
         {
-            // // if no targets invision
-            //     TargetSpeed = MaxSpeed
-            // // else 
-            //     TargetSpeed = MinSpeed
-            
             TargetSpeed = m_TargetSpeedRange.Max;
             // TargetSpeed = Random.Range(m_TargetSpeedRange.Min, m_TargetSpeedRange.Max);
         }
 
-        protected float GetForwardSpeed()
-        {
-            return Vector3.Dot(m_Body.AvgWorldVelocityXZ, m_Body.AvgWorldForwardXZ);
-        }
-
-        protected float GetDirectionalSpeed()
-        {
-            return Vector3.Dot(m_Body.AvgWorldVelocityXZ, m_TargetWalkDirectionXZ);
-        }
-
-        protected float GetSpeedError()
+        protected virtual float GetSpeedError()
         {
             return Mathf.Min(Mathf.Abs(m_Body.AvgSpeed - TargetSpeed), MaxSpeed);
             // return Mathf.Min(Mathf.Abs(GetDirectionalSpeed() - TargetSpeed), MaxSpeed);
