@@ -168,7 +168,7 @@ namespace Ademord
             // deep copy of global variable  it doesnt keep old references
             List<VoxelController> collectibles = collectiblesList; 
             
-            print("Adding n collectibles from SpawnTarget: " + collectibles.Count);
+            // print("Adding n collectibles from SpawnTarget: " + collectibles.Count);
             // initialize and reset
             foreach (var collectible in collectibles)
             {
@@ -235,7 +235,7 @@ namespace Ademord
             // print("reducing collected number, received grandparent: " + e.grandparent);
             trainingElements[e.grandparent] = (trainingElements[e.grandparent].numToCollect - 1,
                 trainingElements[e.grandparent].collectibles);
-            if (RespawnOnCollection)
+            if (trainingElements[e.grandparent].numToCollect ==0 && RespawnOnCollection)
             {
                 Debug.Assert(m_TargetSpawnPrefab != null, "No Respawn Prefab specified");
                 SpawnTarget(m_TargetSpawnPrefab, new Vector3(30,30,30));

@@ -16,7 +16,7 @@ namespace Ademord
 
     public class DroneAgent : ActivatableAgent, IControllableDrone
     {
-        private CharacterController3D characterController;
+        protected CharacterController3D characterController;
         public Vector3 LocalVelocity => m_Body.AvgLocalVelocityXZ;
         public Vector3 WorldVelocity => m_Body.AvgWorldVelocityXZ;
         
@@ -171,7 +171,7 @@ namespace Ademord
             actions[3] = verticalInput * 1f;
         }
         
-        public void ManagedUpdate(ActionBuffers actions)
+        public virtual void ManagedUpdate(ActionBuffers actions)
         {
             switch (steuernModus)
             {

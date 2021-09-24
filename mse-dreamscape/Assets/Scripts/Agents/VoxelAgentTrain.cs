@@ -6,12 +6,10 @@ namespace Ademord
 {
     public class VoxelAgentTrain : VoxelAgent
     {
-
+        [SerializeField] private bool NormalizeVoxelReward = false;
         public override void Initialize()
         {
             base.Initialize();
-
-        
         }
 
         public override void OnEpisodeBegin()
@@ -45,18 +43,24 @@ namespace Ademord
         }
 
      
-        public float GetVoxelDiscoveryReward()
+        public virtual float GetVoxelDiscoveryReward()
         {
             // define reward
-            var r = m_VoxelsScanned * 1f;
-            // var r = (float) m_VoxelsScanned / (2 + m_VoxelsScanned) * 1f;
+            if (NormalizeVoxelReward)
+            {
+                var r = (float) m_VoxelsScanned / (2 + m_VoxelsScanned) * 1f;
+            }
+            else
+            {
+                var r = m_VoxelsScanned * 1f;
+            }
             return r;
         }
         
-        protected virtual void AddTensorboardStats()
+        public override void AddTensorboardStats()
         {
-            // m_TBStats.Add(m_BehaviorName + "/Look Error", GetNormLookDirectionError());
-            // m_TBStats.Add(m_BehaviorName + "/Walk Error", GetNormWalkDirectionError());
+            m_TBStats.Add(m_BehaviorName + "/Voxels Scanned", totalVoxelsScanned);
+            m_TBStats.Add(m_BehaviorName + "/Total Voxels Scanned", totalVoxelsScanned);
         }
 
         public override void DrawGUIStats(bool drawSummary = true)

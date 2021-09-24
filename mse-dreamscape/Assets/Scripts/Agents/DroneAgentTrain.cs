@@ -38,7 +38,7 @@ namespace Ademord
 
         protected Vector3 m_TargetWalkDirectionXZ;
         protected Vector3 m_TargetLookDirectionXZ;
-
+        protected float m_SpeedErrorStrength = 1;
 
         public override void Initialize()
         {
@@ -130,7 +130,7 @@ namespace Ademord
 
         // TBD error/(2+error)*1.4 (assuming max speed = 5)
         // http://fooplot.com/#W3sidHlwZSI6MCwiZXEiOiJ4LygyK3gpKjEuNCIsImNvbG9yIjoiIzAwMDAwMCJ9LHsidHlwZSI6MTAwMH1d
-        protected float GetSpeedErrorPenalty(float strength = 1)
+        protected virtual float GetSpeedErrorPenalty(float strength = 1)
         {
             if (TargetSpeed < MinSpeed)
             {
@@ -141,7 +141,7 @@ namespace Ademord
 
             float error = GetSpeedError();
             float norm = error / (2 + error) * 1.4f;
-            return norm * -strength;
+            return norm * -m_SpeedErrorStrength;
         }
 
         protected float GetMovingForwardReward()

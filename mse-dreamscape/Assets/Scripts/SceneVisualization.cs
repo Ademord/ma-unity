@@ -61,6 +61,7 @@ namespace Ademord
             {
                 Debug.Log("No AgentOctree found for visualization.");
             }
+            
             points = new List<Point>();
             nodes = new List<OctreeNode>();
             OnValidate();
