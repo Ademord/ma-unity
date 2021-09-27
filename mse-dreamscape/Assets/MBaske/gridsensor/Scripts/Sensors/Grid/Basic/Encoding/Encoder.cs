@@ -129,7 +129,7 @@ namespace MBaske.Sensors.Grid
 
                 // nullify observations that are not visible given this filter
                 // only collectibles since the rest of the environment is not voxelized
-                if (tag == "collectible")
+                if (tag == "collectible" || tag == "obstacle")
                 {
                     obsValue *= IsVisible(item);
                 }

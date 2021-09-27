@@ -9,6 +9,7 @@ namespace Ademord
     public class VoxelPigeonAgent : PigeonAgentTrain
     {
         [Header("Voxel Agent Parameters")]
+        [SerializeField] protected bool m_TrainVoxelCollection = true;
         [SerializeField]
         [Tooltip("Reference to sensor component for retrieving detected goal gameobjects that can be disabled (scanned).")]
         protected GridSensorComponent3D m_SensorComponent_Scanner;
@@ -36,7 +37,7 @@ namespace Ademord
         {
             base.CollectObservations(sensor);
             
-            m_VoxelsScanned = UseScanner(m_Body.WorldForward, m_Body.WorldPosition);
+            m_VoxelsScanned = UseScanner(m_Body.WorldForward);
             totalVoxelsScanned += m_VoxelsScanned;
             if (m_EnableVFX && CanResetScannerRotation()) m_VFXController.ResetVFX();
         }
@@ -47,7 +48,7 @@ namespace Ademord
             m_VoxelsScanned = 0;
         }
 
-        private int UseScanner(Vector3 fwd, Vector3 pos)
+        private int UseScanner(Vector3 fwd)
         {
             int voxelCount = 0;
             foreach (var target in m_SensorComponent_Scanner.GetDetectedGameObjects(m_TargetTag))

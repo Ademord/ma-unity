@@ -12,7 +12,7 @@ namespace Ademord
         protected Vector3 m_closestTarget;
         protected float penaltyStrength = 1f;
         protected float distanceToTarget = 1f;
-        
+
         public override void Initialize()
         {
             base.Initialize();
@@ -145,9 +145,9 @@ namespace Ademord
             return Mathf.Min(Mathf.Abs(GetDirectionalSpeed() - TargetSpeed), MaxSpeed);
         }
         
-        protected virtual void AddTensorboardStats()
+        public override void AddTensorboardStats()
         {
-            m_TBStats.Add(m_BehaviorName + "/Speed Error", GetSpeedError());
+            base.AddTensorboardStats();
             m_TBStats.Add(m_BehaviorName + "/Look Error", GetNormLookDirectionError());
             m_TBStats.Add(m_BehaviorName + "/Walk Error", GetNormWalkDirectionError());
         }
@@ -160,14 +160,16 @@ namespace Ademord
             m_GUIStats.Add(GetNormLookDirectionError(), "Direction Errors", "Look Direction", Colors.Lightblue);
 
             var palette = Colors.Palette(4, 1, 0.5f, 0.2f, 0.8f);
+            if (drawSummary)
+            {
+                float sum =
+                    m_GUIStats.Add(GetWalkDirectionReward(), "Rewards", "Walk Direction", palette[2]) +
+                    m_GUIStats.Add(GetLookDirectionReward(), "Rewards", "Look Direction", palette[3]);
 
-            float sum =
-                m_GUIStats.Add(GetWalkDirectionReward(), "Rewards", "Walk Direction", palette[2]) +
-                m_GUIStats.Add(GetLookDirectionReward(), "Rewards", "Look Direction", palette[3]);
+                sum += m_GUIStats.Add(GetSpeedErrorPenalty(), "Penalties", "Speed Error", Colors.Orange);
 
-            sum += m_GUIStats.Add(GetSpeedErrorPenalty(), "Penalties", "Speed Error", Colors.Orange);
-
-            m_GUIStats.Add(sum, "Reward Sum", "", Colors.Lightblue);
+                m_GUIStats.Add(sum, "Reward Sum", "", Colors.Lightblue);
+            }
         }
     }
 }

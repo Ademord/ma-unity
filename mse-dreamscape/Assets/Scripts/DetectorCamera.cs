@@ -24,48 +24,48 @@ public class DetectorCamera : MonoBehaviour
     
     #region Internal objects
 
-    private Camera snapCam;
+    private Camera detectorCam;
     private int resWidth = 256;
     private int resHeight = 256;
     
     ObjectDetector _detector;
     Marker[] _markers = new Marker[50];
-    
+    List<string> detections = new List<string>();
+
     #endregion
 
     #region MonoBehaviour implementation
     void Awake()
     {
-        snapCam = GetComponent<Camera>();
+        detectorCam = GetComponent<Camera>();
         RectTransform canvasRect = _previewUI.GetComponent<Canvas>().GetComponent<RectTransform>();
         resWidth = (int) canvasRect.rect.width;
         resHeight = (int) canvasRect.rect.height;
         print("reswidth: " + canvasRect.rect.width);
         print("resheight: " + canvasRect.rect.height);
         
-        if (snapCam.targetTexture == null)
+        if (detectorCam.targetTexture == null)
         {
-          
-            snapCam.targetTexture = new RenderTexture(resWidth, resHeight, 24);
+            detectorCam.targetTexture = new RenderTexture(resWidth, resHeight, 24);
         }
         else
         {
-            resWidth = snapCam.targetTexture.width;
-            resHeight = snapCam.targetTexture.height;
+            resWidth = detectorCam.targetTexture.width;
+            resHeight = detectorCam.targetTexture.height;
         }
-        snapCam.gameObject.SetActive(false);
+        detectorCam.gameObject.SetActive(false);
         
         // Object detector initialization
         _detector = new ObjectDetector(_resources);
+        if (_detector == null)
+        {
+            Debug.LogError("Detector is null");
+        }
         // Marker populating
         for (var i = 0; i < _markers.Length; i++)
             _markers[i] = Instantiate(
                 _markerPrefab, 
                 _previewUI.transform);
-    }
-    void Start()
-    {
-       
     }
 
     // void OnDisable()
@@ -81,28 +81,32 @@ public class DetectorCamera : MonoBehaviour
     
     public void CallTakeSnapshot()
     {
-        snapCam.gameObject.SetActive(true);
-        
+        detectorCam.gameObject.SetActive(true);
     }
+
+    public List<string> GetDetections() => detections;
+    
     void LateUpdate()
     {
-        if (snapCam.gameObject.activeInHierarchy)
+        if (detectorCam.gameObject.activeInHierarchy)
         {
             // make the camera render and pass that texture to the object detector
-            snapCam.Render();
+            detectorCam.Render();
             if (_detector != null)
             {
-                _detector.ProcessImage(snapCam.targetTexture, _scoreThreshold, _overlapThreshold);
-
+                // print("trying to detect something...");
+                detections.Clear();
+                _detector.ProcessImage(detectorCam.targetTexture, _scoreThreshold, _overlapThreshold);
+    
                 // Marker update
                 var i = 0;
-                List<string> found = new List<string>();
                 foreach (var box in _detector.DetectedObjects)
                 {
                     if (i < _markers.Length)
                     {
                         var name = Config.GetLabel((int)box.classIndex);
-                        found.Add(name);
+                        detections.Add(name);
+
                         _markers[i++].SetAttributes(box);
                     }
                     else
@@ -110,16 +114,11 @@ public class DetectorCamera : MonoBehaviour
                         break;
                     }
                 }
-                // print("found: " + String.Join(", ", found));
+                // print("found: " + String.Join(", ", detections));
 
                 for (; i < _markers.Length; i++) _markers[i].Hide();
             }
-            else
-            {
-                print("could not show you detected objects, detector is null");
-            }
-        
-            snapCam.gameObject.SetActive(false);
+            detectorCam.gameObject.SetActive(false);
         }    
     }
     #endregion 

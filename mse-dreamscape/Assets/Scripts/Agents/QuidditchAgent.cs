@@ -69,6 +69,7 @@ namespace Ademord
         }
         public override void AddTensorboardStats()
         {
+            base.AddTensorboardStats();
             m_TBStats.Add(m_BehaviorName + "/Goals Passed", goalCount);
             m_TBStats.Add(m_BehaviorName + "/Total Goals Passed", totalGoalCount);
         }

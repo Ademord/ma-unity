@@ -15,6 +15,7 @@ namespace Ademord
         
         [SerializeField] protected GameObject m_ScanningLight;
         [SerializeField] protected GameObject m_FlickeringLight;
+        [SerializeField] protected GameObject m_VFXOffReplacementSphere;
         // [SerializeField] protected bool useVFX = true;
 
         // damping of VFX rotation
@@ -23,7 +24,11 @@ namespace Ademord
 
         private void Start()
         {
-            DefRotation = transform.rotation;
+            if (!gameObject.activeInHierarchy)
+            {
+                m_VFXOffReplacementSphere.SetActive(true);
+            }
+            
         }
 
         public void RotateVFXToTarget(GameObject target)

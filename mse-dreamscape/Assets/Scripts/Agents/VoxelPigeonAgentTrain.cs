@@ -8,7 +8,6 @@ namespace Ademord
     public class VoxelPigeonAgentTrain : VoxelPigeonAgent
     {
         [Header("Additional Voxel Agent Parameters")]
-
         [SerializeField] private bool NormalizeVoxelReward = false;
 
         public override void OnEpisodeBegin()
@@ -38,7 +37,11 @@ namespace Ademord
         public override void SetRewards()
         {
             base.SetRewards();
-            AddReward(GetVoxelDiscoveryReward());
+
+            if (m_TrainVoxelCollection)
+            {
+                AddReward(GetVoxelDiscoveryReward());
+            }
         }
 
      
@@ -59,6 +62,7 @@ namespace Ademord
         
         public override void AddTensorboardStats()
         {
+            base.AddTensorboardStats();
             m_TBStats.Add(m_BehaviorName + "/Voxels Scanned", totalVoxelsScanned);
             m_TBStats.Add(m_BehaviorName + "/Total Voxels Scanned", totalVoxelsScanned);
         }

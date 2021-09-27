@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MBaske.Sensors.Grid;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
@@ -8,11 +9,11 @@ namespace Ademord
     public class VoxelSpeedPigeonAgentTrain : VoxelPigeonAgentTrain
     {
         [SerializeField] private bool m_SpeedSensitivityToTargetsInFOV = false;
-        private bool TargetsInFOV;
+        // private bool TargetsInFOV;
         public override void Initialize()
         {
             base.Initialize();
-            TargetsInFOV = false;
+            // TargetsInFOV = false;
         }
         
         public override void CollectObservations(VectorSensor sensor)
@@ -21,8 +22,7 @@ namespace Ademord
             
             if (m_SpeedSensitivityToTargetsInFOV)
             {
-                TargetsInFOV = CheckForTargetsInFOV();
-                if (TargetsInFOV)
+                if (AreTargetsInFOV(m_SensorComponent, m_TargetTag))
                 {
                     m_SpeedErrorStrength = 0.25f;
                 }
@@ -33,10 +33,10 @@ namespace Ademord
             }
         }
 
-        protected bool CheckForTargetsInFOV()
+        protected bool AreTargetsInFOV(GridSensorComponent3D sensor, string tag)
         {
             // this method uses yield so we have to query the results out
-            foreach (var target in m_SensorComponent.GetDetectedGameObjects(m_TargetTag))
+            foreach (var target in sensor.GetDetectedGameObjects(tag))
             {
                 var myVoxel = target.transform.GetComponent<VoxelDetectableGameObject>();
                 // check all the voxels and if one if visible then change the value.

@@ -57,7 +57,7 @@ namespace Ademord
             m_VFXController.gameObject.SetActive(m_EnableVFX);
             
             // VFX determines all drone renderings and GUI.
-            m_DrawGUIStats = m_EnableVFX;
+            m_DrawGUIStats = m_EnableVFX && m_DrawGUIStats;
 
             if (m_DrawGUIStats && m_GUIStats == null)
             {
