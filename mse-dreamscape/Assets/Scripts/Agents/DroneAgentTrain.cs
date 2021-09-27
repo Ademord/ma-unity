@@ -18,8 +18,12 @@ namespace Ademord
     }
     public class DroneAgentTrain : DroneAgent, ITrain
     {
-   
-        // [Header("Drone Agent Train Parameters")]
+        [Header("VFX Parameters")]
+        [Tooltip("Disable VFX during training.")]
+        [SerializeField] protected bool m_EnableVFX = false;
+        [Tooltip("VFX of Scanner Drone that rotates towards objects being scanned.")]
+        [SerializeField] public VFXController m_VFXController;
+
         [Header("GUI Parameters")]
         [SerializeField]
         protected bool m_DrawGUIStats;
@@ -29,7 +33,7 @@ namespace Ademord
         protected int m_TBStatsInterval = 60;
         protected StatsRecorder m_TBStats;
 
-
+       
         [Header("Speed Parameters")]
         [SerializeField] protected bool m_TrainTargetSpeed = true;
         [SerializeField, MinMaxSlider(0f, 10f)]
@@ -46,10 +50,21 @@ namespace Ademord
             m_TBStats = Academy.Instance.StatsRecorder;
             m_GUIStats = GetComponent<GUIStats>();
             
+            if (m_VFXController == null)
+            {
+                Debug.LogError("No VFXController set.");
+            }
+            m_VFXController.gameObject.SetActive(m_EnableVFX);
+            
+            // VFX determines all drone renderings and GUI.
+            m_DrawGUIStats = m_EnableVFX;
+
             if (m_DrawGUIStats && m_GUIStats == null)
             {
                 m_GUIStats = gameObject.AddComponent<GUIStats>();
             }
+
+          
         }
 
         public override void OnEpisodeBegin()

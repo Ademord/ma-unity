@@ -28,10 +28,10 @@ namespace Ademord
         [Range(0, 1)]
         int m_NSpawnTargets = 3;
         [SerializeField] private GameObject m_TargetSpawnPrefab;
-        [SerializeField, MinMaxSlider(0.5f, 10f)]
-        protected MinMax MaxSpawnHeight = new MinMax(0.5f, 10f);
-        [SerializeField, MinMaxSlider(0.5f, 20f)]
-        protected MinMax MaxSpawnRadius = new MinMax(0.5f, 15f);
+        [SerializeField, MinMaxSlider(1f, 10f)]
+        protected MinMax MaxSpawnHeight = new MinMax(1f, 10f);
+        [SerializeField, MinMaxSlider(1f, 20f)]
+        protected MinMax MaxSpawnRadius = new MinMax(1f, 15f);
         [SerializeField]
         protected Body m_Body;
 
@@ -114,8 +114,7 @@ namespace Ademord
             {
                 Transform child = parent.GetChild(i);
                 // Debug.Log("childs name: " + child.name + ", tag: " + child.tag);
-                // child.gameObject.activeInHierarchy && 
-                if (child.CompareTag(collectibleTag))
+                if (child.gameObject.activeInHierarchy && child.CompareTag(collectibleTag))
                 {
                     // print("found a collectible inside FindCollectibles");
                     VoxelController current_child = child.GetComponent<VoxelController>();
@@ -236,9 +235,10 @@ namespace Ademord
         }
         public void ReduceNumCollected(object sender, VoxelCollectedEventArgs e)
         {
-            // print("reducing collected number, received grandparent: " + e.grandparent);
             trainingElements[e.grandparent] = (trainingElements[e.grandparent].numToCollect - 1,
                 trainingElements[e.grandparent].collectibles);
+            // print("reducing collected number, received grandparent: " + e.grandparent + ", to: " + trainingElements[e.grandparent].numToCollect);
+
             // if finished scanning an object, notify agent.
             if (trainingElements[e.grandparent].numToCollect == 0 && RespawnOnCollection)
             {
@@ -247,6 +247,8 @@ namespace Ademord
                 SpawnTarget(m_TargetSpawnPrefab, new Vector3(30,30,30));
                 // set destruction of old target
                 Destroy(e.grandparent.gameObject, TimeBeforeDestroy);
+                // destroy from our records
+                trainingElements.Remove(e.grandparent);
                 // notify of full scan
                 OnFullyScanned();
             }
@@ -286,10 +288,11 @@ namespace Ademord
             float minDist = 100000f;
             foreach (var kvp in trainingElements.ToArray())
             {
+                // print("looking for closest target... " + kvp.Key.name + ", with numToCollect: " + kvp.Value.numToCollect);
                 if (kvp.Value.numToCollect > 0)
                 {
                     float dist = Vector3.Distance(origin, kvp.Key.position);
-                    print("distance between objects is: " + dist);
+                    // print("distance between objects is: " + dist);
                     if (dist < minDist)
                     {
                         minDist = dist;

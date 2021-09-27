@@ -54,10 +54,9 @@ namespace Ademord
             get { return NormTargetLookAngle * 180; }
         }
         
-        [SerializeField]
         [Header("Drone Agent Parameters")]
         [Tooltip("Reference to sensor component for retrieving detected obstacle, goal, and boundary gameobjects.")]
-        protected GridSensorComponent3D m_SensorComponent;
+        [SerializeField] protected GridSensorComponent3D m_SensorComponent;
         
         protected Body m_Body;
         

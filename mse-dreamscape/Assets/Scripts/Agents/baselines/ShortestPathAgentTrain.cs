@@ -1,3 +1,4 @@
+using System;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
@@ -5,22 +6,26 @@ namespace Ademord
 {
     public class ShortestPathAgentTrain : VoxelSpeedPigeonAgentTrain
     {
+        [Header("Shortest Path Agent Parameters")]
         [SerializeField] private bool m_TrainShortestPath = true;
         [SerializeField] private bool m_AddShortestPathObservations = true;
         protected Vector3 m_closestTarget;
+        protected float penaltyStrength = 1f;
+        protected float distanceToTarget = 1f;
+        
         public override void Initialize()
         {
             base.Initialize();
+
             m_closestTarget = new Vector3();
             m_World.OnObjectFullyScannedEventHandler += ObjectFullyScannedEvent;
         }
         public override void OnEpisodeBegin()
         {
-            SetTargetDirectionsToNextGoal();
-
             base.OnEpisodeBegin();
-        }
 
+            SetClosestTarget();
+        }
 
         public override void CollectObservations(VectorSensor sensor)
         {
@@ -28,14 +33,19 @@ namespace Ademord
 
             if (m_AddShortestPathObservations)
             {
-                TargetDirectionsToAngles();
-
+                // look and walk direction errors will dissolve when close to the target
+                distanceToTarget = Vector3.Distance(m_closestTarget, m_Body.WorldPosition) - 1f;
+                penaltyStrength = Math.Abs(distanceToTarget / (2 + distanceToTarget));
+                // print("distance to target: " + distanceToTarget + ", penaltyStrength: " + penaltyStrength);
+                
+                // SetTargetDirections(vectorToTarget, vectorToTarget);
+                // SetTargetDirections(m_Body.AvgWorldVelocityXZ, m_Body.WorldForward);
+                SetTargetPositions(m_closestTarget, m_closestTarget);
+                
                 sensor.AddObservation(NormTargetWalkAngle);
                 sensor.AddObservation(NormTargetLookAngle);
-                print("NormTargetWalkAngle: " + NormTargetWalkAngle);
-                print("NormTargetLookAngle: " + NormTargetLookAngle);
-                sensor.AddObservation(m_closestTarget); // 3
-                sensor.AddObservation(m_Body.WorldPosition - m_closestTarget); // 3
+               
+                // sensor.AddObservation(m_closestTarget); // 3
             }
         }
         
@@ -51,13 +61,11 @@ namespace Ademord
         
         protected virtual void ObjectFullyScannedEvent(object sender, VoxelCollectedEventArgs e)
         {
-            SetTargetDirectionsToNextGoal();
+            SetClosestTarget();
         }
-        public void SetTargetDirectionsToNextGoal()
+        public void SetClosestTarget()
         {
             m_closestTarget  = GetClosestTarget();
-            var vectorToTarget = m_Body.WorldPosition - m_closestTarget; 
-            SetTargetDirections(vectorToTarget, vectorToTarget);
             
             // safety
             if (m_closestTarget.magnitude == 0)
@@ -71,6 +79,13 @@ namespace Ademord
             return m_World.GetClosestTarget(m_Body.WorldPosition);
         }
         
+        protected void SetTargetPositions(Vector3 walkPos, Vector3 lookPos)
+        {
+            Vector3 pos = m_Body.WorldPosition;
+            SetTargetDirections(
+                Vector3.ProjectOnPlane(walkPos - pos, Vector3.up),
+                Vector3.ProjectOnPlane(lookPos - pos, Vector3.up));
+        }
         protected void SetTargetDirections(Vector3 walkDirXZ, Vector3 lookDirXZ)
         {
             m_TargetWalkDirectionXZ = walkDirXZ.normalized;
@@ -94,17 +109,20 @@ namespace Ademord
         
         protected float GetNormWalkDirectionError()
         {
-            return Vector3.Angle(m_Body.AvgWorldVelocityXZ, m_TargetWalkDirectionXZ) / 180f;
+            
+            return penaltyStrength * Vector3.Angle(m_Body.AvgWorldVelocityXZ, m_TargetWalkDirectionXZ) / 180f;
         }
 
         protected float GetWalkDirectionReward(float strength = 1, float exp = 8)
         {
+           
             return Mathf.Pow(1 - GetNormWalkDirectionError(), exp) * strength;
+            // return Mathf.Pow(1 - GetNormWalkDirectionError(), exp) * strength;
         }
 
         protected float GetNormLookDirectionError()
         {
-            return Mathf.Abs(NormTargetLookAngle);
+            return penaltyStrength * Mathf.Abs(NormTargetLookAngle);
         }
 
         protected float GetLookDirectionReward(float strength = 1, float exp = 8)
@@ -134,10 +152,9 @@ namespace Ademord
             m_TBStats.Add(m_BehaviorName + "/Walk Error", GetNormWalkDirectionError());
         }
 
-        protected virtual void DrawGUIStats()
+        public override void DrawGUIStats(bool drawSummary = true)
         {
-            m_GUIStats.Add(TargetSpeed, "Speed", "Target", Colors.Orange);
-            m_GUIStats.Add(m_Body.AvgSpeed, "Speed", "Measured Avg.", Colors.Lightblue);
+            base.DrawGUIStats(false);
 
             m_GUIStats.Add(GetNormWalkDirectionError(), "Direction Errors", "Walk Direction", Colors.Orange);
             m_GUIStats.Add(GetNormLookDirectionError(), "Direction Errors", "Look Direction", Colors.Lightblue);

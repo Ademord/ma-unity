@@ -42,7 +42,14 @@ namespace Ademord
         private float m_ControlAttenuate = 0.95f;
         [SerializeField]
         private float m_BackwardSpeedFactor = 0.25f;
-        
+
+        // void Update()
+        // {
+        //     LineRenderer lineRenderer = transform.GetComponent<LineRenderer>();
+        //     lineRenderer.SetVertexCount(2);
+        //     lineRenderer.SetPosition(0, transform.position);
+        //     lineRenderer.SetPosition(1, transform.forward * 20 + transform.position);
+        // }
         /// <summary>
         /// Sets the brake zone depending on the <see cref="World's"/>'s radius.
         /// </summary>

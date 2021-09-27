@@ -7,12 +7,9 @@ namespace Ademord
     
     public class VoxelPigeonAgentTrain : VoxelPigeonAgent
     {
-        [SerializeField] private bool NormalizeVoxelReward = false;
+        [Header("Additional Voxel Agent Parameters")]
 
-        public override void Initialize()
-        {
-            base.Initialize();
-        }
+        [SerializeField] private bool NormalizeVoxelReward = false;
 
         public override void OnEpisodeBegin()
         {

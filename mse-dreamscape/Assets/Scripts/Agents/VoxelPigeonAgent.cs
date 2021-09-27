@@ -14,10 +14,7 @@ namespace Ademord
         protected GridSensorComponent3D m_SensorComponent_Scanner;
         [SerializeField]
         [Tooltip("Accuracy of the scanner.")]
-        protected float m_ScanAccuracy = 20;        
-        [SerializeField]
-        [Tooltip("VFX of Scanner Drone that rotates towards objects being scanned.")]
-        private VFXController m_VFXController;
+        protected float m_ScanAccuracy = 80;        
         [SerializeField]
         [Tooltip("Delay between scans.")]
         protected float m_ResetVFXWaitPeriod = 2f;
@@ -28,10 +25,6 @@ namespace Ademord
         protected int totalVoxelsScanned;
         
         
-        public override void Initialize()
-        {
-            base.Initialize();
-        }
         public override void OnEpisodeBegin()
         {
             base.OnEpisodeBegin();
@@ -45,7 +38,7 @@ namespace Ademord
             
             m_VoxelsScanned = UseScanner(m_Body.WorldForward, m_Body.WorldPosition);
             totalVoxelsScanned += m_VoxelsScanned;
-            if (CanResetScannerRotation()) m_VFXController.ResetVFX();
+            if (m_EnableVFX && CanResetScannerRotation()) m_VFXController.ResetVFX();
         }
         
         public override void PostAction()
@@ -89,7 +82,7 @@ namespace Ademord
         
         public void OnVoxelScanned(GameObject target)
         {
-            m_VFXController.RotateVFXToTarget(target);
+            if (m_EnableVFX) m_VFXController.RotateVFXToTarget(target);
             m_VoxelsScanned++;
         }
 

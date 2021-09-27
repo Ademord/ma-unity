@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,17 +9,30 @@ namespace Ademord
     {
 
         // public SceneDrone m_Drone { get; protected set; }
-        [SerializeField] [Tooltip("Drone's Scanner Eye.")]
-        protected ScannerController m_ScannerComponent;
+        // [SerializeField] 
+        // [Tooltip("Drone's Scanner Eye.")]
+        // protected ScannerController m_ScannerComponent;
+        
+        [SerializeField] protected GameObject m_ScanningLight;
+        [SerializeField] protected GameObject m_FlickeringLight;
+        // [SerializeField] protected bool useVFX = true;
 
         // damping of VFX rotation
         protected float damping = 10;
-        
+        protected Quaternion DefRotation;
+
+        private void Start()
+        {
+            DefRotation = transform.rotation;
+        }
+
         public void RotateVFXToTarget(GameObject target)
         {
             if (gameObject.activeInHierarchy)
             {
-                transform.LookAt(target.transform);
+                m_ScanningLight.SetActive(false);
+                m_FlickeringLight.SetActive(true);
+                // transform.LookAt(target.transform);
                 // m_ScannerComponent.transform.LookAt(target.transform);
             }
 
@@ -49,11 +63,14 @@ namespace Ademord
             // if (m_VFX != null)
             if (gameObject.activeInHierarchy)
             {
+                m_ScanningLight.SetActive(true);
+                m_FlickeringLight.SetActive(false);
+
                 // m_ScannerComponent.Reset();
-                var rotation = transform.rotation;
-                // m_VFX.transform.localRotation = 
-                var desiredRotQ = new Quaternion(0, rotation.y, 0, rotation.w);
-                transform.rotation = Quaternion.Lerp(rotation, desiredRotQ, Time.deltaTime * damping);
+                // var rotation = transform.rotation;
+                // // m_VFX.transform.localRotation = 
+                // var desiredRotQ = new Quaternion(0, rotation.y, 0, rotation.w);
+                // transform.rotation = Quaternion.Lerp(rotation, DefRotation, Time.deltaTime * damping);
             }
         }
     }
