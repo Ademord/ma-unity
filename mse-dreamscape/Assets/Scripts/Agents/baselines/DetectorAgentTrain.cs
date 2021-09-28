@@ -29,23 +29,23 @@ namespace Ademord
             {
                 detectorCam.CallTakeSnapshot();
                 
-                var targetsInFOV = AreTargetsInFOV(m_SensorComponent_Detector, m_ObjectTag);
+                var voxelsInFOV = AreTargetsInFOV(m_SensorComponent, m_TargetTag);
                 var detections = detectorCam.GetDetections();
                 // if (targetsInFOV && detections.Count == 0)
                 // {
                 //     print("there is a problem with your setup, gridsensor should not see objects");
                 // }
-
-                if (detections.Count > 0)
+                print("voxelsInFOV: " + voxelsInFOV);
+                if (voxelsInFOV && detections.Count > 0)
                 {
-                    if (targetsInFOV)
-                    {
-                        countObjectsDetected = CountTargetsInFOV(m_SensorComponent_Detector, m_ObjectTag);
-                        totalObjectsDetected += countObjectsDetected;
-                        // sensor.AddObservation(NormTargetLookAngle);
-                        sensor.AddObservation(countObjectsDetected);
-                    }
-                    else
+                    countObjectsDetected = CountTargetsInFOV(m_SensorComponent_Detector, m_ObjectTag);
+                    totalObjectsDetected += countObjectsDetected;
+                    print("there are detections > i am passing objects in FOV: " + countObjectsDetected);
+                    // sensor.AddObservation(NormTargetLookAngle);
+                    sensor.AddObservation(countObjectsDetected);
+
+                    if (countObjectsDetected == 0)
+
                     {
                         print("there are detections but the gridsensor doesnt see any objects. please make wider.");
                     }

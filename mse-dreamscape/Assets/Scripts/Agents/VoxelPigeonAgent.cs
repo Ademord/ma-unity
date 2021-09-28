@@ -56,11 +56,13 @@ namespace Ademord
                 VoxelController myVoxel = target.transform.parent.GetComponent<VoxelController>();
                 if (myVoxel)
                 {
+                    var myDetectableGameObject = target.transform.GetComponent<VoxelDetectableGameObject>();
+
                     // dotProduct requirement: ONLY SCAN TARGETS IN FRONT
                     var dotProductToTarget = Vector3.Dot(fwd, myVoxel.transform.forward);
 
                     // if facing targets and chance to collect is successful
-                    if (dotProductToTarget < 0 && Random.Range(0, 101) <= m_ScanAccuracy)
+                    if (myDetectableGameObject.IsInSight() > 0 && Random.Range(0, 101) <= m_ScanAccuracy)
                     {
                         if (myVoxel.Collect())
                         {

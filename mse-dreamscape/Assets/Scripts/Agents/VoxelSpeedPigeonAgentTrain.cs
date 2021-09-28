@@ -38,9 +38,9 @@ namespace Ademord
             // this method uses yield so we have to query the results out
             foreach (var target in sensor.GetDetectedGameObjects(tag))
             {
-                var myVoxel = target.transform.GetComponent<VoxelDetectableGameObject>();
+                var myDetectableGameObject = target.transform.GetComponent<VoxelDetectableGameObject>();
                 // check all the voxels and if one if visible then change the value.
-                if (myVoxel.IsInSight() > 0)
+                if (myDetectableGameObject.IsInSight() > 0)
                 {
                     return true;
                 }

@@ -114,6 +114,18 @@ namespace MBaske.Sensors.Grid
                 return 1;
             }
         }
+        private static float IsFacingAgent(DetectionResult.Item item)
+        {
+            var current_object = item.Detectable as VoxelDetectableGameObject;
+            if (current_object != null)
+            {
+                return current_object.FacingAgent();
+            }
+            else
+            {
+                return 1;
+            }
+        }
 
         private void RegisterObservables(string tag, ref IEnumerable<Observable> tagObs, DetectionResult.Item item, ref PointModifier modifier, ref int channel)
         {
@@ -127,12 +139,19 @@ namespace MBaske.Sensors.Grid
                     item.Detectable, out float obsValue)
                     == ObservableType.Distance;
 
-                // nullify observations that are not visible given this filter
-                // only collectibles since the rest of the environment is not voxelized
-                if (tag == "collectible" || tag == "obstacle")
+                // nullify observations that are blocked by other coliders
+                // only collectibles and obstacles since the rest of the environment is not voxelized :(
+                // collectibles are also nullified if they are not facing the agent
+                if (tag == "collectible")
                 {
                     obsValue *= IsVisible(item);
+                    // THINK? cannot check this because it will use the base object's forward, and we need to get 
+                    // obsValue *= IsFacingAgent(item);
                 }
+                // else if (tag == "object")
+                // {
+                //     obsValue *= IsVisible(item);
+                // }
                 
                 if (!modifier.HasGridPositions)
                 {

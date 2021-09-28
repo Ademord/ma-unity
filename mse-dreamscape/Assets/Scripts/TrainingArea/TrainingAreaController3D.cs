@@ -38,12 +38,20 @@ namespace Ademord
         [Header("Respawn Parameters")]
         [SerializeField] 
         private bool RespawnOnCollection = false;
-        [SerializeField] 
-        private float TimeBeforeDestroy = 5f;
+      
         public List<VoxelController> collectiblesList { get; private set; }
+        
         // training elements tracks child: N_elements, List_Elements
         public Dictionary<Transform, (int numToCollect, List<VoxelController> collectibles)> trainingElements;
+        
         protected float FieldRadius;
+        
+        // this constraints that the next respawned object is at least X meters away from last collected position in XZ
+        private Vector3 lastCollectedPosition;
+        [SerializeField] private float minRespawnDistanceFromLastCollected = 5f;
+        [SerializeField] 
+        private float TimeBeforeDestroy = 5f;
+        
         
         public void Initialize(float ExplorationLimit)
         {
@@ -54,6 +62,7 @@ namespace Ademord
         
         public void Reset(bool randomizeHeight=false)
         {
+            lastCollectedPosition = Vector3.zero;
             // empty the training area
             foreach (var kvp in trainingElements.ToArray())
             {
@@ -188,22 +197,20 @@ namespace Ademord
         public void MoveToSafeRandomPosition(Transform trans, bool randomizeHeight=false)
         {
             bool safePositionFound = false;
-            int attemptsRemaining = 100;
+            int attemptsRemaining = 11;
             Vector3 potentialPosition = Vector3.zero;
             Quaternion potentialRotation = new Quaternion();
 
             // loop until safe position
-            while (!safePositionFound) // && attemptsRemaining > 0
+            while (!safePositionFound && attemptsRemaining-- > 0) // 
             {
-                potentialPosition = GetRandomPosition();
+                potentialPosition = GetRandomPosition(minRespawnDistanceFromLastCollected);
                 potentialRotation = GetRandomRotation();
                 
-                RaycastHit[] sphereCastHits = Physics.SphereCastAll(potentialPosition + new Vector3(0, 10, 0), 7f, -transform.up, 30f, Layer.ObstacleMask);
+                RaycastHit[] sphereCastHits = Physics.SphereCastAll(potentialPosition + new Vector3(0, 10, 0), 2f, -transform.up, 30f, Layer.ObstacleMask);
                 // Debug.Log("spherecast hit length: " + sphereCastHits.Length);
                 // safe position if no colliders found
                 safePositionFound = sphereCastHits.Length == 0;
-                
-                attemptsRemaining--;
             }
 
             Debug.Assert(safePositionFound, "Could not found a safe position");
@@ -213,18 +220,30 @@ namespace Ademord
             trans.rotation = potentialRotation;
         }
 
-        Vector3 GetRandomPosition()
+        Vector3 GetRandomPosition(float minDistanceXZ = 0)
         {
-            // print("looking for a safe position....");
-            // make drone spawn higher to bike
-            // var multiplier = randomizeHeight ? Random.Range(0.1f, 1.2f) : 0.8f;
-            float height = Random.Range(MaxSpawnHeight.Min, MaxSpawnHeight.Max);
-            // print("height chosen:" + height);
-            float radius = Random.Range(MaxSpawnRadius.Min, MaxSpawnRadius.Max);
-            Quaternion direction = Quaternion.Euler(
-                0, Random.Range(-180f, 180f), 0f);
-            return new Vector3(0,0,0) // transform.position
-                                + Vector3.up * height + direction * Vector3.forward * radius;
+            int attempts = 11;
+            bool positionFound = false;
+            Vector3 result = Vector3.zero;
+            while (!positionFound && attempts-- > 0)
+            {
+                // print("looking for a safe position....");
+                float height = Random.Range(MaxSpawnHeight.Min, MaxSpawnHeight.Max);
+                float radius = Random.Range(MaxSpawnRadius.Min, MaxSpawnRadius.Max);
+                Quaternion direction = Quaternion.Euler(0, Random.Range(-180f, 180f), 0f);
+                Vector3 pivotPosition = Vector3.zero; // transform.position;
+                Vector3 temp_result = pivotPosition + Vector3.up * height + direction * Vector3.forward * radius;
+
+                var distanceToNewPosition = Vector3.ProjectOnPlane(temp_result - lastCollectedPosition, Vector3.up).magnitude;
+                if (distanceToNewPosition > minDistanceXZ)
+                {
+                    // print("found a safe position to spawn the new object");
+                    result = temp_result;
+                    positionFound = true;
+                }
+            }
+
+            return result;
         }
         Quaternion GetRandomRotation()
         {
@@ -242,6 +261,7 @@ namespace Ademord
             // if finished scanning an object, notify agent.
             if (trainingElements[e.grandparent].numToCollect == 0 && RespawnOnCollection)
             {
+                lastCollectedPosition = e.grandparent.position;
                 // Debug.Assert(m_TargetSpawnPrefab != null, "No Respawn Prefab specified");
                 // first spawn a new target
                 SpawnTarget(m_TargetSpawnPrefab, new Vector3(30,30,30));
