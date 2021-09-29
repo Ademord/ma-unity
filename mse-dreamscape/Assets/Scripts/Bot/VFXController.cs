@@ -21,14 +21,12 @@ namespace Ademord
         // damping of VFX rotation
         protected float damping = 10;
         protected Quaternion DefRotation;
-
-        private void Start()
+        
+        
+        public void Initialize(bool m_EnableVFX)
         {
-            if (!gameObject.activeInHierarchy)
-            {
-                m_VFXOffReplacementSphere.SetActive(true);
-            }
-            
+            gameObject.SetActive(m_EnableVFX);
+            m_VFXOffReplacementSphere.SetActive(!m_EnableVFX);
         }
 
         public void RotateVFXToTarget(GameObject target)

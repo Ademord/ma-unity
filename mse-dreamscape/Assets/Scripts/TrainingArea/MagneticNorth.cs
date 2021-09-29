@@ -7,11 +7,14 @@ namespace Ademord
     public class MagneticNorth : MonoBehaviour
     {
         int rotationsPerMinute = 10;
-
+        [SerializeField] private bool EnableRotation = false;
         void Update()
         {
-            var angle = 6 * rotationsPerMinute * Time.deltaTime;
-            transform.Rotate(0, 0, angle);
+            if (EnableRotation)
+            {
+                var angle = 6 * rotationsPerMinute * Time.deltaTime;
+                transform.Rotate(0, 0, angle);
+            }
         }
     }
 }

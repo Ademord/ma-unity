@@ -21,6 +21,7 @@ public sealed class ObjectDetector : System.IDisposable
 
     public ObjectDetector(ResourceSet resources)
     {
+
         _resources = resources;
 
         _preBuffer = new ComputeBuffer(Config.InputSize, sizeof(float));
@@ -35,6 +36,12 @@ public sealed class ObjectDetector : System.IDisposable
           (1, sizeof(uint), ComputeBufferType.Raw);
 
         _worker = ModelLoader.Load(_resources.model).CreateWorker();
+        // Debug.Log("_resources: " + _resources == null);
+        // Debug.Log("_preBuffer: " + _preBuffer == null);
+        // Debug.Log("_post1Buffer: " + _post1Buffer == null);
+        // Debug.Log("_post2Buffer: " + _post2Buffer == null);
+        // Debug.Log("_countBuffer: " + _countBuffer == null);
+        // Debug.Log("_worker: " + _worker == null);
     }
 
     #endregion

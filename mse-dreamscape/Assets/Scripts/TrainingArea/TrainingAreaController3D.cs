@@ -25,7 +25,7 @@ namespace Ademord
         
         [Header("Spawn Parameters")]
         [SerializeField]
-        [Range(0, 1)]
+        [Range(0, 3)]
         int m_NSpawnTargets = 3;
         [SerializeField] private GameObject m_TargetSpawnPrefab;
         [SerializeField, MinMaxSlider(1f, 10f)]
@@ -207,7 +207,7 @@ namespace Ademord
                 potentialPosition = GetRandomPosition(minRespawnDistanceFromLastCollected);
                 potentialRotation = GetRandomRotation();
                 
-                RaycastHit[] sphereCastHits = Physics.SphereCastAll(potentialPosition + new Vector3(0, 10, 0), 2f, -transform.up, 30f, Layer.ObstacleMask);
+                RaycastHit[] sphereCastHits = Physics.SphereCastAll(potentialPosition + new Vector3(0, 20, 0), 2f, -transform.up, 30f, Layer.ObstacleMask);
                 // Debug.Log("spherecast hit length: " + sphereCastHits.Length);
                 // safe position if no colliders found
                 safePositionFound = sphereCastHits.Length == 0;

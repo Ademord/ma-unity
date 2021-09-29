@@ -45,7 +45,7 @@ namespace Ademord
         }
 
      
-        public virtual float GetVoxelDiscoveryReward()
+        public virtual float GetVoxelDiscoveryReward(float strength = 0.05f)
         {
             // define reward
             float r = 0;
@@ -57,7 +57,7 @@ namespace Ademord
             {
                 r = m_VoxelsScanned * 1f;
             }
-            return r;
+            return r * strength;
         }
         
         public override void AddTensorboardStats()
@@ -65,6 +65,7 @@ namespace Ademord
             base.AddTensorboardStats();
             m_TBStats.Add(m_BehaviorName + "/Voxels Scanned", totalVoxelsScanned);
             m_TBStats.Add(m_BehaviorName + "/Total Voxels Scanned", totalVoxelsScanned);
+            m_TBStats.Add(m_BehaviorName + "/Total Objects Scanned", totalObjectsScanned);
         }
 
         public override void DrawGUIStats(bool drawSummary = true)

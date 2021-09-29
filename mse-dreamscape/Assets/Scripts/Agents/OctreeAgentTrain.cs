@@ -20,6 +20,7 @@ namespace Ademord
         [Header("Octree Agent Parameters")]
         [SerializeField] protected bool m_AddOctreeObservations = true;
         [SerializeField] protected bool m_TrainOctreeDiscovery = true;
+        [SerializeField] protected bool m_TrainLingerPolicy = true;
         
         [SerializeField]
         [Range(0.25f, 8f)]
@@ -32,11 +33,13 @@ namespace Ademord
         
         [SerializeField]
         bool m_DrawPanoramicResolutionGuidelines = false;
+
+        protected float m_LingeringPenaltyStrength;
         
         public override void Initialize()
         {
             base.Initialize();
-
+            m_LingeringPenaltyStrength = 1f;
             scanPoints = new List<Point>();
             Data = new SceneDroneData();
         }
@@ -100,7 +103,11 @@ namespace Ademord
             if (m_TrainOctreeDiscovery)
             {
                 AddReward(GetOctreeDiscoveryReward());
-                AddReward(GetLingeringPenalty());
+            }
+
+            if (m_TrainLingerPolicy)
+            {
+                AddReward(GetLingeringPenalty(m_LingeringPenaltyStrength));
             }
             
             Data.StepUpdate(m_Body.WorldPosition);
@@ -219,10 +226,10 @@ namespace Ademord
             Vector3[] pts = upts.ToArray();
             return pts;
         }
-        public float GetLingeringPenalty()
+        public float GetLingeringPenalty(float strength = 1)
         {
             float linger = lingerCount / 100f; // 0 - 2
-            return -linger * 0.1f;
+            return -linger * 0.1f * strength;
         }
         public float GetOctreeDiscoveryReward()
         {

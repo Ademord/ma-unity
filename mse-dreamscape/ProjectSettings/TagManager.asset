@@ -20,7 +20,7 @@ TagManager:
   - Obstacle
   - GroundMask
   - Wireframe
-  - 
+  - Object
   - 
   - 
   - 
@@ -42,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Detections
+    uniqueID: 488013929
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

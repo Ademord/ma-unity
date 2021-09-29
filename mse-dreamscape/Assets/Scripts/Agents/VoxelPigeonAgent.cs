@@ -24,7 +24,15 @@ namespace Ademord
         protected float m_ShotTime;
         protected int m_VoxelsScanned;
         protected int totalVoxelsScanned;
+        protected int totalObjectsScanned;
         
+        
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            m_World.OnObjectFullyScannedEventHandler += ObjectFullyScannedEvent;
+        }
         
         public override void OnEpisodeBegin()
         {
@@ -47,7 +55,10 @@ namespace Ademord
             base.PostAction();
             m_VoxelsScanned = 0;
         }
-
+        protected virtual void ObjectFullyScannedEvent(object sender, VoxelCollectedEventArgs e)
+        {
+            totalObjectsScanned++;
+        }
         private int UseScanner(Vector3 fwd)
         {
             int voxelCount = 0;
@@ -62,7 +73,7 @@ namespace Ademord
                     var dotProductToTarget = Vector3.Dot(fwd, myVoxel.transform.forward);
 
                     // if facing targets and chance to collect is successful
-                    if (myDetectableGameObject.IsInSight() > 0 && Random.Range(0, 101) <= m_ScanAccuracy)
+                    if (myDetectableGameObject.IsInSight(Layer.ObstacleMask + Layer.ObjectMask) > 0 && Random.Range(0, 101) <= m_ScanAccuracy)
                     {
                         if (myVoxel.Collect())
                         {
@@ -98,6 +109,7 @@ namespace Ademord
 
         public void ResetAgent(bool fullReset = false)
         {
+            totalObjectsScanned = 0;
             m_VoxelsScanned = 0;
         }
     }

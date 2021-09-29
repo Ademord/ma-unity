@@ -9,48 +9,57 @@ namespace Ademord
     public class DetectorAgentTrain : ShortestPathAgentTrain
     {        
         [Header("Detector Agent Parameters")]
+        [SerializeField] private bool m_LoadDetector = true;
         [SerializeField] private bool m_AddDetectorObservations = true;
         [SerializeField] private bool m_TrainMaximizeDetections = true;
-        [SerializeField] SnapshotCamera snapCam;
-        [SerializeField] DetectorCamera detectorCam;
+        // [SerializeField] SnapshotCamera snapCam;
+        [SerializeField] protected DetectorCamera detectorCam;
         [SerializeField] GridSensorComponent3D m_SensorComponent_Detector;
         [SerializeField] private bool NormalizeDetectionsReward = true;
+        private int countObjectsDetected;
+        private  int totalObjectsDetected;
 
         protected static string m_ObjectTag = "object"; // same for all.
 
-        int countObjectsDetected;
-        int totalObjectsDetected;
 
+        public override void Initialize()
+        {
+            base.Initialize();
+            if (m_LoadDetector)
+            {
+                detectorCam.Initialize();
+            }
+        }
+
+        void Update()
+        {
+            if (m_LoadDetector)
+            {
+                detectorCam.CallTakeSnapshot();
+            }
+        }
         public override void CollectObservations(VectorSensor sensor)
         {
             base.CollectObservations(sensor);
+
+            if (m_LoadDetector)
+            {
+                var voxelsInFOV = AreTargetsInFOV(m_SensorComponent, m_TargetTag);
+                var detections = detectorCam.GetDetections();
+
+                if (voxelsInFOV && detections.Count > 0)
+                {
+                    // print("found: " + String.Join(", ", detections));
+
+                    // the agent gets a bit more information, but it should be the detections.Count, making it highly dependable on the performance of the OD
+                    // countObjectsDetected = CountTargetsInFOV(m_SensorComponent_Detector, m_ObjectTag);
+                    totalObjectsDetected += countObjectsDetected = detections.Count;
+                }
+            }
             
             if (m_AddDetectorObservations)
             {
-                detectorCam.CallTakeSnapshot();
-                
-                var voxelsInFOV = AreTargetsInFOV(m_SensorComponent, m_TargetTag);
-                var detections = detectorCam.GetDetections();
-                // if (targetsInFOV && detections.Count == 0)
-                // {
-                //     print("there is a problem with your setup, gridsensor should not see objects");
-                // }
-                print("voxelsInFOV: " + voxelsInFOV);
-                if (voxelsInFOV && detections.Count > 0)
-                {
-                    countObjectsDetected = CountTargetsInFOV(m_SensorComponent_Detector, m_ObjectTag);
-                    totalObjectsDetected += countObjectsDetected;
-                    print("there are detections > i am passing objects in FOV: " + countObjectsDetected);
-                    // sensor.AddObservation(NormTargetLookAngle);
-                    sensor.AddObservation(countObjectsDetected);
-
-                    if (countObjectsDetected == 0)
-
-                    {
-                        print("there are detections but the gridsensor doesnt see any objects. please make wider.");
-                    }
-                    
-                }
+                sensor.AddObservation(countObjectsDetected);
             }
         }
         public override void PostAction()
@@ -94,7 +103,7 @@ namespace Ademord
         {
             base.AddTensorboardStats();
             m_TBStats.Add(m_BehaviorName + "/Objects Detected", countObjectsDetected);
-            m_TBStats.Add(m_BehaviorName + "/Total Objetcs Detected", totalObjectsDetected);
+            m_TBStats.Add(m_BehaviorName + "/Total Objects Detected", totalObjectsDetected);
         }
 
         public override void DrawGUIStats(bool drawSummary = true)
@@ -103,7 +112,7 @@ namespace Ademord
             var palette = Colors.Palette(4, 1, 0.5f, 0.2f, 0.8f);
 
             m_GUIStats.Add(countObjectsDetected, "Detections", "Detections Count", palette[0]);
-            m_GUIStats.Add(totalObjectsDetected, "Detections", "Total Detections Count", palette[1]);
+            // m_GUIStats.Add(totalObjectsDetected, "Detections", "Total Detections Count", palette[1]);
             if (drawSummary)
             {
                 float sum = 0;

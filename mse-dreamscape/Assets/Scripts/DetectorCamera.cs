@@ -35,17 +35,24 @@ public class DetectorCamera : MonoBehaviour
     #endregion
 
     #region MonoBehaviour implementation
-    void Awake()
+    public void Initialize()
     {
-        detectorCam = GetComponent<Camera>();
+        detectorCam = transform.GetComponent<Camera>();
+        if (detectorCam == null)
+        {
+            Debug.LogError("DetectorCamera cannot find its own camera");
+        }
+
         RectTransform canvasRect = _previewUI.GetComponent<Canvas>().GetComponent<RectTransform>();
         resWidth = (int) canvasRect.rect.width;
         resHeight = (int) canvasRect.rect.height;
-        print("reswidth: " + canvasRect.rect.width);
-        print("resheight: " + canvasRect.rect.height);
+        // canvas dimensions
+        // print("reswidth: " + canvasRect.rect.width);
+        // print("resheight: " + canvasRect.rect.height);
         
         if (detectorCam.targetTexture == null)
         {
+            Debug.Log("detectorCam.targetTexture is null.. setting..");
             detectorCam.targetTexture = new RenderTexture(resWidth, resHeight, 24);
         }
         else
@@ -53,6 +60,7 @@ public class DetectorCamera : MonoBehaviour
             resWidth = detectorCam.targetTexture.width;
             resHeight = detectorCam.targetTexture.height;
         }
+        
         detectorCam.gameObject.SetActive(false);
         
         // Object detector initialization
@@ -78,7 +86,7 @@ public class DetectorCamera : MonoBehaviour
     // {
     //     for (var i = 0; i < _markers.Length; i++) Destroy(_markers[i]);
     // }
-    
+
     public void CallTakeSnapshot()
     {
         detectorCam.gameObject.SetActive(true);

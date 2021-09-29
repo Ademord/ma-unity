@@ -18,7 +18,6 @@ namespace Ademord
             base.Initialize();
 
             m_closestTarget = new Vector3();
-            m_World.OnObjectFullyScannedEventHandler += ObjectFullyScannedEvent;
         }
         public override void OnEpisodeBegin()
         {
@@ -59,8 +58,10 @@ namespace Ademord
             }
         }
         
-        protected virtual void ObjectFullyScannedEvent(object sender, VoxelCollectedEventArgs e)
+        protected override void ObjectFullyScannedEvent(object sender, VoxelCollectedEventArgs e)
         {
+            base.ObjectFullyScannedEvent(sender, e);
+            
             SetClosestTarget();
         }
         public void SetClosestTarget()

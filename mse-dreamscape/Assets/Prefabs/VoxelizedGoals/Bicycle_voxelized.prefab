@@ -9386,7 +9386,7 @@ GameObject:
   - component: {fileID: 3164017198631291131}
   - component: {fileID: 1697939441487793577}
   - component: {fileID: 7008651129666569490}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: bike_collider_object
   m_TagString: object
   m_Icon: {fileID: 0}
@@ -38881,7 +38881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7656792881872456152
 Transform:
   m_ObjectHideFlags: 0
@@ -50979,7 +50979,7 @@ GameObject:
   - component: {fileID: 716649946746523648}
   - component: {fileID: 8435262852643392110}
   - component: {fileID: 5141620163905523127}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83518,7 +83518,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: fb839ad6041a4a0428ca7fb0ba3a99cf, type: 2}
   - {fileID: 2100000, guid: fb839ad6041a4a0428ca7fb0ba3a99cf, type: 2}
   - {fileID: 2100000, guid: 842260b97c19c2c48872a9b1d0d0dbb3, type: 2}
-  - {fileID: 2100000, guid: fb839ad6041a4a0428ca7fb0ba3a99cf, type: 2}
+  - {fileID: 2100000, guid: 796ea17e15ad45541a458f2da8fe82e3, type: 2}
   - {fileID: 2100000, guid: 842260b97c19c2c48872a9b1d0d0dbb3, type: 2}
   - {fileID: 2100000, guid: 842260b97c19c2c48872a9b1d0d0dbb3, type: 2}
   - {fileID: 2100000, guid: fb839ad6041a4a0428ca7fb0ba3a99cf, type: 2}

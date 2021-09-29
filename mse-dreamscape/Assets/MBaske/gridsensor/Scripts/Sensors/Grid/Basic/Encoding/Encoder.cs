@@ -148,10 +148,10 @@ namespace MBaske.Sensors.Grid
                     // THINK? cannot check this because it will use the base object's forward, and we need to get 
                     // obsValue *= IsFacingAgent(item);
                 }
-                // else if (tag == "object")
-                // {
-                //     obsValue *= IsVisible(item);
-                // }
+                else if (tag == "object")
+                {
+                    obsValue *= IsVisible(item);
+                }
                 
                 if (!modifier.HasGridPositions)
                 {

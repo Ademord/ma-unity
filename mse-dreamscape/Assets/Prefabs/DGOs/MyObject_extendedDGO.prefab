@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4048161651908191237}
   - component: {fileID: 312269681383498071}
   - component: {fileID: 8252448716172503532}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: MyObject_extendedDGO
   m_TagString: object
   m_Icon: {fileID: 0}

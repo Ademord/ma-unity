@@ -15,6 +15,7 @@ namespace Ademord
         public const int CollectibleMask = 1 << 7;
         public const int ObstacleMask = 1 << 8;
         public const int GroundMask = 1 << 9;
+        public const int ObjectMask = 1 << 11;
         // public const int BulletMask = 1 << 8;
         // public const int TriggerMask = 1 << 9;
     }

@@ -11,7 +11,7 @@ namespace Ademord
         protected Collider m_Collider;
         protected bool runOnce = true;
         public float FacingAgent() => Vector3.Dot(transform.forward, m_AgentBody.WorldForward) < 0 ? 1 : 0;
-        public float IsInSight() => !Physics.Linecast(m_AgentBody.WorldPosition, transform.position,  Layer.ObstacleMask) ? 1 : 0;
+        public float IsInSight(int layer = Layer.ObstacleMask) => !Physics.Linecast(m_AgentBody.WorldPosition, transform.position,  layer) ? 1 : 0;
         // public float IsInSight(int layerObjectIsIn = 1 << 0)
         // {
         //     float isInSight = 1;
