@@ -65,20 +65,21 @@ namespace Ademord
         {
             base.CollectObservations(sensor);
 
+
+            int totalClassesDetected = m_detections.Distinct().Count();
+            m_SumOfElementsInSemanticMap += m_ClassCountBuffer.Enqueue(totalClassesDetected);
+            
+            // print("totalClassesDetected: " + totalClassesDetected + 
+            //       "m_ClassCountBuffer: " + String.Join(", ", m_ClassCountBuffer.q.ToList()) + 
+            //       "m_SumOfElementsInSemanticMap: " + GetRationalizedClassDensity());
+            
             if (m_SemanticCuriosityObservations)
             {
-                var detections = detectorCam.GetDetections();
-                
-                int totalClassesDetected = detections.Distinct().Count();
-                // sum of total classes seen
-                m_SumOfElementsInSemanticMap += m_ClassCountBuffer.Enqueue(totalClassesDetected);
-                var list_classCountBuffer = m_ClassCountBuffer.q.ToList();
+                Debug.Assert(m_LoadDetector, "LoadDetector must be loaded for Semantic Curiosity Obs");
+                sensor.AddObservation(GetRationalizedClassDensity()); // 1
+
                 // the total different number of classes seen across time is what they want. how many different classes detections across time
                 // m_SumOfElementsInSemanticMap += list_classCountBuffer.Distinct().Count();
-
-                // print("totalClassesDetected: " + totalClassesDetected + 
-                //       "m_ClassCountBuffer: " + String.Join(", ", list_classCountBuffer) + 
-                //       "m_SumOfElementsInSemanticMap: " + GetRationalizedClassDensity());
             }
         }
         public override void SetRewards()
@@ -111,7 +112,7 @@ namespace Ademord
             base.DrawGUIStats(false);
             var palette = Colors.Palette(4, 1, 0.5f, 0.2f, 0.8f);
 
-            m_GUIStats.Add(m_SumOfElementsInSemanticMap, "Semantic Curiosity", "Sum Of Elements in SemanticMap", palette[1]);
+            m_GUIStats.Add(GetRationalizedClassDensity(), "Semantic Curiosity", "Sum Of Elements in SemanticMap", palette[2]);
 
             if (drawSummary)
             {

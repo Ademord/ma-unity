@@ -24,7 +24,7 @@ namespace Ademord
             {
                 if (AreTargetsInFOV(m_SensorComponent, m_TargetTag))
                 {
-                    m_SpeedErrorStrength = 0.25f;
+                    m_SpeedErrorStrength = 0.1f;
                 }
                 else
                 {

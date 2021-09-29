@@ -18,8 +18,8 @@ namespace Ademord
         [SerializeField]
         protected Sun m_SunObject;
 
-        private Quaternion valueTowardsSun;
-        private Quaternion valueTowardsMagneticNorth;
+        protected Quaternion valueTowardsSun;
+        protected Quaternion valueTowardsMagneticNorth;
 
         // memalloc
         private Vector3 _mTempVector;
@@ -130,7 +130,7 @@ namespace Ademord
             // m_GUIStats.Add(Data.LeafNodeInfo[PointType.ScanPoint].Count, "Octree", "Leaf Nodes Scan Points", palette[2]);
             
             m_GUIStats.Add(valueTowardsSun.w, "Pigeon", "Value Towards North", palette[0]);
-            m_GUIStats.Add(valueTowardsMagneticNorth.z, "Pigeon", "Rotation from Compass", palette[1]);
+            m_GUIStats.Add(valueTowardsMagneticNorth.y, "Pigeon", "Rotation from Compass", palette[1]);
             // m_GUIStats.Add(valueTowardsMagneticNorth.w, "Pigeon", "Value Towards Magnetic North", palette[1]);
             // m_GUIStats.Add(coveragePercentage, "Octree", "Coverage %", palette[3]);
             

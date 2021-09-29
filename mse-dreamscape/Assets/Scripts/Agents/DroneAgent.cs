@@ -130,7 +130,8 @@ namespace Ademord
             sensor.AddObservation(m_Body.WorldPosition); // 3
 
             // total 14 obs
-            AddReward(-1f / MaxStep);
+            // AddReward(-10f / MaxStep); // for above 10k steps, try to stay at -0.001 / step
+            AddReward(-0.001f);
         }
 
          public override void OnActionReceived(ActionBuffers actions)

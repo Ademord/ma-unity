@@ -124,24 +124,28 @@ namespace Ademord
 
         protected virtual float GetSpeedError()
         {
-            return Mathf.Min(Mathf.Abs(m_Body.AvgSpeed - TargetSpeed), MaxSpeed);
+            // adapted so that : i dont care if the drone goes faster than maxSpeed, penalize if he is slower than max speed
+            
+            return Mathf.Min(m_Body.AvgSpeed - TargetSpeed, 0f);
+            // return Mathf.Min(Mathf.Abs(m_Body.AvgSpeed - TargetSpeed), MaxSpeed);
             // return Mathf.Min(Mathf.Abs(GetDirectionalSpeed() - TargetSpeed), MaxSpeed);
         }
 
         // TBD error/(2+error)*1.4 (assuming max speed = 5)
         // http://fooplot.com/#W3sidHlwZSI6MCwiZXEiOiJ4LygyK3gpKjEuNCIsImNvbG9yIjoiIzAwMDAwMCJ9LHsidHlwZSI6MTAwMH1d
-        protected virtual float GetSpeedErrorPenalty(float strength = 1)
+        protected virtual float GetSpeedErrorPenalty(float strength = 0.1f)
         {
             if (TargetSpeed < MinSpeed)
             {
                 // Penalize any movement.
-                print("penbalizing any movement");
+                print("penalizing any movement");
                 return -m_Body.WorldVelocity.magnitude;
             }
 
             float error = GetSpeedError();
+            // print("speedError: " + error);
             float norm = error / (2 + error) * 1.4f;
-            return norm * -m_SpeedErrorStrength;
+            return norm * -m_SpeedErrorStrength * strength;
         }
 
         protected float GetMovingForwardReward()

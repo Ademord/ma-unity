@@ -13,7 +13,7 @@ namespace Ademord
         protected List<Point> scanPoints;
         protected int lingerCount; 
         // variable of new nodes discovered since 3 methods use it and modify it all the time otherwise
-        private int nodeCount;
+        protected int nodeCount;
 
         public SceneDroneData Data { get; protected set; }
 
@@ -107,7 +107,7 @@ namespace Ademord
 
             if (m_TrainLingerPolicy)
             {
-                AddReward(GetLingeringPenalty(m_LingeringPenaltyStrength));
+                AddReward(GetLingeringPenalty());
             }
             
             Data.StepUpdate(m_Body.WorldPosition);
@@ -226,14 +226,14 @@ namespace Ademord
             Vector3[] pts = upts.ToArray();
             return pts;
         }
-        public float GetLingeringPenalty(float strength = 1)
+        public float GetLingeringPenalty()
         {
             float linger = lingerCount / 100f; // 0 - 2
-            return -linger * 0.1f * strength;
+            return -linger * 0.1f * m_LingeringPenaltyStrength;
         }
-        public float GetOctreeDiscoveryReward()
+        public float GetOctreeDiscoveryReward(float strength = 0.1f)
         {
-            return (nodeCount * 1f) / Data.LookRadius;
+            return (nodeCount * 1f) / Data.LookRadius * strength;
             // return (nodeCount * 0.1f) / Data.LookRadius;
         }
 
@@ -295,12 +295,12 @@ namespace Ademord
             base.DrawGUIStats(false);
             var palette = Colors.Palette(4, 1, 0.5f, 0.2f, 0.8f);
 
-            m_GUIStats.Add(lingerCount, "Octree", "lingerCount", palette[0]);
+            // m_GUIStats.Add(lingerCount, "Octree Linger", "lingerCount", palette[0]);
             // this metric shows how much of the area the agent actually visited
-            m_GUIStats.Add(Data.LeafNodeInfo[PointType.DronePos].Count, "Octree", "Leaf Nodes Visited", palette[1]);
+            m_GUIStats.Add(Data.LeafNodeInfo[PointType.DronePos].Count / 10, "Octree", "Leaf Nodes Visited", palette[1]);
             // if scanner is smaller (not panoramic) then scan ouf of range nodes will show how much the agent looked around.
             // m_GUIStats.Add(Data.LeafNodeInfo[PointType.ScanOutOfRange].Count, "Octree", "Leaf Nodes ScanOutOfRange", palette[2]);
-            m_GUIStats.Add(Data.LeafNodeInfo[PointType.ScanPoint].Count, "Octree", "Leaf Nodes Scan Points", palette[2]);
+            m_GUIStats.Add(Data.LeafNodeInfo[PointType.ScanPoint].Count / 10, "Octree", "Leaf Nodes Scan Points", palette[2]);
             m_GUIStats.Add(nodeCount, "Octree", "New Nodes Count", palette[3]);
             // m_GUIStats.Add(coveragePercentage, "Octree", "Coverage %", palette[3]);
 

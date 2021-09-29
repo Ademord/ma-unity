@@ -55,6 +55,10 @@ namespace Ademord
             {
                 AddReward(GetWalkDirectionReward());
                 AddReward(GetLookDirectionReward());
+                // nullify that reward
+                if (m_TrainTargetSpeed)
+                    AddReward(-GetSpeedErrorPenalty());
+                AddReward(GetDirectionalSpeedError());
             }
         }
         
@@ -110,13 +114,14 @@ namespace Ademord
         
         protected float GetNormWalkDirectionError()
         {
-            
+            // print("m_TargetWalkDirectionXZ: " + m_TargetWalkDirectionXZ);
+            // print("NormTargetLookAngle: " + NormTargetLookAngle);
             return penaltyStrength * Vector3.Angle(m_Body.AvgWorldVelocityXZ, m_TargetWalkDirectionXZ) / 180f;
         }
 
-        protected float GetWalkDirectionReward(float strength = 1, float exp = 8)
+        protected float GetWalkDirectionReward(float strength = 0.01f, float exp = 8)
         {
-           
+            if (NormTargetLookAngle == 0 && m_TargetWalkDirectionXZ == Vector3.zero) return 0;
             return Mathf.Pow(1 - GetNormWalkDirectionError(), exp) * strength;
             // return Mathf.Pow(1 - GetNormWalkDirectionError(), exp) * strength;
         }
@@ -126,8 +131,10 @@ namespace Ademord
             return penaltyStrength * Mathf.Abs(NormTargetLookAngle);
         }
 
-        protected float GetLookDirectionReward(float strength = 1, float exp = 8)
+        protected float GetLookDirectionReward(float strength = 0.01f, float exp = 8)
         {
+            if (NormTargetLookAngle == 0 && m_TargetWalkDirectionXZ == Vector3.zero) return 0;
+
             return Mathf.Pow(1 - GetNormLookDirectionError(), exp) * strength;
         }
         
@@ -141,8 +148,9 @@ namespace Ademord
             return Vector3.Dot(m_Body.AvgWorldVelocityXZ, m_TargetWalkDirectionXZ);
         }
 
-        protected override float GetSpeedError()
+        protected float GetDirectionalSpeedError()
         {
+            if (NormTargetLookAngle == 0 && m_TargetWalkDirectionXZ == Vector3.zero) return 0;
             return Mathf.Min(Mathf.Abs(GetDirectionalSpeed() - TargetSpeed), MaxSpeed);
         }
         
@@ -167,6 +175,7 @@ namespace Ademord
                     m_GUIStats.Add(GetWalkDirectionReward(), "Rewards", "Walk Direction", palette[2]) +
                     m_GUIStats.Add(GetLookDirectionReward(), "Rewards", "Look Direction", palette[3]);
 
+                sum += m_GUIStats.Add(GetDirectionalSpeedError(), "Penalties", "Directional Speed Error", Colors.Orange);
                 sum += m_GUIStats.Add(GetSpeedErrorPenalty(), "Penalties", "Speed Error", Colors.Orange);
 
                 m_GUIStats.Add(sum, "Reward Sum", "", Colors.Lightblue);

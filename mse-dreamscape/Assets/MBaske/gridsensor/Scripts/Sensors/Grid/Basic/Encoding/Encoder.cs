@@ -102,17 +102,23 @@ namespace MBaske.Sensors.Grid
             }
         }
 
-        private static float IsVisible(DetectionResult.Item item)
+        private static float IsCollectibleVisible(DetectionResult.Item item)
         {
             var current_object = item.Detectable as VoxelDetectableGameObject;
             if (current_object != null)
             {
-                return current_object.IsInSight();
+                return current_object.IsInSight(Layer.ObstacleMask + Layer.ObjectMask);
             }
-            else
+            return 1;
+        }
+        private static float IsObjectVisible(DetectionResult.Item item)
+        {
+            var current_object = item.Detectable as VoxelDetectableGameObject;
+            if (current_object != null)
             {
-                return 1;
+                return current_object.IsInSight(Layer.ObstacleMask);
             }
+            return 1;
         }
         private static float IsFacingAgent(DetectionResult.Item item)
         {
@@ -121,10 +127,7 @@ namespace MBaske.Sensors.Grid
             {
                 return current_object.FacingAgent();
             }
-            else
-            {
-                return 1;
-            }
+            return 1;
         }
 
         private void RegisterObservables(string tag, ref IEnumerable<Observable> tagObs, DetectionResult.Item item, ref PointModifier modifier, ref int channel)
@@ -144,13 +147,13 @@ namespace MBaske.Sensors.Grid
                 // collectibles are also nullified if they are not facing the agent
                 if (tag == "collectible")
                 {
-                    obsValue *= IsVisible(item);
+                    obsValue *= IsCollectibleVisible(item);
                     // THINK? cannot check this because it will use the base object's forward, and we need to get 
                     // obsValue *= IsFacingAgent(item);
                 }
                 else if (tag == "object")
                 {
-                    obsValue *= IsVisible(item);
+                    obsValue *= IsObjectVisible(item);
                 }
                 
                 if (!modifier.HasGridPositions)

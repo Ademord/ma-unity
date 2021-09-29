@@ -1,5 +1,6 @@
 
 using System;
+using System.Collections.Generic;
 using MBaske.Sensors.Grid;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
@@ -9,22 +10,24 @@ namespace Ademord
     public class DetectorAgentTrain : ShortestPathAgentTrain
     {        
         [Header("Detector Agent Parameters")]
-        [SerializeField] private bool m_LoadDetector = true;
+        [SerializeField] protected bool m_LoadDetector = true;
         [SerializeField] private bool m_AddDetectorObservations = true;
         [SerializeField] private bool m_TrainMaximizeDetections = true;
         // [SerializeField] SnapshotCamera snapCam;
         [SerializeField] protected DetectorCamera detectorCam;
         [SerializeField] GridSensorComponent3D m_SensorComponent_Detector;
         [SerializeField] private bool NormalizeDetectionsReward = true;
-        private int countObjectsDetected;
+        protected int countObjectsDetected;
         private  int totalObjectsDetected;
 
         protected static string m_ObjectTag = "object"; // same for all.
-
+        protected List<string> m_detections;
 
         public override void Initialize()
         {
             base.Initialize();
+
+            m_detections = new List<string>();
             if (m_LoadDetector)
             {
                 detectorCam.Initialize();
@@ -45,15 +48,15 @@ namespace Ademord
             if (m_LoadDetector)
             {
                 var voxelsInFOV = AreTargetsInFOV(m_SensorComponent, m_TargetTag);
-                var detections = detectorCam.GetDetections();
+                m_detections = detectorCam.GetDetections();
 
-                if (voxelsInFOV && detections.Count > 0)
+                if (voxelsInFOV && m_detections.Count > 0)
                 {
                     // print("found: " + String.Join(", ", detections));
 
                     // the agent gets a bit more information, but it should be the detections.Count, making it highly dependable on the performance of the OD
                     // countObjectsDetected = CountTargetsInFOV(m_SensorComponent_Detector, m_ObjectTag);
-                    totalObjectsDetected += countObjectsDetected = detections.Count;
+                    totalObjectsDetected += countObjectsDetected = m_detections.Count;
                 }
             }
             
@@ -76,7 +79,7 @@ namespace Ademord
             }
         }
 
-        protected float GetCountDetectionsReward(float strength = 1)
+        protected float GetCountDetectionsReward(float strength = 0.01f)
         {
             float r = 0;
             if (NormalizeDetectionsReward)
