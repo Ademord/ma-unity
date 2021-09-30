@@ -34,6 +34,10 @@ namespace Ademord
             {
                 detectorCam.Initialize();
             }
+            else
+            {
+                detectorCam.gameObject.SetActive(false);
+            }
         }
 
         // void Update()
@@ -78,6 +82,8 @@ namespace Ademord
             base.SetRewards();
             if (m_TrainMaximizeDetections)
             {
+                print("m_TrainMaximizeDetections");
+
                 AddReward(GetCountDetectionsReward());
             }
         }

@@ -102,11 +102,15 @@ namespace Ademord
 
             if (m_TrainOctreeDiscovery)
             {
+                print("m_TrainOctreeDiscovery");
+
                 AddReward(GetOctreeDiscoveryReward());
             }
 
             if (m_TrainLingerPolicy)
             {
+                print("m_TrainLingerPolicy");
+
                 AddReward(GetLingeringPenalty());
             }
             

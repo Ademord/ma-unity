@@ -40,6 +40,8 @@ namespace Ademord
 
             if (m_TrainVoxelCollection)
             {
+                print("m_TrainVoxelCollection");
+
                 AddReward(GetVoxelDiscoveryReward());
             }
         }

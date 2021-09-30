@@ -38,7 +38,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/run49_PigeonAgent_rocks.unity
     guid: 951d833b4a922904da0d9310217a16f5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/run50_PigeonAgent_quidditch.unity
     guid: 42fb352f3c7725348825ccb0ced3d49c
   - enabled: 0
@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/run57_ShortestPath.unity
     guid: 030f676d275cc5042b8393533d15406a
+  - enabled: 1
+    path: Assets/Scenes/run61_BaseAgent.unity
+    guid: 07d2989134e74fb469969b0772376d93
   m_configObjects: {}

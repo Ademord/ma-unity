@@ -88,6 +88,7 @@ namespace Ademord
             
             if (m_TrainSemanticCuriosity)
             {
+                print("m_TrainSemanticCuriosity");
                 AddReward(GetSemanticCuriosityRewardChaplot());
             }
         }

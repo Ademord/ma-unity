@@ -35,6 +35,7 @@ namespace Ademord
 
        
         [Header("Speed Parameters")]
+        [SerializeField] protected bool m_TrainMovingForward = true;
         [SerializeField] protected bool m_TrainTargetSpeed = true;
         [SerializeField, MinMaxSlider(0f, 10f)]
         protected MinMax m_TargetSpeedRange = new MinMax(0f, 4.7f);
@@ -105,10 +106,17 @@ namespace Ademord
 
         public virtual void SetRewards()
         {
-            AddReward(GetMovingForwardReward());
+            if (m_TrainMovingForward)
+            {
+                print("m_TrainMovingForward");
+                AddReward(GetMovingForwardReward());
+            }
 
             if (m_TrainTargetSpeed)
+            {
+                print("m_TrainTargetSpeed");
                 AddReward(GetSpeedErrorPenalty());
+            }
         }
         
 
