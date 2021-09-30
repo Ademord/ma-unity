@@ -3,6 +3,8 @@
 *   Copyright (c) 2021 Yusuf Olokoba.
 */
 
+using System.Collections.Generic;
+
 namespace NatSuite.Examples {
 
     using UnityEngine;
@@ -11,8 +13,8 @@ namespace NatSuite.Examples {
     using NatSuite.ML.Vision;
     using NatSuite.ML.Visualizers;
 
-    public class NatDetectorCam : MonoBehaviour {
-
+    public class NatDetectorCam : MonoBehaviour, IDetectorCamera
+    {
         [Header("Visualization")]
         public TinyYOLOv3Visualizer visualizer;
 
@@ -23,54 +25,50 @@ namespace NatSuite.Examples {
         MLModel model;
         TinyYOLOv3Predictor predictor;
         public string accessKey;
-       
-        async void Start () {
+        List<string> detections = new List<string>();
+
+        public List<string> GetDetections() => detections;
+
+        private int resWidth = 256;
+        private int resHeight = 256;
+        
+        public async void Initialize () {
             // Start the camera preview
             if (previewCamera == null) Debug.LogError("previewCamera is null");
-            if (previewCamera.targetTexture == null)
-            {
-                Debug.Log("detectorCam.targetTexture is null.. setting..");
-                RectTransform canvasRect = visualizer.GetComponent<Canvas>().GetComponent<RectTransform>();
-                previewCamera.targetTexture = new RenderTexture((int) canvasRect.rect.width, (int) canvasRect.rect.height, 24);
-            }
-
-            // inefficient
-            var previewTexture = toTexture2D(previewCamera.targetTexture);
+            RectTransform canvasRect = visualizer.transform.parent.GetComponent<Canvas>().GetComponent<RectTransform>();
+            resWidth = (int) canvasRect.rect.width; resHeight = (int) canvasRect.rect.height;
+            // print("reswidth: " + canvasRect.rect.width); print("resheight: " + canvasRect.rect.height);
+        
+            float cachedCameraAspect = previewCamera.aspect;
+            previewCamera.targetTexture = new RenderTexture(resWidth, resHeight, 24);;
+            previewCamera.aspect = cachedCameraAspect;
 
             // Display the camera preview
-            visualizer.Render(previewTexture);
-            
+            visualizer.Render(previewCamera.targetTexture);
             // Fetch the model data
-            Debug.Log("Fetching model from NatML Hub");
             modelData = await MLModelData.FromHub("@natsuite/tiny-yolo-v3", accessKey);
-
             // Deserialize the model
             model = modelData.Deserialize();
-            
             // Create the Predictor
             predictor = new TinyYOLOv3Predictor(model, modelData.labels);
         }
 
         void Update () {
-            // inefficient
-            var previewTexture = toTexture2D(previewCamera.targetTexture);
-            
             // Check that the model has been downloaded
             if (predictor == null) return;
-            else print("model was found");
-            
             // Predict
-            var input = new MLImageFeature(previewTexture);
+            var input = new MLImageFeature(toTexture2D(previewCamera.targetTexture));
             (input.mean, input.std) = modelData.normalization;
             input.aspectMode = modelData.aspectMode;
-            var detections = predictor.Predict(input);
-            
+            var currentDetections = predictor.Predict(input);
             // Visualize
-            visualizer.Render(previewTexture, detections);
-            Debug.Log("detections.Count" + detections.Length);
-            foreach (var detection in detections)
+            visualizer.Render(previewCamera.targetTexture, currentDetections);
+            // Store
+            detections.Clear();
+            foreach (var detection in currentDetections)
             {
-                Debug.Log($"Image contains {detection.label} with confidence {detection.score}");
+                detections.Add(detection.label);
+                // Debug.Log($"Image contains {detection.label} with confidence {detection.score}");
             }
         }
 
@@ -81,12 +79,14 @@ namespace NatSuite.Examples {
         
         Texture2D toTexture2D(RenderTexture rTex)
         {
-            Texture2D tex = new Texture2D(512, 512, TextureFormat.RGB24, false);
+            // print("rendertexture rTex.width: " + rTex.width);
+            Texture2D tex = new Texture2D(rTex.width, rTex.height, TextureFormat.RGB24, false);
             // ReadPixels looks at the active RenderTexture.
             RenderTexture.active = rTex;
             tex.ReadPixels(new Rect(0, 0, rTex.width, rTex.height), 0, 0);
             tex.Apply();
             return tex;
         }
+        
     }
 }

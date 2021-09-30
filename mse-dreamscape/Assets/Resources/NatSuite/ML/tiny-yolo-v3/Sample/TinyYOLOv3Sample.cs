@@ -41,7 +41,7 @@ namespace NatSuite.Examples {
             watch.Stop();
             // Visualize
             Debug.Log($"Detected {detections.Length} objects after {watch.Elapsed.TotalMilliseconds}ms");
-            visualizer.Render(image, detections);
+            // visualizer.Render(image, detections);
             // Dispose the model
             model.Dispose();
         }

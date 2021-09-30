@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using MBaske.Sensors.Grid;
+using NatSuite.Examples;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
@@ -14,7 +15,8 @@ namespace Ademord
         [SerializeField] private bool m_AddDetectorObservations = true;
         [SerializeField] private bool m_TrainMaximizeDetections = true;
         // [SerializeField] SnapshotCamera snapCam;
-        [SerializeField] protected DetectorCamera detectorCam;
+        // [SerializeField] protected DetectorCamera detectorCam;
+        [SerializeField] protected NatDetectorCam detectorCam;
         [SerializeField] GridSensorComponent3D m_SensorComponent_Detector;
         [SerializeField] private bool NormalizeDetectionsReward = true;
         protected int countObjectsDetected;
@@ -34,13 +36,14 @@ namespace Ademord
             }
         }
 
-        void Update()
-        {
-            if (m_LoadDetector)
-            {
-                detectorCam.CallTakeSnapshot();
-            }
-        }
+        // void Update()
+        // {
+        //     if (m_LoadDetector)
+        //     {
+        //         detectorCam.CallTakeSnapshot();
+        //     }
+        // }
+        
         public override void CollectObservations(VectorSensor sensor)
         {
             base.CollectObservations(sensor);

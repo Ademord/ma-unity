@@ -57,7 +57,7 @@ namespace Ademord
                     break;
                 
                 case SteuernModus.PhysicsVelocity:
-                    var yaw = Mathf.Clamp( TurnInput * 0.1f, -1, 1);
+                    var yaw = Mathf.Clamp( TurnInput * 0.05f, -1, 1);
                     m_Rigidbody.AddTorque(transform.up * yaw, ForceMode.VelocityChange);
                     
                     var velocity = new Vector3(ForwardInput, VerticalInput, SidesInput) * 0.1f;

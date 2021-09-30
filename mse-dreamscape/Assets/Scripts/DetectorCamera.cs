@@ -5,8 +5,14 @@ using UnityEngine;
 using UI = UnityEngine.UI;
 using Yolo;
 
+public interface IDetectorCamera
+{
+    // public void Initialize();
+    public List<string> GetDetections();
+}
+
 [RequireComponent(typeof(Camera))]
-public class DetectorCamera : MonoBehaviour
+public class DetectorCamera : MonoBehaviour, IDetectorCamera
 {
     #region Editable attributes
 
@@ -35,7 +41,7 @@ public class DetectorCamera : MonoBehaviour
     #endregion
 
     #region MonoBehaviour implementation
-    public void Initialize()
+    public void Start()
     {
         detectorCam = transform.GetComponent<Camera>();
         if (detectorCam == null)
@@ -47,8 +53,8 @@ public class DetectorCamera : MonoBehaviour
         resWidth = (int) canvasRect.rect.width;
         resHeight = (int) canvasRect.rect.height;
         // canvas dimensions
-        // print("reswidth: " + canvasRect.rect.width);
-        // print("resheight: " + canvasRect.rect.height);
+        print("reswidth: " + canvasRect.rect.width);
+        print("resheight: " + canvasRect.rect.height);
         
         if (detectorCam.targetTexture == null)
         {

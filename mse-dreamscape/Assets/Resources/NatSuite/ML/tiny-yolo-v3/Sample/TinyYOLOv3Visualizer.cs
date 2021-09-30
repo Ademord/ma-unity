@@ -20,7 +20,7 @@ namespace NatSuite.ML.Visualizers {
         /// </summary>
         /// <param name="image">Image which detections are made on.</param>
         /// <param name="detections">Detections to render.</param>
-        public void Render (Texture image, params (Rect rect, string label, float score)[] detections) {
+        public void Render (RenderTexture image, params (Rect rect, string label, float score)[] detections) {
             // Delete current
             foreach (var rect in currentRects)
                 GameObject.Destroy(rect.gameObject);
@@ -29,6 +29,8 @@ namespace NatSuite.ML.Visualizers {
             var rawImage = GetComponent<RawImage>();
             var aspectFitter = GetComponent<AspectRatioFitter>();
             rawImage.texture = image;
+            // print("image.width: " + image.width + "image.height: " + image.height);
+
             aspectFitter.aspectRatio = (float)image.width / image.height;
             // Render rects
             var imageRect = new Rect(0, 0, image.width, image.height);
