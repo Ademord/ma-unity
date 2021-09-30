@@ -1,4 +1,13 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "NatSuite Framework",
+      "url": "https://registry.npmjs.com",
+      "scopes": [
+        "api.natsuite"
+      ]
+    }
+  ],
   "dependencies": {
     "com.popcron.gizmos": "file:M:/Unity Hub Projects AI ML/unity installed packages/gizmos-master",
     "com.unity.collab-proxy": "1.5.7",
