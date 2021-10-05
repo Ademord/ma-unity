@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using MBaske.Sensors.Grid;
-using NatSuite.Examples;
+
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
@@ -15,9 +15,9 @@ namespace Ademord
         [SerializeField] private bool m_AddDetectorObservations = true;
         [SerializeField] private bool m_TrainMaximizeDetections = true;
         // [SerializeField] SnapshotCamera snapCam;
-        // [SerializeField] protected DetectorCamera detectorCam;
-        [SerializeField] protected NatDetectorCam detectorCam;
-        [SerializeField] GridSensorComponent3D m_SensorComponent_Detector;
+        [SerializeField] protected DetectorCamera detectorCam;
+        // [SerializeField] protected NatDetectorCam detectorCam;
+        // [SerializeField] GridSensorComponent3D m_SensorComponent_Detector;
         [SerializeField] private bool NormalizeDetectionsReward = true;
         protected int countObjectsDetected;
         private  int totalObjectsDetected;
@@ -40,13 +40,14 @@ namespace Ademord
             }
         }
 
-        // void Update()
-        // {
-        //     if (m_LoadDetector)
-        //     {
-        //         detectorCam.CallTakeSnapshot();
-        //     }
-        // }
+        // todo remove when using natdetector
+        void Update()
+        {
+            if (m_LoadDetector)
+            {
+                detectorCam.CallTakeSnapshot();
+            }
+        }
         
         public override void CollectObservations(VectorSensor sensor)
         {
@@ -56,10 +57,10 @@ namespace Ademord
             {
                 var voxelsInFOV = AreTargetsInFOV(m_SensorComponent, m_TargetTag);
                 m_detections = detectorCam.GetDetections();
-
+                // print("voxelsInFOV: " + voxelsInFOV);
                 if (voxelsInFOV && m_detections.Count > 0)
                 {
-                    // print("found: " + String.Join(", ", detections));
+                    // print("found: " + String.Join(", ", m_detections));
 
                     // the agent gets a bit more information, but it should be the detections.Count, making it highly dependable on the performance of the OD
                     // countObjectsDetected = CountTargetsInFOV(m_SensorComponent_Detector, m_ObjectTag);
@@ -82,8 +83,7 @@ namespace Ademord
             base.SetRewards();
             if (m_TrainMaximizeDetections)
             {
-                print("m_TrainMaximizeDetections");
-
+                if (m_EnableTrainDebuggingLogs) print("m_TrainMaximizeDetections");
                 AddReward(GetCountDetectionsReward());
             }
         }

@@ -308,7 +308,7 @@ namespace Ademord
             float minDist = 100000f;
             foreach (var kvp in trainingElements.ToArray())
             {
-                // print("looking for closest target... " + kvp.Key.name + ", with numToCollect: " + kvp.Value.numToCollect);
+                print("looking for closest target... " + kvp.Key.name + ", with numToCollect: " + kvp.Value.numToCollect);
                 if (kvp.Value.numToCollect > 0)
                 {
                     float dist = Vector3.Distance(origin, kvp.Key.position);

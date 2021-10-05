@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "api.natsuite.natml": {
-      "version": "file:api.natsuite.natml@1.0.4",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "com.popcron.gizmos": {
       "version": "file:M:/Unity Hub Projects AI ML/unity installed packages/gizmos-master",
       "depth": 0,

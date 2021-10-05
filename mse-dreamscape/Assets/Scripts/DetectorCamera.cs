@@ -41,7 +41,7 @@ public class DetectorCamera : MonoBehaviour, IDetectorCamera
     #endregion
 
     #region MonoBehaviour implementation
-    public void Start()
+    public void Initialize()
     {
         detectorCam = transform.GetComponent<Camera>();
         if (detectorCam == null)
@@ -52,9 +52,9 @@ public class DetectorCamera : MonoBehaviour, IDetectorCamera
         RectTransform canvasRect = _previewUI.GetComponent<Canvas>().GetComponent<RectTransform>();
         resWidth = (int) canvasRect.rect.width;
         resHeight = (int) canvasRect.rect.height;
-        // canvas dimensions
-        print("reswidth: " + canvasRect.rect.width);
-        print("resheight: " + canvasRect.rect.height);
+        // canvas dimensions 1229 x 584
+        // print("reswidth: " + canvasRect.rect.width);
+        // print("resheight: " + canvasRect.rect.height);
         
         if (detectorCam.targetTexture == null)
         {

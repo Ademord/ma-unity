@@ -43,8 +43,8 @@ namespace Ademord
             }
             if (m_Collider == null)
             {
-                print("ERROR: collider in voxel was NOT FOUND");
-
+                m_Collider = transform.Find("MyVoxel_extendedDGO_collider");
+                if (m_Collider == null) print("ERROR: collider in voxel was NOT FOUND");
             }
         }
         

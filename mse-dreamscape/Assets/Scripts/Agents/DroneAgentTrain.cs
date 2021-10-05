@@ -23,7 +23,8 @@ namespace Ademord
         [SerializeField] protected bool m_EnableVFX = false;
         [Tooltip("VFX of Scanner Drone that rotates towards objects being scanned.")]
         [SerializeField] public VFXController m_VFXController;
-
+        [Tooltip("Disable print messages of which methods are begin trained.")]
+        [SerializeField] protected bool m_EnableTrainDebuggingLogs = false;
         [Header("GUI Parameters")]
         [SerializeField]
         protected bool m_DrawGUIStats;
@@ -108,13 +109,13 @@ namespace Ademord
         {
             if (m_TrainMovingForward)
             {
-                print("m_TrainMovingForward");
+                if (m_EnableTrainDebuggingLogs) print("m_TrainMovingForward");
                 AddReward(GetMovingForwardReward());
             }
 
             if (m_TrainTargetSpeed)
             {
-                print("m_TrainTargetSpeed");
+                if (m_EnableTrainDebuggingLogs) print("m_TrainTargetSpeed");
                 AddReward(GetSpeedErrorPenalty());
             }
         }

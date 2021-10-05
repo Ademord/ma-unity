@@ -53,7 +53,7 @@ namespace Ademord
             base.SetRewards();
             if (m_TrainShortestPath)
             {
-                print("m_TrainShortestPath");
+                if (m_EnableTrainDebuggingLogs) print("m_TrainShortestPath");
 
                 AddReward(GetWalkDirectionReward());
                 AddReward(GetLookDirectionReward());
