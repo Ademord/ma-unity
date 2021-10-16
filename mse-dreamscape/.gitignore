@@ -125,6 +125,3 @@ Temporary Items
 *.log
 *.unitypackage
 /Assets/AssetStore/*
-/Assets/Scripts/GymWrapper_py39/env/*
-/Assets/Scripts/GymWrapper_py39/.idea/*
-/Assets/Scripts/GymWrapper_py39/__pycache__/*
