@@ -1,0 +1,18 @@
+{
+    "os": "Windows-10-10.0.22463-SP0",
+    "python": "3.9.7",
+    "heartbeatAt": "2021-10-03T10:31:33.710376",
+    "startedAt": "2021-10-03T10:31:30.722538",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "gpu_count": 1,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "C:\\Users\\franc\\PycharmProjects\\mlagents_gym_39\\main.py",
+    "codePath": "main.py",
+    "host": "DESKTOP-D5Q2KVG",
+    "username": "franc",
+    "executable": "C:\\Users\\franc\\PycharmProjects\\mlagents_gym_39\\env\\Scripts\\python.exe"
+}

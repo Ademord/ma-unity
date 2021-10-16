@@ -1,5 +1,4 @@
 env/*
+builds/*
 .idea/*
 __pycache__/*
-src/builds/*
-src/wandb/*

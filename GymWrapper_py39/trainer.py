@@ -198,7 +198,7 @@ class Trainer:
     @measure
     def _make_my_vec_env(self, env_id, rank, callback, seed=0):
         """
-        Utility function for multi-processed env.
+        Utility function for multiprocessed env.
 
         :param env_id: (str) the environment ID
         :param seed: (int) the inital seed for RNG
