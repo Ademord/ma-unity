@@ -3,7 +3,7 @@
   "run_dir": "",
 
   "env_id": "MyUnityGymEnv-v0",
-  "env_path": "drone3D_linux_run61.3c/mse-dreamscape",
+  "env_path": "builds/run61.3c/mse-dreamscape",
   "has_continuous_action_space": true,
   "debug_env": false,
 
