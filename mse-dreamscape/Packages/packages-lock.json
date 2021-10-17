@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.popcron.gizmos": {
-      "version": "file:M:/Unity Hub Projects AI ML/unity installed packages/gizmos-master",
+      "version": "file:M:/UnityHubProjectsAIML/unity installed packages/gizmos-master",
       "depth": 0,
       "source": "local",
       "dependencies": {}
@@ -75,7 +75,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ml-agents": {
-      "version": "file:M:/Unity Hub Projects AI ML/unity installed packages/ml-agents-release_17/com.unity.ml-agents",
+      "version": "file:M:/UnityHubProjectsAIML/unity installed packages/ml-agents-release_17/com.unity.ml-agents",
       "depth": 0,
       "source": "local",
       "dependencies": {
@@ -85,7 +85,7 @@
       }
     },
     "com.unity.ml-agents.extensions": {
-      "version": "file:M:/Unity Hub Projects AI ML/unity installed packages/ml-agents-release_17/com.unity.ml-agents.extensions",
+      "version": "file:M:/UnityHubProjectsAIML/unity installed packages/ml-agents-release_17/com.unity.ml-agents.extensions",
       "depth": 0,
       "source": "local",
       "dependencies": {
