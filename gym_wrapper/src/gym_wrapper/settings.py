@@ -45,23 +45,7 @@ def print_config():
     pretty_print(SEPARATOR, Colors.OKCYAN)
 
 
-def consume_TFSideStats():
-    pretty_print_separator()
-    # pretty_print("Waiting for async...", Colors.FAIL)
-    consumer = Consumer(callback)
-    consumer.setDaemon(True)
-    consumer.start_consuming()
-    import asyncio
-    #asyncio.run(consumer.start_consuming())
-
-    pretty_print("Closing consumer connection.....", Colors.OKCYAN)
-    # close consumer
-    consumer.close_connection()
-    pretty_print_separator()
-
-
 def close_all():
-    # consume_TFSideStats()
     # close wandb
     pretty_print("Exiting WandB run.....", Colors.OKCYAN)
     wandb.finish()

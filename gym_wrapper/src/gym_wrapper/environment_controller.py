@@ -11,7 +11,6 @@ from mlagents_envs.side_channel.stats_side_channel import StatsSideChannel, Stat
 from colors import *
 import json
 from wandb import Config
-import pika
 from typing import Tuple, List, Mapping
 from collections import defaultdict
 
@@ -127,20 +126,6 @@ class SB3StatsRecorder(SideChannel):
         self.stats: EnvironmentStats = defaultdict(list)
         self.i = 0
 
-        self.queue_name = queue_name
-
-        # Access the CLODUAMQP_URL environment variable and parse it (fallback to localhost)
-        url = os.environ.get('AMQP_URL', 'amqp://guest:guest@localhost:5672/%2f')
-        params = pika.URLParameters(url)
-        self.connection = pika.BlockingConnection(params)
-        self.channel = self.connection.channel()  # start a channel
-        self.channel.queue_declare(queue=self.queue_name)  # Declare a queue
-        self.channel.queue_purge(self.queue_name)
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.channel.close()
-        self.connection.close()
-
     def on_message_received(self, msg: IncomingMessage) -> None:
         """
         Receive the message from the environment, and save it for later retrieval.
@@ -163,9 +148,7 @@ class SB3StatsRecorder(SideChannel):
         key = key.split("/")
         key[0] = key[0] + wandb_run_identifier
         key = "/".join(key)
-            #self.channel.basic_publish(exchange='',
-             #                      routing_key=self.queue_name,
-              #                     body=json.dumps({key: val}))
+
         self.i += 1
 
         # TODO train are not being registered because they are out of scope. This bug is not a priority
