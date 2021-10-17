@@ -154,12 +154,12 @@ class SB3StatsRecorder(SideChannel):
         # TODO train are not being registered because they are out of scope. This bug is not a priority
         # TODO need to accumulate this data in the channel and send the callback on destruction
         # TODO then push all aggregated to wandb at once. until then, it works like this
-        if env_callback is not None and wandb_run_identifier == "[test]":
-            if self.i % 100000 == 0:
-                pretty_print("Publishing {}.i: {}".format(key, self.i), Colors.FAIL)
+        if env_callback is not None and wandb_run_identifier == "[test]": # and "Speed" in "key"
+            if self.i % 10000 == 0:
+                pretty_print("Publishing {}.i: {}".format(key, val), Colors.FAIL)
 
-            if self.i % (19 * 100) == 0:
-                env_callback({key:val})
+            # if self.i % (19 * 1000) == 0:
+            env_callback({key:val})
 
     def get_and_reset_stats(self) -> EnvironmentStats:
         """

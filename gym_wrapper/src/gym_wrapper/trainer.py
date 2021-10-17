@@ -147,6 +147,11 @@ class Trainer:
         reinitialize_from = "/".join(reinitialize_from)
         # pretty_print("Building reinitialize_from string: {}".format(reinitialize_from), Colors.FAIL)
 
+        if not os.path.isdir(reinitialize_from): 
+            print("\tReinitialize folder does not exist!")
+        else: 
+            print("\tReinitialize folder was found!")
+        
         model_path = os.path.join(reinitialize_from, "model")  \
             if self.config.reinitialize_from != "" and os.path.isdir(reinitialize_from) \
             else os.path.join(self.config.run_dir, "model")
