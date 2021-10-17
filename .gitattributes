@@ -54,3 +54,6 @@
 *.meta linguist-generated
 *.prefab linguist-generated
 *.unity linguist-generated
+
+# Build-related files
+*.dylib filter=lfs diff=lfs merge=lfs -text
