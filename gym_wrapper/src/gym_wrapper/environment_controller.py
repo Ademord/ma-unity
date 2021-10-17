@@ -118,7 +118,7 @@ class SB3StatsRecorder(SideChannel):
     be passed to a StatsReporter.
     """
 
-    def __init__(self, queue_name='wandb_queue') -> None:
+    def __init__(self) -> None:
         # >>> uuid.uuid5(uuid.NAMESPACE_URL, "com.unity.ml-agents/StatsSideChannel")
         # UUID('a1d8f7b7-cec8-50f9-b78b-d3e165a78520')
         super().__init__(uuid.UUID("a1d8f7b7-cec8-50f9-b78b-d3e165a78520"))
@@ -156,8 +156,7 @@ class SB3StatsRecorder(SideChannel):
         # TODO then push all aggregated to wandb at once. until then, it works like this
         if env_callback is not None and wandb_run_identifier == "[test]":
             if self.i % 100000 == 0:
-                pretty_print("Publishing {}.i: {}, exporting to {}"
-                             .format(key, self.i, self.queue_name), Colors.FAIL)
+                pretty_print("Publishing {}.i: {}".format(key, self.i), Colors.FAIL)
 
             if self.i % (19 * 100) == 0:
                 env_callback({key:val})
