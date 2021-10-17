@@ -55,5 +55,6 @@
 *.prefab linguist-generated
 *.unity linguist-generated
 
-# Build-related files
+# ML Agents Builds
 *.dylib filter=lfs diff=lfs merge=lfs -text
+*.assets filter=lfs diff=lfs merge=lfs -text
