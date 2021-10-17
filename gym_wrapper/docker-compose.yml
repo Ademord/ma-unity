@@ -1,0 +1,104 @@
+version: '3'
+services:
+  # roscow:
+  #   build:
+  #     context: ../../src/rosplay
+  #     dockerfile: Dockerfile
+  #   hostname: roscow
+  #   environment:
+  #     # utilities
+  #     - DISPLAY=novnc:0.0
+  #     # ros
+  #     - ROS_HOSTNAME=roscow
+  #     - ROSBAG=/host/datasets/bags/teats/testBag_teats1.bag
+  #     - ROSPLAY_RATE=0.5
+  #     - PLAY_ROSBAG=TRUE
+  #   volumes:
+  #    - "../../:/host:rw"    
+  #   depends_on:
+  #     - novnc
+
+  # novnc:  
+  #   image: theasp/novnc:latest
+  #   environment:
+  #     - DISPLAY_WIDTH=1920
+  #     - DISPLAY_HEIGHT=1080
+  #     - RUN_XTERM=no
+  #   ports:
+  #     - "443:8080"
+  #     - "8080:8080"
+
+  novnc:  
+    build:
+      context: src/novnc/
+      dockerfile: Dockerfile
+    environment:
+      # Adjust to your screen size
+      - DISPLAY_WIDTH=1920
+      - DISPLAY_HEIGHT=1080
+      - RUN_XTERM=no
+    shm_size: 2gb
+    # ipc: host
+    ports:
+      - "8080:8080"
+      - "443:8080"
+    networks:
+      - x11
+
+  ultron:
+    build:
+      context: docker/
+      dockerfile: Dockerfile # supported versions: roscow + GPU bridge
+    hostname: ultron
+    # depends_on:
+      # - roscow
+    environment:
+      # utils
+      DISPLAY: 'novnc:0.0'
+      NVIDIA_VISIBLE_DEVICES: 'all'
+      # ros
+      ROS_HOSTNAME: 'ultron'
+      # - ROS_MASTER_URI=http://roscow:11311
+      # mlagents
+      AMQP_URL: 'amqp://rabbitmq?connection_attempts=5&retry_delay=5'
+      WANDB_KEY: '5d9d8684c32eecb60c3bffc59ec8addce718eeb8'
+
+    shm_size: 128gb
+    ipc: host
+    ports:
+      - "8888:8888"
+    volumes:
+      - "./:/host:rw" 
+      # this can limit how much access the container has to other implementations
+      - "../src/:/home/ros/catkin_ws/src/:rw"
+      # - /host/src/     
+    networks:
+      - x11
+
+  rabbitmq:
+    # There is a prebuilt RabbitMQ image; see
+    # https://hub.docker.com/_/rabbitmq/ for details.
+    # This variant is built on Alpine Linux (it's smaller) and includes
+    # the management UI.
+    image: 'rabbitmq:3.6-management-alpine'
+
+    # These ports are exposed on the host; 'hostport:containerport'.
+    # You could connect to this server from outside with the *host's*
+    # DNS name or IP address and port 5672 (the left-hand side of the
+    # colon).
+    ports:
+      # The standard AMQP protocol port
+      - '5672:5672'
+      # HTTP management UI
+      - '15672:15672'
+
+    # Run this container on a private network for this application.
+    # This is necessary for magic Docker DNS to work: other containers
+    # also running on this network will see a host name "rabbitmq"
+    # (the name of this section) and the internal port 5672, even though
+    # that's not explicitly published above.
+    networks:
+      - x11
+  
+networks:
+  x11:
