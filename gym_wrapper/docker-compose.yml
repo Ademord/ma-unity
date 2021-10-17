@@ -68,9 +68,11 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - "./:/host:rw" 
+      # - "./:/host:rw" 
+      - "../builds_mac:/app/builds:rw" 
+      - "./src/gym_wrapper:/app:rw"
       # this can limit how much access the container has to other implementations
-      - "../src/:/home/ros/catkin_ws/src/:rw"
+      # - "../src/:/home/ros/catkin_ws/src/:rw"
       # - /host/src/     
     networks:
       - x11

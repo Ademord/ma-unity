@@ -7,7 +7,7 @@
   "has_continuous_action_space": true,
   "debug_env": false,
 
-  "num_env": 3,
+  "num_env": 1,
   "time_scale": 50,
   "no_graphics": true,
 

@@ -1,0 +1,16 @@
+{
+    "os": "Linux-5.10.47-linuxkit-x86_64-with-debian-buster-sid",
+    "python": "3.7.10",
+    "heartbeatAt": "2021-10-17T17:59:27.238309",
+    "startedAt": "2021-10-17T17:59:24.768760",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "main.py",
+    "codePath": "main.py",
+    "host": "ultron",
+    "username": "ros",
+    "executable": "/opt/conda/bin/python"
+}
