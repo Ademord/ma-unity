@@ -69,8 +69,8 @@ services:
       - "8888:8888"
     volumes:
       # - "./:/host:rw" 
-      # - "../builds_mac:/app/builds:rw" 
-      - "../builds_linux:/app/builds:rw" 
+      # - "../builds/builds_mac:/app/builds:rw" 
+      - "../builds/builds_linux:/app/builds:rw" 
       - "./src/gym_wrapper:/app:rw"
       # this can limit how much access the container has to other implementations
       # - "../src/:/home/ros/catkin_ws/src/:rw"
