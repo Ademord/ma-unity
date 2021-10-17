@@ -125,3 +125,6 @@ Temporary Items
 *.log
 *.unitypackage
 /Assets/AssetStore/*
+/Assets/*
+!/Assets
+!Assets/Scripts
