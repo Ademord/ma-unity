@@ -194,7 +194,7 @@ class Trainer:
                 self.rank -= 1
 
     @measure
-    def _make_my_vec_env(self, rank, callback, seed=0):
+    def _make_my_vec_env(self, _rank, _wandb_run_identifier, _callback, seed=0):
         """
         Utility function for multiprocessed env.
 
@@ -204,10 +204,10 @@ class Trainer:
         """
 
         def _init():
-            environment_controller.set_rank(_rank=rank, _callback=callback)
+            environment_controller.set_rank(_rank=_rank, _wandb_run_identifier=_wandb_run_identifier, _callback=_callback)
             env = environment_controller.make_env()
             # print("_make_my_vec_env of type:", type(env))
-            env.seed(seed + rank)
+            env.seed(seed + _rank)
             return env
 
         set_random_seed(seed)
