@@ -159,26 +159,35 @@ class Trainer:
         if self.config.reinitialize_from != "":
             pretty_print("Reinitializing training from run: {}".format(model_path), Colors.FAIL)
 
-        if train:
-            num_cpu = self.config.num_env
-            idx_r = self.rank
-            self.rank += num_cpu
+            if train:
+                num_cpu = self.config.num_env
+                # Create the vectorized environment
+                idx_r = self.rank
+                self.rank += num_cpu
 
-            with SubprocVecEnv([
-                self._make_my_vec_env(self.config.env_id, i, self.callback) for i in range(idx_r, num_cpu + idx_r)
-            ]) as env:
+                env = SubprocVecEnv([self._make_my_vec_env(self.config.env_id, i, self.callback) for i in range(idx_r, num_cpu + idx_r)])
                 env.reset()
+
+                # get a new model
                 model = self._make_model(env)
+                # train and save model
                 _ = self._train_pipeline(model)
+
+                # notify of saved trained model
                 pretty_print("Trained model saved to: " + model_path)
+
                 env.close()
+                del env
                 self.rank -= num_cpu
 
-        if test or export_onnx:
-            environment_controller.set_rank(_rank=self.rank, _wandb_run_identifier="test", _callback=self.callback)
-            self.rank += 1
-            with DummyVecEnv([environment_controller.make_env]) as env:
+            if test or export_onnx:
+                # load env
+                environment_controller.set_rank(_rank=self.rank, _wandb_run_identifier="test", _callback=self.callback)
+                self.rank += 1
+                env = DummyVecEnv([environment_controller.make_env])
                 env.reset()
+                # load saved trained model
+                # model_path = "/host/unity_builds/mse-dreamscape/wandb/run-20211003_110641-34bcwtgd/files/model"
                 model = self._load_model(model_path)
 
                 if test:
@@ -188,10 +197,12 @@ class Trainer:
                 if export_onnx:
                     self._export_pipeline(model, env)
 
+                # close env
                 env.close()
+                del env
                 self.rank -= 1
 
-    @measure
+@measure
     def _make_my_vec_env(self, env_id, rank, callback, seed=0):
         """
         Utility function for multiprocessed env.
