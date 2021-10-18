@@ -149,7 +149,7 @@ class SB3StatsRecorder(SideChannel):
         self.i += 1
 
         if env_callback is not None and wandb_run_identifier == "[test]":  # and "Speed" in "val"
-            if "Speed" in val and self.i % 1000 == 0:
+            if "Speed" in key and self.i % 1000 == 0:
                 pretty_print("Publishing {}.i: {}".format(key, val), Colors.FAIL)
 
             # add table_id to tables
