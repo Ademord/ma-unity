@@ -143,6 +143,7 @@ class SB3StatsRecorder(SideChannel):
         # assign different Drone[id] to each subprocess within this wandb run
         key = key.split("/")
         key[0] = key[0] + wandb_run_identifier
+        # table_id = key[0]
         key = "/".join(key)
 
         self.i += 1
@@ -156,7 +157,7 @@ class SB3StatsRecorder(SideChannel):
             else:
                 self.wandb_table[key] = [val]
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
+    def __del__(self, exc_type, exc_val, exc_tb):
         pretty_print("Exiting SB3StatsRecorder, sending logs...", Colors.FAIL)
         env_callback(self.wandb_table)
 
