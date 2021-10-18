@@ -161,35 +161,46 @@ class Trainer:
 
         if train:
             num_cpu = self.config.num_env
+            # Create the vectorized environment
             idx_r = self.rank
             self.rank += num_cpu
 
-            with SubprocVecEnv([
-                self._make_my_vec_env(self.config.env_id, i, self.callback) for i in range(idx_r, num_cpu + idx_r)
-            ]) as env:
-                env.reset()
-                model = self._make_model(env)
-                _ = self._train_pipeline(model)
-                pretty_print("Trained model saved to: " + model_path)
-                env.close()
-                self.rank -= num_cpu
+            env = SubprocVecEnv([self._make_my_vec_env(self.config.env_id, i, self.callback) for i in range(idx_r, num_cpu + idx_r)])
+            env.reset()
+
+            # get a new model
+            model = self._make_model(env)
+            # train and save model
+            _ = self._train_pipeline(model)
+
+            # notify of saved trained model
+            pretty_print("Trained model saved to: " + model_path)
+
+            env.close()
+            del env
+            self.rank -= num_cpu
 
         if test or export_onnx:
+            # load env
             environment_controller.set_rank(_rank=self.rank, _wandb_run_identifier="test", _callback=self.callback)
             self.rank += 1
-            with DummyVecEnv([environment_controller.make_env]) as env:
-                env.reset()
-                model = self._load_model(model_path)
+            env = DummyVecEnv([environment_controller.make_env])
+            env.reset()
+            # load saved trained model
+            # model_path = "/host/unity_builds/mse-dreamscape/wandb/run-20211003_110641-34bcwtgd/files/model"
+            model = self._load_model(model_path)
 
-                if test:
-                    test_r, test_std_r = self._test_pipeline(model, env)  # mean_reward, std_reward
-                    pretty_print("Test evaluation results: {}, {}".format(test_r, test_std_r))
+            if test:
+                test_r, test_std_r = self._test_pipeline(model, env)  # mean_reward, std_reward
+                pretty_print("Test evaluation results: {}, {}".format(test_r, test_std_r))
 
-                if export_onnx:
-                    self._export_pipeline(model, env)
+            if export_onnx:
+                self._export_pipeline(model, env)
 
-                env.close()
-                self.rank -= 1
+            # close env
+            env.close()
+            del env
+            self.rank -= 1
 
     @measure
     def _make_my_vec_env(self, env_id, rank, callback, seed=0):
