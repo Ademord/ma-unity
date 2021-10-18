@@ -165,7 +165,7 @@ class Trainer:
             self.rank += num_cpu
 
             with SubprocVecEnv([
-                self._make_my_vec_env(_rank=self.config.env_id,
+                self._make_my_vec_env(_rank=i,
                                       _wandb_run_identifier=i,
                                       _callback=self.callback) for i in range(idx_r, num_cpu + idx_r)
             ]) as env:
