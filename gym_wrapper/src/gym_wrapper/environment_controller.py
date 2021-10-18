@@ -47,7 +47,7 @@ gym.logger.set_level(40)
 wandb_run_identifier = "rank"
 
 
-def set_rank(_rank, _wandb_run_identifier=None, _callback=None):
+def set_rank(_rank, _wandb_run_identifier: str=None, _callback=None):
     global rank
     rank = _rank
 
@@ -57,7 +57,7 @@ def set_rank(_rank, _wandb_run_identifier=None, _callback=None):
     else:
         wandb_run_identifier = str(_rank)
 
-    wandb_run_identifier = "[{}]".format(wandb_run_identifier)
+    # wandb_run_identifier = "[{}]".format(wandb_run_identifier)
 
     global env_callback
     env_callback = _callback
@@ -141,31 +141,18 @@ class SB3StatsRecorder(SideChannel):
         self.stats[key].append((val, agg_type))
 
         # assign different Drone[id] to each subprocess within this wandb run
-        key = key.split("/")
-        key[0] = key[0] + wandb_run_identifier
-        # table_id = key[0]
-        key = "/".join(key)
-
+        key = key.split("/")[1]
         self.i += 1
 
-        if env_callback is not None and wandb_run_identifier == "[test]":  # and "Speed" in "val"
-            if "Speed" in key and self.i % 1000 == 0:
-                pretty_print("Publishing {}.i: {}".format(key, val), Colors.FAIL)
+        if env_callback is not None and wandb_run_identifier == "test":  # and "Speed" in "val"
+            # if self.i % 100 == 0:
 
-            # add table_id to tables
-            if wandb_run_identifier not in self.wandb_tables:
-                self.wandb_tables[wandb_run_identifier] = {}
-            # add new metric  to respective table_id
-            if key in self.wandb_tables[wandb_run_identifier]:
-                self.wandb_tables[wandb_run_identifier][key] += [val]
-            else:
-                self.wandb_tables[wandb_run_identifier][key] = [val]
+            my_table_id: str = "Performance[{}]".format(wandb_run_identifier)
 
-    def __del__(self):
-        for table_id, table in self.wandb_tables:
-            pretty_print("Exiting SB3StatsRecorder, sending logs for table {} ...".format(table_id), Colors.FAIL)
-            env_callback(table_id, self.wandb_table)
+            # pretty_print("Publishing Table: key: {}, val: {}".format(my_table_id, key, val), Colors.FAIL)
 
+            env_callback(my_table_id, key, val)
+                
     def get_and_reset_stats(self) -> EnvironmentStats:
         """
         Returns the current stats, and resets the internal storage of the stats.

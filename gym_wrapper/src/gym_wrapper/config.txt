@@ -12,7 +12,7 @@
   "no_graphics": true,
 
   "reinitialize_from": "run-20211004_161556-cdp0bn8h",
-  "total_timesteps": 200,
+  "total_timesteps": 0,
   "test_total_episodes": 1,
   "log_TFSideStats": false,
   "export_onnx": false,

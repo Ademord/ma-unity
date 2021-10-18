@@ -1,21 +1,49 @@
 import wandb, json, os
 from colors import *
+import numpy as np
 
 
-def callback(table_id, payload: dict):
+wandb_tables = {}
+
+def callback(table_id, key, val):
     if wandb.run is not None:
-        # print(" [x] Received {}".format(payload))
-        # print(" [x] Received type {}".format(type(payload)))
-        # raise Exception("hello")
+        global wandb_tables
+        
+        # add table_id to tables
+        if table_id not in wandb_tables:
+            wandb_tables[table_id] = {}
 
-        columns: list = payload.keys()
-        my_data: list = payload.values()
-        my_table = wandb.Table(data=my_data, columns=columns)
-        my_table_id: str = "Drone/Performance[{}]".format(table_id)
-        # wandb.log(payload, commit=False)
-        pretty_print("\tTransmitting logs to WandB", Colors.FAIL)
-        wandb.log({my_table_id: my_table})
-        pretty_print("\tLogs Transmitted.", Colors.OKGREEN)
+        # add new metric  to respective table_id
+        if key in wandb_tables[table_id]:
+            wandb_tables[table_id][key] += [val]
+        else:
+            wandb_tables[table_id][key] = [val]
+
+        
+def log_wandb_tables():
+    global wandb_tables
+    
+    for table_id, table in wandb_tables.items():
+        pretty_print("Publishing table: {} ...".format(table_id), Colors.FAIL)
+        
+        columns = list(table.keys())
+        my_data = list(table.values())
+
+        n_smallest_list = min([len(x) for x in my_data]) 
+        step = n_smallest_list // 1000
+        print("smallest list found: ", n_smallest_list)
+        print("step found: ", step)
+        
+        for j in range(0, n_smallest_list, step): #n_smallest_list
+            payload = {}
+            for i in range(len(columns)):
+                metric = columns[i]
+                payload[metric] = sum(table[metric][j:j+step])//step # following https://stackoverflow.com/questions/41933232/python-average-every-n-elements-in-a-list
+                # print("adding table[{}][{}]: {}".format(metric,j,table[metric][j]))
+            # print("logging payload: ", payload)
+            wandb.log(payload)
+                    
+        pretty_print("\tTable {} logged.".format(table_id), Colors.OKGREEN)
 
 
 def initialize():
@@ -48,13 +76,19 @@ def initialize():
 
 def print_config():
     config_str = json.dumps(dict(wandb.config), sort_keys=True, indent=4)
+
     pretty_print(SEPARATOR, Colors.OKCYAN)
+    
     pretty_print("config: {}".format(config_str), Colors.OKCYAN)
+    
     pretty_print(SEPARATOR, Colors.OKCYAN)
 
 
 def close_all():
-    # close wandb
     pretty_print("Exiting WandB run.....", Colors.OKCYAN)
+
+    log_wandb_tables()
+
     wandb.finish()
+    
     pretty_print_separator()
