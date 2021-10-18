@@ -202,7 +202,7 @@ class Trainer:
                 del env
                 self.rank -= 1
 
-@measure
+    @measure
     def _make_my_vec_env(self, env_id, rank, callback, seed=0):
         """
         Utility function for multiprocessed env.

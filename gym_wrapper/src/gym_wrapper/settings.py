@@ -2,19 +2,19 @@ import wandb, json, os
 from colors import *
 
 
-def callback(payload: dict):
+def callback(table_id, payload: dict):
     if wandb.run is not None:
         # print(" [x] Received {}".format(payload))
         # print(" [x] Received type {}".format(type(payload)))
         # raise Exception("hello")
 
-        columns = payload.keys()
-        my_data = payload.values()
+        columns: list = payload.keys()
+        my_data: list = payload.values()
         my_table = wandb.Table(data=my_data, columns=columns)
-
+        my_table_id: str = "Drone/Performance[{}]".format(table_id)
         # wandb.log(payload, commit=False)
         pretty_print("\tTransmitting logs to WandB", Colors.FAIL)
-        wandb.log({"Drone/Performance": my_table})
+        wandb.log({my_table_id: my_table})
         pretty_print("\tLogs Transmitted.", Colors.OKGREEN)
 
 
