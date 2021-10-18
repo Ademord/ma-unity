@@ -125,7 +125,7 @@ class SB3StatsRecorder(SideChannel):
         pretty_print("Initializing SB3StatsRecorder", Colors.FAIL)
         self.stats: EnvironmentStats = defaultdict(list)
         self.i = 0
-        self.wandb_table = {}
+        self.wandb_tables: dict = {}
 
     def on_message_received(self, msg: IncomingMessage) -> None:
         """
@@ -148,18 +148,23 @@ class SB3StatsRecorder(SideChannel):
 
         self.i += 1
 
-        if env_callback is not None and wandb_run_identifier == "[test]":  # and "Speed" in "key"
-            if self.i % 10000 == 0:
+        if env_callback is not None and wandb_run_identifier == "[test]":  # and "Speed" in "val"
+            if "Speed" in val and self.i % 1000 == 0:
                 pretty_print("Publishing {}.i: {}".format(key, val), Colors.FAIL)
 
-            if key in self.wandb_table:
-                self.wandb_table[key] += [val]
+            # add table_id to tables
+            if wandb_run_identifier not in self.wandb_tables:
+                self.wandb_tables[wandb_run_identifier] = {}
+            # add new metric  to respective table_id
+            if key in self.wandb_tables[wandb_run_identifier]:
+                self.wandb_tables[wandb_run_identifier][key] += [val]
             else:
-                self.wandb_table[key] = [val]
+                self.wandb_tables[wandb_run_identifier][key] = [val]
 
-    def __del__(self, exc_type, exc_val, exc_tb):
-        pretty_print("Exiting SB3StatsRecorder, sending logs...", Colors.FAIL)
-        env_callback(self.wandb_table)
+    def __del__(self):
+        for table_id, table in self.wandb_tables:
+            pretty_print("Exiting SB3StatsRecorder, sending logs for table {} ...".format(table_id), Colors.FAIL)
+            env_callback(table_id, self.wandb_table)
 
     def get_and_reset_stats(self) -> EnvironmentStats:
         """
