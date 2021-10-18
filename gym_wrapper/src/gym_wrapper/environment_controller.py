@@ -125,6 +125,7 @@ class SB3StatsRecorder(SideChannel):
         pretty_print("Initializing SB3StatsRecorder", Colors.FAIL)
         self.stats: EnvironmentStats = defaultdict(list)
         self.i = 0
+        self.wandb_table = {}
 
     def on_message_received(self, msg: IncomingMessage) -> None:
         """
@@ -139,11 +140,6 @@ class SB3StatsRecorder(SideChannel):
 
         self.stats[key].append((val, agg_type))
 
-        # print('\n' + key + ', ' + str(val))
-        # print('\n'.join(str(key) + ', ' + str(value[0][0]) for key, value in self.stats.items()))
-        # print("----------------------------------------------------------------------------")
-        # from settings import log as log_to_wandb, run_finished
-
         # assign different Drone[id] to each subprocess within this wandb run
         key = key.split("/")
         key[0] = key[0] + wandb_run_identifier
@@ -151,15 +147,18 @@ class SB3StatsRecorder(SideChannel):
 
         self.i += 1
 
-        # TODO train are not being registered because they are out of scope. This bug is not a priority
-        # TODO need to accumulate this data in the channel and send the callback on destruction
-        # TODO then push all aggregated to wandb at once. until then, it works like this
-        if env_callback is not None and wandb_run_identifier == "[test]": # and "Speed" in "key"
+        if env_callback is not None and wandb_run_identifier == "[test]":  # and "Speed" in "key"
             if self.i % 10000 == 0:
                 pretty_print("Publishing {}.i: {}".format(key, val), Colors.FAIL)
 
-            # if self.i % (19 * 1000) == 0:
-            env_callback({key:val})
+            if key in self.wandb_table:
+                self.wandb_table[key] += [val]
+            else:
+                self.wandb_table[key] = [val]
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        pretty_print("Exiting SB3StatsRecorder, sending logs...", Colors.FAIL)
+        env_callback(self.wandb_table)
 
     def get_and_reset_stats(self) -> EnvironmentStats:
         """

@@ -1,13 +1,21 @@
-import wandb, atexit, json, os
+import wandb, json, os
 from colors import *
 
 
-def callback(payload):
+def callback(payload: dict):
     if wandb.run is not None:
         # print(" [x] Received {}".format(payload))
         # print(" [x] Received type {}".format(type(payload)))
         # raise Exception("hello")
-        wandb.log(payload, commit=False)
+
+        columns = payload.keys()
+        my_data = payload.values()
+        my_table = wandb.Table(data=my_data, columns=columns)
+
+        # wandb.log(payload, commit=False)
+        pretty_print("\tTransmitting logs to WandB", Colors.FAIL)
+        wandb.log({"Drone/Performance": my_table})
+        pretty_print("\tLogs Transmitted.", Colors.OKGREEN)
 
 
 def initialize():
