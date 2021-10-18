@@ -165,9 +165,7 @@ class Trainer:
             self.rank += num_cpu
 
             with SubprocVecEnv([
-                self._make_my_vec_env(_rank=i,
-                                      _wandb_run_identifier=str(i),
-                                      _callback=self.callback) for i in range(idx_r, num_cpu + idx_r)
+                self._make_my_vec_env(self.config.env_id, i, self.callback) for i in range(idx_r, num_cpu + idx_r)
             ]) as env:
                 env.reset()
                 model = self._make_model(env)
@@ -194,7 +192,7 @@ class Trainer:
                 self.rank -= 1
 
     @measure
-    def _make_my_vec_env(self, _rank, _wandb_run_identifier, _callback, seed=0):
+    def _make_my_vec_env(self, env_id, rank, callback, seed=0):
         """
         Utility function for multiprocessed env.
 
@@ -204,10 +202,10 @@ class Trainer:
         """
 
         def _init():
-            environment_controller.set_rank(_rank=_rank, _wandb_run_identifier=_wandb_run_identifier, _callback=_callback)
+            environment_controller.set_rank(_rank=rank, _callback=callback)
             env = environment_controller.make_env()
             # print("_make_my_vec_env of type:", type(env))
-            env.seed(seed + _rank)
+            env.seed(seed + rank)
             return env
 
         set_random_seed(seed)
