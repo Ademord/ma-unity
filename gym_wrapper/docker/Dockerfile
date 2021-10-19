@@ -123,6 +123,8 @@ RUN apt-get update
 ENV PATH "$PATH:/home/ros/.local/bin"
 RUN apt-get install -y ffmpeg freeglut3-dev xvfb
 RUN apt-get install -y libgtk2.0-0 unzip libblas-dev liblapack-dev libhdf5-dev libgl1-mesa-glx
+RUN apt-get install -y htop
+
 # RUN apt-get install -y cuda-cudart-10-1
 # RUN apt-get install -y cuda-cudart-11-3
 # RUN ldconfig /usr/local/cuda/lib64

@@ -3,17 +3,18 @@
   "run_dir": "",
 
   "env_id": "MyUnityGymEnv-v0",
-  "env_path": "builds/run61.3c/mse-dreamscape",
+  "env_path": "builds/run61.pure_speed/run61.pure_speed",
   "has_continuous_action_space": true,
   "debug_env": false,
 
-  "num_env": 1,
+  "num_env": 4,
   "time_scale": 50,
   "no_graphics": true,
 
-  "reinitialize_from": "run-20211004_161556-cdp0bn8h",
-  "total_timesteps": 0,
-  "test_total_episodes": 1,
+  "reinitialize_from": "run-20211019_131003-3t3eu19u",
+  "resume_wandb": false,
+  "total_timesteps": 3000000,
+  "test_total_episodes": 0,
   "log_TFSideStats": false,
   "export_onnx": false,
 

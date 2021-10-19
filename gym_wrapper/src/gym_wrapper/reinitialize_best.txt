@@ -1,0 +1,5 @@
+best models per run for reinitializations
+
+run61.3c = run-20211004_161556-cdp0bn8h
+
+run61.pure_speed = run-20211019_131003-3t3eu19u

@@ -137,70 +137,79 @@ class Trainer:
         environment_controller.test_env_compatibility(test_env)
         test_env.close()
 
+    def get_model_path(self):
+        if self.config.reinitialize_from != "" :
+
+            reinitialize_from = self.config.run_dir.split("/")[:-2] + [self.config.reinitialize_from, "files"]
+            
+            reinitialize_from = "/".join(reinitialize_from)
+
+            if not os.path.isdir(reinitialize_from): 
+                print("\tReinitialize folder does not exist!")
+            else: 
+                print("\tReinitialize folder was found!")
+
+            model_path = os.path.join(reinitialize_from, "model") 
+
+            pretty_print("Reinitializing training from run: {}".format(model_path), Colors.FAIL)
+            
+        else:
+            pretty_print("Not reinitializing.", Colors.FAIL)
+
+            model_path = os.path.join(self.config.run_dir, "model")
+         
+        return model_path
+    
     @measure
     def model_pipeline(self):
         train = self.config.total_timesteps > 0
         test = self.config.test_total_episodes > 0
         export_onnx = self.config.export_onnx
 
-        reinitialize_from = self.config.run_dir.split("/")[:-2] + [self.config.reinitialize_from, "files"]
-        reinitialize_from = "/".join(reinitialize_from)
-        # pretty_print("Building reinitialize_from string: {}".format(reinitialize_from), Colors.FAIL)
+        model_path = self.get_model_path()
 
-        if not os.path.isdir(reinitialize_from): 
-            print("\tReinitialize folder does not exist!")
-        else: 
-            print("\tReinitialize folder was found!")
-        
-        model_path = os.path.join(reinitialize_from, "model")  \
-            if self.config.reinitialize_from != "" and os.path.isdir(reinitialize_from) \
-            else os.path.join(self.config.run_dir, "model")
+        if train:
+            num_cpu = self.config.num_env
+            # Create the vectorized environment
+            idx_r = self.rank
+            self.rank += num_cpu
 
-        if self.config.reinitialize_from != "":
-            pretty_print("Reinitializing training from run: {}".format(model_path), Colors.FAIL)
+            env = SubprocVecEnv([self._make_my_vec_env(self.config.env_id, i, self.callback) for i in range(idx_r, num_cpu + idx_r)])
+            env.reset()
 
-            if train:
-                num_cpu = self.config.num_env
-                # Create the vectorized environment
-                idx_r = self.rank
-                self.rank += num_cpu
+            # get a new model
+            model = self._make_model(env)
+            # train and save model
+            _ = self._train_pipeline(model)
 
-                env = SubprocVecEnv([self._make_my_vec_env(self.config.env_id, i, self.callback) for i in range(idx_r, num_cpu + idx_r)])
-                env.reset()
+            # notify of saved trained model
+            pretty_print("Trained model saved to: " + model_path)
 
-                # get a new model
-                model = self._make_model(env)
-                # train and save model
-                _ = self._train_pipeline(model)
+            env.close()
+            del env
+            self.rank -= num_cpu
 
-                # notify of saved trained model
-                pretty_print("Trained model saved to: " + model_path)
+        if test or export_onnx:
+            # load env
+            environment_controller.set_rank(_rank=self.rank, _wandb_run_identifier="test", _callback=self.callback)
+            self.rank += 1
+            env = DummyVecEnv([environment_controller.make_env])
+            env.reset()
+            # load saved trained model
+            # model_path = "/host/unity_builds/mse-dreamscape/wandb/run-20211003_110641-34bcwtgd/files/model"
+            model = self._load_model(model_path)
 
-                env.close()
-                del env
-                self.rank -= num_cpu
+            if test:
+                test_r, test_std_r = self._test_pipeline(model, env)  # mean_reward, std_reward
+                pretty_print("Test evaluation results: {}, {}".format(test_r, test_std_r))
 
-            if test or export_onnx:
-                # load env
-                environment_controller.set_rank(_rank=self.rank, _wandb_run_identifier="test", _callback=self.callback)
-                self.rank += 1
-                env = DummyVecEnv([environment_controller.make_env])
-                env.reset()
-                # load saved trained model
-                # model_path = "/host/unity_builds/mse-dreamscape/wandb/run-20211003_110641-34bcwtgd/files/model"
-                model = self._load_model(model_path)
+            if export_onnx:
+                self._export_pipeline(model, env)
 
-                if test:
-                    test_r, test_std_r = self._test_pipeline(model, env)  # mean_reward, std_reward
-                    pretty_print("Test evaluation results: {}, {}".format(test_r, test_std_r))
-
-                if export_onnx:
-                    self._export_pipeline(model, env)
-
-                # close env
-                env.close()
-                del env
-                self.rank -= 1
+            # close env
+            env.close()
+            del env
+            self.rank -= 1
 
     @measure
     def _make_my_vec_env(self, env_id, rank, callback, seed=0):
