@@ -5,6 +5,39 @@ import numpy as np
 
 wandb_tables = {}
 
+
+def initialize():
+    
+    pretty_print(SEPARATOR, Colors.OKCYAN)
+    
+    pretty_print("Initializing run.....", Colors.OKCYAN)
+    
+    with open('config.txt') as json_file:
+        global_config = json.load(json_file)
+
+    wandb.login(key=os.environ.get('WANDB_KEY', None))
+
+    pretty_print("Initializing WandB", Colors.FAIL)
+    
+    resume_wandb = global_config["resume_wandb"]
+
+    pretty_print("resume_wandb: {}".format(resume_wandb), Colors.FAIL)
+
+    wandb.init(project="mse-dreamscape",
+               config=global_config,
+               sync_tensorboard=True,  # auto-upload sb3's tensorboard metrics
+               monitor_gym=True,  # auto-upload the videos of agents playing the game
+               save_code=True,  # optional
+               resume=resume_wandb)
+    
+    # update with run_dir value and config
+    wandb.config.update({"run_dir": wandb.run.dir}, allow_val_change=True)
+    with open('run_config.json', 'w') as outfile:
+        json.dump(dict(wandb.config), outfile)
+
+    print_config()
+
+    
 def callback(table_id, key, val):
     if wandb.run is not None:
         global wandb_tables
@@ -44,34 +77,6 @@ def log_wandb_tables():
             wandb.log(payload)
                     
         pretty_print("\tTable {} logged.".format(table_id), Colors.OKGREEN)
-
-
-def initialize():
-    pretty_print(SEPARATOR, Colors.OKCYAN)
-    pretty_print("Initializing run.....", Colors.OKCYAN)
-    # safety blocker
-    configured = True
-    # open config
-    with open('config.txt') as json_file:
-        global_config = json.load(json_file)
-    # login
-    wandb.login(key=os.environ.get('WANDB_KEY', None))
-    # init
-    pretty_print("Initializing WandB", Colors.FAIL)
-    wandb.init(project="mse-dreamscape",
-               config=global_config,
-               sync_tensorboard=True,  # auto-upload sb3's tensorboard metrics
-               monitor_gym=True,  # auto-upload the videos of agents playing the game
-               save_code=True,  # optional
-               )
-    # update with run_dir
-    wandb.config.update({"run_dir": wandb.run.dir}, allow_val_change=True)
-    # update config.json
-    with open('run_config.json', 'w') as outfile:
-        json.dump(dict(wandb.config), outfile)
-
-    print_config()
-    # atexit.register(exit_handler)
 
 
 def print_config():
