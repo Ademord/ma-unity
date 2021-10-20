@@ -40,7 +40,7 @@ services:
     shm_size: 2gb
     # ipc: host
     ports:
-      - "8080:8080"
+      - "8180:8080"
       - "443:8080"
     networks:
       - x11
