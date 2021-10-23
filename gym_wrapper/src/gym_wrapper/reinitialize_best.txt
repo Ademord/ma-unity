@@ -1,37 +1,31 @@
 best models per run for reinitializations
 
-run61.3c = run-20211004_161556-cdp0bn8h
-  "env_path": "builds/run61.3c/mse-dreamscape",
-==============================================
-
 run61.pure_speed = run-20211021_143500-1wbli8lg
-  "env_path": "builds/run61.pure_speed/run61.pure_speed",
 terminal 1
 
 run62.octree = run-20211021_143815-r46grtxa
-  "env_path": "builds/run62/mse-dreamscape",
 terminal 2
 
 run63.voxel = run-20211021_144107-c6iydiwe
-  "env_path": "builds/run63/mse-dreamscape",
 terminal 3
 
 run64.shortest = run-20211021_144354-2yqdg2h9
-  "env_path": "builds/run64/mse-dreamscape",
 terminal 4
 
 =========================== visual obs ON ===================
+run65.objdetector = terminal 5
+run66.curiosity = terminal 6
+run67.entropy = terminal 7
 
-run65.objdetector = 
-  "env_path": "builds/run65/mse-dreamscape",
-terminal 5
+===========================
 
-run66.curiosity = 
-  "env_path": "builds/run66/mse-dreamscape",
-terminal 6
+cd /app; python /app/main.py --run-dir='baseAgents/run61.speed/'
+cd /app; python /app/main.py --run-dir='baseAgents/run62.octree/'
+cd /app; python /app/main.py --run-dir='baseAgents/run63.voxel/'
+cd /app; python /app/main.py --run-dir='baseAgents/run64.shortest/'
+cd /app; python /app/main.py --run-dir='baseAgents/run65.detector/'
+cd /app; python /app/main.py --run-dir='baseAgents/run66.curiosity/'
+cd /app; python /app/main.py --run-dir='baseAgents/run67.entropy/'
+cd /app; python /app/main.py --run-dir='baseAgents/run68.ultron/'
 
-run67.entropy = 
-  "env_path": "builds/run67/mse-dreamscape",
-terminal 7
-
-cd /app; python main.py
+3000000

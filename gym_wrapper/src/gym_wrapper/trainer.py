@@ -120,8 +120,9 @@ class Trainer:
         self.config = Config()
         for k, v in config.items():
             self.config[k] = v
-        self.rank = self.config.starting_rank
-
+            
+        self.ranks_to_use = self.config.ranks_to_use
+        
         # base_path = os.path.join(self.config.run_dir, "monitor")
         base_path = self.config.run_dir
         pretty_print("Monitor base path: " + base_path)
@@ -131,12 +132,15 @@ class Trainer:
 
     @measure
     def test_compatibility(self):
-        environment_controller.set_rank(_rank=self.rank, _callback=self.callback)
-        self.rank += 1
+        next_available_rank = self.ranks_to_use.pop(0)
+        
+        environment_controller.set_rank(_rank=next_available_rank, _callback=self.callback)
 
         test_env: gym.Env = environment_controller.make_env()
         environment_controller.test_env_compatibility(test_env)
         test_env.close()
+        
+        self.ranks_to_use.append(next_available_rank)
 
     def get_model_path(self):
 
@@ -162,7 +166,8 @@ class Trainer:
 
         if train:
             
-            env = self._get_vec_env()
+            next_available_ranks, env = self._get_vec_env()
+            
             model = self._make_model(env)
             _ = self._train_pipeline(model)
             
@@ -170,11 +175,14 @@ class Trainer:
             pretty_print("Trained model saved to: " + model_path)
 
             env.close()
-            self.rank -= self.config.num_env # num_cpu
+            
+            # return ranks to the queue
+            for rank in next_available_ranks:
+                self.ranks_to_use.append(rank)
 
         if model_path is not None and (test or export_onnx):
 
-            env = self._get_dummy_env("test")
+            next_available_rank, env = self._get_dummy_env("test")
             model = self._load_model(model_path)
 
             if test:
@@ -185,25 +193,29 @@ class Trainer:
                 self._export_pipeline(model, env)
 
             env.close()
-            self.rank -= 1
+            self.ranks_to_use.append(next_available_rank)
 
     def _get_vec_env(self):
-        num_cpu = self.config.num_env
-        idx_r = self.rank
-        env = SubprocVecEnv([self._make_my_vec_env(self.config.env_id, i, self.callback) for i in range(idx_r, num_cpu + idx_r)])
+        
+        next_available_ranks = []
+        
+        for i in range(self.config.num_env):
+            rank = self.ranks_to_use.pop(0)
+            next_available_ranks.append(rank)
+        
+        env = SubprocVecEnv([self._make_my_vec_env(self.config.env_id, i, self.callback) for i in next_available_ranks])
         env.reset()
 
-        self.rank += num_cpu
-        return env
+        return next_available_ranks, env
 
     def _get_dummy_env(self, wandb_identifier: str):
-        environment_controller.set_rank(_rank=self.rank, _wandb_run_identifier=wandb_identifier, _callback=self.callback)
+        next_available_rank = self.ranks_to_use.pop(0)
+
+        environment_controller.set_rank(_rank=next_available_rank, _wandb_run_identifier=wandb_identifier, _callback=self.callback)
         env = DummyVecEnv([environment_controller.make_env])
         env.reset()
-
-        self.rank += 1
         
-        return env
+        return next_available_rank, env
     
     @measure
     def _make_my_vec_env(self, env_id, rank, callback, seed=0):

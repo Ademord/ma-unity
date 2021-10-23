@@ -7,7 +7,7 @@ def main():
     args = parser.parse_args()
     
     import settings
-    settings.initialize(args)
+    settings.settings_controller.initialize(args)
 
     import trainer
     m_Trainer = trainer.Trainer(settings.callback)
@@ -15,7 +15,7 @@ def main():
     # m_Trainer.test_compatibility()
     m_Trainer.model_pipeline()
 
-    settings.close_all()
+    settings.settings_controller.close_all()
 
 
 if __name__ == '__main__':

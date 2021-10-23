@@ -42,7 +42,7 @@ class SettingsController:
     def setup_from_configs(self, args):
         cwd_path = os.path.dirname(os.path.abspath(__file__))
         base_run_dir = os.path.join(cwd_path, args.run_dir)
-        project_config_path = os.path.join('../', base_run_dir, 'config.txt')
+        project_config_path = os.path.join(base_run_dir, '../config.txt')
         run_config_path = os.path.join(base_run_dir, 'config.txt')
         wandb_run_dir = base_run_dir
 
@@ -53,14 +53,15 @@ class SettingsController:
 
         with open(run_config_path) as json_file:
             local_config = json.load(json_file)
+            local_config["ranks_to_use"] = []
 
         with open(project_config_path) as json_file:
             project_config = json.load(json_file)
-
+        
         # update starting_rank in project config
-        with open(project_config_path) as outfile:
+        with open(project_config_path, 'w') as outfile:
             if project_config["clear_project_ranks"]:
-                project_config["available_ranks"] = list(range(1, 50))
+                project_config["available_ranks"] = list(range(0, 50))
                 project_config["taken_ranks"] = []
 
             ranks_to_take = local_config["num_env"]
@@ -69,10 +70,15 @@ class SettingsController:
             project_config["available_ranks"] = project_config["available_ranks"][ranks_to_take:]
             project_config["taken_ranks"] += local_config["ranks_to_use"]
 
-            json.dump(project_config, outfile)
-
+            json.dump(project_config, outfile, indent=4)
+        
+        # merge configs
         self.global_config = {**project_config, **local_config}
-
+        
+        # privacy in wandb push
+        del self.global_config["available_ranks"]
+        del self.global_config["taken_ranks"]
+        
         # store all necessary variables
         self.resume_wandb = self.global_config["resume_wandb"]
         self.project_name = wandb_run_dir.split("/")[-3]  # global_config["wandb_project"]
@@ -113,6 +119,8 @@ class SettingsController:
 
             n_smallest_list = min([len(x) for x in my_data])
             step = n_smallest_list // 1000
+            # print("columns: ", columns)
+
             print("smallest list found: ", n_smallest_list)
             print("step found: ", step)
 
@@ -133,14 +141,16 @@ class SettingsController:
 
         os.remove('temp_run_config.json')
 
-        with open(self.project_config_path) as outfile:
-
-            project_config = json.load(outfile)
-
+        with open(self.project_config_path) as json_file:
+            project_config = json.load(json_file)
+            
+        with open(self.project_config_path, 'w') as outfile:
             project_config["available_ranks"] += self.global_config["ranks_to_use"]
-            project_config["taken_ranks"] -= self.global_config["ranks_to_use"]
+            project_config["available_ranks"].sort()
 
-            json.dump(project_config, outfile)
+            project_config["taken_ranks"] = [r for r in project_config["taken_ranks"] if r not in self.global_config["ranks_to_use"]]
+
+            json.dump(project_config, outfile, indent=4)
 
         self.log_wandb_tables()
 
