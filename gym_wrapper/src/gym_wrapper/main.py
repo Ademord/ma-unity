@@ -7,7 +7,7 @@ def main():
     args = parser.parse_args()
     
     import settings
-    settings.initialize(args)
+    settings.settings_controller.initialize(args)
 
     import trainer
     m_Trainer = trainer.Trainer(settings.callback)
