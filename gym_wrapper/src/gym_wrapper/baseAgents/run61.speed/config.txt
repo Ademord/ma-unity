@@ -1,21 +1,21 @@
 {
-  "starting_rank": 0,
-  "num_env": 1,
+  "starting_rank": 1,
+  "num_env": 2,
 
   "no_graphics": false,
-  "time_scale": 3,
-  "total_timesteps": 0,
+  "time_scale": 50,
+  "total_timesteps": 100,
   "test_total_episodes": 1,
   "export_onnx": false,
  
   "resume_wandb": false,
   "reinitialize_from_best": true,
+  "monitor_gym": true,
 
   "env_id": "MyUnityGymEnv-v0",
   "env_path": "build/agent",
   "has_continuous_action_space": true,
   "debug_env": false,
-  "monitor_gym": true,
 
   "buffer_size": 10240,
   "batch_size": 1024,

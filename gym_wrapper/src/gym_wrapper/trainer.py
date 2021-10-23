@@ -114,15 +114,16 @@ class FullModel(nn.Module):
 
 class Trainer:
     def __init__(self, callback):
-        with open('run_config.json') as json_file:
+        with open('temp_run_config.json') as json_file:
             config = json.load(json_file)
         # print("loaded config: " + str(config))
         self.config = Config()
         for k, v in config.items():
             self.config[k] = v
-        self.rank = 0
+        self.rank = self.config.starting_rank
 
-        base_path = os.path.join(self.config.run_dir, "monitor")
+        # base_path = os.path.join(self.config.run_dir, "monitor")
+        base_path = self.config.run_dir
         pretty_print("Monitor base path: " + base_path)
 
         self.callback = callback
@@ -138,27 +139,18 @@ class Trainer:
         test_env.close()
 
     def get_model_path(self):
-        if self.config.reinitialize_from != "" :
 
-            reinitialize_from = self.config.run_dir.split("/")[:-2] + [self.config.reinitialize_from, "files"]
+        if self.config.reinitialize_from_best and os.path.isfile(self.config.best_model_path):
+            model_path = self.config.best_model_path
+
+            pretty_print("Reinitializing training from best model".format(model_path), Colors.FAIL)
             
-            reinitialize_from = "/".join(reinitialize_from)
-
-            if not os.path.isdir(reinitialize_from): 
-                print("\tReinitialize folder does not exist!")
-            else: 
-                print("\tReinitialize folder was found!")
-
-            model_path = os.path.join(reinitialize_from, "model") 
-
-            pretty_print("Reinitializing training from run: {}".format(model_path), Colors.FAIL)
+            return model_path
             
         else:
-            pretty_print("Not reinitializing.", Colors.FAIL)
+            pretty_print("No reinitialize model found.", Colors.FAIL)
 
-            model_path = os.path.join(self.config.run_dir, "model")
-         
-        return model_path
+            return None
     
     @measure
     def model_pipeline(self):
@@ -169,34 +161,20 @@ class Trainer:
         model_path = self.get_model_path()
 
         if train:
-            num_cpu = self.config.num_env
-            # Create the vectorized environment
-            idx_r = self.rank
-            self.rank += num_cpu
-
-            env = SubprocVecEnv([self._make_my_vec_env(self.config.env_id, i, self.callback) for i in range(idx_r, num_cpu + idx_r)])
-            env.reset()
-
-            # get a new model
+            
+            env = self._get_vec_env()
             model = self._make_model(env)
-            # train and save model
             _ = self._train_pipeline(model)
-
-            # notify of saved trained model
+            
+            model_path = os.path.join(self.config.run_dir, "model")
             pretty_print("Trained model saved to: " + model_path)
 
             env.close()
-            del env
-            self.rank -= num_cpu
+            self.rank -= self.config.num_env # num_cpu
 
-        if test or export_onnx:
-            # load env
-            environment_controller.set_rank(_rank=self.rank, _wandb_run_identifier="test", _callback=self.callback)
-            self.rank += 1
-            env = DummyVecEnv([environment_controller.make_env])
-            env.reset()
-            # load saved trained model
-            # model_path = "/host/unity_builds/mse-dreamscape/wandb/run-20211003_110641-34bcwtgd/files/model"
+        if model_path is not None and (test or export_onnx):
+
+            env = self._get_dummy_env("test")
             model = self._load_model(model_path)
 
             if test:
@@ -206,11 +184,27 @@ class Trainer:
             if export_onnx:
                 self._export_pipeline(model, env)
 
-            # close env
             env.close()
-            del env
             self.rank -= 1
 
+    def _get_vec_env(self):
+        num_cpu = self.config.num_env
+        idx_r = self.rank
+        env = SubprocVecEnv([self._make_my_vec_env(self.config.env_id, i, self.callback) for i in range(idx_r, num_cpu + idx_r)])
+        env.reset()
+
+        self.rank += num_cpu
+        return env
+
+    def _get_dummy_env(self, wandb_identifier: str):
+        environment_controller.set_rank(_rank=self.rank, _wandb_run_identifier=wandb_identifier, _callback=self.callback)
+        env = DummyVecEnv([environment_controller.make_env])
+        env.reset()
+
+        self.rank += 1
+        
+        return env
+    
     @measure
     def _make_my_vec_env(self, env_id, rank, callback, seed=0):
         """
@@ -231,11 +225,13 @@ class Trainer:
         set_random_seed(seed)
         return _init
 
-    @measure
     def _load_model(self, model_path):
+        pretty_print_separator()
+
         try:
             model = PPO.load(model_path)
-            pretty_print("Model successfully loaded: {} from {}".format(model, model_path))
+            pretty_print("Model: {}".format(model), Colors.FAIL)
+            pretty_print("\tloaded from: {}".format(model, model_path), Colors.FAIL)
             return model
 
         except BaseException as e:
@@ -274,6 +270,7 @@ class Trainer:
             callback=WandbCallback(
                 gradient_save_freq=100,
                 model_save_path=f"" + os.path.join(self.config.run_dir, "models"),
+                model_save_freq=1000,
                 verbose=2,
             ),
         )

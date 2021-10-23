@@ -1,21 +1,25 @@
 {
+  "run_id": "run67.curiosity",
+  "resume_wandb": false,
+  "wandb_project": "baseInOpenWorld",  
+  "reinitialize_from": "run-20211022_132220-1c3tjlwa",
+
+  "env_path": "builds/run67/mse-dreamscape",
   "starting_rank": 0,
   "num_env": 1,
 
   "no_graphics": false,
+  "monitor_gym": true,
+
   "time_scale": 3,
   "total_timesteps": 0,
   "test_total_episodes": 1,
   "export_onnx": false,
  
-  "resume_wandb": false,
-  "reinitialize_from_best": true,
-
   "env_id": "MyUnityGymEnv-v0",
-  "env_path": "build/agent",
   "has_continuous_action_space": true,
   "debug_env": false,
-  "monitor_gym": true,
+  "run_dir": "",
 
   "buffer_size": 10240,
   "batch_size": 1024,

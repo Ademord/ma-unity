@@ -23,13 +23,14 @@ env_callback = None
 
 
 # Opening JSON file
-with open('run_config.json') as json_file:
+with open('temp_run_config.json') as json_file:
     file_config = json.load(json_file)
     # print("loaded config: " + str(file_config))
     config = Config()
     for k, v in file_config.items():
         config[k] = v
-
+    
+    
 register(
     id='MyUnityGymEnv-v0',
     entry_point='environment_controller:CustomEnv'
@@ -96,7 +97,7 @@ def get_wandb_ue_env():
     # environment
     env = UE(config.env_path,
              seed=1,
-             worker_id=config.worker_id,
+             worker_id=rank,
              base_port=5000 + rank,
              no_graphics=config.no_graphics,
              side_channels=[engine_channel, channel])

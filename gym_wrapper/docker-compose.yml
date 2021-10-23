@@ -40,7 +40,7 @@ services:
     shm_size: 2gb
     # ipc: host
     ports:
-      - "8180:8080"
+      - "8080:8080"
       - "443:8080"
     networks:
       - x11
@@ -70,7 +70,14 @@ services:
     volumes:
       # - "./:/host:rw" 
       # - "../builds/builds_mac:/app/builds:rw" 
-      - "../builds/builds_linux:/app/builds:rw" 
+      - "./builds/builds_linux/run61:/app/baseAgents/run61.speed/build:rw" 
+      - "./builds/builds_linux/run62:/app/baseAgents/run62.octree/build:rw" 
+      - "./builds/builds_linux/run63:/app/baseAgents/run63.voxel/build:rw" 
+      - "./builds/builds_linux/run64:/app/baseAgents/run64.shortest/build:rw" 
+      - "./builds/builds_linux/run65:/app/baseAgents/run65.detector/build:rw" 
+      - "./builds/builds_linux/run66:/app/baseAgents/run66.curiosity/build:rw" 
+      - "./builds/builds_linux/run67:/app/baseAgents/run67.entropy/build:rw" 
+      - "./builds/builds_linux/run68:/app/baseAgents/run68.ultron/build:rw" 
       - "./src/gym_wrapper:/app:rw"
       # this can limit how much access the container has to other implementations
       # - "../src/:/home/ros/catkin_ws/src/:rw"

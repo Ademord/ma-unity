@@ -1,22 +1,21 @@
 {
-  "worker_id": 1,
-  "run_dir": "",
+  "starting_rank": 0,
+  "num_env": 1,
+
+  "no_graphics": false,
+  "time_scale": 3,
+  "total_timesteps": 0,
+  "test_total_episodes": 1,
+  "export_onnx": false,
+ 
+  "resume_wandb": false,
+  "reinitialize_from_best": true,
 
   "env_id": "MyUnityGymEnv-v0",
-  "env_path": "builds/run61.pure_speed/run61.pure_speed",
+  "env_path": "build/agent",
   "has_continuous_action_space": true,
   "debug_env": false,
-
-  "num_env": 4,
-  "time_scale": 50,
-  "no_graphics": true,
-
-  "reinitialize_from": "run-20211019_131003-3t3eu19u",
-  "resume_wandb": false,
-  "total_timesteps": 3000000,
-  "test_total_episodes": 0,
-  "log_TFSideStats": false,
-  "export_onnx": false,
+  "monitor_gym": true,
 
   "buffer_size": 10240,
   "batch_size": 1024,
