@@ -7,5 +7,6 @@
   "export_onnx": false,
  
   "resume_wandb": false,
-  "reinitialize_from_best": true
+  "reinitialize_from_best": true,
+  "log_wandb_tables": true
 }

@@ -16,11 +16,14 @@ class SettingsController:
         self.project_config_path = None
         self.run_config_path = None
 
-    def initialize(self, args):
+    def initialize(self, base_run_dir):
+        self.base_run_dir = base_run_dir
+        print("setting... " + self.base_run_dir)
+        
         pretty_print(SEPARATOR, Colors.OKCYAN)
         pretty_print("Initializing run.....", Colors.OKCYAN)
 
-        self.setup_from_configs(args)
+        self.setup_from_configs()
 
         wandb.login(key=os.environ.get('WANDB_KEY', None))
 
@@ -39,9 +42,9 @@ class SettingsController:
         self.dump_temp_config()
         print_config()
 
-    def setup_from_configs(self, args):
+    def setup_from_configs(self):
         cwd_path = os.path.dirname(os.path.abspath(__file__))
-        base_run_dir = os.path.join(cwd_path, args.run_dir)
+        base_run_dir = self.base_run_dir
         project_config_path = os.path.join(base_run_dir, '../config.txt')
         run_config_path = os.path.join(base_run_dir, 'config.txt')
         wandb_run_dir = base_run_dir
@@ -83,6 +86,10 @@ class SettingsController:
         self.resume_wandb = self.global_config["resume_wandb"]
         self.project_name = wandb_run_dir.split("/")[-3]  # global_config["wandb_project"]
         self.run_id = wandb_run_dir.split("/")[-2]  # global_config["run_id"]
+        
+        import time
+        self.run_id += time.strftime('-%m%d-%H%M%S')
+        
         self.monitor_gym = self.global_config["monitor_gym"]
         self.wandb_run_dir = wandb_run_dir
         self.base_run_dir = base_run_dir
@@ -152,7 +159,8 @@ class SettingsController:
 
             json.dump(project_config, outfile, indent=4)
 
-        self.log_wandb_tables()
+        if wandb.config.log_wandb_tables:
+            self.log_wandb_tables()
 
         wandb.finish()
 

@@ -166,8 +166,9 @@ class Trainer:
 
         if train:
             
-            next_available_ranks, env = self._get_vec_env()
-            
+            # next_available_ranks, env = self._get_vec_env()
+            next_available_rank, env = self._get_dummy_env("train")
+
             model = self._make_model(env)
             _ = self._train_pipeline(model)
             
@@ -177,8 +178,9 @@ class Trainer:
             env.close()
             
             # return ranks to the queue
-            for rank in next_available_ranks:
-                self.ranks_to_use.append(rank)
+            #for rank in next_available_ranks:
+            #    self.ranks_to_use.append(rank)
+            self.ranks_to_use.append(next_available_rank)
 
         if model_path is not None and (test or export_onnx):
 

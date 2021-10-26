@@ -18,14 +18,26 @@ run66.curiosity = terminal 6
 run67.entropy = terminal 7
 
 ===========================
+runID=""; 
 
-cd /app; python /app/main.py --run-dir='baseAgents/run61.speed/'
-cd /app; python /app/main.py --run-dir='baseAgents/run62.octree/'
-cd /app; python /app/main.py --run-dir='baseAgents/run63.voxel/'
-cd /app; python /app/main.py --run-dir='baseAgents/run64.shortest/'
-cd /app; python /app/main.py --run-dir='baseAgents/run65.detector/'
-cd /app; python /app/main.py --run-dir='baseAgents/run66.curiosity/'
-cd /app; python /app/main.py --run-dir='baseAgents/run67.entropy/'
-cd /app; python /app/main.py --run-dir='baseAgents/run68.ultron/'
+cd /app/baseAgents/run61.speed/; python /app/main.py
+cd /app/baseAgents/run62.octree/; python /app/main.py
+cd /app/baseAgents/run63.voxel/; python /app/main.py
+cd /app/baseAgents/run64.shortest/; python /app/main.py
+cd /app/baseAgents/run65.detector/; python /app/main.py
+cd /app/baseAgents/run66.curiosity/; python /app/main.py
+cd /app/baseAgents/run67.entropy/; python /app/main.py
+cd /app/baseAgents/run68.ultron/; python /app/main.py
+
 
 3000000
+
+
+
+    from argparse import ArgumentParser
+
+    parser = ArgumentParser(fromfile_prefix_chars='@')
+    parser.add_argument('--run-dir')  # ex. python /app/main.py --run-dir='baseAgents/run61.speed/'
+    
+    args = parser.parse_args()
+    

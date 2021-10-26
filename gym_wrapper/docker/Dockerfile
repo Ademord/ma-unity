@@ -158,8 +158,8 @@ RUN pip install jupyterlab tensorflow-graphics-gpu tensorflow pygments keras
 # RUN pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 # RUN pip install detectron2==0.1.3 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/index.html
 # RUN pip install python-cfonts django
-
-RUN pip install -U stable-baselines3[extra] gym_unity gym mlagents wandb
+# gym is installed through stable-baselines3
+RUN pip install -U stable-baselines3[extra] gym_unity mlagents wandb 
 RUN pip install ipywidgets 
 RUN pip install pika
 

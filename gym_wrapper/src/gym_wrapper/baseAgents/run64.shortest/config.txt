@@ -2,10 +2,11 @@
   "num_env": 1,
   "no_graphics": true,
   "time_scale": 50,
-  "total_timesteps": 1000000,
+  "total_timesteps": 3000000,
   "test_total_episodes": 1,
   "export_onnx": false,
  
   "resume_wandb": false,
-  "reinitialize_from_best": true
+  "reinitialize_from_best": true,
+  "log_wandb_tables": true
 }
