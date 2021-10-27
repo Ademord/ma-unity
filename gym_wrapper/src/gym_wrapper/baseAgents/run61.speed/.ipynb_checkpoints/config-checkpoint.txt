@@ -6,7 +6,7 @@
   "test_total_episodes": 0,
   "export_onnx": false,
  
-  "resume_wandb": false,
-  "reinitialize_from_best": true,
+  "resume_run_id": "",
+  "reinitialize_from": "/app/baseAgents/test/wandb/run-20211026_153113-test-1026-153111/",
   "log_wandb_tables": true
 }

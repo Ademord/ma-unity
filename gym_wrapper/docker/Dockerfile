@@ -159,9 +159,11 @@ RUN pip install jupyterlab tensorflow-graphics-gpu tensorflow pygments keras
 # RUN pip install detectron2==0.1.3 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/index.html
 # RUN pip install python-cfonts django
 # gym is installed through stable-baselines3
-RUN pip install -U stable-baselines3[extra] gym_unity mlagents wandb 
-RUN pip install ipywidgets 
-RUN pip install pika
+RUN sudo apt-get install tmux
+RUN pip install -U stable-baselines3[extra]==1.3.0 mlagents==0.26.0 gym-unity==0.26.0 wandb 
+RUN pip install ipywidgets jupyterlab-system-monitor
+
+# RUN pip install pika
 
 # torch-points3d dependencies
 # ARG TORCH_CUDA_ARCH_LIST="3.5 5.2 6.0 6.1 7.0+PTX" 

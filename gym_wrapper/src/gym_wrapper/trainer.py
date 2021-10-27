@@ -144,36 +144,37 @@ class Trainer:
 
     def get_model_path(self):
 
-        if self.config.reinitialize_from_best and os.path.isfile(self.config.best_model_path):
-            model_path = self.config.best_model_path
-
-            pretty_print("Reinitializing training from best model".format(model_path), Colors.FAIL)
+        if self.config.reinitialize_from != "": 
+            model_path = self.config.reinitialize_model_path
             
-            return model_path
-            
-        else:
-            pretty_print("No reinitialize model found.", Colors.FAIL)
+            if os.path.isfile(self.config.reinitialize_model_path):
 
-            return None
+                pretty_print("Reinitializing training from best model under {}.".format(model_path), Colors.FAIL)
+            
+                return model_path
+
+            else:
+                pretty_print("No reinitialize model found under {}.".format(model_path), Colors.FAIL)
+
+        
+        return None
     
     @measure
     def model_pipeline(self):
         train = self.config.total_timesteps > 0
         test = self.config.test_total_episodes > 0
         export_onnx = self.config.export_onnx
-
-        model_path = self.get_model_path()
-
+            
         if train:
             
             # next_available_ranks, env = self._get_vec_env()
             next_available_rank, env = self._get_dummy_env("train")
 
-            model = self._make_model(env)
+            model = self._get_model(env)
             _ = self._train_pipeline(model)
             
             model_path = os.path.join(self.config.run_dir, "model")
-            pretty_print("Trained model saved to: " + model_path)
+            pretty_print("Trained model will be saved to: " + model_path)
 
             env.close()
             
@@ -182,11 +183,12 @@ class Trainer:
             #    self.ranks_to_use.append(rank)
             self.ranks_to_use.append(next_available_rank)
 
-        if model_path is not None and (test or export_onnx):
+        if test or export_onnx:
 
             next_available_rank, env = self._get_dummy_env("test")
-            model = self._load_model(model_path)
 
+            model = model if train else self._get_model(env)
+            
             if test:
                 test_r, test_std_r = self._test_pipeline(model, env)  # mean_reward, std_reward
                 pretty_print("Test evaluation results: {}, {}".format(test_r, test_std_r))
@@ -238,12 +240,22 @@ class Trainer:
 
         set_random_seed(seed)
         return _init
+      
+    def _get_model(self, env):
+        model_path = self.get_model_path()
+         
+        if model_path is not None:
+            model = self._load_model(model_path, env)
+        else:
+            model = self._make_model(env)
+            
+        return model
 
-    def _load_model(self, model_path):
+    def _load_model(self, model_path, env):
         pretty_print_separator()
 
         try:
-            model = PPO.load(model_path)
+            model = PPO.load(model_path, env)
             pretty_print("Model: {}".format(model), Colors.FAIL)
             pretty_print("\tloaded from: {}".format(model, model_path), Colors.FAIL)
             return model
@@ -260,7 +272,7 @@ class Trainer:
         # policy kwargs
         policy_kwargs = dict(features_extractor_class=CustomCombinedExtractor, )
 
-        model = PPO("MlpPolicy", env,
+        model = PPO("MultiInputPolicy", env, # MultiInputPolicy
                     policy_kwargs=policy_kwargs,
                     learning_rate=self.config.lr_actor,
                     # n_steps=self.config.buffer_size,

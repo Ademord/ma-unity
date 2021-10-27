@@ -20,6 +20,16 @@ run67.entropy = terminal 7
 ===========================
 runID=""; 
 
+cd /app/baseAgents/test/; python /app/main.py
+  "reinitialize_from": "/app/baseAgents/test/wandb/run-20211026_131328-test-1026-131326/",
+  "reinitialize_from": "/app/baseAgents/test/wandb/run-20211026_153113-test-1026-153111/", << REINIT FROM THIS ONE, ALL THE FUTURE OTHER ONES (base movement logic)
+
+>> resume the first one from the second one
+resume_run_id = test-1026-144959
+
+
+  "reinitialize_from": "/app/baseAgents/run61.speed/wandb/run-20211025_103347-run61.speed-1025-103345",
+
 cd /app/baseAgents/run61.speed/; python /app/main.py
 cd /app/baseAgents/run62.octree/; python /app/main.py
 cd /app/baseAgents/run63.voxel/; python /app/main.py

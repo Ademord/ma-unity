@@ -43,6 +43,11 @@ class SettingsController:
         print_config()
 
     def setup_from_configs(self):
+        
+        # resume_run": "",
+        # reinitialize from is solved in trainer.py
+        # "reinitialize_from": "",
+        
         cwd_path = os.path.dirname(os.path.abspath(__file__))
         base_run_dir = self.base_run_dir
         project_config_path = os.path.join(base_run_dir, '../config.txt')
@@ -82,21 +87,31 @@ class SettingsController:
         del self.global_config["available_ranks"]
         del self.global_config["taken_ranks"]
         
-        # store all necessary variables
-        self.resume_wandb = self.global_config["resume_wandb"]
-        self.project_name = wandb_run_dir.split("/")[-3]  # global_config["wandb_project"]
-        self.run_id = wandb_run_dir.split("/")[-2]  # global_config["run_id"]
-        
-        import time
-        self.run_id += time.strftime('-%m%d-%H%M%S')
-        
-        self.monitor_gym = self.global_config["monitor_gym"]
+        # project and run data
         self.wandb_run_dir = wandb_run_dir
         self.base_run_dir = base_run_dir
-        self.best_model_path = os.path.join(base_run_dir, 'best/')
+        
+        self.project_name = wandb_run_dir.split("/")[-3]  # global_config["wandb_project"]
+        self.run_id = wandb_run_dir.split("/")[-2]  # global_config["run_id"]
+        import time
+        self.run_id += time.strftime('-%m%d-%H%M%S')
         self.project_config_path = project_config_path
+        
+        # monitoring
+        self.monitor_gym = self.global_config["monitor_gym"]
 
+        # resume
+        self.resume_run_id = self.global_config["resume_run_id"]
+        self.resume_wandb = self.resume_run_id != ""
+        if self.resume_wandb: self.run_id = self.resume_run_id
+
+        # reinitialization
+        self.reinitialize_model_path = os.path.join(self.global_config["reinitialize_from"], 'files/model.zip') if self.global_config["reinitialize_from"] != "" else ""
+        self.best_model_path = os.path.join(base_run_dir, 'best/model.zip')
+
+        pretty_print("resume_run_id: {}".format(self.resume_run_id), Colors.FAIL)
         pretty_print("resume_wandb: {}".format(self.resume_wandb), Colors.FAIL)
+        pretty_print("reinitialize_model_path: {}".format(self.reinitialize_model_path), Colors.FAIL)
         pretty_print("project_name: {}".format(self.project_name), Colors.FAIL)
         pretty_print("run_id: {}".format(self.run_id), Colors.FAIL)
 
@@ -107,8 +122,13 @@ class SettingsController:
         wandb.config.update(
             {"env_path": os.path.join(self.base_run_dir, wandb.config.env_path)}, allow_val_change=True)
         wandb.config.update(
-            {"best_model_path": os.path.join(self.best_model_path, 'model.zip')}, allow_val_change=True)
+            {"best_model_path": self.best_model_path}, allow_val_change=True)
+        wandb.config.update(
+            {"reinitialize_model_path": self.reinitialize_model_path}, allow_val_change=True)
+        # wandb.config.update(
+        #     {"resume_run_id": self.resume_run_id}, allow_val_change=True)
 
+    
         bestFolderExist = os.path.exists(self.best_model_path)
         if not bestFolderExist: os.makedirs(self.best_model_path)
 
