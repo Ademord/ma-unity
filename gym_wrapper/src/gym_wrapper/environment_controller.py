@@ -145,7 +145,7 @@ class SB3StatsRecorder(SideChannel):
         key = key.split("/")[1]
         self.i += 1
 
-        if env_callback is not None and wandb_run_identifier == "test":  # and "Speed" in "val"
+        if env_callback is not None: # and wandb_run_identifier == "test":  # and "Speed" in "val"
             # if self.i % 100 == 0:
 
             my_table_id: str = "Performance[{}]".format(wandb_run_identifier)

@@ -2,7 +2,7 @@
   "num_env": 1,
   "no_graphics": true,
   "time_scale": 50,
-  "total_timesteps": 100000,
+  "total_timesteps": 0,
   "test_total_episodes": 0,
   "export_onnx": false,
  

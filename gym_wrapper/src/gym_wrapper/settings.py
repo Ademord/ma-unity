@@ -29,18 +29,24 @@ class SettingsController:
 
         pretty_print("\nInitializing WandB\n", Colors.FAIL)
 
+        self.init_wandb("train")
+
+        self.dump_temp_config()
+        print_config()
+
+    def init_wandb(self, section: str, resume_overwrite=None):
+        
         wandb.init(project=self.project_name,
                    config=self.global_config,
                    sync_tensorboard=True,  # auto-upload sb3's tensorboard metrics
                    monitor_gym=self.monitor_gym,  # auto-upload the videos of agents playing the game
                    save_code=True,  # optional
-                   resume=self.resume_wandb,
+                   resume=resume_overwrite or self.resume_wandb,
                    id=self.run_id,
                    dir=self.wandb_run_dir,
-                   settings=wandb.Settings(_save_requirements=False))
-
-        self.dump_temp_config()
-        print_config()
+                   settings=wandb.Settings(_save_requirements=False),
+                   reinit=True,
+                   tags=[section])
 
     def setup_from_configs(self):
         
@@ -139,7 +145,10 @@ class SettingsController:
         print("Logging tables found: {}".format(self.wandb_tables.keys()))
 
         for table_id, table in self.wandb_tables.items():
+            # create a new section
+            self.init_wandb(section=table_id, resume_overwrite=True)
             pretty_print("Publishing table: {} ...".format(table_id), Colors.FAIL)
+
 
             columns = list(table.keys())
             my_data = list(table.values())
@@ -160,6 +169,7 @@ class SettingsController:
                     # print("adding table[{}][{}]: {}".format(metric,j,table[metric][j]))
                 # print("logging payload: ", payload)
                 wandb.log(payload)
+                # wandb.log({table_id: payload})
 
             pretty_print("\tTable {} logged.".format(table_id), Colors.OKGREEN)
 
@@ -177,7 +187,10 @@ class SettingsController:
 
             project_config["taken_ranks"] = [r for r in project_config["taken_ranks"] if r not in self.global_config["ranks_to_use"]]
 
+            print("saving project config: {}".format(project_config))
+
             json.dump(project_config, outfile, indent=4)
+
 
         if wandb.config.log_wandb_tables:
             self.log_wandb_tables()
