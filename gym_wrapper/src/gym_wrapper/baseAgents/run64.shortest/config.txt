@@ -7,6 +7,6 @@
   "export_onnx": false,
 
   "resume_run_id": "",
-  "reinitialize_from": "/app/baseAgents/test/wandb/run-20211026_153113-test-1026-153111/",
+  "reinitialize_from": "/app/baseAgents/run64.shortest/wandb/run-20211027_110532-run64.shortest-1027-110530/",
   "log_wandb_tables": true
 }

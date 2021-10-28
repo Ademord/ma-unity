@@ -7,6 +7,6 @@
   "export_onnx": false,
 
   "resume_run_id": "",
-  "reinitialize_from": "/app/baseAgents/test/wandb/run-20211026_153113-test-1026-153111/",
+  "reinitialize_from": "/app/baseAgents/run63.voxel/wandb/run-20211027_110300-run63.voxel-1027-110258/",
   "log_wandb_tables": true
 }

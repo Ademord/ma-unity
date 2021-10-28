@@ -8,5 +8,6 @@
  
   "resume_run_id": "test-1026-144959",
   "reinitialize_from": "/app/baseAgents/test/wandb/run-20211026_145001-test-1026-144959",
+  "reinitialize_from": "/app/baseAgents/test/wandb/run-20211026_153113-test-1026-153111/",
   "log_wandb_tables": true
 }

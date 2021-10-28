@@ -38,12 +38,14 @@ cd /app/baseAgents/run63.voxel/; python /app/main.py
 cd /app/baseAgents/run64.shortest/; python /app/main.py
 cd /app/baseAgents/run65.detector/; python /app/main.py
 
-oct 28
+oct 28 
 [crashed] cd /app/baseAgents/run63.voxel/; python /app/main.py
 [crashed] cd /app/baseAgents/run64.shortest/; python /app/main.py
 >> fix by splitting training in 3 subdivisions
 
 cd /app/baseAgents/run66.curiosity/; python /app/main.py
+
+oct 29
 cd /app/baseAgents/run67.entropy/; python /app/main.py
 cd /app/baseAgents/run68.ultron/; python /app/main.py
 

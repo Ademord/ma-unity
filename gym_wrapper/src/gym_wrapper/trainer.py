@@ -166,22 +166,32 @@ class Trainer:
         export_onnx = self.config.export_onnx
             
         if train:
-            
-            # next_available_ranks, env = self._get_vec_env()
+            # patch to fix environment breaking after 33% of the steps
+             # next_available_ranks, env = self._get_vec_env()
             next_available_rank, env = self._get_dummy_env("train")
+            env.close()
+            self.ranks_to_use.append(next_available_rank)
 
             model = self._get_model(env)
-            _ = self._train_pipeline(model)
-            
+            train_division = 3
+
+            for i in range(train_division):
+                pretty_print_separator()
+                pretty_print("Training subdivision: {}".format(i))
+                
+                next_available_rank, env = self._get_dummy_env("train")
+                model.set_env(env)
+                _ = self._train_pipeline(model, self.config.total_timesteps // train_division)
+                env.close()
+                
+                # return ranks to the queue
+                #for rank in next_available_ranks:
+                #    self.ranks_to_use.append(rank)
+                self.ranks_to_use.append(next_available_rank)
+               
             model_path = os.path.join(self.config.run_dir, "model")
             pretty_print("Trained model will be saved to: " + model_path)
 
-            env.close()
-            
-            # return ranks to the queue
-            #for rank in next_available_ranks:
-            #    self.ranks_to_use.append(rank)
-            self.ranks_to_use.append(next_available_rank)
 
         if test or export_onnx:
 
@@ -287,12 +297,12 @@ class Trainer:
         return model
 
     @measure
-    def _train_pipeline(self, model):
+    def _train_pipeline(self, model, total_timesteps: int):
         pretty_print_separator()
         pretty_print("Training...")
 
         model.learn(
-            total_timesteps=self.config.total_timesteps,
+            total_timesteps=total_timesteps,
             callback=WandbCallback(
                 gradient_save_freq=100,
                 model_save_path=f"" + os.path.join(self.config.run_dir, "models"),
