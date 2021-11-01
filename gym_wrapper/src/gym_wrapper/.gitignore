@@ -3,4 +3,13 @@ builds/*
 .idea/*
 __pycache__/*
 **/wandb/*
+**/results/*
 .ipynb_checkpoints
+*.pt
+*.onnx
+*.0
+*.log
+*.dll
+*.pdb
+*.map
+**/configLoader/*
