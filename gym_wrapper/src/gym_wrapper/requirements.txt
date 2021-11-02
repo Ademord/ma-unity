@@ -1,5 +1,0 @@
-wandb
-stable-baselines3[extra]
-mlagents==0.27.0
-gym_unity
-gym

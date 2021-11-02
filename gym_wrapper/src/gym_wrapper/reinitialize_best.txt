@@ -76,6 +76,7 @@ nov 1st
 
 nov 2
 ✅ [-----] message remo to get more machines
+[+++++] corrections gio
 [-----] reduce project (archive old files)
 ✅ [linux] make config files for 63++025 63++05 63++075 63++1
 [windows] get environment 71 functional and ready to export with configLoaderOpenWorld
