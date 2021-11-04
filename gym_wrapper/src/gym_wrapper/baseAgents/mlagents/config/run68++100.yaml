@@ -53,13 +53,13 @@ environment_parameters:
   m_TrainVoxelCollection: 1
   allowedToSeeVoxels: 1
   m_VoxelRewardStrength: 1 # <<<<<<<<<<<<<<<<
-  NormalizeVoxelReward: 1 #  <<<<<<<<<<<<<<<<<<<<
+  NormalizeVoxelReward: 0 #  <<<<<<<<<<<<<<<<<<<<
   m_SpeedSensitivityToTargetsInFOV: 1 # all voxel-detecting behaviors should have this
   # shortest
   m_AddShortestPathObservations: 0
   m_TrainShortestPath: 0
   # detector
-  m_LoadDetector: 0
+  m_LoadDetector: 1
   m_AddDetectorObservations: 0
   m_TrainObjectDetectionMaximization: 0
   NormalizeDetectionsReward: 1
@@ -67,8 +67,8 @@ environment_parameters:
   m_AddSemanticCuriosityObservations: 0
   m_TrainSemanticCuriosity: 0
   # entropy
-  m_AddSemanticEntropyObservations: 0
-  m_TrainSemanticEntropy: 0
+  m_AddSemanticEntropyObservations: 1
+  m_TrainSemanticEntropy: 1
   #################    END BEHAVIOR   ##################
 
 
