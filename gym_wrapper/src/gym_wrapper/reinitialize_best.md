@@ -106,17 +106,59 @@ resume_run_id = test-1026-144959
 - ✅ added obs distToOrigin
 
 ## nov 4
-- [-----] figure out why the trees are not clickable
-- [-----] figure out same for rocks instances
-- [-----] corrections gio: chapter 2
-- [-----] look at error of GPU leak
+- ✅ [-----] figure out why the trees are not clickable >> terrain does not load scripts
+- ✅ [-----] figure out same for rocks instances >> terrain does not load scripts
+- ✅ [-----] look at error of GPU leak >> add destructor ~OD()
+- ✅ [windows] export env CL_v2 (linux) and test "run68.testOD" (cannot reinitialize cause increased size of obs)
+- ✅ [gapu-t2] `runID="run65"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- ✅ [gapu-t2] `runID="run66" && cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5005 & wait; echo "$runID has finished" >> runs_progress.log &   `
 
-- [windows] or disable colliders on the tree instances (also an option to avoid them alltogether) >> maybe it is also good to show we can learn to avoid obstacles / trees in the way
-- [windows] add obstacle tags 
-- [windows] export run configLoaderOpenWorld 71 and 72
+- ✅ [gapu-t1] `runID="run67"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5010 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- ✅ [gapu-t1] `runID="run68"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5015 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- ✅ [gapu-t3] `runID="run68++050"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5020 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- ✅ [gapu-t3] `runID="run68++100"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5025 & wait; echo "$runID has finished" >> runs_progress.log &   `
+
 
 ## nov 5 [WFH]
+- ✅ [windows] fix errors with OD
+- ✅ [windows] `$runID="test"; mlagents-learn config\test.yaml --env build\mse-dreamscape --run-id=ExplorerDrone.${runID} --force --width=1080 --height=684 --time-scale=10`
+
+
+- ✅ [gapu-t2] `runID="run65"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- ✅ [gapu-t2] `runID="run66" && cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5005 & wait; echo "$runID has finished" >> runs_progress.log &   `
+
+- ✅ [gapu-t1] `runID="run67"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5010 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- ✅ [gapu-t1] `runID="run68"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5015 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- ✅ [gapu-t3] `runID="run68++050"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5020 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- ✅ [gapu-t3] `runID="run68++100"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5025 & wait; echo "$runID has finished" >> runs_progress.log &   `
+
+
+## nov 6
+## nov 7
+- wasted because of error with OD > linux doesnt work
+
+
+## nov 8
+- [windows] make a backup scene CL_WithterrainTrees > 
+- [windows] delete trees > put them by hand :)
+- [windows] add obstacle tags to rocks
+
+- [windows] test gridsensor visibility
+
+- [windows] export env CL_OW 
+- [windows] export run configLoaderOpenWorld 
+- train_off.bat 71
+- train_off.bat 72
+- meeting with remo
+
+- voxelize house
+- voxelize crooked bus
+
+## nov 9 
 - [-----] corrections gio: chapter 2
+- [-----] corrections gio: chapter 2
+
+
 - [gapu-t1] 71
 - [gapu-t1] 72
 - [gapu-t2] 73
@@ -124,68 +166,68 @@ resume_run_id = test-1026-144959
 - [gapu-t3] 75
 - [gapu-t3] 76
 
-
-## nov 6
-- [-----] corrections gio: chapter 3
-- [-----] chapter 3
-
 - [gapu-t1] 77
 - [gapu-t1] 78
 
-## nov 7
+
+## nov 10-11
+
+- [-----] corrections gio: chapter 3
+- [-----] chapter 3
+
+## nov 12-13
 - [-----] chapter 4
 
-## nov 8
-- [-----] chapter 4
 
-## nov 9
+## nov 13-14
 - [-----] chapter 5
 
-## nov 10
-- [-----] chapter 5
-
-## nov 11
-- [-----] chapter 5
-
-## nov 12
+## nov 14
+- [-----] chapter 6
 - [windows] export runForest
 - [windows] export runFire
-- [linux] runForest
-- [linux] runFire
+- [windows] runForest
+- [windows] runFire
 
-## nov 13
-- [-----] chapter 6
+## nov 12
 - [-----] send for corrections [adhi, irena, bruno, alAmeen]
 
-nov 14
-[-----] PPT
 
-nov 15
+## nov 15
 [-----] meeting thilo
 
-nov 16
+## nov 16
+[-----] PPT
+
+
+## nov 17
 [-----] corrections bruno
 [-----] corrections adhi
 [-----] corrections irena
 
-nov 17
-[-----] send for corrections [gio, andy, moha]
-
-nov 18
+## nov 20
 [-----] send for corrections [gio, andy, moha]
 [-----] correct PPT
 
-nov 20
+## nov 25-27
 [-----] corrections [gio, andy, moha]
 
-nov 21
-[-----] corrections [gio, andy, moha]
-
-nov 22
+## nov 27
 [-----] send to thilo [PDF, PPT]
 
-nov 29
+## nov 29
 [-----] meeting thilo and corrections
 
-dec 1
+## dec 1
 [-----] define presentation date
+
+## archive
+- `runID="run61"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --no-graphics --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- `runID="run62"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --no-graphics --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- `runID="run63"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --no-graphics --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- `runID="run63++025"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --no-graphics --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- `runID="run63++050"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --no-graphics --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- `runID="run63++075"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --no-graphics --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- `runID="run63++100"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --no-graphics --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- `runID="run64"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --no-graphics --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+
