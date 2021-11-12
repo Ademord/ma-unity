@@ -1,3 +1,5 @@
+vscode save
+
 <!-- best models per run for reinitializations
 
 run61.pure_speed = run-20211021_143500-1wbli8lg
@@ -110,116 +112,137 @@ resume_run_id = test-1026-144959
 - ✅ [-----] figure out same for rocks instances >> terrain does not load scripts
 - ✅ [-----] look at error of GPU leak >> add destructor ~OD()
 - ✅ [windows] export env CL_v2 (linux) and test "run68.testOD" (cannot reinitialize cause increased size of obs)
-- ✅ [gapu-t2] `runID="run65"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
-- ✅ [gapu-t2] `runID="run66" && cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5005 & wait; echo "$runID has finished" >> runs_progress.log &   `
-
-- ✅ [gapu-t1] `runID="run67"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5010 & wait; echo "$runID has finished" >> runs_progress.log &   `
-- ✅ [gapu-t1] `runID="run68"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5015 & wait; echo "$runID has finished" >> runs_progress.log &   `
-- ✅ [gapu-t3] `runID="run68++050"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5020 & wait; echo "$runID has finished" >> runs_progress.log &   `
-- ✅ [gapu-t3] `runID="run68++100"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5025 & wait; echo "$runID has finished" >> runs_progress.log &   `
 
 
-## nov 5 [WFH]
-- ✅ [windows] fix errors with OD
-- ✅ [windows] `$runID="test"; mlagents-learn config\test.yaml --env build\mse-dreamscape --run-id=ExplorerDrone.${runID} --force --width=1080 --height=684 --time-scale=10`
+
+- [gapu-t2] `runID="run65"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=20 --num-envs=5 --force --base-port=5010 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- [gapu-t2] `runID="run65-pure"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=20 --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- [gapu-t2] `runID="run66" && cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=20 --num-envs=5 --force --base-port=5005 & wait; echo "$runID has finished" >> runs_progress.log &   `
+
+- [gapu-t1] `runID="run67"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5010 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- [gapu-t1] `runID="run68"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5015 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- [gapu-t3] `runID="run68++050"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5020 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- [gapu-t3] `runID="run68++100"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5025 & wait; echo "$runID has finished" >> runs_progress.log &   `
 
 
-- ✅ [gapu-t2] `runID="run65"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
-- ✅ [gapu-t2] `runID="run66" && cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5005 & wait; echo "$runID has finished" >> runs_progress.log &   `
-
-- ✅ [gapu-t1] `runID="run67"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5010 & wait; echo "$runID has finished" >> runs_progress.log &   `
-- ✅ [gapu-t1] `runID="run68"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5015 & wait; echo "$runID has finished" >> runs_progress.log &   `
-- ✅ [gapu-t3] `runID="run68++050"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5020 & wait; echo "$runID has finished" >> runs_progress.log &   `
-- ✅ [gapu-t3] `runID="run68++100"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5025 & wait; echo "$runID has finished" >> runs_progress.log &   `
-
-
+## nov 5
 ## nov 6
 ## nov 7
 - wasted because of error with OD > linux doesnt work
+- problems with linux and OpenGL and VNC and bleh.
+- ✅ [windows] fix errors with OD
+- ✅ [windows] `$runID="test"; mlagents-learn config\test.yaml --env build\mse-dreamscape --run-id=ExplorerDrone.${runID} --force --width=1080 --height=684 --time-scale=10`
+- ✅ [windows] `runID="run65"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+
+# nov 9
+- runID="run65"; cd ~/ultron/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=20 --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   
+- ✅ [windows] `runID="run65-pure"; cd ~/ultron/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=20 --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+- ✅ [windows] `runID="run66" && cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --num-envs=5 --force --base-port=5005 & wait; echo "$runID has finished" >> runs_progress.log &   `
+
+# nov 11
+- ✅ setup VMs the way sean set them up
 
 
-## nov 8
-- [windows] make a backup scene CL_WithterrainTrees > 
-- [windows] delete trees > put them by hand :)
-- [windows] add obstacle tags to rocks
+# nov 12
 
-- [windows] test gridsensor visibility
+- [cancelled] empty windows so i can train more
+- ✅ setup VMs the way sean set them up
 
-- [windows] export env CL_OW 
-- [windows] export run configLoaderOpenWorld 
-- train_off.bat 71
-- train_off.bat 72
-- meeting with remo
+- t1 run 65, 65-pure, 
+- t2 run 66, 67
+- t3 run 68, 68++  
+- t4 run 61, 62
+- t5 run 63 25, 63 50
+- t6 run 63 75, 63 100
+- t7 run 64
+- run 63 and 68++050
 
+## nov 13
+- do all the Blender stuff required
 - voxelize house
 - voxelize crooked bus
 
-## nov 9 
-- [-----] corrections gio: chapter 2
-- [-----] corrections gio: chapter 2
+- ✅ [macos] make a backup scene CL_WithterrainTrees > 
+- ✅ [macos] delete trees 
+- [windows] collaborate pull
+- [windows] put trees by hand
+- [cancelled] add obstacle tags to rocks
+- [windows] test gridsensor visibility
+ >> need to get SSD from home
 
-
-- [gapu-t1] 71
-- [gapu-t1] 72
-- [gapu-t2] 73
-- [gapu-t2] 74
-- [gapu-t3] 75
-- [gapu-t3] 76
-
-- [gapu-t1] 77
-- [gapu-t1] 78
-
-
-## nov 10-11
-
-- [-----] corrections gio: chapter 3
-- [-----] chapter 3
-
-## nov 12-13
-- [-----] chapter 4
-
-
-## nov 13-14
-- [-----] chapter 5
+- [windows] export env CL_OW 
+- [windows] export run agentOpenWorld 
 
 ## nov 14
-- [-----] chapter 6
-- [windows] export runForest
-- [windows] export runFire
-- [windows] runForest
-- [windows] runFire
+- t1 run 65, 65-pure, 
+- t2 run 66, 67
+- t3 run 68, 68++
+  
+- t4 run 61, 62
+- t5 run 63 25, 63 50
+- t6 run 63 75, 63 100
 
-## nov 12
-- [-----] send for corrections [adhi, irena, bruno, alAmeen]
+- t7 run 64
+
+- [-----] corrections gio: chapter 2
+- [-----] corrections gio: chapter 2
 
 
 ## nov 15
 [-----] meeting thilo
 
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
 ## nov 16
-[-----] PPT
+
+- [-----] corrections gio: chapter 3
+- [-----] chapter 3
+
+## nov 19
+- [-----] chapter 4
 
 
-## nov 17
-[-----] corrections bruno
-[-----] corrections adhi
-[-----] corrections irena
+## nov 22
+- [-----] chapter 5
 
-## nov 20
-[-----] send for corrections [gio, andy, moha]
-[-----] correct PPT
+## nov 25
+- [-----] chapter 6
 
-## nov 25-27
-[-----] corrections [gio, andy, moha]
+- [windows] export runForest
+- [windows] export runFire
+- [windows] runForest
+- [windows] runFire
 
-## nov 27
-[-----] send to thilo [PDF, PPT]
+- [-----] send for corrections [adhi, andy, irena, bruno, alAmeen]
 
 ## nov 29
 [-----] meeting thilo and corrections
+[-----] define presentation date
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
 
 ## dec 1
-[-----] define presentation date
+[-----] PPT
+[-----] corrections bruno
+[-----] corrections adhi
+[-----] corrections irena
+[-----] corrections andy
+
+## dec 3
+[-----] send for corrections [gio, moha]
+[-----] correct PPT
+
+## dec 6
+[-----] corrections [gio, andy, moha]
+
+## dec 9
+[-----] send to thilo [PDF, PPT]
+
+## dec 13
+[-----] meeting thilo
 
 ## archive
 - `runID="run61"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --no-graphics --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
@@ -230,4 +253,5 @@ resume_run_id = test-1026-144959
 - `runID="run63++075"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --no-graphics --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
 - `runID="run63++100"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --no-graphics --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
 - `runID="run64"; cd /app/baseAgents_v2; mlagents-learn config/$runID.yaml --env build/agent --run-id=$runID --width=1080 --height=684 --time-scale=50 --no-graphics --num-envs=5 --force --base-port=5000 & wait; echo "$runID has finished" >> runs_progress.log &   `
+
 
