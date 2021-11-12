@@ -35,7 +35,7 @@ environment_parameters:
   # agent paremeters
   EnvironmentType: 0 # open, fire, forest
   steuernModus: 1
-  m_EnableVFX: 1
+  m_EnableVFX: 0
   m_EnableTrainDebuggingLogs: 1
   # config for the specific behavior to be trained 
   # do not modify these lines below: use templates
