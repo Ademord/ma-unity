@@ -144,52 +144,67 @@ resume_run_id = test-1026-144959
 
 
 # nov 12
-
 - [cancelled] empty windows so i can train more
 - ✅ setup VMs the way sean set them up
-
-- t1 run 65, 65-pure, 
-- t2 run 66, 67
-- t3 run 68, 68++  
-- t4 run 61, 62
-- t5 run 63 25, 63 50
-- t6 run 63 75, 63 100
-- t7 run 64
-- run 63 and 68++050
-
-## nov 13
-- do all the Blender stuff required
-- voxelize house
-- voxelize crooked bus
-
+- ✅ t1 run 65, 65-pure, 
+- ✅ t2 run 66, 67
+- ✅ t3 run 68, 68++  
+- ✅ t4 run 61, 62
+- ✅ t5 run 63 25, 63 50
+- ✅ t6 run 63 75, 63 100
+- ✅ t7 run 64
+- ✅ run 63 and 68++050
 - ✅ [macos] make a backup scene CL_WithterrainTrees > 
 - ✅ [macos] delete trees 
-- [windows] collaborate pull
+
+## nov 13, ## nov 14
+- ✅  do all the Blender stuff required
+- ✅  voxelize house
+- ✅  voxelize crooked bus
+
+- ✅ [windows] collaborate pull
 - [windows] put trees by hand
 - [cancelled] add obstacle tags to rocks
-- [windows] test gridsensor visibility
+- ✅  [windows] test gridsensor visibility
  >> need to get SSD from home
 
-- [windows] export env CL_OW 
-- [windows] export run agentOpenWorld 
+- ✅  [windows] export env CL_bike
+- ✅  [windows] export env CL_bus 
+- ✅  [windows] export env CL_house
+- ✅  [windows] export env CL_quidditch
 
-## nov 14
-- t1 run 65, 65-pure, 
-- t2 run 66, 67
-- t3 run 68, 68++
-  
-- t4 run 61, 62
-- t5 run 63 25, 63 50
-- t6 run 63 75, 63 100
+- broken runs: 66 67 (u2, 67 >> u4) 68 (u3) 65 (u1)
 
-- t7 run 64
+✅ resuming
+- u1 65
+- u2 66
+- u3 68
+- u4 67
 
-- [-----] corrections gio: chapter 2
-- [-----] corrections gio: chapter 2
+✅ new starting
+- u5 62, 63 >> 70i 
+- u6 run63++025, run63++050 >> 70i
+- u7 run63++075, un63++100
+- u8 run64
+
+
 
 
 ## nov 15
 [-----] meeting thilo
+
+- ergoneo part, commit everything
+
+missing to start these runs (bike)
+- run65, run65-pure
+- 66, 67 
+- 68, 68++050
+- run68++100, 61
+
+
+- [-----] corrections gio: chapter 2
+- [-----] corrections gio: chapter 2
+
 
 
 -----------------------------------------------------------------
