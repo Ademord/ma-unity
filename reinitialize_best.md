@@ -176,19 +176,21 @@ resume_run_id = test-1026-144959
 - broken runs: 66 67 (u2, 67 >> u4) 68 (u3) 65 (u1)
 
 ✅ resuming
+
 - u1 65
-- u2 66
 - u3 68
+
+- u2 66
 - u4 67
 
-✅ new starting
-- u5 62, 63 >> 70i 
-- u6 run63++025, run63++050 >> 70i
-- u7 run63++075, un63++100
+✅ new starting, >> update 7 am: crashed, too fast and too many envs. reduced 5 >> 2 (crashing.. i assume openworld is heavier.)
+- u5 62, 
+- u6 run63++025, 
+- u7 run63++075, 
 - u8 run64
 
-
-
+- u2 63
+- u4 63++050
 
 ## nov 15
 [-----] meeting thilo
@@ -196,22 +198,23 @@ resume_run_id = test-1026-144959
 - ergoneo part, commit everything
 
 missing to start these runs (bike)
-- run65, run65-pure
-- 66, 67 
-- 68, 68++050
+- ✅ u2 63 >> 70i  #        cd ~/ultron/openWorldBicycle/; ./train_visON.sh run63 5005 &
+- ✅ u4 run63++050 >> 70i   cd ~/ultron/openWorldBicycle/; ./train_visON.sh run63++050 5005 &
+- u1 run63++100          cd ~/ultron/openWorldBicycle/; ./train_visON.sh run63++100 5005 &
+- u3 run65, cd ~/ultron/openWorldBicycle/; ./train_visON.sh run63++100 5005 &
+- run65-pure
+- 66, 
+- 67 
+- 68, 
+- 68++050
 - run68++100, 61
-
-
-- [-----] corrections gio: chapter 2
-- [-----] corrections gio: chapter 2
-
-
 
 -----------------------------------------------------------------
 -----------------------------------------------------------------
 
 ## nov 16
-
+- [-----] corrections gio: chapter 2
+- [-----] corrections gio: chapter 2
 - [-----] corrections gio: chapter 3
 - [-----] chapter 3
 
