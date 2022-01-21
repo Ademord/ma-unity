@@ -1,3 +1,8 @@
 
 gym_wrapper/.idea/workspace.xml
 *.assets
+*.pt
+*.onnx
+*tfevents*
+*.log
+*.json
