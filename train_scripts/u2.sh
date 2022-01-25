@@ -25,11 +25,11 @@
 # cd ~/ultron/configLoader_v4/scripts; ./train_visON_resume.sh run63++100 5005 && \
 # cd ~/ultron/configLoader_v4/scripts && ./train_visON_resume.sh run67 50010 &
 
-cd ~/ultron/configLoader_v4/scripts     && \
-    ./train_visON_resume.sh run67 5005 && \
+# cd ~/ultron/configLoader_v4/scripts     && \
+#     ./train_visON_resume.sh run67 5005 && \
     
-    cd ~/ultron/configLoader_v4/scripts     && \
-    ./train_visON.sh run69-8-nolinger 5010 && \
+#     cd ~/ultron/configLoader_v4/scripts     && \
+#     ./train_visON.sh run69-8-nolinger 5010 && \
 
     cd ~/ultron/configLoader_v4/scripts     && \
-    ./train_visON.sh run69-16-nolinger 5015
+    ./train_visON_resume.sh run69-16-nolinger 5015

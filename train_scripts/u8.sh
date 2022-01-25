@@ -29,5 +29,8 @@
 #     ./train_visON_resume.sh run65-pure-vision 5010
 
 
-cd ~/ultron/configLoader_v4/scripts     && \
-    ./train_visON.sh run66 5010
+# cd ~/ultron/configLoader_v4/scripts     && \
+#    ./train_visON_resume.sh run66 5010  && \
+
+cd ~/ultron/configLoader_v4_smallcam/scripts     && \
+    ./train_visON_resume.sh ev_smallcam.run69-8 5020 

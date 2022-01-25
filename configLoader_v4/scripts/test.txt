@@ -1,0 +1,3 @@
+mlagents-learn ../config/run69-4-nolinger.yaml --env ../build/agent --run-id=run69-4-nolinger \
+    --width=1080 --height=684 --time-scale=20 --num-envs=5 --force --base-port=5010 \
+    > logs_train/run69-4-nolinger.log

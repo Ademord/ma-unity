@@ -4,5 +4,7 @@ then
 else
      echo "Directory exists"
 fi
-mlagents-learn ../config/$1.yaml --env ../build_inference_octree/agent --run-id=$1 --initialize-from=$3 \
-    --width=1080 --height=684 --time-scale=20 --num-envs=5 --force --base-port=$2 > logs_inference/$1-inference.log
+echo "<octree inference> on run <$2> with config <$1>"
+mlagents-learn ../config/$1.yaml --env ../build_inference_octree/agent --run-id=$2 --initialize-from=$4 \
+    --width=1080 --height=684 --time-scale=20 --num-envs=5 --force --base-port=$3 > logs_inference/$2-inference.log
+echo "exiting '<octree inference> on run <$2>"

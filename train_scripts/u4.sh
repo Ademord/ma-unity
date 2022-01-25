@@ -26,11 +26,11 @@
 # cd ~/ultron/configLoader_v4/scripts && ./train_visON_resume.sh run68++050 5010 &
 
 
-cd ~/ultron/configLoader_v4/scripts     && \
-    ./train_visON_resume.sh run68++050 5005 && \
+# cd ~/ultron/configLoader_v4/scripts     && \
+#     ./train_visON_resume.sh run68++050 5005 && \
     
-    cd ~/ultron/configLoader_v4/scripts     && \
-    ./train_visON.sh run69-16-noTrainEntropy 5010 && \
+#     cd ~/ultron/configLoader_v4/scripts     && \
+#     ./train_visON.sh run69-16-noTrainEntropy 5010 && \
 
     cd ~/ultron/configLoader_v4/scripts     && \
-    ./train_visON.sh run69-4-nolinger-noTrainEntropy 5015
+    ./train_visON_resume.sh run69-4-nolinger-noTrainEntropy 5015

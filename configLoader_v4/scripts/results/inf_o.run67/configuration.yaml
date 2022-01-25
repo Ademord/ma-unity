@@ -1,0 +1,322 @@
+default_settings: null
+behaviors:
+  Drone:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 0.0003
+      beta: 0.01
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: false
+      hidden_units: 256
+      num_layers: 2
+      vis_encode_type: simple
+      memory: null
+      goal_conditioning_type: hyper
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+        network_settings:
+          normalize: false
+          hidden_units: 128
+          num_layers: 2
+          vis_encode_type: simple
+          memory: null
+          goal_conditioning_type: hyper
+      curiosity:
+        gamma: 0.99
+        strength: 0.02
+        network_settings:
+          normalize: false
+          hidden_units: 256
+          num_layers: 2
+          vis_encode_type: simple
+          memory: null
+          goal_conditioning_type: hyper
+        learning_rate: 0.0003
+        encoding_size: null
+    init_path: results/run67/Drone
+    keep_checkpoints: 1
+    checkpoint_interval: 500000
+    max_steps: 7500000
+    time_horizon: 64
+    summary_freq: 30000
+    threaded: true
+    self_play: null
+    behavioral_cloning: null
+env_settings:
+  env_path: ../build_inference_voxel/agent
+  env_args: null
+  base_port: 5015
+  num_envs: 5
+  seed: -1
+engine_settings:
+  width: 1080
+  height: 684
+  quality_level: 5
+  time_scale: 20.0
+  target_frame_rate: -1
+  capture_frame_rate: 60
+  no_graphics: false
+environment_parameters:
+  EnvironmentType:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6118
+          value: 0
+      name: EnvironmentType
+      completion_criteria: null
+  steuernModus:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6119
+          value: 1
+      name: steuernModus
+      completion_criteria: null
+  m_EnableVFX:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6120
+          value: 0
+      name: m_EnableVFX
+      completion_criteria: null
+  m_EnableTrainDebuggingLogs:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6121
+          value: 0
+      name: m_EnableTrainDebuggingLogs
+      completion_criteria: null
+  m_ResetOnCollision:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6122
+          value: 1
+      name: m_ResetOnCollision
+      completion_criteria: null
+  m_TrainMovingForward:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6123
+          value: 1
+      name: m_TrainMovingForward
+      completion_criteria: null
+  m_TrainTargetSpeed:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6124
+          value: 1
+      name: m_TrainTargetSpeed
+      completion_criteria: null
+  leafNodeSize:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6125
+          value: 4
+      name: leafNodeSize
+      completion_criteria: null
+  m_AddOctreeObservations:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6126
+          value: 0
+      name: m_AddOctreeObservations
+      completion_criteria: null
+  m_TrainOctreeDiscovery:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6127
+          value: 0
+      name: m_TrainOctreeDiscovery
+      completion_criteria: null
+  m_TrainLingerPolicy:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6128
+          value: 0
+      name: m_TrainLingerPolicy
+      completion_criteria: null
+  m_AddPigeonObservations:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6129
+          value: 0
+      name: m_AddPigeonObservations
+      completion_criteria: null
+  m_TrainVoxelCollection:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6130
+          value: 1
+      name: m_TrainVoxelCollection
+      completion_criteria: null
+  allowedToSeeVoxels:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6131
+          value: 0
+      name: allowedToSeeVoxels
+      completion_criteria: null
+  m_VoxelRewardStrength:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6132
+          value: 0.5
+      name: m_VoxelRewardStrength
+      completion_criteria: null
+  NormalizeVoxelReward:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6133
+          value: 1
+      name: NormalizeVoxelReward
+      completion_criteria: null
+  m_SpeedSensitivityToTargetsInFOV:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6134
+          value: 1
+      name: m_SpeedSensitivityToTargetsInFOV
+      completion_criteria: null
+  m_AddShortestPathObservations:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6135
+          value: 0
+      name: m_AddShortestPathObservations
+      completion_criteria: null
+  m_TrainShortestPath:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6136
+          value: 0
+      name: m_TrainShortestPath
+      completion_criteria: null
+  m_LoadDetector:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6137
+          value: 1
+      name: m_LoadDetector
+      completion_criteria: null
+  m_AddDetectorObservations:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6138
+          value: 0
+      name: m_AddDetectorObservations
+      completion_criteria: null
+  m_TrainObjectDetectionMaximization:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6139
+          value: 0
+      name: m_TrainObjectDetectionMaximization
+      completion_criteria: null
+  NormalizeDetectionsReward:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6140
+          value: 1
+      name: NormalizeDetectionsReward
+      completion_criteria: null
+  m_AddSemanticCuriosityObservations:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6141
+          value: 0
+      name: m_AddSemanticCuriosityObservations
+      completion_criteria: null
+  m_TrainSemanticCuriosity:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6142
+          value: 0
+      name: m_TrainSemanticCuriosity
+      completion_criteria: null
+  m_AddSemanticEntropyObservations:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6143
+          value: 1
+      name: m_AddSemanticEntropyObservations
+      completion_criteria: null
+  m_TrainSemanticEntropy:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 6144
+          value: 1
+      name: m_TrainSemanticEntropy
+      completion_criteria: null
+checkpoint_settings:
+  run_id: inf_o.run67
+  initialize_from: run67
+  load_model: false
+  resume: false
+  force: true
+  train_model: false
+  inference: false
+  results_dir: results
+torch_settings:
+  device: null
+debug: false

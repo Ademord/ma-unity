@@ -26,10 +26,11 @@ behaviors:
         network_settings:
           hidden_units: 256
         learning_rate: 0.0003
-    keep_checkpoints: 5
+    keep_checkpoints: 1 
     max_steps: 30000000
     time_horizon: 64
     summary_freq: 30000
+    threaded: true
 
 environment_parameters:
   # agent paremeters
