@@ -32,5 +32,11 @@
 #     cd ~/ultron/configLoader_v4/scripts     && \
 #     ./train_visON.sh run69-16-noTrainEntropy 5010 && \
 
-    cd ~/ultron/configLoader_v4/scripts     && \
-    ./train_visON_resume.sh run69-4-nolinger-noTrainEntropy 5015
+    # cd ~/ultron/configLoader_v4/scripts     && \
+    # ./train_visON_resume.sh run69-4-nolinger-noTrainEntropy 5015
+
+    # cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
+    # inf_o.run62-4  inf_o.run62-4 5010
+
+    cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
+    inf_o.run66 inf_o.run66 5015 run66 

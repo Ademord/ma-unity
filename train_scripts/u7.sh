@@ -28,15 +28,19 @@
 #     ./train_visON_resume.sh run61-explore-constrained-nospeed 5005 
 
 
-    cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
-    inf_o.run67 inf_v.run67 5015 && \
+    # cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
+    # inf_o.run67 inf_v.run67 5015 && \
 
-    cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
-    inf_o.run62-16-constrained  inf_o.run62-16-constrained 5010 && \
+    # cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
+    # inf_o.run62-16-constrained  inf_o.run62-16-constrained 5010 && \
+
+    # cd ~/ultron/configLoader_v4/scripts         && ./inference_octree_resume.sh \
+    # inf_o.run62-16-constrained-pigeon-nospeed inf_o.run62-16-constrained-pigeon-nospeed 5005 
+
+
+cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
+    inf_o.run63++025 inf_v.run63++025 5005 run63++100-nospeed && \
+
 
     cd ~/ultron/configLoader_v4/scripts         && ./inference_octree_resume.sh \
-    inf_o.run62-16-constrained-pigeon-nospeed inf_o.run62-16-constrained-pigeon-nospeed 5005 && \
-
-    cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
-    inf_o.run62-4  inf_o.run62-4 5010
-
+    inf_o.run62-16-constrained-pigeon inf_o.run62-16-constrained-pigeon 5005 

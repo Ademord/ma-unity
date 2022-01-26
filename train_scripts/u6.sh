@@ -30,12 +30,16 @@
 cd ~/ultron/configLoader_v4_bigscanner/scripts     && \
 ./train_visON_resume.sh ev_bigscanner.run69-8 5025    && \
 
-# >> PENDING
+# >> PENDING until it finishes training
+# cd ~/ultron/configLoader_v4_bigscanner/scripts     && \
+# ./inference_octree.sh inf_o.ev_bigscanner.run69-8 inf_o.ev_bigscanner.run69-8 5030 ev_bigscanner.run69-8  
+
 # cd ~/ultron/configLoader_v4_bigscanner/scripts     && \
 # ./inference_voxel.sh inf_o.ev_bigscanner.run69-8 inf_v.ev_bigscanner.run69-8 5030 ev_bigscanner.run69-8  
 
-cd ~/ultron/configLoader_v4/scripts && ./inference_octree.sh \
+
+cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
 inf_o.run68++100-nospeed  inf_o.run68++100-nospeed 5015 run68++100-nospeed && \
 
-cd ~/ultron/configLoader_v4/scripts && ./inference_voxel.sh \
+cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
 inf_o.run68++100-nospeed  inf_v.run68++100-nospeed 5015 run68++100-nospeed

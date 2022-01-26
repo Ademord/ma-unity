@@ -38,7 +38,7 @@
 cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
     inf_o.run63++025 inf_o.run63++025 5005 run63++100-nospeed && \
 
-cd ~/ultron/configLoader_v4/scripts && ./inference_octree.sh \
+cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
     inf_o.run63++100-nospeed-nolinger inf_o.run63++100-nospeed-nolinger 5005 run63++100-nospeed && \
 
 cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \

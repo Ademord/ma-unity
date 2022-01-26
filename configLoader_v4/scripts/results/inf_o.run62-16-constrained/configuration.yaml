@@ -29,10 +29,10 @@ behaviors:
           vis_encode_type: simple
           memory: null
           goal_conditioning_type: hyper
-    init_path: results/run62-16-constrained-pigeon-pathak/Drone
+    init_path: null
     keep_checkpoints: 1
     checkpoint_interval: 500000
-    max_steps: 10000000
+    max_steps: 7500000
     time_horizon: 64
     summary_freq: 30000
     threaded: false
@@ -41,8 +41,8 @@ behaviors:
 env_settings:
   env_path: ../build_inference_octree/agent
   env_args: null
-  base_port: 5005
-  num_envs: 6
+  base_port: 5010
+  num_envs: 4
   seed: -1
 engine_settings:
   width: 1080
@@ -58,7 +58,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6949
+          seed: 3688
           value: 1
       name: EnvironmentType
       completion_criteria: null
@@ -67,7 +67,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6950
+          seed: 3689
           value: 1
       name: steuernModus
       completion_criteria: null
@@ -76,7 +76,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6951
+          seed: 3690
           value: 0
       name: m_EnableVFX
       completion_criteria: null
@@ -85,7 +85,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6952
+          seed: 3691
           value: 0
       name: m_EnableTrainDebuggingLogs
       completion_criteria: null
@@ -94,7 +94,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6953
+          seed: 3692
           value: 0
       name: m_ResetOnCollision
       completion_criteria: null
@@ -103,7 +103,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6954
+          seed: 3693
           value: 1
       name: m_TrainMovingForward
       completion_criteria: null
@@ -112,7 +112,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6955
+          seed: 3694
           value: 1
       name: m_TrainTargetSpeed
       completion_criteria: null
@@ -121,7 +121,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6956
+          seed: 3695
           value: 16
       name: leafNodeSize
       completion_criteria: null
@@ -130,7 +130,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6957
+          seed: 3696
           value: 1
       name: m_AddOctreeObservations
       completion_criteria: null
@@ -139,7 +139,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6958
+          seed: 3697
           value: 1
       name: m_TrainOctreeDiscovery
       completion_criteria: null
@@ -148,7 +148,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6959
+          seed: 3698
           value: 1
       name: m_TrainLingerPolicy
       completion_criteria: null
@@ -157,7 +157,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6960
+          seed: 3699
           value: 0
       name: m_AddPigeonObservations
       completion_criteria: null
@@ -166,7 +166,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6961
+          seed: 3700
           value: 0
       name: m_TrainVoxelCollection
       completion_criteria: null
@@ -175,7 +175,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6962
+          seed: 3701
           value: 0
       name: allowedToSeeVoxels
       completion_criteria: null
@@ -184,7 +184,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6963
+          seed: 3702
           value: 0.5
       name: m_VoxelRewardStrength
       completion_criteria: null
@@ -193,7 +193,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6964
+          seed: 3703
           value: 0
       name: NormalizeVoxelReward
       completion_criteria: null
@@ -202,7 +202,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6965
+          seed: 3704
           value: 0
       name: m_SpeedSensitivityToTargetsInFOV
       completion_criteria: null
@@ -211,7 +211,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6966
+          seed: 3705
           value: 0
       name: m_AddShortestPathObservations
       completion_criteria: null
@@ -220,7 +220,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6967
+          seed: 3706
           value: 0
       name: m_TrainShortestPath
       completion_criteria: null
@@ -229,7 +229,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6968
+          seed: 3707
           value: 1
       name: m_LoadDetector
       completion_criteria: null
@@ -238,7 +238,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6969
+          seed: 3708
           value: 0
       name: m_AddDetectorObservations
       completion_criteria: null
@@ -247,7 +247,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6970
+          seed: 3709
           value: 0
       name: m_TrainObjectDetectionMaximization
       completion_criteria: null
@@ -256,7 +256,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6971
+          seed: 3710
           value: 1
       name: NormalizeDetectionsReward
       completion_criteria: null
@@ -265,7 +265,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6972
+          seed: 3711
           value: 0
       name: m_AddSemanticCuriosityObservations
       completion_criteria: null
@@ -274,7 +274,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6973
+          seed: 3712
           value: 0
       name: m_TrainSemanticCuriosity
       completion_criteria: null
@@ -283,7 +283,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6974
+          seed: 3713
           value: 0
       name: m_AddSemanticEntropyObservations
       completion_criteria: null
@@ -292,16 +292,16 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 6975
+          seed: 3714
           value: 0
       name: m_TrainSemanticEntropy
       completion_criteria: null
 checkpoint_settings:
   run_id: inf_o.run62-16-constrained
-  initialize_from: run62-16-constrained-pigeon-pathak
+  initialize_from: null
   load_model: false
-  resume: false
-  force: true
+  resume: true
+  force: false
   train_model: false
   inference: false
   results_dir: results
