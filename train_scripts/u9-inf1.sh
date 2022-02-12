@@ -15,5 +15,8 @@
 # cd ~/ultron/configLoader_v4/scripts     && \
 # ./train_visON_resume.sh ev_sac.run69-8 5015   
 
-cd ~/ultron/configLoader_v4/scripts && ./inference_octree.sh \
-inf_o.run69-8 inf_o.run69-8 5010 run69-8
+# cd ~/ultron/configLoader_v4/scripts && ./inference_octree.sh \
+# inf_o.run69-8 inf_o.run69-8 5010 run69-8
+
+
+

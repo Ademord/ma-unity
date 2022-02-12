@@ -32,5 +32,18 @@
 # cd ~/ultron/configLoader_v4/scripts     && \
 #    ./train_visON_resume.sh run66 5010  && \
 
-cd ~/ultron/configLoader_v4_smallcam/scripts     && \
-    ./train_visON_resume.sh ev_smallcam.run69-8 5020 
+# cd ~/ultron/configLoader_v4_smallcam/scripts     && \
+#     ./train_visON_resume.sh ev_smallcam.run69-8 5020 
+
+
+# cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
+# inf_o.run69-8 inf_o.run69-8 5010 run69-8
+
+
+# cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
+# inf_o.run69-16-nolinger inf_v.run69-16-nolinger 5010
+
+
+
+
+

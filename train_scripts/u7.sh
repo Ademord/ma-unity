@@ -38,9 +38,14 @@
     # inf_o.run62-16-constrained-pigeon-nospeed inf_o.run62-16-constrained-pigeon-nospeed 5005 
 
 
-cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
-    inf_o.run63++025 inf_v.run63++025 5005 run63++100-nospeed && \
 
 
-    cd ~/ultron/configLoader_v4/scripts         && ./inference_octree_resume.sh \
-    inf_o.run62-16-constrained-pigeon inf_o.run62-16-constrained-pigeon 5005 
+# cd ~/ultron/configLoader_v4/scripts         && ./inference_octree_resume.sh \
+# inf_o.run62-16-constrained-pigeon inf_o.run62-16-constrained-pigeon 5005 
+
+# cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
+# inf_o.run68++100-nospeed  inf_v.run68++100-nospeed 5015
+
+
+# cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
+# inf_o.run63++100-nospeed-oracle-8-pigeon inf_v.run63++100-nospeed-oracle-8-pigeon 5010

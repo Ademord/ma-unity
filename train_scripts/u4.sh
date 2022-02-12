@@ -38,5 +38,20 @@
     # cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
     # inf_o.run62-4  inf_o.run62-4 5010
 
-    cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
-    inf_o.run66 inf_o.run66 5015 run66 
+    # cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
+    # inf_o.run66 inf_o.run66 5015 run66 
+# cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
+# inf_o.run69-8 inf_v.run69-8 5010 run69-8
+
+
+# cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
+# inf_o.run69-16-constrained inf_o.run69-16-constrained-no-init 5010 
+
+
+    # cd ~/ultron/configLoader_v4/scripts     && \
+    # ./train_visON_resume.sh run62-16-pathak-constrained-nospeed-nolinger 5010
+
+
+    
+cd ~/ultron/configLoader_v4/scripts     && \
+./train_visON.sh run63++100-nospeed-object-detector 5010

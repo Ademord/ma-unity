@@ -48,11 +48,28 @@
     #     inf_o.run62-4-constrained-pigeon-nospeed 5005 inf_o.run62-4
 
 
-cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
-    inf_o.run63++025 inf_v.run63++025 5005 run63++100-nospeed && \
+# cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
+#     inf_o.run63++025 inf_v.run63++025 5005 run63++100-nospeed && \
 
-cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
-    inf_o.run63++100-nospeed-nolinger inf_v.run63++100-nospeed-nolinger 5005 run63++100-nospeed && \
+# cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
+#     inf_o.run63++100-nospeed-nolinger inf_v.run63++100-nospeed-nolinger 5005 run63++100-nospeed && \
 
-cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
-    inf_o.run63++100-nospeed inf_v.run63++100-nospeed 5005 run63++100-nospeed
+# cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
+#     inf_o.run63++100-nospeed inf_v.run63++100-nospeed 5005 run63++100-nospeed
+# cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
+# inf_o.run68++100-nospeed  inf_o.run68++100-nospeed 5015
+
+# >> moved to u8
+# cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
+# inf_o.run69-8 inf_o.run69-8 5010 run69-8
+
+# cd ~/ultron/configLoader_v4/scripts     && \
+#     ./train_visON_resume.sh ev_sac.run62-16-constrained-pigeon 5005 
+
+# cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
+# inf_o.run69-16-constrained inf_o.run69-16-constrained 5010 inf_o.run69-16
+
+
+    # cd ~/ultron/configLoader_v4/scripts     && \
+    # ./train_visON_resume.sh run62-16-pathak-constrained-nospeed 5010
+

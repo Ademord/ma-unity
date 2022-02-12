@@ -58,7 +58,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3688
+          seed: 6361
           value: 1
       name: EnvironmentType
       completion_criteria: null
@@ -67,7 +67,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3689
+          seed: 6362
           value: 1
       name: steuernModus
       completion_criteria: null
@@ -76,7 +76,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3690
+          seed: 6363
           value: 0
       name: m_EnableVFX
       completion_criteria: null
@@ -85,7 +85,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3691
+          seed: 6364
           value: 0
       name: m_EnableTrainDebuggingLogs
       completion_criteria: null
@@ -94,7 +94,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3692
+          seed: 6365
           value: 0
       name: m_ResetOnCollision
       completion_criteria: null
@@ -103,7 +103,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3693
+          seed: 6366
           value: 1
       name: m_TrainMovingForward
       completion_criteria: null
@@ -112,7 +112,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3694
+          seed: 6367
           value: 1
       name: m_TrainTargetSpeed
       completion_criteria: null
@@ -121,7 +121,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3695
+          seed: 6368
           value: 16
       name: leafNodeSize
       completion_criteria: null
@@ -130,7 +130,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3696
+          seed: 6369
           value: 1
       name: m_AddOctreeObservations
       completion_criteria: null
@@ -139,7 +139,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3697
+          seed: 6370
           value: 1
       name: m_TrainOctreeDiscovery
       completion_criteria: null
@@ -148,7 +148,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3698
+          seed: 6371
           value: 1
       name: m_TrainLingerPolicy
       completion_criteria: null
@@ -157,7 +157,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3699
+          seed: 6372
           value: 0
       name: m_AddPigeonObservations
       completion_criteria: null
@@ -166,7 +166,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3700
+          seed: 6373
           value: 0
       name: m_TrainVoxelCollection
       completion_criteria: null
@@ -175,7 +175,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3701
+          seed: 6374
           value: 0
       name: allowedToSeeVoxels
       completion_criteria: null
@@ -184,7 +184,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3702
+          seed: 6375
           value: 0.5
       name: m_VoxelRewardStrength
       completion_criteria: null
@@ -193,7 +193,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3703
+          seed: 6376
           value: 0
       name: NormalizeVoxelReward
       completion_criteria: null
@@ -202,7 +202,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3704
+          seed: 6377
           value: 0
       name: m_SpeedSensitivityToTargetsInFOV
       completion_criteria: null
@@ -211,7 +211,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3705
+          seed: 6378
           value: 0
       name: m_AddShortestPathObservations
       completion_criteria: null
@@ -220,7 +220,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3706
+          seed: 6379
           value: 0
       name: m_TrainShortestPath
       completion_criteria: null
@@ -229,7 +229,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3707
+          seed: 6380
           value: 1
       name: m_LoadDetector
       completion_criteria: null
@@ -238,7 +238,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3708
+          seed: 6381
           value: 0
       name: m_AddDetectorObservations
       completion_criteria: null
@@ -247,7 +247,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3709
+          seed: 6382
           value: 0
       name: m_TrainObjectDetectionMaximization
       completion_criteria: null
@@ -256,7 +256,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3710
+          seed: 6383
           value: 1
       name: NormalizeDetectionsReward
       completion_criteria: null
@@ -265,7 +265,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3711
+          seed: 6384
           value: 0
       name: m_AddSemanticCuriosityObservations
       completion_criteria: null
@@ -274,7 +274,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3712
+          seed: 6385
           value: 0
       name: m_TrainSemanticCuriosity
       completion_criteria: null
@@ -283,7 +283,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3713
+          seed: 6386
           value: 0
       name: m_AddSemanticEntropyObservations
       completion_criteria: null
@@ -292,7 +292,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 3714
+          seed: 6387
           value: 0
       name: m_TrainSemanticEntropy
       completion_criteria: null

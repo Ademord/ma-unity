@@ -27,8 +27,8 @@
 #     cd ~/ultron/configLoader_v4/scripts     && \
 #     ./train_visON.sh run69-16-nolinger-noTrainEntropy 5015
 
-cd ~/ultron/configLoader_v4_bigscanner/scripts     && \
-./train_visON_resume.sh ev_bigscanner.run69-8 5025    && \
+# cd ~/ultron/configLoader_v4_bigscanner/scripts     && \
+# ./train_visON_resume.sh ev_bigscanner.run69-8 5025  
 
 # >> PENDING until it finishes training
 # cd ~/ultron/configLoader_v4_bigscanner/scripts     && \
@@ -38,8 +38,17 @@ cd ~/ultron/configLoader_v4_bigscanner/scripts     && \
 # ./inference_voxel.sh inf_o.ev_bigscanner.run69-8 inf_v.ev_bigscanner.run69-8 5030 ev_bigscanner.run69-8  
 
 
-cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
-inf_o.run68++100-nospeed  inf_o.run68++100-nospeed 5015 run68++100-nospeed && \
+# cd ~/ultron/configLoader_v4/scripts && ./inference_octree_resume.sh \
+# inf_o.run69-16-constrained-noTrainEntropy inf_o.run69-16-constrained-noTrainEntropy 5010 inf_o.run69-16
 
-cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
-inf_o.run68++100-nospeed  inf_v.run68++100-nospeed 5015 run68++100-nospeed
+# cd ~/ultron/configLoader_v4/scripts     && \
+# ./train_visON_resume.sh run69-8-constrained 5010 run69-8
+
+
+cd ~/ultron/configLoader_v4/scripts     && \
+./train_visON.sh run63++100-nospeed-semantic-curiosity 5010
+
+
+# cd ~/ultron/configLoader_v4/scripts     && \
+# ./inference_voxel.sh inf_o.voxel++100-nospeed-nolinger-oracle-8 inf_v.voxel++100-nospeed-nolinger-oracle-8 5030 voxel++100-nospeed-nolinger-oracle-8 
+

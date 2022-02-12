@@ -1,0 +1,92 @@
+behaviors:
+  Drone:
+    trainer_type: ppo
+    
+    hyperparameters:
+      # Hyperparameters common to PPO and SAC
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 0.0003
+      learning_rate_schedule: linear
+
+      # PPO-specific hyperparameters
+      beta: 0.01
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+
+      # SAC-specific hyperparameters
+      # Replaces the "PPO-specific hyperparameters" section above
+      # buffer_init_steps: 0
+      # tau: 0.005
+      # steps_per_update: 10.0
+      # save_replay_buffer: false
+      # init_entcoef: 0.5
+      # reward_signal_steps_per_update: 10.0
+
+    # Configuration of the neural network (common to PPO/SAC)
+    network_settings:
+      vis_encode_type: simple
+      normalize: false
+      hidden_units: 256
+      num_layers: 2
+      # memory
+      # memory:
+      #   sequence_length: 64
+      #   memory_size: 256
+
+    # Trainer configurations common to all trainers
+    max_steps: 7500000
+    time_horizon: 64
+    summary_freq: 30000
+    keep_checkpoints: 1
+
+    reward_signals:
+      # environment reward (default)
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+    
+environment_parameters:
+  # agent paremeters
+  EnvironmentType: 0 # open, fire, forest
+  steuernModus: 1
+  m_EnableVFX: 0
+  m_EnableTrainDebuggingLogs: 0
+  m_ResetOnCollision: 1
+  # config for the specific behavior to be trained 
+  # do not modify these lines below: use templates
+  #################  BEHAVIOR: SPEED  ##################
+  # base
+  m_TrainMovingForward: 1
+  m_TrainTargetSpeed: 0
+  # octree
+  leafNodeSize: 16
+  m_AddOctreeObservations: 1
+  m_TrainOctreeDiscovery: 1
+  m_TrainLingerPolicy: 0
+  m_AddPigeonObservations: 1
+  # voxel
+  m_TrainVoxelCollection: 1
+  allowedToSeeVoxels: 1
+  m_VoxelRewardStrength: 1 # <<<<<<<<<<<<<<<<
+  NormalizeVoxelReward: 0 #  <<<<<<<<<<<<<<<<<<<<
+  m_SpeedSensitivityToTargetsInFOV: 1 # all voxel-detecting behaviors should have this
+  # shortest
+  m_AddShortestPathObservations: 0
+  m_TrainShortestPath: 0
+  # detector
+  m_LoadDetector: 1
+  m_AddDetectorObservations: 0
+  m_TrainObjectDetectionMaximization: 0
+  NormalizeDetectionsReward: 1
+  # curiosity
+  m_AddSemanticCuriosityObservations: 0
+  m_TrainSemanticCuriosity: 0
+  # entropy
+  m_AddSemanticEntropyObservations: 1
+  m_TrainSemanticEntropy: 1
+  #################    END BEHAVIOR   ##################
+
+
+  

@@ -40,7 +40,12 @@ behaviors:
     time_horizon: 64
     summary_freq: 30000
     keep_checkpoints: 1
-    threaded: true
+
+    reward_signals:
+      # environment reward (default)
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
     
 environment_parameters:
   # agent paremeters
