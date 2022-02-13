@@ -45,9 +45,11 @@
 # ./train_visON_resume.sh run69-8-constrained 5010 run69-8
 
 
-cd ~/ultron/configLoader_v4/scripts     && \
-./train_visON.sh run63++100-nospeed-semantic-curiosity 5010
+# cd ~/ultron/configLoader_v4/scripts     && \
+# ./train_visON.sh run63++100-nospeed-semantic-curiosity 5010
 
+cd ~/ultron/configLoader_v4/scripts     && \
+./train_visON.sh run69-8-semantic-entropy-noTrainEntropy 5010
 
 # cd ~/ultron/configLoader_v4/scripts     && \
 # ./inference_voxel.sh inf_o.voxel++100-nospeed-nolinger-oracle-8 inf_v.voxel++100-nospeed-nolinger-oracle-8 5030 voxel++100-nospeed-nolinger-oracle-8 

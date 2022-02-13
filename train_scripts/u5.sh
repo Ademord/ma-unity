@@ -51,5 +51,10 @@
 
 
     
+# cd ~/ultron/configLoader_v4/scripts     && \
+# ./train_visON.sh run63++100-nospeed-semantic-entropy 5010
+
+
 cd ~/ultron/configLoader_v4/scripts     && \
-./train_visON.sh run63++100-nospeed-semantic-entropy 5010
+./train_visON.sh run62-4-pigeon-constrained 5010
+

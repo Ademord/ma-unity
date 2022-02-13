@@ -53,5 +53,9 @@
 
 
     
+# cd ~/ultron/configLoader_v4/scripts     && \
+# ./train_visON.sh run63++100-nospeed-object-detector 5010
+
+
 cd ~/ultron/configLoader_v4/scripts     && \
-./train_visON.sh run63++100-nospeed-object-detector 5010
+./train_visON.sh run62-4-pigeon-constrained-nospeed 5010
