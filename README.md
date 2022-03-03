@@ -17,7 +17,7 @@ Our approach aims to serve as a baseline for computer vision methods that incorp
 
 
 # Thesis document
-The document PDF is added in this repository.
+Please feel free to reference this thesis work in your own work and publications. The document PDF is added in this repository.
 
 For the latex of the thesis document please refer to: https://github.com/Ademord/MT_scene_understanding_2
 
@@ -39,3 +39,9 @@ All assets in the project from the Unity Asset Store are under copyright and mus
  
 The Unity code included are the scripts for the trained agents and the ONNX models. 
 For a full copy of the Unity project please reach out to me directly.
+
+# Acknowledgements
+
+Thanks to all the developers who contributed with their own projects, tutorials and ideas to the conception of this master's thesis, and to my family and friends.
+Special thanks to [Mbaske](https://github.com/mbaske) and [Aakarshan Chauhan](https://github.com/Aakarshan-chauhan).
+
