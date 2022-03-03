@@ -51,3 +51,17 @@
 
 # cd ~/ultron/configLoader_v4/scripts && ./inference_voxel_resume.sh \
 # inf_o.run69-16-nolinger-noTrainEntropy inf_v.run69-16-nolinger-noTrainEntropy 5010
+
+# run63++025 no checkpoint
+# cd ~/ultron/configLoader_v4/scripts     && \
+#     ./train_visON_inference.sh inf_o.run63++025 inf_v.run63++025 5005 
+
+# cd ~/ultron/configLoader_v4/scripts     && \
+#     ./train_visON_inference.sh inf_o.run69-8 inf_v.run69-8 5005 
+
+
+    
+cd ~/ultron/configLoader_v4/scripts     && \
+    ./train_visON_inference.sh inf_o.run69-16-constrained inf_o.run69-16-constrained 5005 
+
+

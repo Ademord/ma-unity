@@ -60,3 +60,5 @@
 
 
     
+cd ~/ultron/configLoader_v4/scripts     && \
+    ./train_visON_inference.sh run63++025 5005 
