@@ -19,7 +19,7 @@ Our approach aims to serve as a baseline for computer vision methods that incorp
 # Thesis document
 Please feel free to reference this thesis work in your own work and publications. The document PDF is added in this repository.
 
-For the latex of the thesis document please refer to: https://github.com/Ademord/MT_scene_understanding_2
+For the latex of the thesis document please refer to: https://github.com/Ademord/MT_scene_understanding_pdf
 
 # Unity Assets used
 
